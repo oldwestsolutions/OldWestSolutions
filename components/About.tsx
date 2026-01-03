@@ -86,90 +86,19 @@ export default function About() {
           </div>
         </div>
 
-        {/* Infinite Marquee with Company Logos and Stats */}
-        <div className="relative overflow-hidden py-6">
+        {/* Infinite Marquee with Company Logos */}
+        <div className="relative overflow-hidden py-8">
           <div className="flex animate-marquee whitespace-nowrap">
-            {/* First set */}
-            {partners.map((partner, index) => (
-              <div key={`first-${index}`} className="inline-flex mx-4">
-                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
-                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
-                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
-                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">500+</div>
-                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Clients Served</div>
+            {/* Duplicate sets for seamless infinite loop */}
+            {[...Array(3)].map((_, setIndex) => (
+              partners.map((partner, index) => (
+                <div key={`${setIndex}-${index}`} className="inline-flex items-center justify-center mx-8 md:mx-12 min-w-[150px] md:min-w-[200px]">
+                  <div className="text-center">
+                    <div className="text-6xl md:text-8xl mb-3">{partner.logo}</div>
+                    <div className="text-lg md:text-xl font-semibold text-white">{partner.name}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
-            {partners.map((partner, index) => (
-              <div key={`second-${index}`} className="inline-flex mx-4">
-                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
-                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
-                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
-                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">15+</div>
-                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Years Experience</div>
-                </div>
-              </div>
-            ))}
-            {partners.map((partner, index) => (
-              <div key={`third-${index}`} className="inline-flex mx-4">
-                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
-                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
-                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
-                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">99.9%</div>
-                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Uptime SLA</div>
-                </div>
-              </div>
-            ))}
-            {partners.map((partner, index) => (
-              <div key={`fourth-${index}`} className="inline-flex mx-4">
-                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
-                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
-                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
-                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">24/7</div>
-                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Support Available</div>
-                </div>
-              </div>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {partners.map((partner, index) => (
-              <div key={`first-dup-${index}`} className="inline-flex mx-4">
-                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
-                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
-                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
-                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">500+</div>
-                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Clients Served</div>
-                </div>
-              </div>
-            ))}
-            {partners.map((partner, index) => (
-              <div key={`second-dup-${index}`} className="inline-flex mx-4">
-                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
-                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
-                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
-                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">15+</div>
-                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Years Experience</div>
-                </div>
-              </div>
-            ))}
-            {partners.map((partner, index) => (
-              <div key={`third-dup-${index}`} className="inline-flex mx-4">
-                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
-                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
-                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
-                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">99.9%</div>
-                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Uptime SLA</div>
-                </div>
-              </div>
-            ))}
-            {partners.map((partner, index) => (
-              <div key={`fourth-dup-${index}`} className="inline-flex mx-4">
-                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
-                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
-                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
-                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">24/7</div>
-                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Support Available</div>
-                </div>
-              </div>
+              ))
             ))}
           </div>
         </div>
