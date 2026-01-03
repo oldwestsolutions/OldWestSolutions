@@ -73,16 +73,16 @@ export default function Hero() {
         <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-gray-400/10 to-transparent"></div>
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="flex flex-col justify-center order-2 lg:order-1">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
+        <div className="w-full max-w-4xl text-center pt-20 md:pt-32">
+          <div className="flex flex-col justify-center items-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight">
               Enterprise IT Solutions
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-windows-dark-text-secondary mb-6 md:mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-windows-dark-text-secondary mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto">
               Empowering your business with cutting-edge technology and reliable IT services
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <button className="windows-button windows-button-primary text-base md:text-lg px-6 md:px-8 py-2 md:py-3">
                 Get Started
               </button>
