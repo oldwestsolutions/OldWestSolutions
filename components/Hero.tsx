@@ -74,7 +74,7 @@ export default function Hero() {
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-        <div className="w-full max-w-4xl text-left">
+        <div className="w-full max-w-4xl text-left pt-24 md:pt-32 lg:pt-40">
           <div className="flex flex-col justify-center items-start">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight">
               Enterprise IT Solutions
