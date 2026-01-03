@@ -87,24 +87,24 @@ export default function Services() {
   }
 
   return (
-    <section id="products" className="py-20 bg-windows-dark-bg">
+    <section id="products" className="py-12 md:py-20 bg-windows-dark-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Featured Products Cards */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-bold text-white mb-4">Featured Products</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+        <div className="mb-12 md:mb-20">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Products</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-6 md:mt-8">
             {featuredProducts.map((product, index) => (
               <div
                 key={index}
-                className="windows-card p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group"
+                className="windows-card p-4 md:p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group"
               >
-                <div className={`w-full h-32 mb-4 rounded bg-gradient-to-br ${product.gradient} opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center`}>
-                  <span className="text-4xl opacity-70">{product.category === 'Managed Servers' ? '🖥️' : product.category === 'Virtual Machines' ? '💻' : product.category === 'Email Solutions' ? '📧' : '🔧'}</span>
+                <div className={`w-full h-24 md:h-32 mb-3 md:mb-4 rounded bg-gradient-to-br ${product.gradient} opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center`}>
+                  <span className="text-3xl md:text-4xl opacity-70">{product.category === 'Managed Servers' ? '🖥️' : product.category === 'Virtual Machines' ? '💻' : product.category === 'Email Solutions' ? '📧' : '🔧'}</span>
                 </div>
                 <div className="text-xs text-windows-dark-accent mb-2 font-medium">{product.category}</div>
-                <h3 className="text-lg font-semibold text-white mb-2">{product.title}</h3>
-                <p className="text-windows-dark-text-secondary text-sm mb-4">{product.description}</p>
-                <a href="#" className="text-windows-dark-accent hover:text-windows-dark-accent-hover text-sm font-medium flex items-center gap-1">
+                <h3 className="text-base md:text-lg font-semibold text-white mb-2">{product.title}</h3>
+                <p className="text-windows-dark-text-secondary text-xs md:text-sm mb-3 md:mb-4">{product.description}</p>
+                <a href="#" className="text-windows-dark-accent hover:text-windows-dark-accent-hover text-xs md:text-sm font-medium flex items-center gap-1">
                   Learn more →
                 </a>
               </div>
@@ -112,24 +112,24 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Main Services Section - 4x2 Layout */}
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Lead in the IT era with Old West Solutions</h2>
-          <p className="text-windows-dark-text-secondary text-lg max-w-3xl mb-12">
+        {/* Solutions Section - 4x2 Layout */}
+        <div className="mb-16" id="solutions">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Solutions</h2>
+          <p className="text-windows-dark-text-secondary text-base md:text-lg max-w-3xl mb-8 md:mb-12">
             From next-generation cloud solutions to cutting-edge security, our deep expertise across industries can help you reinvent how your business works in the digital age.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
                 onClick={() => handleServiceClick(service)}
-                className="windows-card p-6 hover:border-windows-dark-accent transition-all duration-300 text-center group cursor-pointer"
+                className="windows-card p-4 md:p-6 hover:border-windows-dark-accent transition-all duration-300 text-center group cursor-pointer"
               >
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
-                <h3 className="text-lg font-semibold text-white mb-3">{service.title}</h3>
-                <p className="text-windows-dark-text-secondary text-sm mb-4">{service.description}</p>
-                <div className="text-windows-dark-accent text-sm flex items-center justify-center gap-1 group-hover:gap-2 transition-all">
+                <div className="text-4xl md:text-5xl mb-3 md:mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
+                <h3 className="text-base md:text-lg font-semibold text-white mb-2 md:mb-3">{service.title}</h3>
+                <p className="text-windows-dark-text-secondary text-xs md:text-sm mb-3 md:mb-4">{service.description}</p>
+                <div className="text-windows-dark-accent text-xs md:text-sm flex items-center justify-center gap-1 group-hover:gap-2 transition-all">
                   Learn more →
                 </div>
               </div>

@@ -62,8 +62,8 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-8">
-              <h1 className="text-2xl font-bold text-white">Old West Solutions</h1>
+            <div className="flex items-center gap-4 md:gap-8">
+              <h1 className="text-lg md:text-2xl font-bold text-white">Old West Solutions</h1>
               
               <nav className="hidden md:flex space-x-1">
                 <a href="#products" className="px-4 py-2 text-windows-dark-text hover:bg-windows-dark-hover rounded transition-colors">
@@ -75,7 +75,7 @@ export default function Header() {
               </nav>
             </div>
             
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 md:gap-4">
               <button
                 onClick={() => setIsSearchOpen(true)}
                 className="windows-button hidden md:flex items-center gap-2"
@@ -86,13 +86,11 @@ export default function Header() {
                 </svg>
                 Search
               </button>
-              <button className="windows-button windows-button-primary hidden md:block">
-                Get Started
-              </button>
 
               <button
-                className="md:hidden windows-button"
+                className="md:hidden windows-button p-2"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Menu"
               >
                 ☰
               </button>
@@ -118,9 +116,6 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
                 Search
-              </button>
-              <button className="windows-button windows-button-primary mt-2 w-full">
-                Get Started
               </button>
             </div>
           )}

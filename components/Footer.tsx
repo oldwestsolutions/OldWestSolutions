@@ -1,38 +1,37 @@
 export default function Footer() {
   return (
-    <footer className="bg-windows-dark-surface border-t border-windows-dark-border mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-windows-dark-surface border-t border-windows-dark-border mt-12 md:mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">Old West Solutions</h3>
-            <p className="text-windows-dark-text-secondary text-sm">
+            <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">Old West Solutions</h3>
+            <p className="text-windows-dark-text-secondary text-xs md:text-sm">
               Enterprise IT services and solutions for modern businesses.
             </p>
           </div>
           
           <div>
-            <h4 className="text-white font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm text-windows-dark-text-secondary">
-              <li><a href="#services" className="hover:text-windows-dark-accent">Cloud Solutions</a></li>
-              <li><a href="#services" className="hover:text-windows-dark-accent">Network Security</a></li>
-              <li><a href="#services" className="hover:text-windows-dark-accent">IT Consulting</a></li>
-              <li><a href="#services" className="hover:text-windows-dark-accent">Managed Services</a></li>
+            <h4 className="text-white font-semibold mb-3 md:mb-4 text-sm md:text-base">Services</h4>
+            <ul className="space-y-2 text-xs md:text-sm text-windows-dark-text-secondary">
+              <li><a href="#products" className="hover:text-windows-dark-accent">Cloud Solutions</a></li>
+              <li><a href="#products" className="hover:text-windows-dark-accent">Network Security</a></li>
+              <li><a href="#solutions" className="hover:text-windows-dark-accent">IT Consulting</a></li>
+              <li><a href="#solutions" className="hover:text-windows-dark-accent">Managed Services</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-white font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-windows-dark-text-secondary">
-              <li><a href="#about" className="hover:text-windows-dark-accent">About Us</a></li>
-              <li><a href="#contact" className="hover:text-windows-dark-accent">Contact</a></li>
+            <h4 className="text-white font-semibold mb-3 md:mb-4 text-sm md:text-base">Company</h4>
+            <ul className="space-y-2 text-xs md:text-sm text-windows-dark-text-secondary">
+              <li><a href="#solutions" className="hover:text-windows-dark-accent">About Us</a></li>
               <li><a href="#" className="hover:text-windows-dark-accent">Careers</a></li>
               <li><a href="#" className="hover:text-windows-dark-accent">Blog</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-white font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-sm text-windows-dark-text-secondary">
+            <h4 className="text-white font-semibold mb-3 md:mb-4 text-sm md:text-base">Contact</h4>
+            <ul className="space-y-2 text-xs md:text-sm text-windows-dark-text-secondary">
               <li>Email: info@oldwestsolutions.com</li>
               <li>Phone: (555) 123-4567</li>
               <li>Address: 123 Tech Street</li>
@@ -40,7 +39,7 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="mt-8 pt-8 border-t border-windows-dark-border text-center text-sm text-windows-dark-text-secondary">
+        <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-windows-dark-border text-center text-xs md:text-sm text-windows-dark-text-secondary">
           <p>&copy; {new Date().getFullYear()} Old West Solutions. All rights reserved.</p>
         </div>
       </div>
