@@ -1,41 +1,11 @@
 'use client'
 
-import { useRef, useMemo } from 'react'
+import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Environment, Sphere } from '@react-three/drei'
 
 function CelestialSphere() {
   const meshRef = useRef<any>(null)
-  
-  const textures = useMemo(() => {
-    const createGrayscaleTexture = (size: number, baseGray: number, variation: number) => {
-      const canvas = document.createElement('canvas')
-      canvas.width = size
-      canvas.height = size
-      const ctx = canvas.getContext('2d')!
-      
-      const imageData = ctx.createImageData(size, size)
-      const data = imageData.data
-      
-      for (let i = 0; i < data.length; i += 4) {
-        const noise = (Math.random() - 0.5) * variation
-        const gray = Math.max(0, Math.min(255, baseGray + noise))
-        data[i] = gray
-        data[i + 1] = gray
-        data[i + 2] = gray
-        data[i + 3] = 255
-      }
-      
-      ctx.putImageData(imageData, 0, 0)
-      return canvas
-    }
-    
-    return {
-      color: createGrayscaleTexture(1024, 70, 25),
-      normal: createGrayscaleTexture(1024, 128, 15),
-      roughness: createGrayscaleTexture(1024, 200, 20),
-    }
-  }, [])
 
   useFrame((state, delta) => {
     if (meshRef.current) {
