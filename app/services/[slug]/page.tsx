@@ -67,31 +67,32 @@ const services: Record<string, ServiceDetail> = {
       'Security architecture design'
     ]
   },
-  'it-consulting': {
-    title: 'IT Consulting',
-    icon: '💼',
-    description: 'Expert guidance to optimize your technology strategy.',
-    longDescription: 'Leverage our deep industry expertise to develop and execute technology strategies that align with your business goals. Our consultants work with you to identify opportunities, mitigate risks, and drive digital transformation.',
+  'ai': {
+    title: 'AI',
+    icon: '🤖',
+    description: 'Artificial intelligence solutions to transform your business.',
+    longDescription: 'Harness the power of artificial intelligence to transform your business operations, enhance customer experiences, and drive innovation. Our AI solutions leverage machine learning, natural language processing, and computer vision to solve complex business challenges and unlock new opportunities.',
     features: [
-      'IT strategy and roadmap development',
-      'Technology assessment and evaluation',
-      'Digital transformation planning',
-      'Vendor selection and management',
-      'IT governance and best practices',
-      'Change management and training'
+      'Machine learning model development',
+      'Natural language processing (NLP)',
+      'Computer vision and image recognition',
+      'Predictive analytics and forecasting',
+      'AI-powered automation',
+      'Chatbots and virtual assistants'
     ],
     benefits: [
-      'Align IT with business objectives',
-      'Reduce technology risks',
-      'Optimize IT investments',
-      'Accelerate digital initiatives',
-      'Access to industry best practices'
+      'Automate complex decision-making processes',
+      'Improve customer experience with personalization',
+      'Increase operational efficiency',
+      'Unlock insights from unstructured data',
+      'Reduce costs through intelligent automation'
     ],
     useCases: [
-      'Digital transformation initiatives',
-      'IT strategy development',
-      'Technology vendor selection',
-      'IT organizational optimization'
+      'Customer service automation',
+      'Predictive maintenance',
+      'Fraud detection and prevention',
+      'Recommendation systems',
+      'Document processing and analysis'
     ]
   },
   'managed-services': {
@@ -202,31 +203,33 @@ const services: Record<string, ServiceDetail> = {
       'Regulatory compliance requirements'
     ]
   },
-  'consulting': {
-    title: 'Consulting',
-    icon: '👥',
-    description: 'Strategic IT consulting and implementation services.',
-    longDescription: 'Get expert guidance on your most critical IT initiatives. Our consulting services help you navigate complex technology decisions, implement best practices, and achieve your strategic objectives.',
+  'blockchain': {
+    title: 'Blockchain',
+    icon: '⛓️',
+    description: 'Blockchain solutions for secure and transparent operations.',
+    longDescription: 'Implement blockchain technology to create secure, transparent, and decentralized solutions for your business. From smart contracts to supply chain tracking, our blockchain solutions enable trust, traceability, and efficiency in your operations.',
     features: [
-      'Strategic IT planning',
-      'Technology architecture design',
-      'Implementation project management',
-      'Process improvement consulting',
-      'Technology training and enablement',
-      'Post-implementation support'
+      'Smart contract development',
+      'Blockchain platform implementation',
+      'Cryptocurrency and token solutions',
+      'Supply chain transparency',
+      'Digital identity management',
+      'Decentralized application (DApp) development'
     ],
     benefits: [
-      'Expert guidance and best practices',
-      'Reduced project risks',
-      'Faster time to value',
-      'Knowledge transfer to your team',
-      'Proven methodologies and frameworks'
+      'Enhanced security and immutability',
+      'Transparent and auditable transactions',
+      'Reduced intermediaries and costs',
+      'Improved traceability and provenance',
+      'Decentralized trust mechanisms'
     ],
     useCases: [
-      'Large-scale IT implementations',
-      'Technology architecture redesign',
-      'IT process improvement',
-      'Digital transformation projects'
+      'Supply chain tracking',
+      'Digital asset management',
+      'Smart contract automation',
+      'Identity verification',
+      'Cross-border payments',
+      'Voting and governance systems'
     ]
   }
 }
@@ -241,67 +244,123 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
   return (
     <main className="min-h-screen bg-windows-dark-bg">
       <Header />
-      <div className="pt-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <Link href="/#products" className="text-windows-dark-accent hover:text-windows-dark-accent-hover mb-8 inline-block">
-          ← Back to Products
-        </Link>
-
-        <div className="mb-12">
-          <div className="text-6xl mb-6">{service.icon}</div>
-          <h1 className="text-5xl font-bold text-white mb-6">{service.title}</h1>
-          <p className="text-xl text-windows-dark-text-secondary mb-4">{service.description}</p>
-          <p className="text-lg text-windows-dark-text-secondary max-w-3xl">{service.longDescription}</p>
+      <div className="pt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Link href="/#products" className="text-windows-dark-accent hover:text-windows-dark-accent-hover mb-8 inline-block">
+            ← Back to Products
+          </Link>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          <div className="windows-card p-6">
-            <h2 className="text-2xl font-semibold text-white mb-4">Key Features</h2>
-            <ul className="space-y-3">
-              {service.features.map((feature, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-windows-dark-accent mr-3">✓</span>
-                  <span className="text-windows-dark-text-secondary">{feature}</span>
-                </li>
-              ))}
-            </ul>
+        {/* Immersive Full-Page Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 p-4 md:p-6 max-w-[1920px] mx-auto">
+          {/* Hero Section - Full Width */}
+          <div className="md:col-span-2 lg:col-span-4 windows-card p-12 md:p-16 bg-gradient-to-br from-windows-dark-accent/30 via-windows-dark-accent/20 to-windows-dark-accent/10 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-windows-dark-accent/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-windows-dark-accent/5 rounded-full blur-3xl"></div>
+            <div className="relative z-10">
+              <div className="text-8xl md:text-9xl mb-6">{service.icon}</div>
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">{service.title}</h1>
+              <p className="text-xl md:text-2xl text-windows-dark-text-secondary mb-4 max-w-4xl">{service.description}</p>
+              <p className="text-lg md:text-xl text-windows-dark-text-secondary max-w-4xl leading-relaxed">
+                {service.longDescription}
+              </p>
+            </div>
           </div>
 
-          <div className="windows-card p-6">
-            <h2 className="text-2xl font-semibold text-white mb-4">Benefits</h2>
-            <ul className="space-y-3">
+          {/* Key Features - Large Section */}
+          <div className="md:col-span-2 lg:col-span-2 windows-card p-8 md:p-12 hover:border-windows-dark-accent transition-all">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Key Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {service.features.map((feature, index) => (
+                <div key={index} className="flex items-start p-4 windows-card bg-windows-dark-surface/50">
+                  <span className="text-windows-dark-accent mr-3 text-2xl">✓</span>
+                  <span className="text-windows-dark-text-secondary text-base md:text-lg">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Benefits Section */}
+          <div className="md:col-span-2 lg:col-span-2 windows-card p-8 md:p-12 hover:border-windows-dark-accent transition-all bg-gradient-to-br from-windows-dark-surface to-windows-dark-bg">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Benefits</h2>
+            <ul className="space-y-4">
               {service.benefits.map((benefit, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="text-windows-dark-accent mr-3">→</span>
-                  <span className="text-windows-dark-text-secondary">{benefit}</span>
+                  <span className="text-windows-dark-accent mr-4 text-2xl">→</span>
+                  <span className="text-windows-dark-text-secondary text-base md:text-lg">{benefit}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="windows-card p-6">
-            <h2 className="text-2xl font-semibold text-white mb-4">Use Cases</h2>
-            <ul className="space-y-3">
+          {/* Use Cases Grid */}
+          <div className="md:col-span-2 lg:col-span-4 windows-card p-10 md:p-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-10">Use Cases</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {service.useCases.map((useCase, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-windows-dark-accent mr-3">•</span>
-                  <span className="text-windows-dark-text-secondary">{useCase}</span>
-                </li>
+                <div key={index} className="windows-card p-6 hover:border-windows-dark-accent transition-all group cursor-pointer">
+                  <div className="text-4xl mb-4">💡</div>
+                  <h3 className="text-xl font-semibold text-white mb-2">{useCase}</h3>
+                  <p className="text-windows-dark-text-secondary text-sm">
+                    Discover how {service.title} can address this specific use case in your organization.
+                  </p>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
-        </div>
 
-        <div className="windows-card p-8 bg-gradient-to-br from-windows-dark-accent/10 to-windows-dark-accent/5">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
-            <p className="text-windows-dark-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-              Contact us today to learn how {service.title} can transform your business. Our experts are ready to discuss your specific needs and create a customized solution.
+          {/* Additional Information Section */}
+          <div className="md:col-span-2 lg:col-span-4 windows-card p-10 md:p-16 bg-gradient-to-br from-windows-dark-surface to-windows-dark-bg">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Why Choose {service.title}?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              <div>
+                <div className="text-5xl mb-4">🎯</div>
+                <h3 className="text-2xl font-semibold text-white mb-4">Expert Implementation</h3>
+                <p className="text-windows-dark-text-secondary text-base md:text-lg leading-relaxed">
+                  Our certified experts have years of experience implementing {service.title.toLowerCase()} solutions 
+                  across various industries. We bring best practices and proven methodologies to every project.
+                </p>
+              </div>
+              <div>
+                <div className="text-5xl mb-4">⚡</div>
+                <h3 className="text-2xl font-semibold text-white mb-4">Rapid Deployment</h3>
+                <p className="text-windows-dark-text-secondary text-base md:text-lg leading-relaxed">
+                  Get up and running quickly with our streamlined implementation process. We minimize disruption 
+                  to your business while maximizing the value of your investment.
+                </p>
+              </div>
+              <div>
+                <div className="text-5xl mb-4">🛡️</div>
+                <h3 className="text-2xl font-semibold text-white mb-4">Enterprise-Grade Security</h3>
+                <p className="text-windows-dark-text-secondary text-base md:text-lg leading-relaxed">
+                  Security is built into every solution we deliver. We ensure your {service.title.toLowerCase()} 
+                  implementation meets the highest security and compliance standards.
+                </p>
+              </div>
+              <div>
+                <div className="text-5xl mb-4">📈</div>
+                <h3 className="text-2xl font-semibold text-white mb-4">Scalable Solutions</h3>
+                <p className="text-windows-dark-text-secondary text-base md:text-lg leading-relaxed">
+                  Our solutions are designed to grow with your business. Start small and scale as needed, 
+                  ensuring your investment continues to deliver value as you expand.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="md:col-span-2 lg:col-span-4 windows-card p-12 md:p-16 bg-gradient-to-br from-windows-dark-accent/20 to-windows-dark-accent/5 text-center">
+            <div className="text-7xl md:text-8xl mb-6">{service.icon}</div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Get Started?</h2>
+            <p className="text-windows-dark-text-secondary mb-10 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+              Contact us today to learn how {service.title} can transform your business. Our experts are ready 
+              to discuss your specific needs and create a customized solution tailored to your requirements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="windows-button windows-button-primary text-lg px-8 py-3">
+              <button className="windows-button windows-button-primary text-lg md:text-xl px-10 py-4">
                 Schedule a Consultation
               </button>
-              <button className="windows-button text-lg px-8 py-3">
+              <button className="windows-button text-lg md:text-xl px-10 py-4">
                 Request a Quote
               </button>
             </div>

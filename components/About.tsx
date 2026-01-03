@@ -57,7 +57,7 @@ export default function About() {
               <div className="text-4xl md:text-6xl">💼</div>
             </div>
             <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 md:mb-6">Why Choose Us?</h3>
-            <ul className="space-y-3 md:space-y-4">
+            <ul className="space-y-3 md:space-y-4 mb-6">
               <li className="flex items-start">
                 <span className="text-windows-dark-accent mr-3 text-lg md:text-xl">✓</span>
                 <span className="text-windows-dark-text-secondary text-sm md:text-base">
@@ -83,23 +83,12 @@ export default function About() {
                 </span>
               </li>
             </ul>
-          </div>
-        </div>
-
-        {/* Infinite Marquee with Company Logos */}
-        <div className="relative overflow-hidden py-8">
-          <div className="flex animate-marquee whitespace-nowrap">
-            {/* Duplicate sets for seamless infinite loop */}
-            {[...Array(3)].map((_, setIndex) => (
-              partners.map((partner, index) => (
-                <div key={`${setIndex}-${index}`} className="inline-flex items-center justify-center mx-8 md:mx-12 min-w-[150px] md:min-w-[200px]">
-                  <div className="text-center">
-                    <div className="text-6xl md:text-8xl mb-3">{partner.logo}</div>
-                    <div className="text-lg md:text-xl font-semibold text-white">{partner.name}</div>
-                  </div>
-                </div>
-              ))
-            ))}
+            <a 
+              href="/partners" 
+              className="windows-button windows-button-primary w-full text-center block"
+            >
+              View Partners →
+            </a>
           </div>
         </div>
       </div>

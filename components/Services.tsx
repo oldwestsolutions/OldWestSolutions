@@ -47,9 +47,9 @@ const services: Service[] = [
     icon: '🔒',
   },
   {
-    title: 'IT Consulting',
-    description: 'Expert guidance to optimize your technology strategy.',
-    icon: '💼',
+    title: 'AI',
+    description: 'Artificial intelligence solutions to transform your business.',
+    icon: '🤖',
   },
   {
     title: 'Managed Services',
@@ -72,9 +72,9 @@ const services: Service[] = [
     icon: '🌐',
   },
   {
-    title: 'Consulting',
-    description: 'Strategic IT consulting and implementation services.',
-    icon: '👥',
+    title: 'Blockchain',
+    description: 'Blockchain solutions for secure and transparent operations.',
+    icon: '⛓️',
   },
 ]
 
