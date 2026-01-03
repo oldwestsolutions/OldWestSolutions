@@ -1,7 +1,5 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-
 const partners = [
   { name: 'Snowflake', logo: '❄️', color: 'from-blue-500/20 to-cyan-500/20' },
   { name: 'IBM', logo: '🔵', color: 'from-blue-600/20 to-indigo-600/20' },
@@ -11,15 +9,6 @@ const partners = [
 ]
 
 export default function About() {
-  const [currentPartner, setCurrentPartner] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentPartner((prev) => (prev + 1) % partners.length)
-    }, 4000) // Change every 4 seconds
-
-    return () => clearInterval(interval)
-  }, [])
 
   return (
     <section id="solutions" className="py-12 md:py-20 bg-windows-dark-surface">
@@ -72,61 +61,68 @@ export default function About() {
               <li className="flex items-start">
                 <span className="text-windows-dark-accent mr-3 text-lg md:text-xl">✓</span>
                 <span className="text-windows-dark-text-secondary text-sm md:text-base">
-                  Certified IT professionals with industry expertise
+                  Certified Enterprise Partner with leading technology platforms
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="text-windows-dark-accent mr-3 text-lg md:text-xl">✓</span>
                 <span className="text-windows-dark-text-secondary text-sm md:text-base">
-                  Proven track record of successful implementations
+                  Authorized reseller and implementation partner for Salesforce, Microsoft Azure, Google Cloud, Snowflake, and IBM
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="text-windows-dark-accent mr-3 text-lg md:text-xl">✓</span>
                 <span className="text-windows-dark-text-secondary text-sm md:text-base">
-                  Customized solutions for your unique business needs
+                  Direct access to partner resources, training, and support channels
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="text-windows-dark-accent mr-3 text-lg md:text-xl">✓</span>
                 <span className="text-windows-dark-text-secondary text-sm md:text-base">
-                  Responsive support and proactive monitoring
+                  Certified consultants with up-to-date platform expertise and certifications
                 </span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Stats Carousel with Company Logos */}
-        <div className="relative overflow-hidden">
-          <div 
-            className="flex transition-transform duration-1000 ease-in-out"
-            style={{ transform: `translateX(-${currentPartner * 100}%)` }}
-          >
+        {/* Infinite Marquee with Company Logos and Stats */}
+        <div className="relative overflow-hidden py-6">
+          <div className="flex animate-marquee whitespace-nowrap">
+            {/* First set */}
             {partners.map((partner, index) => (
-              <div
-                key={index}
-                className="min-w-full grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"
-              >
-                <div className="text-center windows-card p-4 md:p-6">
+              <div key={`first-${index}`} className="inline-flex mx-4">
+                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
                   <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
                   <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
                   <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">500+</div>
                   <div className="text-windows-dark-text-secondary text-xs md:text-sm">Clients Served</div>
                 </div>
-                <div className="text-center windows-card p-4 md:p-6">
+              </div>
+            ))}
+            {partners.map((partner, index) => (
+              <div key={`second-${index}`} className="inline-flex mx-4">
+                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
                   <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
                   <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
                   <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">15+</div>
                   <div className="text-windows-dark-text-secondary text-xs md:text-sm">Years Experience</div>
                 </div>
-                <div className="text-center windows-card p-4 md:p-6">
+              </div>
+            ))}
+            {partners.map((partner, index) => (
+              <div key={`third-${index}`} className="inline-flex mx-4">
+                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
                   <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
                   <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
                   <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">99.9%</div>
                   <div className="text-windows-dark-text-secondary text-xs md:text-sm">Uptime SLA</div>
                 </div>
-                <div className="text-center windows-card p-4 md:p-6">
+              </div>
+            ))}
+            {partners.map((partner, index) => (
+              <div key={`fourth-${index}`} className="inline-flex mx-4">
+                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
                   <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
                   <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
                   <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">24/7</div>
@@ -134,21 +130,46 @@ export default function About() {
                 </div>
               </div>
             ))}
-          </div>
-          
-          {/* Carousel Indicators */}
-          <div className="flex justify-center gap-2 mt-6">
-            {partners.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentPartner(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentPartner
-                    ? 'bg-windows-dark-accent w-8'
-                    : 'bg-windows-dark-border w-2 hover:bg-windows-dark-hover'
-                }`}
-                aria-label={`View ${partners[index].name}`}
-              />
+            {/* Duplicate set for seamless loop */}
+            {partners.map((partner, index) => (
+              <div key={`first-dup-${index}`} className="inline-flex mx-4">
+                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
+                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
+                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
+                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">500+</div>
+                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Clients Served</div>
+                </div>
+              </div>
+            ))}
+            {partners.map((partner, index) => (
+              <div key={`second-dup-${index}`} className="inline-flex mx-4">
+                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
+                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
+                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
+                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">15+</div>
+                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Years Experience</div>
+                </div>
+              </div>
+            ))}
+            {partners.map((partner, index) => (
+              <div key={`third-dup-${index}`} className="inline-flex mx-4">
+                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
+                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
+                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
+                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">99.9%</div>
+                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Uptime SLA</div>
+                </div>
+              </div>
+            ))}
+            {partners.map((partner, index) => (
+              <div key={`fourth-dup-${index}`} className="inline-flex mx-4">
+                <div className="text-center windows-card p-4 md:p-6 min-w-[200px] md:min-w-[250px]">
+                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
+                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
+                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">24/7</div>
+                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Support Available</div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
