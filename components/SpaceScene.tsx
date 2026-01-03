@@ -6,10 +6,9 @@ import { Environment, Sphere } from '@react-three/drei'
 
 function CelestialSphere() {
   const meshRef = useRef<any>(null)
-  const { gl } = useThree()
+  const { gl, scene } = useThree()
 
   useEffect(() => {
-    gl.physicallyCorrectLights = true
     gl.outputColorSpace = 'srgb'
     gl.toneMapping = 1
     gl.toneMappingExposure = 0.8
