@@ -64,100 +64,92 @@ export default function About() {
           </div>
           
           <div className="windows-card p-6 md:p-8 bg-gradient-to-br from-windows-dark-surface to-windows-dark-bg">
-            <div className="aspect-video bg-gradient-to-br from-windows-dark-accent/20 to-windows-dark-accent/5 rounded mb-4 md:mb-6 flex items-center justify-center relative overflow-hidden">
-              {partners.map((partner, index) => (
-                <div
-                  key={index}
-                  className={`absolute inset-0 bg-gradient-to-br ${partner.color} transition-opacity duration-1000 ${
-                    index === currentPartner ? 'opacity-100' : 'opacity-0'
-                  }`}
-                ></div>
-              ))}
-              <div className="relative z-10 text-center w-full">
-                <div className="text-5xl md:text-7xl mb-4 transition-all duration-500">{partners[currentPartner].logo}</div>
-                <div className="text-2xl md:text-3xl font-bold text-white">{partners[currentPartner].name}</div>
-              </div>
+            <div className="aspect-video bg-gradient-to-br from-windows-dark-accent/20 to-windows-dark-accent/5 rounded mb-4 md:mb-6 flex items-center justify-center">
+              <div className="text-4xl md:text-6xl">💼</div>
             </div>
-            
-            <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 md:mb-6">Enterprise Technology Partner</h3>
-            <p className="text-windows-dark-text-secondary text-sm md:text-base mb-4 md:mb-6">
-              As a certified Enterprise Partner, we deliver world-class solutions powered by industry-leading platforms.
-            </p>
-            
-            {/* Stats Carousel */}
-            <div className="relative h-48 md:h-56 overflow-hidden">
-              <div 
-                className="absolute inset-0 transition-transform duration-1000 ease-in-out"
-                style={{ transform: `translateX(-${currentPartner * 100}%)` }}
-              >
-                {partners.map((partner, index) => (
-                  <div
-                    key={index}
-                    className="absolute top-0 left-0 w-full h-full flex items-center justify-center"
-                    style={{ left: `${index * 100}%` }}
-                  >
-                    <div className="text-center w-full">
-                      <div className="text-3xl md:text-4xl mb-2">{partner.logo}</div>
-                      <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
-                      <div className="grid grid-cols-2 gap-3 md:gap-4">
-                        <div className="text-center">
-                          <div className="text-2xl md:text-3xl font-bold text-windows-dark-accent mb-1">500+</div>
-                          <div className="text-xs md:text-sm text-windows-dark-text-secondary">Clients Served</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-2xl md:text-3xl font-bold text-windows-dark-accent mb-1">15+</div>
-                          <div className="text-xs md:text-sm text-windows-dark-text-secondary">Years Experience</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-2xl md:text-3xl font-bold text-windows-dark-accent mb-1">99.9%</div>
-                          <div className="text-xs md:text-sm text-windows-dark-text-secondary">Uptime SLA</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-2xl md:text-3xl font-bold text-windows-dark-accent mb-1">24/7</div>
-                          <div className="text-xs md:text-sm text-windows-dark-text-secondary">Support Available</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Carousel Indicators */}
-            <div className="flex justify-center gap-2 mt-4">
-              {partners.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentPartner(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    index === currentPartner
-                      ? 'bg-windows-dark-accent w-8'
-                      : 'bg-windows-dark-border w-2 hover:bg-windows-dark-hover'
-                  }`}
-                  aria-label={`View ${partners[index].name}`}
-                />
-              ))}
-            </div>
+            <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 md:mb-6">Why Choose Us?</h3>
+            <ul className="space-y-3 md:space-y-4">
+              <li className="flex items-start">
+                <span className="text-windows-dark-accent mr-3 text-lg md:text-xl">✓</span>
+                <span className="text-windows-dark-text-secondary text-sm md:text-base">
+                  Certified IT professionals with industry expertise
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-windows-dark-accent mr-3 text-lg md:text-xl">✓</span>
+                <span className="text-windows-dark-text-secondary text-sm md:text-base">
+                  Proven track record of successful implementations
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-windows-dark-accent mr-3 text-lg md:text-xl">✓</span>
+                <span className="text-windows-dark-text-secondary text-sm md:text-base">
+                  Customized solutions for your unique business needs
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-windows-dark-accent mr-3 text-lg md:text-xl">✓</span>
+                <span className="text-windows-dark-text-secondary text-sm md:text-base">
+                  Responsive support and proactive monitoring
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-          <div className="text-center">
-            <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">500+</div>
-            <div className="text-windows-dark-text-secondary text-xs md:text-sm">Clients Served</div>
+        {/* Stats Carousel with Company Logos */}
+        <div className="relative overflow-hidden">
+          <div 
+            className="flex transition-transform duration-1000 ease-in-out"
+            style={{ transform: `translateX(-${currentPartner * 100}%)` }}
+          >
+            {partners.map((partner, index) => (
+              <div
+                key={index}
+                className="min-w-full grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"
+              >
+                <div className="text-center windows-card p-4 md:p-6">
+                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
+                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
+                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">500+</div>
+                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Clients Served</div>
+                </div>
+                <div className="text-center windows-card p-4 md:p-6">
+                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
+                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
+                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">15+</div>
+                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Years Experience</div>
+                </div>
+                <div className="text-center windows-card p-4 md:p-6">
+                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
+                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
+                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">99.9%</div>
+                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Uptime SLA</div>
+                </div>
+                <div className="text-center windows-card p-4 md:p-6">
+                  <div className="text-4xl md:text-5xl mb-3">{partner.logo}</div>
+                  <div className="text-lg md:text-xl font-semibold text-white mb-4">{partner.name}</div>
+                  <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">24/7</div>
+                  <div className="text-windows-dark-text-secondary text-xs md:text-sm">Support Available</div>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">15+</div>
-            <div className="text-windows-dark-text-secondary text-xs md:text-sm">Years Experience</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">99.9%</div>
-            <div className="text-windows-dark-text-secondary text-xs md:text-sm">Uptime SLA</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-4xl font-bold text-windows-dark-accent mb-1 md:mb-2">24/7</div>
-            <div className="text-windows-dark-text-secondary text-xs md:text-sm">Support Available</div>
+          
+          {/* Carousel Indicators */}
+          <div className="flex justify-center gap-2 mt-6">
+            {partners.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentPartner(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentPartner
+                    ? 'bg-windows-dark-accent w-8'
+                    : 'bg-windows-dark-border w-2 hover:bg-windows-dark-hover'
+                }`}
+                aria-label={`View ${partners[index].name}`}
+              />
+            ))}
           </div>
         </div>
       </div>
