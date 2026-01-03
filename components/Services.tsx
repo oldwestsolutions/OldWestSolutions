@@ -1,3 +1,7 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+
 interface Service {
   title: string
   description: string
@@ -71,8 +75,15 @@ const services: Service[] = [
 ]
 
 export default function Services() {
+  const router = useRouter()
+
+  const handleServiceClick = (service: Service) => {
+    const slug = service.title.toLowerCase().replace(/\s+/g, '-').replace('&', 'and')
+    router.push(`/services/${slug}`)
+  }
+
   return (
-    <section id="services" className="py-20 bg-windows-dark-bg">
+    <section id="products" className="py-20 bg-windows-dark-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Featured Services Cards */}
         <div className="mb-20">
@@ -94,25 +105,26 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Main Services Section */}
+        {/* Main Services Section - 4x2 Layout */}
         <div className="mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Lead in the IT era with Old West Solutions</h2>
           <p className="text-windows-dark-text-secondary text-lg max-w-3xl mb-12">
             From next-generation cloud solutions to cutting-edge security, our deep expertise across industries can help you reinvent how your business works in the digital age.
           </p>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
+                onClick={() => handleServiceClick(service)}
                 className="windows-card p-6 hover:border-windows-dark-accent transition-all duration-300 text-center group cursor-pointer"
               >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
-                <h3 className="text-sm font-semibold text-white mb-2">{service.title}</h3>
-                <p className="text-windows-dark-text-secondary text-xs mb-3">{service.description}</p>
-                <a href="#" className="text-windows-dark-accent text-xs flex items-center justify-center gap-1">
-                  →
-                </a>
+                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
+                <h3 className="text-lg font-semibold text-white mb-3">{service.title}</h3>
+                <p className="text-windows-dark-text-secondary text-sm mb-4">{service.description}</p>
+                <div className="text-windows-dark-accent text-sm flex items-center justify-center gap-1 group-hover:gap-2 transition-all">
+                  Learn more →
+                </div>
               </div>
             ))}
           </div>
