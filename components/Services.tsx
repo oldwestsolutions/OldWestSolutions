@@ -8,26 +8,30 @@ interface Service {
   icon: string
 }
 
-const featuredServices = [
+const featuredProducts = [
   {
-    title: 'Power up your IT infrastructure',
-    description: 'Transform your business with scalable cloud solutions and modern technology.',
+    title: 'ProHost Managed Servers',
+    description: 'Fully managed dedicated and virtual servers with 24/7 monitoring, automated backups, and enterprise-grade security.',
     gradient: 'from-blue-600 to-cyan-500',
+    category: 'Managed Servers',
   },
   {
-    title: 'Maximize security and compliance',
-    description: 'Protect your data and systems with enterprise-grade security solutions.',
+    title: 'MacCloud Virtual Machines',
+    description: 'High-performance macOS virtual machines for development, testing, and creative workflows. Pre-configured and ready to deploy.',
     gradient: 'from-purple-600 to-pink-500',
+    category: 'Virtual Machines',
   },
   {
-    title: 'Accelerate digital transformation',
-    description: 'Leverage AI and automation to streamline operations and boost productivity.',
+    title: 'BusinessMail Pro Setup',
+    description: 'Professional email hosting and configuration with custom domains, advanced security, and seamless integration.',
     gradient: 'from-green-600 to-emerald-500',
+    category: 'Email Solutions',
   },
   {
-    title: 'Ensure business continuity',
-    description: 'Comprehensive backup, recovery, and disaster planning for peace of mind.',
+    title: 'TechSource Hardware',
+    description: 'Certified pre-owned and new enterprise hardware from trusted suppliers. Servers, workstations, and networking equipment.',
     gradient: 'from-orange-600 to-red-500',
+    category: 'Hardware',
   },
 ]
 
@@ -85,18 +89,21 @@ export default function Services() {
   return (
     <section id="products" className="py-20 bg-windows-dark-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Featured Services Cards */}
+        {/* Featured Products Cards */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-white mb-4">Review the top solutions of 2025</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Featured Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-            {featuredServices.map((service, index) => (
+            {featuredProducts.map((product, index) => (
               <div
                 key={index}
                 className="windows-card p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group"
               >
-                <div className={`w-full h-32 mb-4 rounded bg-gradient-to-br ${service.gradient} opacity-80 group-hover:opacity-100 transition-opacity`}></div>
-                <h3 className="text-lg font-semibold text-white mb-2">{service.title}</h3>
-                <p className="text-windows-dark-text-secondary text-sm mb-4">{service.description}</p>
+                <div className={`w-full h-32 mb-4 rounded bg-gradient-to-br ${product.gradient} opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center`}>
+                  <span className="text-4xl opacity-70">{product.category === 'Managed Servers' ? '🖥️' : product.category === 'Virtual Machines' ? '💻' : product.category === 'Email Solutions' ? '📧' : '🔧'}</span>
+                </div>
+                <div className="text-xs text-windows-dark-accent mb-2 font-medium">{product.category}</div>
+                <h3 className="text-lg font-semibold text-white mb-2">{product.title}</h3>
+                <p className="text-windows-dark-text-secondary text-sm mb-4">{product.description}</p>
                 <a href="#" className="text-windows-dark-accent hover:text-windows-dark-accent-hover text-sm font-medium flex items-center gap-1">
                   Learn more →
                 </a>
