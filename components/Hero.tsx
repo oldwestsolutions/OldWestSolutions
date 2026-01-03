@@ -5,10 +5,10 @@ import SpaceScene from './SpaceScene'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative py-12 md:py-20 min-h-[600px] md:min-h-[700px] overflow-hidden">
-      {/* Technical Galaxy Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-indigo-950/80 to-black">
-        {/* Deep space stars layer */}
+    <section id="home" className="relative py-12 md:py-20 min-h-[600px] md:min-h-[700px] overflow-hidden bg-windows-dark-bg">
+      {/* Technical Galaxy Background - Gray theme to match site */}
+      <div className="absolute inset-0 bg-gradient-to-b from-windows-dark-bg via-windows-dark-surface/50 to-windows-dark-bg">
+        {/* Deep space stars layer - gray/white */}
         <div className="absolute inset-0">
           {[...Array(200)].map((_, i) => {
             const size = Math.random() * 2 + 0.5
@@ -16,64 +16,64 @@ export default function Hero() {
             return (
               <div
                 key={i}
-                className="absolute rounded-full bg-white"
+                className="absolute rounded-full bg-gray-300"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
                   width: `${size}px`,
                   height: `${size}px`,
-                  opacity: Math.random() * 0.6 + 0.2,
+                  opacity: Math.random() * 0.4 + 0.2,
                   animation: `twinkle ${Math.random() * 4 + 3}s infinite`,
                   animationDelay: `${delay}s`,
-                  boxShadow: `0 0 ${size * 2}px rgba(255, 255, 255, 0.8)`,
+                  boxShadow: `0 0 ${size * 2}px rgba(224, 224, 224, 0.6)`,
                 }}
               />
             )
           })}
         </div>
         
-        {/* Bright stars layer */}
+        {/* Bright stars layer - gray tones */}
         <div className="absolute inset-0">
           {[...Array(50)].map((_, i) => {
             const size = Math.random() * 3 + 2
             return (
               <div
                 key={`bright-${i}`}
-                className="absolute rounded-full bg-blue-200"
+                className="absolute rounded-full bg-gray-200"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
                   width: `${size}px`,
                   height: `${size}px`,
-                  opacity: Math.random() * 0.5 + 0.5,
+                  opacity: Math.random() * 0.3 + 0.3,
                   animation: `pulse ${Math.random() * 3 + 2}s infinite`,
-                  boxShadow: `0 0 ${size * 3}px rgba(74, 144, 226, 0.8), 0 0 ${size * 6}px rgba(74, 144, 226, 0.4)`,
+                  boxShadow: `0 0 ${size * 3}px rgba(224, 224, 224, 0.5), 0 0 ${size * 6}px rgba(224, 224, 224, 0.2)`,
                 }}
               />
             )
           })}
         </div>
         
-        {/* Galaxy nebula clouds */}
-        <div className="absolute top-0 right-0 w-[800px] h-[600px] bg-gradient-radial from-blue-500/15 via-indigo-500/10 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-[700px] h-[500px] bg-gradient-radial from-purple-500/15 via-blue-500/10 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 left-1/3 w-[600px] h-[400px] bg-gradient-radial from-cyan-500/10 via-blue-500/5 to-transparent rounded-full blur-3xl"></div>
+        {/* Galaxy nebula clouds - gray tones */}
+        <div className="absolute top-0 right-0 w-[800px] h-[600px] bg-gradient-radial from-gray-600/10 via-gray-500/5 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[700px] h-[500px] bg-gradient-radial from-gray-600/10 via-gray-500/5 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/3 w-[600px] h-[400px] bg-gradient-radial from-gray-500/8 via-gray-400/3 to-transparent rounded-full blur-3xl"></div>
         
-        {/* Technical grid overlay */}
+        {/* Technical grid overlay - gray */}
         <div 
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-5"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(74, 144, 226, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(74, 144, 226, 0.1) 1px, transparent 1px)
+              linear-gradient(rgba(224, 224, 224, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(224, 224, 224, 0.1) 1px, transparent 1px)
             `,
             backgroundSize: '50px 50px',
           }}
         ></div>
         
-        {/* Light rays */}
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-400/20 to-transparent"></div>
-        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-indigo-400/20 to-transparent"></div>
+        {/* Light rays - gray */}
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-gray-400/10 to-transparent"></div>
+        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-gray-400/10 to-transparent"></div>
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,10 +99,10 @@ export default function Hero() {
             <Canvas camera={{ position: [0, 0, 8], fov: 60 }} className="rounded-lg">
               <SpaceScene />
             </Canvas>
-            {/* Technical overlay on canvas */}
+            {/* Technical overlay on canvas - gray to match site */}
             <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-4 right-4 text-xs text-blue-300/50 font-mono">ORBIT: ACTIVE</div>
-              <div className="absolute bottom-4 left-4 text-xs text-blue-300/50 font-mono">ALT: 400KM</div>
+              <div className="absolute top-4 right-4 text-xs text-windows-dark-text-secondary/50 font-mono">ORBIT: ACTIVE</div>
+              <div className="absolute bottom-4 left-4 text-xs text-windows-dark-text-secondary/50 font-mono">ALT: 400KM</div>
             </div>
           </div>
         </div>
