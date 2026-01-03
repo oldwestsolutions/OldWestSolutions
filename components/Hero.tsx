@@ -11,15 +11,6 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <Canvas
           camera={{ position: [0, 0, 5], fov: 50 }}
-          gl={(canvas) => {
-            const { WebGLRenderer } = require('three')
-            const renderer = new WebGLRenderer({ canvas, antialias: true })
-            renderer.physicallyCorrectLights = true
-            renderer.outputColorSpace = 'srgb'
-            renderer.toneMapping = 1
-            renderer.toneMappingExposure = 0.8
-            return renderer
-          }}
         >
           <SpaceScene />
         </Canvas>

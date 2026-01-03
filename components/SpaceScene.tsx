@@ -1,11 +1,19 @@
 'use client'
 
-import { useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
+import { useRef, useEffect } from 'react'
+import { useFrame, useThree } from '@react-three/fiber'
 import { Environment, Sphere } from '@react-three/drei'
 
 function CelestialSphere() {
   const meshRef = useRef<any>(null)
+  const { gl } = useThree()
+
+  useEffect(() => {
+    gl.physicallyCorrectLights = true
+    gl.outputColorSpace = 'srgb'
+    gl.toneMapping = 1
+    gl.toneMappingExposure = 0.8
+  }, [gl])
 
   useFrame((state, delta) => {
     if (meshRef.current) {
