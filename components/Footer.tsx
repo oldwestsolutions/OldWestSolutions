@@ -84,8 +84,13 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-windows-dark-accent" />
                 <button
-                  onClick={() => setIsContactModalOpen(true)}
-                  className="hover:text-windows-dark-accent transition-colors text-left"
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    setIsContactModalOpen(true)
+                  }}
+                  className="hover:text-windows-dark-accent transition-colors text-left cursor-pointer"
                 >
                   Mail Us
                 </button>
