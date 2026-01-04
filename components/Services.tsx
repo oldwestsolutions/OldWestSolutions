@@ -20,7 +20,15 @@ interface Service {
   icon: LucideIcon
 }
 
-const featuredProducts = [
+interface FeaturedProduct {
+  title: string
+  description: string
+  category: string
+  icon: LucideIcon | string
+  useIcon: boolean
+}
+
+const featuredProducts: FeaturedProduct[] = [
   {
     title: 'ProHost Managed Servers',
     description: 'Fully managed dedicated and virtual servers with 24/7 monitoring, automated backups, and enterprise-grade security.',
