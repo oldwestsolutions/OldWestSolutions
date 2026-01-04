@@ -40,7 +40,6 @@ export default function Footer() {
               <li><a href="/university" className="hover:text-windows-dark-accent">University</a></li>
               <li><a href="/careers" className="hover:text-windows-dark-accent">Careers</a></li>
               <li><a href="/about" className="hover:text-windows-dark-accent">About Us</a></li>
-              <li><a href="#contact" className="hover:text-windows-dark-accent">Contact Us</a></li>
             </ul>
           </div>
           

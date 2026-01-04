@@ -55,9 +55,10 @@ export default function About() {
           <div className="windows-card p-6 md:p-8 bg-gradient-to-br from-windows-dark-surface to-windows-dark-bg">
             <div className="aspect-video rounded mb-4 md:mb-6 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&q=80"
+                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop&q=80&auto=format"
                 alt="Professional business partnership"
                 className="w-full h-full object-cover"
+                style={{ imageRendering: 'auto' }}
                 onError={(e) => {
                   const target = e.target as HTMLImageElement
                   target.style.display = 'none'
