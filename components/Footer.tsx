@@ -15,10 +15,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-3 md:mb-4 text-sm md:text-base">Products</h4>
             <ul className="space-y-2 text-xs md:text-sm text-windows-dark-text-secondary">
-              <li><a href="/products/prohost-managed-servers" className="hover:text-windows-dark-accent">ProHost Managed Servers</a></li>
-              <li><a href="/products/maccloud-virtual-machines" className="hover:text-windows-dark-accent">MacCloud Virtual Machines</a></li>
-              <li><a href="/products/businessmail-pro-setup" className="hover:text-windows-dark-accent">BusinessMail Pro Setup</a></li>
-              <li><a href="/products/techsource-hardware" className="hover:text-windows-dark-accent">TechSource Hardware</a></li>
+              <li><a href="/products/virtual-machines" className="hover:text-windows-dark-accent">Virtual Machines</a></li>
+              <li><a href="/products/applications" className="hover:text-windows-dark-accent">Applications</a></li>
+              <li><a href="/products/blockchain" className="hover:text-windows-dark-accent">Blockchain</a></li>
+              <li><a href="/products/kubernetes" className="hover:text-windows-dark-accent">Kubernetes</a></li>
             </ul>
           </div>
           
