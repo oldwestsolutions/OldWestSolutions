@@ -129,7 +129,7 @@ export default function Services() {
                       return <IconComponent className="w-12 h-12 md:w-16 md:h-16 text-windows-dark-accent" strokeWidth={1.5} />
                     })()
                   ) : (
-                    <span className="text-4xl md:text-5xl">{typeof product.icon === 'string' ? product.icon : ''}</span>
+                    <span className="text-5xl md:text-6xl lg:text-7xl">{typeof product.icon === 'string' ? product.icon : ''}</span>
                   )}
                 </div>
                 <div className="text-xs text-windows-dark-accent mb-2 font-medium">{product.category}</div>

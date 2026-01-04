@@ -59,8 +59,8 @@ export default function Hero() {
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 h-full flex items-center">
-        <div className="w-full text-left pt-24 md:pt-32 lg:pt-40">
-          <div className="flex flex-col justify-center items-start max-w-4xl">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center pt-24 md:pt-32 lg:pt-40">
+          <div className="flex flex-col justify-center items-start">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight">
               Enterprise IT Solutions
             </h1>
@@ -74,6 +74,19 @@ export default function Hero() {
               <button className="windows-button text-base md:text-lg px-6 md:px-8 py-2 md:py-3">
                 Learn More
               </button>
+            </div>
+          </div>
+          <div className="hidden lg:block">
+            <div className="relative w-full h-96 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&q=80"
+                alt="Professional business team"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement
+                  target.style.display = 'none'
+                }}
+              />
             </div>
           </div>
         </div>
