@@ -37,7 +37,6 @@ export default function Hero() {
   }, [])
 
   return (
-  return (
     <section id="home" className="relative py-12 md:py-20 min-h-[600px] md:min-h-[700px] overflow-hidden bg-windows-dark-bg">
       {/* Technical Galaxy Background - Gray theme to match site */}
       <div className="absolute inset-0 bg-gradient-to-b from-windows-dark-bg via-windows-dark-surface/50 to-windows-dark-bg">
