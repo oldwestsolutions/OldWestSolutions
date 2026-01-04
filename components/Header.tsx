@@ -72,6 +72,9 @@ export default function Header() {
                 <a href="#solutions" className="px-4 py-2 text-windows-dark-text hover:bg-windows-dark-hover rounded transition-colors">
                   Solutions
                 </a>
+                <a href="/applications" className="px-4 py-2 text-windows-dark-text hover:bg-windows-dark-hover rounded transition-colors">
+                  Applications
+                </a>
               </nav>
             </div>
             
@@ -104,6 +107,9 @@ export default function Header() {
               </a>
               <a href="#solutions" className="block px-4 py-2 text-windows-dark-text hover:bg-windows-dark-hover rounded">
                 Solutions
+              </a>
+              <a href="/applications" className="block px-4 py-2 text-windows-dark-text hover:bg-windows-dark-hover rounded">
+                Applications
               </a>
               <button
                 onClick={() => {
