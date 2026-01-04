@@ -10,6 +10,7 @@ import {
   Zap, 
   Network, 
   Link as LinkIcon,
+  Server,
   type LucideIcon
 } from 'lucide-react'
 
