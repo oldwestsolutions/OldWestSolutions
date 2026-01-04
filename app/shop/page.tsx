@@ -103,8 +103,8 @@ export default function ShopPage() {
           </div>
         </div>
 
-        {/* Filters and Sort Bar - Sticky */}
-        <div className="bg-windows-dark-surface border-b border-windows-dark-border sticky top-16 z-40 shadow-lg">
+        {/* Filters and Sort Bar - Fixed */}
+        <div className="bg-windows-dark-surface border-b border-windows-dark-border fixed top-16 left-0 right-0 z-40 shadow-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
               <div className="flex flex-wrap gap-2 overflow-x-auto pb-2 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
@@ -138,7 +138,7 @@ export default function ShopPage() {
         </div>
 
         {/* Products Grid - Newegg Style */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 pt-24 md:pt-28">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product) => (
               <div
