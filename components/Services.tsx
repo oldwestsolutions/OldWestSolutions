@@ -23,26 +23,29 @@ const featuredProducts = [
   {
     title: 'ProHost Managed Servers',
     description: 'Fully managed dedicated and virtual servers with 24/7 monitoring, automated backups, and enterprise-grade security.',
-    gradient: 'from-blue-600 to-cyan-500',
     category: 'Managed Servers',
+    icon: '🖥️', // Server icon
   },
   {
     title: 'MacCloud Virtual Machines',
     description: 'High-performance macOS virtual machines for development, testing, and creative workflows. Pre-configured and ready to deploy.',
-    gradient: 'from-purple-600 to-pink-500',
     category: 'Virtual Machines',
+    icon: '💻',
+    useIcon: false,
   },
   {
     title: 'BusinessMail Pro Setup',
     description: 'Professional email hosting and configuration with custom domains, advanced security, and seamless integration.',
-    gradient: 'from-green-600 to-emerald-500',
     category: 'Email Solutions',
+    icon: '📧',
+    useIcon: false,
   },
   {
     title: 'TechSource Hardware',
     description: 'Certified pre-owned and new enterprise hardware from trusted suppliers. Servers, workstations, and networking equipment.',
-    gradient: 'from-orange-600 to-red-500',
     category: 'Hardware',
+    icon: '🔧',
+    useIcon: false,
   },
 ]
 
@@ -109,19 +112,12 @@ export default function Services() {
                 key={index}
                 className="windows-card p-4 md:p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group"
               >
-                <div className={`w-full h-24 md:h-32 mb-3 md:mb-4 rounded bg-gradient-to-br ${product.gradient} opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center overflow-hidden relative`}>
-                  <img 
-                    src={`/images/${product.category.toLowerCase().replace(/\s+/g, '-')}.jpg`}
-                    alt={product.category}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement
-                      target.style.display = 'none'
-                    }}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center text-3xl md:text-4xl opacity-70 pointer-events-none">
-                    {product.category === 'Managed Servers' ? '🖥️' : product.category === 'Virtual Machines' ? '💻' : product.category === 'Email Solutions' ? '📧' : '🔧'}
-                  </div>
+                <div className="w-full h-24 md:h-32 mb-3 md:mb-4 rounded bg-windows-dark-surface flex items-center justify-center">
+                  {product.useIcon ? (
+                    <product.icon className="w-12 h-12 md:w-16 md:h-16 text-windows-dark-accent" strokeWidth={1.5} />
+                  ) : (
+                    <span className="text-4xl md:text-5xl">{product.icon}</span>
+                  )}
                 </div>
                 <div className="text-xs text-windows-dark-accent mb-2 font-medium">{product.category}</div>
                 <h3 className="text-base md:text-lg font-semibold text-white mb-2">{product.title}</h3>
