@@ -15,7 +15,7 @@ import {
 interface Service {
   title: string
   description: string
-  icon: React.ComponentType<{ className?: string }>
+  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>
 }
 
 const featuredProducts = [
