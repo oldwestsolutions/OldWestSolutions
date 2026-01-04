@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import { 
   Cloud, 
   Shield, 
-  Brain, 
+  Cpu, 
   Settings, 
   BarChart3, 
   Zap, 
@@ -60,7 +60,7 @@ const services: Service[] = [
   {
     title: 'AI',
     description: 'Artificial intelligence solutions to transform your business.',
-    icon: Brain,
+    icon: Cpu,
   },
   {
     title: 'Managed Services',
@@ -109,8 +109,17 @@ export default function Services() {
                 key={index}
                 className="windows-card p-4 md:p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group"
               >
-                <div className={`w-full h-24 md:h-32 mb-3 md:mb-4 rounded bg-gradient-to-br ${product.gradient} opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center`}>
-                  <span className="text-3xl md:text-4xl opacity-70">{product.category === 'Managed Servers' ? '🖥️' : product.category === 'Virtual Machines' ? '💻' : product.category === 'Email Solutions' ? '📧' : '🔧'}</span>
+                <div className={`w-full h-24 md:h-32 mb-3 md:mb-4 rounded bg-gradient-to-br ${product.gradient} opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center overflow-hidden`}>
+                  <img 
+                    src={`/images/${product.category.toLowerCase().replace(/\s+/g, '-')}.jpg`}
+                    alt={product.category}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.style.display = 'none'
+                      target.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center text-3xl md:text-4xl opacity-70">📦</div>'
+                    }}
+                  />
                 </div>
                 <div className="text-xs text-windows-dark-accent mb-2 font-medium">{product.category}</div>
                 <h3 className="text-base md:text-lg font-semibold text-white mb-2">{product.title}</h3>

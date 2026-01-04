@@ -97,7 +97,7 @@ export default function ApplicationsPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
           <div className="mb-12 md:mb-16 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Our Applications</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Our Products</h1>
             <p className="text-lg md:text-xl text-windows-dark-text-secondary max-w-3xl mx-auto">
               Explore our portfolio of innovative applications built with cutting-edge technology.
             </p>
