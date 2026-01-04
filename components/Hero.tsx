@@ -79,8 +79,8 @@ export default function Hero() {
           <div className="hidden lg:block">
             <div className="relative w-full h-96 rounded-lg overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop&q=80&auto=format"
-                alt="Professional business people in suits"
+                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop&q=80&auto=format"
+                alt="Professional corporate business meeting"
                 className="w-full h-full object-cover"
                 style={{ imageRendering: 'auto' }}
                 onError={(e) => {

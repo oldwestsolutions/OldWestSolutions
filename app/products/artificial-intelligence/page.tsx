@@ -7,8 +7,8 @@ export default function ArtificialIntelligencePage() {
       <Header />
       <div className="pt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <Link href="/#solutions" className="text-windows-dark-accent hover:text-windows-dark-accent-hover mb-8 inline-block">
-            ← Back to Solutions
+          <Link href="/#shop" className="text-windows-dark-accent hover:text-windows-dark-accent-hover mb-8 inline-block">
+            ← Back to Shop
           </Link>
         </div>
 

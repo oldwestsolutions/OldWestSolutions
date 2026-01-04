@@ -18,18 +18,19 @@ export default function Footer() {
               <li><a href="/products/virtual-machines" className="hover:text-windows-dark-accent">Virtual Machines</a></li>
               <li><a href="/products/applications" className="hover:text-windows-dark-accent">Applications</a></li>
               <li><a href="/products/blockchain" className="hover:text-windows-dark-accent">Blockchain</a></li>
-              <li><a href="/products/kubernetes" className="hover:text-windows-dark-accent">Kubernetes</a></li>
+              <li><a href="/products/artificial-intelligence" className="hover:text-windows-dark-accent">Artificial Intelligence</a></li>
+              <li><a href="/products/quantum-computing" className="hover:text-windows-dark-accent">Quantum Computing</a></li>
               <li><a href="/products/crypto" className="hover:text-windows-dark-accent">Crypto</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-white font-semibold mb-3 md:mb-4 text-sm md:text-base">Solutions</h4>
+            <h4 className="text-white font-semibold mb-3 md:mb-4 text-sm md:text-base">Services</h4>
             <ul className="space-y-2 text-xs md:text-sm text-windows-dark-text-secondary">
               <li><a href="/solutions/dev-ops-ci-cd" className="hover:text-windows-dark-accent">Dev Ops CI/CD</a></li>
-              <li><a href="/solutions/artificial-intelligence" className="hover:text-windows-dark-accent">Artificial Intelligence</a></li>
-              <li><a href="/solutions/quantum-computing" className="hover:text-windows-dark-accent">Quantum Computing</a></li>
               <li><a href="/solutions/cybersecurity" className="hover:text-windows-dark-accent">CyberSecurity</a></li>
+              <li><a href="/solutions/kubernetes" className="hover:text-windows-dark-accent">Kubernetes</a></li>
+              <li><a href="/solutions/full-stack" className="hover:text-windows-dark-accent">Full Stack</a></li>
             </ul>
           </div>
           
