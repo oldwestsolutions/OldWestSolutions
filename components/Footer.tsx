@@ -42,21 +42,20 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 md:gap-8">
           <div>
-            <div className="flex items-center gap-2 mb-3 md:mb-4">
-              <h3 className="text-lg md:text-xl font-bold text-white">Old West Solutions</h3>
-              <a 
-                href="https://www.github.com/oldwestsolutions" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-windows-dark-text-secondary hover:text-windows-dark-accent transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-            </div>
-            <p className="text-windows-dark-text-secondary text-xs md:text-sm">
+            <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">Old West Solutions</h3>
+            <p className="text-windows-dark-text-secondary text-xs md:text-sm mb-3 md:mb-4">
               Enterprise IT services and solutions for modern businesses.
             </p>
+            <a 
+              href="https://www.github.com/oldwestsolutions" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-windows-dark-text-secondary hover:text-windows-dark-accent transition-colors text-xs md:text-sm"
+              aria-label="GitHub"
+            >
+              <Github className="w-4 h-4 md:w-5 md:h-5" />
+              <span>GitHub</span>
+            </a>
           </div>
           
           <div>
