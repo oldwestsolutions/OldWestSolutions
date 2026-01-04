@@ -34,29 +34,42 @@ function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-        placeholder="Enter your email address"
-        className="windows-input flex-1"
-        disabled={isSubmitting || isSubmitted}
-      />
-      <button
-        type="submit"
-        disabled={isSubmitting || isSubmitted}
-        className="windows-button windows-button-primary whitespace-nowrap px-6 md:px-8"
-      >
-        {isSubmitting ? 'Subscribing...' : isSubmitted ? 'Subscribed!' : 'Subscribe'}
-      </button>
+    <div className="space-y-4">
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+        <div className="flex-1">
+          <label htmlFor="newsletter-email" className="block text-sm font-medium text-windows-dark-text-secondary mb-2">
+            Email Address
+          </label>
+          <input
+            type="email"
+            id="newsletter-email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            placeholder="your.email@company.com"
+            className="windows-input w-full"
+            disabled={isSubmitting || isSubmitted}
+          />
+        </div>
+        <div className="flex items-end">
+          <button
+            type="submit"
+            disabled={isSubmitting || isSubmitted}
+            className="windows-button windows-button-primary whitespace-nowrap px-8 md:px-10 py-3 md:py-4 h-fit"
+          >
+            {isSubmitting ? 'Subscribing...' : isSubmitted ? 'Subscribed!' : 'Subscribe'}
+          </button>
+        </div>
+      </form>
       {isSubmitted && (
-        <p className="text-windows-dark-accent text-sm md:text-base mt-2 sm:mt-0 sm:ml-4 flex items-center">
-          ✓ Thank you for subscribing!
-        </p>
+        <div className="text-center">
+          <p className="text-windows-dark-accent text-base md:text-lg flex items-center justify-center gap-2">
+            <span className="text-xl">✓</span>
+            <span>Thank you for subscribing! You'll receive updates from Rockefeller Press.</span>
+          </p>
+        </div>
       )}
-    </form>
+    </div>
   )
 }
 
@@ -153,12 +166,16 @@ export default function About() {
         {/* Rockefeller Press Newsletter Section */}
         <div className="mt-12 md:mt-20">
           <div className="windows-card p-8 md:p-12 bg-gradient-to-br from-windows-dark-surface to-windows-dark-bg">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">Subscribe to Rockefeller Press</h2>
-            <p className="text-windows-dark-text-secondary text-base md:text-lg mb-6 md:mb-8">
-              Stay informed with the latest crypto news, DeFi updates, and cryptocurrency reviews from Rockefeller Press.
-            </p>
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">Subscribe to Rockefeller Press</h2>
+              <p className="text-windows-dark-text-secondary text-base md:text-lg max-w-2xl mx-auto">
+                Stay informed with the latest crypto news, DeFi updates, and cryptocurrency reviews from Rockefeller Press.
+              </p>
+            </div>
             
-            <NewsletterForm />
+            <div className="max-w-2xl mx-auto">
+              <NewsletterForm />
+            </div>
           </div>
         </div>
       </div>
