@@ -19,7 +19,6 @@ export default function Footer() {
               <li><a href="/products/software" className="hover:text-windows-dark-accent">Software</a></li>
               <li><a href="/products/hardware" className="hover:text-windows-dark-accent">Hardware</a></li>
               <li><a href="/products/decentralized" className="hover:text-windows-dark-accent">Decentralized</a></li>
-              <li><a href="/products/crypto" className="hover:text-windows-dark-accent">Crypto</a></li>
             </ul>
           </div>
           
