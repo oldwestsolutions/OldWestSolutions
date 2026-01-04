@@ -65,11 +65,10 @@ export default function Hero() {
     <section id="home" className="relative py-12 md:py-20 min-h-[600px] md:min-h-[700px] overflow-hidden bg-windows-dark-bg">
       {/* Technical Galaxy Background - Gray theme to match site */}
       <div className="absolute inset-0 bg-gradient-to-b from-windows-dark-bg via-windows-dark-surface/50 to-windows-dark-bg">
-        {/* Deep space stars layer - gray/white */}
+        {/* Deep space stars layer - gray/white - Static */}
         <div className="absolute inset-0">
           {[...Array(200)].map((_, i) => {
             const size = Math.random() * 2 + 0.5
-            const delay = Math.random() * 10
             return (
               <div
                 key={i}
@@ -79,17 +78,15 @@ export default function Hero() {
                   top: `${Math.random() * 100}%`,
                   width: `${size}px`,
                   height: `${size}px`,
-                  opacity: Math.random() * 0.4 + 0.2,
-                  animation: `twinkle ${Math.random() * 8 + 6}s infinite`,
-                  animationDelay: `${delay}s`,
-                  boxShadow: `0 0 ${size * 2}px rgba(224, 224, 224, 0.6)`,
+                  opacity: Math.random() * 0.3 + 0.2,
+                  boxShadow: `0 0 ${size * 2}px rgba(224, 224, 224, 0.4)`,
                 }}
               />
             )
           })}
         </div>
         
-        {/* Bright stars layer - gray tones */}
+        {/* Bright stars layer - gray tones - Static */}
         <div className="absolute inset-0">
           {[...Array(50)].map((_, i) => {
             const size = Math.random() * 3 + 2
@@ -102,9 +99,8 @@ export default function Hero() {
                   top: `${Math.random() * 100}%`,
                   width: `${size}px`,
                   height: `${size}px`,
-                  opacity: Math.random() * 0.3 + 0.3,
-                  animation: `pulse ${Math.random() * 6 + 4}s infinite`,
-                  boxShadow: `0 0 ${size * 3}px rgba(224, 224, 224, 0.5), 0 0 ${size * 6}px rgba(224, 224, 224, 0.2)`,
+                  opacity: Math.random() * 0.2 + 0.3,
+                  boxShadow: `0 0 ${size * 3}px rgba(224, 224, 224, 0.3), 0 0 ${size * 6}px rgba(224, 224, 224, 0.1)`,
                 }}
               />
             )
@@ -216,19 +212,19 @@ export default function Hero() {
             transform: scale(1);
           }
           50% { 
-            opacity: 0.8;
-            transform: scale(1.1);
+            opacity: 0.5;
+            transform: scale(1.05);
           }
         }
         
         @keyframes pulse {
           0%, 100% { 
-            opacity: 0.4;
+            opacity: 0.3;
             transform: scale(1);
           }
           50% { 
-            opacity: 0.7;
-            transform: scale(1.15);
+            opacity: 0.5;
+            transform: scale(1.08);
           }
         }
       `}</style>
