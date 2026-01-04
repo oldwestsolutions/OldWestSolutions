@@ -1,3 +1,5 @@
+import { MapPin } from 'lucide-react'
+
 export default function Footer() {
   return (
     <footer className="bg-windows-dark-surface border-t border-windows-dark-border mt-12 md:mt-20">
@@ -41,11 +43,10 @@ export default function Footer() {
           
           <div>
             <h4 className="text-white font-semibold mb-3 md:mb-4 text-sm md:text-base">Contact</h4>
-            <ul className="space-y-2 text-xs md:text-sm text-windows-dark-text-secondary">
-              <li>Email: info@oldwestsolutions.com</li>
-              <li>Phone: (555) 123-4567</li>
-              <li>Address: 123 Tech Street</li>
-            </ul>
+            <div className="flex items-start gap-2 text-xs md:text-sm text-windows-dark-text-secondary">
+              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-windows-dark-accent" />
+              <span>7950 Legacy Drive, Plano, TX 75024</span>
+            </div>
           </div>
         </div>
         
