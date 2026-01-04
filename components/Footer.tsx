@@ -72,7 +72,7 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-3 md:mb-4 text-sm md:text-base">Services</h4>
             <ul className="space-y-2 text-xs md:text-sm text-windows-dark-text-secondary">
               <li><a href="/solutions/dev-ops-ci-cd" className="hover:text-windows-dark-accent">Dev Ops CI/CD</a></li>
-              <li><a href="/solutions/cybersecurity" className="hover:text-windows-dark-accent">CyberSecurity</a></li>
+              <li><a href="/solutions/orchestration" className="hover:text-windows-dark-accent">Orchestration</a></li>
               <li><a href="/solutions/kubernetes" className="hover:text-windows-dark-accent">Kubernetes</a></li>
               <li><a href="/solutions/full-stack" className="hover:text-windows-dark-accent">Full Stack</a></li>
             </ul>
