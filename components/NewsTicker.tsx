@@ -25,12 +25,12 @@ export default function NewsTicker() {
   }, [])
 
   return (
-    <div className="windows-card p-6 md:p-8 h-full flex flex-col justify-center">
+    <div className="p-6 md:p-8 h-full flex flex-col justify-center bg-transparent border border-windows-dark-border/30 backdrop-blur-sm">
       <div className="mb-4">
         <h3 className="text-sm md:text-base font-semibold text-windows-dark-accent mb-2 uppercase tracking-wide">
           Latest News
         </h3>
-        <div className="h-px bg-windows-dark-border mb-4"></div>
+        <div className="h-px bg-windows-dark-border/50 mb-4"></div>
       </div>
       
       <div className="relative h-32 md:h-40 overflow-hidden">
