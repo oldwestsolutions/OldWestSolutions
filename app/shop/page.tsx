@@ -103,29 +103,29 @@ export default function ShopPage() {
           </div>
         </div>
 
-        {/* Filters and Sort Bar */}
-        <div className="bg-windows-dark-surface border-b border-windows-dark-border sticky top-16 z-40">
+        {/* Filters and Sort Bar - Sticky */}
+        <div className="bg-windows-dark-surface border-b border-windows-dark-border sticky top-16 z-40 shadow-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-              <div className="flex flex-wrap gap-2">
-                <button className="px-4 py-2 bg-windows-dark-accent/20 text-windows-dark-accent rounded hover:bg-windows-dark-accent/30 transition-colors text-sm font-medium">
+              <div className="flex flex-wrap gap-2 overflow-x-auto pb-2 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
+                <button className="px-4 py-2 bg-windows-dark-accent/20 text-windows-dark-accent rounded hover:bg-windows-dark-accent/30 transition-colors text-sm font-medium whitespace-nowrap">
                   All Products
                 </button>
-                <button className="px-4 py-2 bg-windows-dark-hover text-windows-dark-text-secondary rounded hover:bg-windows-dark-accent/20 transition-colors text-sm">
+                <button className="px-4 py-2 bg-windows-dark-hover text-windows-dark-text-secondary rounded hover:bg-windows-dark-accent/20 transition-colors text-sm whitespace-nowrap">
                   Managed Servers
                 </button>
-                <button className="px-4 py-2 bg-windows-dark-hover text-windows-dark-text-secondary rounded hover:bg-windows-dark-accent/20 transition-colors text-sm">
+                <button className="px-4 py-2 bg-windows-dark-hover text-windows-dark-text-secondary rounded hover:bg-windows-dark-accent/20 transition-colors text-sm whitespace-nowrap">
                   Virtual Machines
                 </button>
-                <button className="px-4 py-2 bg-windows-dark-hover text-windows-dark-text-secondary rounded hover:bg-windows-dark-accent/20 transition-colors text-sm">
+                <button className="px-4 py-2 bg-windows-dark-hover text-windows-dark-text-secondary rounded hover:bg-windows-dark-accent/20 transition-colors text-sm whitespace-nowrap">
                   Email Solutions
                 </button>
-                <button className="px-4 py-2 bg-windows-dark-hover text-windows-dark-text-secondary rounded hover:bg-windows-dark-accent/20 transition-colors text-sm">
+                <button className="px-4 py-2 bg-windows-dark-hover text-windows-dark-text-secondary rounded hover:bg-windows-dark-accent/20 transition-colors text-sm whitespace-nowrap">
                   Hardware
                 </button>
               </div>
-              <div className="flex items-center gap-4">
-                <select className="windows-input text-sm py-2 px-4">
+              <div className="flex items-center gap-4 w-full md:w-auto">
+                <select className="windows-input text-sm py-2 px-4 w-full md:w-auto">
                   <option>Sort by: Best Match</option>
                   <option>Price: Low to High</option>
                   <option>Price: High to Low</option>
