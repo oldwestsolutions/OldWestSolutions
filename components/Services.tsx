@@ -9,13 +9,14 @@ import {
   BarChart3, 
   Zap, 
   Network, 
-  Link as LinkIcon 
+  Link as LinkIcon,
+  type LucideIcon
 } from 'lucide-react'
 
 interface Service {
   title: string
   description: string
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>
+  icon: LucideIcon
 }
 
 const featuredProducts = [
