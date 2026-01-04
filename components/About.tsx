@@ -53,8 +53,17 @@ export default function About() {
           </div>
           
           <div className="windows-card p-6 md:p-8 bg-gradient-to-br from-windows-dark-surface to-windows-dark-bg">
-            <div className="aspect-video bg-gradient-to-br from-windows-dark-accent/20 to-windows-dark-accent/5 rounded mb-4 md:mb-6 flex items-center justify-center">
-              <div className="text-4xl md:text-6xl">💼</div>
+            <div className="aspect-video rounded mb-4 md:mb-6 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&q=80"
+                alt="Professional business partnership"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement
+                  target.style.display = 'none'
+                  target.parentElement!.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-windows-dark-accent/20 to-windows-dark-accent/5 flex items-center justify-center"><div class="text-4xl md:text-6xl">💼</div></div>'
+                }}
+              />
             </div>
             <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 md:mb-6">Why Choose Us?</h3>
             <ul className="space-y-3 md:space-y-4 mb-6">
