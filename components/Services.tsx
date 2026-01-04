@@ -123,10 +123,13 @@ export default function Services() {
                 className="windows-card p-4 md:p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group"
               >
                 <div className="w-full h-24 md:h-32 mb-3 md:mb-4 rounded bg-windows-dark-surface flex items-center justify-center">
-                  {product.useIcon ? (
-                    <product.icon className="w-12 h-12 md:w-16 md:h-16 text-windows-dark-accent" strokeWidth={1.5} />
+                  {product.useIcon && typeof product.icon !== 'string' ? (
+                    (() => {
+                      const IconComponent = product.icon as LucideIcon
+                      return <IconComponent className="w-12 h-12 md:w-16 md:h-16 text-windows-dark-accent" strokeWidth={1.5} />
+                    })()
                   ) : (
-                    <span className="text-4xl md:text-5xl">{product.icon}</span>
+                    <span className="text-4xl md:text-5xl">{typeof product.icon === 'string' ? product.icon : ''}</span>
                   )}
                 </div>
                 <div className="text-xs text-windows-dark-accent mb-2 font-medium">{product.category}</div>
