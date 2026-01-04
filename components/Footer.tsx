@@ -38,6 +38,7 @@ export default function Footer() {
               <li><a href="/university" className="hover:text-windows-dark-accent">University</a></li>
               <li><a href="/careers" className="hover:text-windows-dark-accent">Careers</a></li>
               <li><a href="/about" className="hover:text-windows-dark-accent">About Us</a></li>
+              <li><a href="/legal" className="hover:text-windows-dark-accent">Legal</a></li>
             </ul>
           </div>
           
@@ -53,7 +54,7 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-windows-dark-accent" />
                 <a href="tel:9453824660" className="hover:text-windows-dark-accent transition-colors">
-                  945 382 4660
+                  (945) 382-4660
                 </a>
               </li>
               <li className="flex items-start gap-2">
