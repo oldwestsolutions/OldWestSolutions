@@ -82,32 +82,13 @@ export default function Hero() {
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-windows-dark-text-secondary mb-6 md:mb-8 leading-relaxed">
               Empowering your business with cutting-edge technology and reliable IT services
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8 md:mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <button className="windows-button windows-button-primary text-base md:text-lg px-6 md:px-8 py-2 md:py-3">
                 Get Started
               </button>
               <button className="windows-button text-base md:text-lg px-6 md:px-8 py-2 md:py-3">
                 Learn More
               </button>
-            </div>
-            <div className="windows-card p-6 md:p-8 bg-transparent/60 border border-windows-dark-border/30 backdrop-blur-sm">
-              <h3 className="text-lg md:text-xl font-semibold text-windows-dark-accent mb-4 uppercase tracking-wide text-white">
-                Featured Applications
-              </h3>
-              <ul className="space-y-2 text-sm md:text-base text-windows-dark-text-secondary">
-                <li>• Consequence — AI-powered music creation</li>
-                <li>• PayPhone — Neural network song lyrics generator</li>
-                <li>• Wintergarden — Music performance platform</li>
-                <li>• EtherBonds — Educational decentralized systems</li>
-                <li>• Lubbock.Cloud — Energy optimization platform</li>
-                <li>• Deadwood.Software — Supply-chain optimization</li>
-                <li>• OldWest — Freelancer collaboration platform</li>
-                <li>• AutoEquityGroup — Vehicle equity management</li>
-                <li>• HatedByMany — UGC image editing platform</li>
-                <li>• Pressbox — News integration SaaS</li>
-                <li>• Moneybagg — Customizable link hub</li>
-                <li>• And more...</li>
-              </ul>
             </div>
           </div>
         </div>
