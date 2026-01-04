@@ -140,27 +140,27 @@ export default function Hero() {
 
           {/* Right Column - News Carousel */}
           <div className="relative">
-            <div className="overflow-hidden rounded-lg">
+            <div className="overflow-hidden rounded-lg h-[400px] md:h-[500px]">
               <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                className="flex flex-col transition-transform duration-500 ease-in-out h-full"
+                style={{ transform: `translateY(-${currentIndex * 100}%)` }}
               >
                 {articles.map((article, index) => (
                   <a
                     key={index}
                     href={article.href}
-                    className="windows-card p-6 md:p-8 hover:border-windows-dark-accent transition-all duration-300 group min-w-full flex-shrink-0 cursor-pointer"
+                    className="windows-card p-6 md:p-8 hover:border-windows-dark-accent transition-all duration-300 group h-full flex-shrink-0 cursor-pointer flex flex-col"
                   >
-                    <div className="flex items-center gap-3 mb-3">
+                    <div className="flex items-center gap-3 mb-4">
                       <span className="px-3 py-1 bg-windows-dark-accent/20 text-windows-dark-accent text-xs font-medium rounded">
                         {article.category}
                       </span>
                       <span className="text-xs text-windows-dark-text-secondary">{article.readTime}</span>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-windows-dark-accent transition-colors leading-tight">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-windows-dark-accent transition-colors leading-tight">
                       {article.title}
                     </h3>
-                    <p className="text-sm md:text-base text-windows-dark-text-secondary leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-sm md:text-base text-windows-dark-text-secondary leading-relaxed mb-6 flex-grow">
                       {article.preview}
                     </p>
                     <div className="flex items-center gap-2 text-windows-dark-accent text-sm font-medium group-hover:gap-3 transition-all">
