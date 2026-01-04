@@ -246,9 +246,9 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       <Header />
       <div className="pt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <Link href="/#products" className="text-windows-dark-accent hover:text-windows-dark-accent-hover mb-8 inline-block">
-            ← Back to Products
-          </Link>
+        <Link href="/#shop" className="text-windows-dark-accent hover:text-windows-dark-accent-hover mb-8 inline-block">
+          ← Back to Shop
+        </Link>
         </div>
 
         {/* Immersive Full-Page Grid Layout */}
