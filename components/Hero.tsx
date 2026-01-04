@@ -142,14 +142,17 @@ export default function Hero() {
           <div className="relative">
             <div className="overflow-hidden rounded-lg h-[400px] md:h-[500px]">
               <div 
-                className="flex flex-col transition-transform duration-500 ease-in-out h-full"
-                style={{ transform: `translateY(-${currentIndex * 100}%)` }}
+                className="flex flex-col transition-transform duration-500 ease-in-out"
+                style={{ 
+                  transform: `translateY(-${currentIndex * 100}%)`,
+                  height: `${articles.length * 100}%`
+                }}
               >
                 {articles.map((article, index) => (
                   <a
                     key={index}
                     href={article.href}
-                    className="windows-card p-6 md:p-8 hover:border-windows-dark-accent transition-all duration-300 group h-full flex-shrink-0 cursor-pointer flex flex-col"
+                    className="windows-card p-6 md:p-8 hover:border-windows-dark-accent transition-all duration-300 group h-[400px] md:h-[500px] flex-shrink-0 cursor-pointer flex flex-col"
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <span className="px-3 py-1 bg-windows-dark-accent/20 text-windows-dark-accent text-xs font-medium rounded">
