@@ -13,13 +13,9 @@ export default function About() {
   return (
     <section id="solutions" className="py-12 md:py-20 bg-windows-dark-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Smarter business. Real impact.</h2>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-20">
           <div>
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Success Stories</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Partners</h3>
             <p className="text-windows-dark-text-secondary mb-4 md:mb-6 text-base md:text-lg">
               Leading enterprises trust Old West Solutions to transform their IT infrastructure. 
               Our clients have seen significant improvements in efficiency, security, and operational excellence.
@@ -55,8 +51,8 @@ export default function About() {
           <div className="windows-card p-6 md:p-8 bg-gradient-to-br from-windows-dark-surface to-windows-dark-bg">
             <div className="aspect-video rounded mb-4 md:mb-6 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop&q=80&auto=format"
-                alt="Professional business partnership"
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&q=80&auto=format"
+                alt="Modern corporate office building"
                 className="w-full h-full object-cover"
                 style={{ imageRendering: 'auto' }}
                 onError={(e) => {
