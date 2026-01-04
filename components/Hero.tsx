@@ -69,7 +69,7 @@ export default function Hero() {
         <div className="absolute inset-0">
           {[...Array(200)].map((_, i) => {
             const size = Math.random() * 2 + 0.5
-            const delay = Math.random() * 5
+            const delay = Math.random() * 10
             return (
               <div
                 key={i}
@@ -80,7 +80,7 @@ export default function Hero() {
                   width: `${size}px`,
                   height: `${size}px`,
                   opacity: Math.random() * 0.4 + 0.2,
-                  animation: `twinkle ${Math.random() * 4 + 3}s infinite`,
+                  animation: `twinkle ${Math.random() * 8 + 6}s infinite`,
                   animationDelay: `${delay}s`,
                   boxShadow: `0 0 ${size * 2}px rgba(224, 224, 224, 0.6)`,
                 }}
@@ -103,7 +103,7 @@ export default function Hero() {
                   width: `${size}px`,
                   height: `${size}px`,
                   opacity: Math.random() * 0.3 + 0.3,
-                  animation: `pulse ${Math.random() * 3 + 2}s infinite`,
+                  animation: `pulse ${Math.random() * 6 + 4}s infinite`,
                   boxShadow: `0 0 ${size * 3}px rgba(224, 224, 224, 0.5), 0 0 ${size * 6}px rgba(224, 224, 224, 0.2)`,
                 }}
               />
@@ -213,19 +213,19 @@ export default function Hero() {
             transform: scale(1);
           }
           50% { 
-            opacity: 1;
-            transform: scale(1.2);
+            opacity: 0.8;
+            transform: scale(1.1);
           }
         }
         
         @keyframes pulse {
           0%, 100% { 
-            opacity: 0.5;
+            opacity: 0.4;
             transform: scale(1);
           }
           50% { 
-            opacity: 1;
-            transform: scale(1.3);
+            opacity: 0.7;
+            transform: scale(1.15);
           }
         }
       `}</style>
