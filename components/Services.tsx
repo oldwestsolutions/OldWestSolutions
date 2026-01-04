@@ -135,7 +135,7 @@ export default function Services() {
                 <div className="text-xs text-windows-dark-accent mb-2 font-medium">{product.category}</div>
                 <h3 className="text-base md:text-lg font-semibold text-white mb-2">{product.title}</h3>
                 <p className="text-windows-dark-text-secondary text-xs md:text-sm mb-3 md:mb-4">{product.description}</p>
-                <a href="#" className="text-windows-dark-accent hover:text-windows-dark-accent-hover text-xs md:text-sm font-medium flex items-center gap-1">
+                <a href={`/shop/${product.category.toLowerCase().replace(/\s+/g, '-')}`} className="text-windows-dark-accent hover:text-windows-dark-accent-hover text-xs md:text-sm font-medium flex items-center gap-1">
                   Learn more →
                 </a>
               </div>

@@ -28,7 +28,6 @@ export default function Footer() {
             <ul className="space-y-2 text-xs md:text-sm text-windows-dark-text-secondary">
               <li><a href="/solutions/dev-ops-ci-cd" className="hover:text-windows-dark-accent">Dev Ops CI/CD</a></li>
               <li><a href="/solutions/artificial-intelligence" className="hover:text-windows-dark-accent">Artificial Intelligence</a></li>
-              <li><a href="/solutions/machine-learning" className="hover:text-windows-dark-accent">Machine Learning</a></li>
               <li><a href="/solutions/quantum-computing" className="hover:text-windows-dark-accent">Quantum Computing</a></li>
               <li><a href="/solutions/cybersecurity" className="hover:text-windows-dark-accent">CyberSecurity</a></li>
             </ul>
@@ -60,7 +59,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-windows-dark-accent" />
-                <span>4230 Avondale Avenue<br />Dallas, TX 75219</span>
+                <span>Dallas, Texas</span>
               </li>
             </ul>
           </div>
