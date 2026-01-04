@@ -1,11 +1,21 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { 
+  Cloud, 
+  Shield, 
+  Brain, 
+  Settings, 
+  BarChart3, 
+  Zap, 
+  Network, 
+  Link as LinkIcon 
+} from 'lucide-react'
 
 interface Service {
   title: string
   description: string
-  icon: string
+  icon: React.ComponentType<{ className?: string }>
 }
 
 const featuredProducts = [
@@ -39,42 +49,42 @@ const services: Service[] = [
   {
     title: 'Cloud Solutions',
     description: 'Scalable cloud infrastructure and migration services.',
-    icon: '☁️',
+    icon: Cloud,
   },
   {
     title: 'Network Security',
     description: 'Comprehensive security solutions to protect your business.',
-    icon: '🔒',
+    icon: Shield,
   },
   {
     title: 'AI',
     description: 'Artificial intelligence solutions to transform your business.',
-    icon: '🤖',
+    icon: Brain,
   },
   {
     title: 'Managed Services',
     description: '24/7 monitoring and support for your systems.',
-    icon: '⚙️',
+    icon: Settings,
   },
   {
     title: 'Data & Analytics',
     description: 'Transform data into actionable business insights.',
-    icon: '📊',
+    icon: BarChart3,
   },
   {
     title: 'Automation',
     description: 'Streamline processes with intelligent automation.',
-    icon: '🤖',
+    icon: Zap,
   },
   {
     title: 'Hybrid Cloud',
     description: 'Seamless integration across cloud and on-premises.',
-    icon: '🌐',
+    icon: Network,
   },
   {
     title: 'Blockchain',
     description: 'Blockchain solutions for secure and transparent operations.',
-    icon: '⛓️',
+    icon: LinkIcon,
   },
 ]
 
@@ -120,20 +130,25 @@ export default function Services() {
           </p>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                onClick={() => handleServiceClick(service)}
-                className="windows-card p-4 md:p-6 hover:border-windows-dark-accent transition-all duration-300 text-center group cursor-pointer"
-              >
-                <div className="text-4xl md:text-5xl mb-3 md:mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
-                <h3 className="text-base md:text-lg font-semibold text-white mb-2 md:mb-3">{service.title}</h3>
-                <p className="text-windows-dark-text-secondary text-xs md:text-sm mb-3 md:mb-4">{service.description}</p>
-                <div className="text-windows-dark-accent text-xs md:text-sm flex items-center justify-center gap-1 group-hover:gap-2 transition-all">
-                  Learn more →
+            {services.map((service, index) => {
+              const IconComponent = service.icon
+              return (
+                <div
+                  key={index}
+                  onClick={() => handleServiceClick(service)}
+                  className="windows-card p-4 md:p-6 hover:border-windows-dark-accent transition-all duration-300 text-center group cursor-pointer"
+                >
+                  <div className="flex justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                    <IconComponent className="w-12 h-12 md:w-16 md:h-16 text-windows-dark-accent" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-base md:text-lg font-semibold text-white mb-2 md:mb-3">{service.title}</h3>
+                  <p className="text-windows-dark-text-secondary text-xs md:text-sm mb-3 md:mb-4">{service.description}</p>
+                  <div className="text-windows-dark-accent text-xs md:text-sm flex items-center justify-center gap-1 group-hover:gap-2 transition-all">
+                    Learn more →
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>
