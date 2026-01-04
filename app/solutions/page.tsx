@@ -124,30 +124,30 @@ export default function SolutionsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
             {solutions.map((solution, index) => {
               const IconComponent = solution.icon
               return (
                 <Link
                   key={index}
                   href={solution.href}
-                  className="windows-card p-6 md:p-8 hover:border-windows-dark-accent transition-all duration-300 group cursor-pointer h-full flex flex-col"
+                  className="windows-card p-3 md:p-8 hover:border-windows-dark-accent transition-all duration-300 group cursor-pointer h-full flex flex-col"
                 >
-                  <div className="flex justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <div className="p-4 bg-windows-dark-accent/10 rounded-lg group-hover:bg-windows-dark-accent/20 transition-colors">
-                      <IconComponent className="w-12 h-12 md:w-16 md:h-16 text-windows-dark-accent" strokeWidth={1.5} />
+                  <div className="flex justify-center mb-2 md:mb-4 group-hover:scale-110 transition-transform">
+                    <div className="p-2 md:p-4 bg-windows-dark-accent/10 rounded-lg group-hover:bg-windows-dark-accent/20 transition-colors">
+                      <IconComponent className="w-8 h-8 md:w-16 md:h-16 text-windows-dark-accent" strokeWidth={1.5} />
                     </div>
                   </div>
                   
-                  <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 group-hover:text-windows-dark-accent transition-colors">
+                  <h3 className="text-sm md:text-2xl font-semibold text-white mb-2 md:mb-3 group-hover:text-windows-dark-accent transition-colors leading-tight">
                     {solution.title}
                   </h3>
                   
-                  <p className="text-windows-dark-text-secondary text-sm md:text-base mb-6 flex-grow">
+                  <p className="text-windows-dark-text-secondary text-xs md:text-base mb-3 md:mb-6 flex-grow line-clamp-2 md:line-clamp-none">
                     {solution.description}
                   </p>
 
-                  <div className="space-y-2 mb-6">
+                  <div className="space-y-1 md:space-y-2 mb-3 md:mb-6 hidden md:block">
                     {solution.features.map((feature, fIndex) => (
                       <div key={fIndex} className="flex items-center gap-2 text-xs md:text-sm text-windows-dark-text-secondary">
                         <div className="w-1.5 h-1.5 rounded-full bg-windows-dark-accent"></div>
@@ -156,9 +156,10 @@ export default function SolutionsPage() {
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-2 text-windows-dark-accent font-medium text-sm md:text-base group-hover:gap-4 transition-all">
-                    Learn more
-                    <ArrowRight className="w-4 h-4" />
+                  <div className="flex items-center gap-1 md:gap-2 text-windows-dark-accent font-medium text-xs md:text-base group-hover:gap-2 md:group-hover:gap-4 transition-all mt-auto">
+                    <span className="hidden md:inline">Learn more</span>
+                    <span className="md:hidden">More</span>
+                    <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
                   </div>
                 </Link>
               )

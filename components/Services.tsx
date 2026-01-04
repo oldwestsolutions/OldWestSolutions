@@ -143,29 +143,31 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Solutions Section - 4x2 Layout */}
+        {/* Solutions Section - 2x4 Layout on Mobile, 4x2 on Desktop */}
         <div className="mb-16" id="solutions">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Solutions</h2>
           <p className="text-windows-dark-text-secondary text-base md:text-lg max-w-3xl mb-8 md:mb-12">
             From next-generation cloud solutions to cutting-edge security, our deep expertise across industries can help you reinvent how your business works in the digital age.
           </p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {services.map((service, index) => {
               const IconComponent = service.icon
               return (
                 <div
                   key={index}
                   onClick={() => handleServiceClick(service)}
-                  className="windows-card p-4 md:p-6 hover:border-windows-dark-accent transition-all duration-300 text-center group cursor-pointer"
+                  className="windows-card p-3 md:p-6 hover:border-windows-dark-accent transition-all duration-300 text-center group cursor-pointer"
                 >
-                  <div className="flex justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
-                    <IconComponent className="w-12 h-12 md:w-16 md:h-16 text-windows-dark-accent" strokeWidth={1.5} />
+                  <div className="flex justify-center mb-2 md:mb-4 group-hover:scale-110 transition-transform">
+                    <IconComponent className="w-8 h-8 md:w-16 md:h-16 text-windows-dark-accent" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-base md:text-lg font-semibold text-white mb-2 md:mb-3">{service.title}</h3>
-                  <p className="text-windows-dark-text-secondary text-xs md:text-sm mb-3 md:mb-4">{service.description}</p>
+                  <h3 className="text-sm md:text-lg font-semibold text-white mb-1 md:mb-3 leading-tight">{service.title}</h3>
+                  <p className="text-windows-dark-text-secondary text-xs md:text-sm mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">{service.description}</p>
                   <div className="text-windows-dark-accent text-xs md:text-sm flex items-center justify-center gap-1 group-hover:gap-2 transition-all">
-                    Learn more →
+                    <span className="hidden md:inline">Learn more</span>
+                    <span className="md:hidden">More</span>
+                    <span className="hidden sm:inline">→</span>
                   </div>
                 </div>
               )
