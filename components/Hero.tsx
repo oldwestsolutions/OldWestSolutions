@@ -75,7 +75,7 @@ export default function Hero() {
         <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-gray-400/10 to-transparent"></div>
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 h-full flex items-center">
         <div className="w-full grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
           <div className="lg:col-span-3 text-left pt-24 md:pt-32 lg:pt-40">
             <div className="flex flex-col justify-center items-start">
