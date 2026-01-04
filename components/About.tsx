@@ -34,41 +34,93 @@ function NewsletterForm() {
   }
 
   return (
-    <div className="space-y-4">
-      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
-        <div className="flex-1">
-          <label htmlFor="newsletter-email" className="block text-sm font-medium text-windows-dark-text-secondary mb-2">
-            Email Address
-          </label>
-          <input
-            type="email"
-            id="newsletter-email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            placeholder="your.email@company.com"
-            className="windows-input w-full"
-            disabled={isSubmitting || isSubmitted}
-          />
-        </div>
-        <div className="flex items-end">
-          <button
-            type="submit"
-            disabled={isSubmitting || isSubmitted}
-            className="windows-button windows-button-primary whitespace-nowrap px-8 md:px-10 py-3 md:py-4 h-fit"
-          >
-            {isSubmitting ? 'Subscribing...' : isSubmitted ? 'Subscribed!' : 'Subscribe'}
-          </button>
+    <div className="space-y-6">
+      <form onSubmit={handleSubmit} className="relative">
+        <div className="flex flex-col sm:flex-row gap-4 items-end">
+          <div className="flex-1 w-full">
+            <label htmlFor="newsletter-email" className="block text-sm font-medium text-windows-dark-text-secondary mb-3">
+              Email Address
+            </label>
+            <div className="relative group">
+              <input
+                type="email"
+                id="newsletter-email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="your.email@company.com"
+                className="windows-input w-full pl-4 pr-12 py-4 text-base md:text-lg transition-all duration-300 focus:ring-2 focus:ring-windows-dark-accent focus:border-windows-dark-accent group-hover:border-windows-dark-accent/50"
+                disabled={isSubmitting || isSubmitted}
+              />
+              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-windows-dark-text-secondary group-focus-within:text-windows-dark-accent transition-colors">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div className="w-full sm:w-auto">
+            <button
+              type="submit"
+              disabled={isSubmitting || isSubmitted}
+              className="windows-button windows-button-primary whitespace-nowrap px-8 md:px-12 py-4 md:py-5 text-base md:text-lg font-semibold w-full sm:w-auto transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-windows-dark-accent/20 disabled:hover:scale-100 disabled:hover:shadow-none"
+            >
+              {isSubmitting ? (
+                <span className="flex items-center gap-2">
+                  <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Subscribing...
+                </span>
+              ) : isSubmitted ? (
+                <span className="flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Subscribed!
+                </span>
+              ) : (
+                <span className="flex items-center gap-2">
+                  Subscribe
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+              )}
+            </button>
+          </div>
         </div>
       </form>
       {isSubmitted && (
-        <div className="text-center">
-          <p className="text-windows-dark-accent text-base md:text-lg flex items-center justify-center gap-2">
-            <span className="text-xl">✓</span>
-            <span>Thank you for subscribing! You'll receive updates from Rockefeller Press.</span>
-          </p>
+        <div className="text-center animate-fade-in">
+          <div className="inline-flex items-center gap-3 px-6 py-4 bg-windows-dark-accent/10 border border-windows-dark-accent/30 rounded-lg backdrop-blur-sm">
+            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-windows-dark-accent/20 flex items-center justify-center">
+              <svg className="w-5 h-5 text-windows-dark-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p className="text-windows-dark-accent text-base md:text-lg font-medium">
+              Thank you for subscribing! You'll receive updates from Rockefeller Press.
+            </p>
+          </div>
         </div>
       )}
+      <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.5s ease-out;
+        }
+      `}</style>
     </div>
   )
 }
@@ -165,16 +217,28 @@ export default function About() {
 
         {/* Rockefeller Press Newsletter Section */}
         <div className="mt-12 md:mt-20">
-          <div className="windows-card p-8 md:p-12 bg-gradient-to-br from-windows-dark-surface to-windows-dark-bg">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">Subscribe to Rockefeller Press</h2>
-              <p className="text-windows-dark-text-secondary text-base md:text-lg max-w-2xl mx-auto">
-                Stay informed with the latest crypto news, DeFi updates, and cryptocurrency reviews from Rockefeller Press.
-              </p>
-            </div>
+          <div className="windows-card p-8 md:p-12 lg:p-16 bg-gradient-to-br from-windows-dark-surface via-windows-dark-bg to-windows-dark-surface relative overflow-hidden">
+            {/* Background decorative elements */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-windows-dark-accent/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-windows-dark-accent/5 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-windows-dark-accent/3 rounded-full blur-3xl"></div>
             
-            <div className="max-w-2xl mx-auto">
-              <NewsletterForm />
+            <div className="relative z-10">
+              <div className="text-center mb-10 md:mb-12">
+                <div className="inline-block mb-4 md:mb-6">
+                  <span className="text-5xl md:text-6xl">📰</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 bg-gradient-to-r from-white via-windows-dark-accent to-white bg-clip-text text-transparent">
+                  Subscribe to Rockefeller Press
+                </h2>
+                <p className="text-windows-dark-text-secondary text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
+                  Stay informed with the latest crypto news, DeFi updates, and cryptocurrency reviews from Rockefeller Press.
+                </p>
+              </div>
+              
+              <div className="max-w-2xl mx-auto">
+                <NewsletterForm />
+              </div>
             </div>
           </div>
         </div>
