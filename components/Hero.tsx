@@ -59,36 +59,20 @@ export default function Hero() {
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 h-full flex items-center">
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center pt-16 md:pt-20 lg:pt-24">
-          <div className="flex flex-col justify-center items-start">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight">
-              Enterprise IT Solutions
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-windows-dark-text-secondary mb-6 md:mb-8 leading-relaxed">
-              Empowering your business with cutting-edge technology and reliable IT services
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-              <button className="windows-button windows-button-primary text-base md:text-lg px-6 md:px-8 py-2 md:py-3">
-                Get Started
-              </button>
-              <button className="windows-button text-base md:text-lg px-6 md:px-8 py-2 md:py-3">
-                Learn More
-              </button>
-            </div>
-          </div>
-          <div className="hidden lg:block">
-            <div className="relative w-full h-96 rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&q=80&auto=format"
-                alt="Old windmill at night"
-                className="w-full h-full object-cover"
-                style={{ imageRendering: 'auto' }}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement
-                  target.style.display = 'none'
-                }}
-              />
-            </div>
+        <div className="w-full flex flex-col justify-center items-center text-center pt-16 md:pt-20 lg:pt-24">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight">
+            Enterprise IT Solutions
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-windows-dark-text-secondary mb-6 md:mb-8 leading-relaxed max-w-4xl">
+            Empowering your business with cutting-edge technology and reliable IT services
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+            <button className="windows-button windows-button-primary text-base md:text-lg px-6 md:px-8 py-2 md:py-3">
+              Get Started
+            </button>
+            <button className="windows-button text-base md:text-lg px-6 md:px-8 py-2 md:py-3">
+              Learn More
+            </button>
           </div>
         </div>
       </div>
