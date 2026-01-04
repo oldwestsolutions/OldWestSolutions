@@ -25,10 +25,11 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-3 md:mb-4 text-sm md:text-base">Solutions</h4>
             <ul className="space-y-2 text-xs md:text-sm text-windows-dark-text-secondary">
-              <li><a href="/solutions/enterprise-solutions" className="hover:text-windows-dark-accent">Enterprise Solutions</a></li>
-              <li><a href="/solutions/cloud-migration" className="hover:text-windows-dark-accent">Cloud Migration</a></li>
-              <li><a href="/solutions/security-implementation" className="hover:text-windows-dark-accent">Security Implementation</a></li>
-              <li><a href="/solutions/digital-transformation" className="hover:text-windows-dark-accent">Digital Transformation</a></li>
+              <li><a href="/solutions/dev-ops-ci-cd" className="hover:text-windows-dark-accent">Dev Ops CI/CD</a></li>
+              <li><a href="/solutions/artificial-intelligence" className="hover:text-windows-dark-accent">Artificial Intelligence</a></li>
+              <li><a href="/solutions/machine-learning" className="hover:text-windows-dark-accent">Machine Learning</a></li>
+              <li><a href="/solutions/quantum-computing" className="hover:text-windows-dark-accent">Quantum Computing</a></li>
+              <li><a href="/solutions/cybersecurity" className="hover:text-windows-dark-accent">CyberSecurity</a></li>
             </ul>
           </div>
           
@@ -38,6 +39,7 @@ export default function Footer() {
               <li><a href="/university" className="hover:text-windows-dark-accent">University</a></li>
               <li><a href="/careers" className="hover:text-windows-dark-accent">Careers</a></li>
               <li><a href="/about" className="hover:text-windows-dark-accent">About Us</a></li>
+              <li><a href="#contact" className="hover:text-windows-dark-accent">Contact Us</a></li>
             </ul>
           </div>
           
@@ -45,7 +47,7 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-3 md:mb-4 text-sm md:text-base">Contact</h4>
             <div className="flex items-start gap-2 text-xs md:text-sm text-windows-dark-text-secondary">
               <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-windows-dark-accent" />
-              <span>7950 Legacy Drive, Plano, TX 75024</span>
+              <span>4230 Avondale Avenue<br />Dallas, TX 75219</span>
             </div>
           </div>
         </div>
