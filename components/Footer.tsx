@@ -1,8 +1,44 @@
+'use client'
+
+import { useState } from 'react'
 import { MapPin, Mail, Phone } from 'lucide-react'
 
 export default function Footer() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    businessEmail: '',
+    company: '',
+    jobTitle: '',
+    phone: '',
+    message: '',
+  })
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log('Contact form submitted:', formData)
+    alert('Thank you for your message! We will get back to you soon.')
+    setFormData({
+      name: '',
+      businessEmail: '',
+      company: '',
+      jobTitle: '',
+      phone: '',
+      message: '',
+    })
+    setIsContactModalOpen(false)
+  }
+
   return (
-    <footer className="bg-windows-dark-surface border-t border-windows-dark-border mt-12 md:mt-20">
+    <>
+      <footer className="bg-windows-dark-surface border-t border-windows-dark-border mt-12 md:mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 md:gap-8">
           <div>
@@ -47,9 +83,12 @@ export default function Footer() {
             <ul className="space-y-3 text-xs md:text-sm text-windows-dark-text-secondary">
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-windows-dark-accent" />
-                <a href="mailto:info@oldwestsolutions.com" className="hover:text-windows-dark-accent transition-colors">
+                <button
+                  onClick={() => setIsContactModalOpen(true)}
+                  className="hover:text-windows-dark-accent transition-colors text-left"
+                >
                   Mail Us
-                </a>
+                </button>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-windows-dark-accent" />
@@ -70,6 +109,141 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+
+    {/* Contact Modal */}
+    {isContactModalOpen && (
+      <div
+        className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4"
+        onClick={() => setIsContactModalOpen(false)}
+      >
+        <div
+          className="windows-card p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Contact Us</h2>
+            <button
+              onClick={() => setIsContactModalOpen(false)}
+              className="text-windows-dark-text-secondary hover:text-white text-3xl leading-none"
+              aria-label="Close contact form"
+            >
+              ×
+            </button>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="contact-name" className="block text-sm font-medium text-windows-dark-text-secondary mb-2">
+                Full Name *
+              </label>
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="windows-input w-full"
+                placeholder="John Doe"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="contact-businessEmail" className="block text-sm font-medium text-windows-dark-text-secondary mb-2">
+                Business Email *
+              </label>
+              <input
+                type="email"
+                id="contact-businessEmail"
+                name="businessEmail"
+                value={formData.businessEmail}
+                onChange={handleChange}
+                required
+                className="windows-input w-full"
+                placeholder="your.email@company.com"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="contact-company" className="block text-sm font-medium text-windows-dark-text-secondary mb-2">
+                Company Name *
+              </label>
+              <input
+                type="text"
+                id="contact-company"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                required
+                className="windows-input w-full"
+                placeholder="Your Company Inc."
+              />
+            </div>
+
+            <div>
+              <label htmlFor="contact-jobTitle" className="block text-sm font-medium text-windows-dark-text-secondary mb-2">
+                Job Title *
+              </label>
+              <input
+                type="text"
+                id="contact-jobTitle"
+                name="jobTitle"
+                value={formData.jobTitle}
+                onChange={handleChange}
+                required
+                className="windows-input w-full"
+                placeholder="CTO, IT Director, etc."
+              />
+            </div>
+
+            <div>
+              <label htmlFor="contact-phone" className="block text-sm font-medium text-windows-dark-text-secondary mb-2">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="contact-phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="windows-input w-full"
+                placeholder="(945) 382-4660"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="contact-message" className="block text-sm font-medium text-windows-dark-text-secondary mb-2">
+                Message *
+              </label>
+              <textarea
+                id="contact-message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={6}
+                className="windows-input w-full resize-none"
+                placeholder="Tell us about your business needs and how we can help..."
+              />
+            </div>
+
+            <div className="flex gap-4">
+              <button type="submit" className="windows-button windows-button-primary flex-1">
+                Send Message
+              </button>
+              <button
+                type="button"
+                onClick={() => setIsContactModalOpen(false)}
+                className="windows-button"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    )}
+    </>
   )
 }
 
