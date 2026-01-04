@@ -120,7 +120,7 @@ export default function Services() {
             {featuredProducts.map((product, index) => (
               <div
                 key={index}
-                className="windows-card p-4 md:p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group"
+                className="windows-card p-4 md:p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group flex flex-col"
               >
                 <div className="w-full h-24 md:h-32 mb-3 md:mb-4 rounded bg-windows-dark-surface flex items-center justify-center">
                   {product.useIcon && typeof product.icon !== 'string' ? (
@@ -134,8 +134,8 @@ export default function Services() {
                 </div>
                 <div className="text-xs text-windows-dark-accent mb-2 font-medium">{product.category}</div>
                 <h3 className="text-base md:text-lg font-semibold text-white mb-2">{product.title}</h3>
-                <p className="text-windows-dark-text-secondary text-xs md:text-sm mb-3 md:mb-4">{product.description}</p>
-                <a href={`/shop/${product.category.toLowerCase().replace(/\s+/g, '-')}`} className="text-windows-dark-accent hover:text-windows-dark-accent-hover text-xs md:text-sm font-medium flex items-center gap-1">
+                <p className="text-windows-dark-text-secondary text-xs md:text-sm mb-3 md:mb-4 flex-grow">{product.description}</p>
+                <a href={`/shop/${product.category.toLowerCase().replace(/\s+/g, '-')}`} className="text-windows-dark-accent hover:text-windows-dark-accent-hover text-xs md:text-sm font-medium flex items-center gap-1 mt-auto">
                   Learn more →
                 </a>
               </div>
