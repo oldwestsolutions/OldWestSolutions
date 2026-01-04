@@ -66,14 +66,11 @@ export default function Header() {
               <h1 className="text-lg md:text-2xl font-bold text-white">Old West Solutions</h1>
               
               <nav className="hidden md:flex space-x-1">
-                <a href="#products" className="px-4 py-2 text-windows-dark-text hover:bg-windows-dark-hover rounded transition-colors">
-                  Products
+                <a href="#shop" className="px-4 py-2 text-windows-dark-text hover:bg-windows-dark-hover rounded transition-colors">
+                  Shop
                 </a>
                 <a href="#solutions" className="px-4 py-2 text-windows-dark-text hover:bg-windows-dark-hover rounded transition-colors">
                   Solutions
-                </a>
-                <a href="/applications" className="px-4 py-2 text-windows-dark-text hover:bg-windows-dark-hover rounded transition-colors">
-                  Applications
                 </a>
               </nav>
             </div>
@@ -102,14 +99,11 @@ export default function Header() {
 
           {isMenuOpen && (
             <div className="md:hidden py-4 border-t border-windows-dark-border">
-              <a href="#products" className="block px-4 py-2 text-windows-dark-text hover:bg-windows-dark-hover rounded">
-                Products
+              <a href="#shop" className="block px-4 py-2 text-windows-dark-text hover:bg-windows-dark-hover rounded">
+                Shop
               </a>
               <a href="#solutions" className="block px-4 py-2 text-windows-dark-text hover:bg-windows-dark-hover rounded">
                 Solutions
-              </a>
-              <a href="/applications" className="block px-4 py-2 text-windows-dark-text hover:bg-windows-dark-hover rounded">
-                Applications
               </a>
               <button
                 onClick={() => {

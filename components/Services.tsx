@@ -87,11 +87,11 @@ export default function Services() {
   }
 
   return (
-    <section id="products" className="py-12 md:py-20 bg-windows-dark-bg">
+    <section id="shop" className="py-12 md:py-20 bg-windows-dark-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Featured Products Cards */}
         <div className="mb-12 md:mb-20">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Products</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Shop</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-6 md:mt-8">
             {featuredProducts.map((product, index) => (
               <div
