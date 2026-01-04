@@ -1,4 +1,4 @@
-import { MapPin } from 'lucide-react'
+import { MapPin, Mail, Phone } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -46,10 +46,24 @@ export default function Footer() {
           
           <div>
             <h4 className="text-white font-semibold mb-3 md:mb-4 text-sm md:text-base">Contact</h4>
-            <div className="flex items-start gap-2 text-xs md:text-sm text-windows-dark-text-secondary">
-              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-windows-dark-accent" />
-              <span>4230 Avondale Avenue<br />Dallas, TX 75219</span>
-            </div>
+            <ul className="space-y-3 text-xs md:text-sm text-windows-dark-text-secondary">
+              <li className="flex items-start gap-2">
+                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-windows-dark-accent" />
+                <a href="mailto:info@oldwestsolutions.com" className="hover:text-windows-dark-accent transition-colors">
+                  Mail Us
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-windows-dark-accent" />
+                <a href="tel:9453824660" className="hover:text-windows-dark-accent transition-colors">
+                  945 382 4660
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-windows-dark-accent" />
+                <span>4230 Avondale Avenue<br />Dallas, TX 75219</span>
+              </li>
+            </ul>
           </div>
         </div>
         
