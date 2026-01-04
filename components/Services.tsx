@@ -25,7 +25,7 @@ const featuredProducts = [
     title: 'ProHost Managed Servers',
     description: 'Fully managed dedicated and virtual servers with 24/7 monitoring, automated backups, and enterprise-grade security.',
     category: 'Managed Servers',
-    icon: Server,
+    icon: Cloud,
     useIcon: true,
   },
   {
