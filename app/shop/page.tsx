@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Link from 'next/link'
+import { ShoppingCart, Star, Truck, Shield, Check } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Old West Solutions',
@@ -17,266 +18,62 @@ export const metadata: Metadata = {
   },
 }
 
-const applications = [
+const products = [
   {
-    name: 'Consequence',
-    description: 'AI-powered music creation platform leveraging machine learning to help producers generate original compositions, optimize creative workflows, and explore new sonic possibilities through intelligent analysis and generation.',
-    language: 'JavaScript',
-    updated: '3 days ago',
-    features: [
-      'AI-powered composition generation',
-      'Machine learning integration',
-      'Creative workflow optimization',
-      'Intelligent sonic analysis',
-      'Original composition tools',
-    ],
+    id: 1,
+    name: 'ProHost Managed Servers',
+    category: 'Managed Servers',
+    price: 'Starting at $99/mo',
+    originalPrice: '$149/mo',
+    rating: 4.8,
+    reviews: 124,
+    image: '☁️',
+    badge: 'Best Seller',
+    features: ['24/7 Monitoring', 'Automated Backups', 'Enterprise Security', '99.9% Uptime SLA'],
+    inStock: true,
+    shipping: 'Free Shipping',
   },
   {
-    name: 'PayPhone',
-    description: 'Neural network–driven lyric generation system using advanced sequence models and large language models (LLMs) to produce context-aware, coherent, and adaptable song lyrics across multiple musical genres.',
-    language: 'JavaScript',
-    updated: '5 days ago',
-    features: [
-      'Neural network lyrics generation',
-      'Advanced sequence models',
-      'LLM-powered content creation',
-      'Context-aware output',
-      'Multi-genre adaptability',
-    ],
+    id: 2,
+    name: 'MacCloud Virtual Machines',
+    category: 'Virtual Machines',
+    price: 'Starting at $79/mo',
+    originalPrice: '$119/mo',
+    rating: 4.9,
+    reviews: 89,
+    image: '💻',
+    badge: 'New',
+    features: ['High Performance', 'Pre-configured', 'macOS Ready', 'Development Tools'],
+    inStock: true,
+    shipping: 'Instant Setup',
   },
   {
-    name: 'Wintergarden',
-    description: 'Performance optimization platform for musicians that integrates Watson AI, LLMs, and virtual machines (VMs) to analyze, guide, and enhance musical performance outcomes in real time.',
-    language: 'JavaScript',
-    updated: '5 days ago',
-    features: [
-      'Watson AI integration',
-      'LLM-powered analysis',
-      'Virtual machine support',
-      'Real-time performance optimization',
-      'Musical outcome enhancement',
-    ],
+    id: 3,
+    name: 'BusinessMail Pro Setup',
+    category: 'Email Solutions',
+    price: 'Starting at $29/mo',
+    originalPrice: '$49/mo',
+    rating: 4.7,
+    reviews: 156,
+    image: '📧',
+    badge: 'Popular',
+    features: ['Custom Domains', 'Advanced Security', 'Seamless Integration', 'Unlimited Storage'],
+    inStock: true,
+    shipping: 'Free Setup',
   },
   {
-    name: 'EtherBonds',
-    description: 'Educational application that simulates programmable bonds and escrow mechanisms to teach decentralized systems using LLM-driven environments and virtual machines.',
-    language: 'JavaScript',
-    updated: '5 days ago',
-    features: [
-      'Programmable bond simulation',
-      'Escrow mechanism teaching',
-      'Decentralized systems education',
-      'LLM-driven environments',
-      'Virtual machine integration',
-    ],
-  },
-  {
-    name: 'Lubbock.Cloud',
-    description: 'Cloud infrastructure platform that converts energy constraints into competitive advantages using three integrated engines: energy arbitrage, adaptive compute orchestration, and natural resource optimization.',
-    language: 'TypeScript',
-    updated: 'last week',
-    features: [
-      'Energy arbitrage engine',
-      'Adaptive compute orchestration',
-      'Natural resource optimization',
-      'Three-engine integration',
-      'Competitive advantage conversion',
-    ],
-  },
-  {
-    name: 'Deadwood.Software',
-    description: 'Quantum-inspired supply chain optimization platform that unifies enterprise data into an AI-ready foundation, applying probabilistic and hybrid quantum-classical techniques to forecasting and logistics optimization.',
-    language: 'TypeScript',
-    updated: 'last week',
-    features: [
-      'Quantum-inspired algorithms',
-      'Supply chain optimization',
-      'Enterprise data unification',
-      'Probabilistic forecasting',
-      'Hybrid quantum-classical techniques',
-    ],
-  },
-  {
-    name: 'OldWest',
-    description: 'Decentralized collaboration platform built on the Cosmos network, connecting freelancers and collaborators while tracking merit earned from successful projects within dedicated virtual machine workspaces.',
-    language: 'TypeScript',
-    updated: 'last week',
-    features: [
-      'Cosmos network integration',
-      'Freelancer collaboration',
-      'Merit tracking system',
-      'Virtual machine workspaces',
-      'Project-based merit system',
-    ],
-  },
-  {
-    name: 'AutoEquityGroup',
-    description: 'Platform for evaluating and managing vehicle equity using a private blockchain for secure, tamper-proof transaction records and scalable cloud-based data processing.',
-    language: 'TypeScript',
-    updated: '3 weeks ago',
-    features: [
-      'Vehicle equity evaluation',
-      'Private blockchain integration',
-      'Tamper-proof transaction records',
-      'Scalable cloud processing',
-      'Secure data management',
-    ],
-  },
-  {
-    name: 'HatedByMany',
-    description: 'Neural network–powered platform for user-generated content (UGC) image editing and marketing ideation, enabling creators and brands to generate, refine, and optimize visual assets at scale.',
-    language: 'TypeScript',
-    updated: 'Oct 13, 2025',
-    features: [
-      'Neural network image editing',
-      'UGC content creation',
-      'Marketing ideation tools',
-      'Visual asset optimization',
-      'Scale-ready platform',
-    ],
-  },
-  {
-    name: 'XYZ',
-    description: 'Distribution and compliance platform for Delta-8 THC products, providing inventory management, order tracking, and regulatory workflow automation.',
-    language: 'CSS',
-    updated: 'Oct 7, 2025',
-    features: [
-      'Inventory management',
-      'Order tracking system',
-      'Regulatory compliance',
-      'Workflow automation',
-      'Delta-8 THC distribution',
-    ],
-  },
-  {
-    name: 'Consultation.Directory',
-    description: 'Decentralized consultation marketplace powered by Polygon, connecting professionals with clients for public relations, career development, and mentorship services through reputation and feedback systems.',
-    language: 'TypeScript',
-    updated: 'Sep 29, 2025',
-    features: [
-      'Polygon blockchain integration',
-      'Professional-client matching',
-      'Public relations services',
-      'Career development tools',
-      'Reputation and feedback systems',
-    ],
-  },
-  {
-    name: 'FirstClassMail',
-    description: 'Modern shipping and fulfillment platform enabling automated document and parcel delivery with full tracking, logistics optimization, and bulk shipping workflows.',
-    language: 'TypeScript',
-    updated: 'Sep 29, 2025',
-    features: [
-      'Automated delivery system',
-      'Full tracking capabilities',
-      'Logistics optimization',
-      'Bulk shipping workflows',
-      'Document and parcel handling',
-    ],
-  },
-  {
-    name: 'Moneybagg',
-    description: 'Lightweight, customizable link-in-bio platform designed for creators, influencers, and businesses to consolidate and share important links in a single fast-loading page.',
-    language: 'TypeScript',
-    updated: 'May 20, 2025',
-    features: [
-      'Customizable link hub',
-      'Creator and influencer tools',
-      'Business link management',
-      'Fast-loading design',
-      'Single-page consolidation',
-    ],
-  },
-  {
-    name: 'RockstarCareers',
-    description: 'Job search and recruitment platform connecting candidates with employers through advanced filtering, personalized recommendations, and SEO-optimized job listings.',
-    language: 'TypeScript',
-    updated: 'May 5, 2025',
-    features: [
-      'Advanced job filtering',
-      'Personalized recommendations',
-      'SEO-optimized listings',
-      'Candidate-employer matching',
-      'Recruitment tools',
-    ],
-  },
-  {
-    name: 'CreditCoffee',
-    description: 'Micro-credit platform enabling users to build verifiable credit histories through small transactions, designed to promote financial inclusion and global accessibility.',
-    language: 'TypeScript',
-    updated: 'May 5, 2025',
-    features: [
-      'Micro-credit services',
-      'Verifiable credit history',
-      'Small transaction support',
-      'Financial inclusion focus',
-      'Global accessibility',
-    ],
-  },
-  {
-    name: 'Pressbox',
-    description: 'SaaS platform that allows websites to embed modular, customizable news feeds featuring curated headlines, summaries, and topic-based filtering.',
-    language: 'TypeScript',
-    updated: 'Apr 28, 2025',
-    features: [
-      'Modular news feeds',
-      'Customizable integration',
-      'Curated headlines',
-      'Topic-based filtering',
-      'Embed-ready platform',
-    ],
-  },
-  {
-    name: 'RockefellerPress',
-    description: 'Digital media platform delivering crypto news, DeFi updates, blockchain project analysis, and market insights.',
-    language: 'TypeScript',
-    updated: 'Apr 26, 2025',
-    features: [
-      'Crypto news delivery',
-      'DeFi updates',
-      'Blockchain project analysis',
-      'Market insights',
-      'Digital media platform',
-    ],
-  },
-  {
-    name: 'Mixtapes',
-    description: 'AI-driven music curation platform that classifies tracks using machine learning and assembles cohesive mixtapes based on musical compatibility, flow, and energy progression.',
-    language: 'JavaScript',
-    updated: 'Apr 26, 2025',
-    features: [
-      'AI-driven curation',
-      'Machine learning classification',
-      'Musical compatibility analysis',
-      'Flow and energy progression',
-      'Cohesive mixtape assembly',
-    ],
-  },
-  {
-    name: 'JunkYardCarParts',
-    description: 'Automotive parts sourcing and inventory management platform integrating third-party marketplaces to provide searchable catalogs, real-time pricing, and streamlined selling workflows.',
-    language: 'TypeScript',
-    updated: 'Apr 17, 2025',
-    features: [
-      'Third-party marketplace integration',
-      'Searchable parts catalog',
-      'Real-time pricing',
-      'Streamlined selling workflows',
-      'Inventory management',
-    ],
-  },
-  {
-    name: 'SubsidyCheck',
-    description: 'Decentralized subsidy application platform enabling users to apply for large-scale subsidies through on-chain governance and conditional funding logic.',
-    language: 'JavaScript',
-    updated: 'Mar 20, 2025',
-    features: [
-      'Decentralized subsidy platform',
-      'On-chain governance',
-      'Conditional funding logic',
-      'Large-scale subsidy applications',
-      'Transparent funding system',
-    ],
+    id: 4,
+    name: 'TechSource Hardware',
+    category: 'Hardware',
+    price: 'Starting at $499',
+    originalPrice: '$799',
+    rating: 4.6,
+    reviews: 203,
+    image: '🔧',
+    badge: 'Sale',
+    features: ['Certified Pre-owned', 'Enterprise Grade', 'Warranty Included', 'Fast Delivery'],
+    inStock: true,
+    shipping: 'Free Shipping',
   },
 ]
 
@@ -285,60 +82,187 @@ export default function ShopPage() {
     <main className="min-h-screen bg-windows-dark-bg">
       <Header />
       <div className="pt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <Link href="/#shop" className="text-windows-dark-accent hover:text-windows-dark-accent-hover mb-8 inline-block">
-            ← Back to Shop
-          </Link>
+        {/* Breadcrumb */}
+        <div className="bg-windows-dark-surface border-b border-windows-dark-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-center gap-2 text-sm text-windows-dark-text-secondary">
+              <Link href="/" className="hover:text-windows-dark-accent">Home</Link>
+              <span>/</span>
+              <span className="text-white">Shop</span>
+            </div>
+          </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-          <div className="mb-12 md:mb-16 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Our Applications</h1>
-            <p className="text-lg md:text-xl text-windows-dark-text-secondary max-w-3xl mx-auto">
-              Explore our portfolio of innovative applications built with cutting-edge technology.
+        {/* Hero Banner */}
+        <div className="bg-gradient-to-r from-windows-dark-accent/20 to-windows-dark-accent/10 border-b border-windows-dark-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Shop IT Solutions</h1>
+            <p className="text-lg md:text-xl text-windows-dark-text-secondary max-w-2xl">
+              Enterprise-grade IT products and services. Trusted by businesses worldwide.
             </p>
           </div>
+        </div>
 
-          <div className="space-y-24 md:space-y-32">
-            {applications.map((app, index) => (
-              <section key={index} className="min-h-[50vh]">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-                  <div className="windows-card p-8 md:p-12">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="text-5xl md:text-6xl">{app.name === 'Consequence' ? '🎹' : app.name === 'PayPhone' ? '📞' : app.name === 'Wintergarden' ? '🎵' : app.name === 'EtherBonds' ? '⛓️' : app.name === 'Lubbock.Cloud' ? '☁️' : app.name === 'Deadwood.Software' ? '🌲' : app.name === 'OldWest' ? '🤠' : app.name === 'AutoEquityGroup' ? '🚗' : app.name === 'HatedByMany' ? '🎨' : app.name === 'XYZ' ? '🌿' : app.name === 'Consultation.Directory' ? '📋' : app.name === 'FirstClassMail' ? '📮' : app.name === 'Moneybagg' ? '💰' : app.name === 'RockstarCareers' ? '⭐' : app.name === 'CreditCoffee' ? '☕' : app.name === 'Pressbox' ? '📦' : app.name === 'RockefellerPress' ? '📰' : app.name === 'Mixtapes' ? '🎧' : app.name === 'JunkYardCarParts' ? '🔧' : app.name === 'SubsidyCheck' ? '💸' : '💻'}</div>
-                      <div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">{app.name}</h2>
-                        <div className="flex items-center gap-3 text-sm text-windows-dark-text-secondary">
-                          <span className="px-2 py-1 bg-windows-dark-accent/20 text-windows-dark-accent rounded">
-                            {app.language}
-                          </span>
-                          <span>Updated {app.updated}</span>
-                        </div>
-                      </div>
+        {/* Filters and Sort Bar */}
+        <div className="bg-windows-dark-surface border-b border-windows-dark-border sticky top-16 z-40">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+              <div className="flex flex-wrap gap-2">
+                <button className="px-4 py-2 bg-windows-dark-accent/20 text-windows-dark-accent rounded hover:bg-windows-dark-accent/30 transition-colors text-sm font-medium">
+                  All Products
+                </button>
+                <button className="px-4 py-2 bg-windows-dark-hover text-windows-dark-text-secondary rounded hover:bg-windows-dark-accent/20 transition-colors text-sm">
+                  Managed Servers
+                </button>
+                <button className="px-4 py-2 bg-windows-dark-hover text-windows-dark-text-secondary rounded hover:bg-windows-dark-accent/20 transition-colors text-sm">
+                  Virtual Machines
+                </button>
+                <button className="px-4 py-2 bg-windows-dark-hover text-windows-dark-text-secondary rounded hover:bg-windows-dark-accent/20 transition-colors text-sm">
+                  Email Solutions
+                </button>
+                <button className="px-4 py-2 bg-windows-dark-hover text-windows-dark-text-secondary rounded hover:bg-windows-dark-accent/20 transition-colors text-sm">
+                  Hardware
+                </button>
+              </div>
+              <div className="flex items-center gap-4">
+                <select className="windows-input text-sm py-2 px-4">
+                  <option>Sort by: Best Match</option>
+                  <option>Price: Low to High</option>
+                  <option>Price: High to Low</option>
+                  <option>Rating: Highest</option>
+                  <option>Newest First</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Products Grid - Newegg Style */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="windows-card p-4 md:p-6 hover:border-windows-dark-accent transition-all duration-300 group cursor-pointer bg-windows-dark-surface"
+              >
+                {/* Badge */}
+                {product.badge && (
+                  <div className="absolute top-2 right-2 z-10">
+                    <span className="px-2 py-1 bg-windows-dark-accent text-white text-xs font-bold rounded">
+                      {product.badge}
+                    </span>
+                  </div>
+                )}
+
+                {/* Product Image */}
+                <div className="relative mb-4 bg-windows-dark-bg rounded-lg p-8 flex items-center justify-center min-h-[200px]">
+                  <span className="text-7xl md:text-8xl">{product.image}</span>
+                  {product.inStock && (
+                    <div className="absolute bottom-2 left-2 flex items-center gap-1 text-xs text-green-400 bg-green-400/10 px-2 py-1 rounded">
+                      <Check className="w-3 h-3" />
+                      In Stock
                     </div>
-                    <p className="text-lg md:text-xl text-windows-dark-text-secondary leading-relaxed mb-6">
-                      {app.description}
-                    </p>
+                  )}
+                </div>
+
+                {/* Product Info */}
+                <div className="space-y-2">
+                  <div className="text-xs text-windows-dark-accent font-medium">{product.category}</div>
+                  <h3 className="text-base md:text-lg font-semibold text-white group-hover:text-windows-dark-accent transition-colors line-clamp-2">
+                    {product.name}
+                  </h3>
+
+                  {/* Rating */}
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`w-4 h-4 ${
+                            i < Math.floor(product.rating)
+                              ? 'fill-yellow-400 text-yellow-400'
+                              : 'text-windows-dark-text-secondary'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-xs text-windows-dark-text-secondary">
+                      ({product.reviews})
+                    </span>
                   </div>
 
-                  <div className="windows-card p-8 md:p-12 bg-gradient-to-br from-windows-dark-surface to-windows-dark-bg">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Key Features</h3>
-                    <ul className="space-y-4">
-                      {app.features.map((feature, fIndex) => (
-                        <li key={fIndex} className="flex items-start">
-                          <span className="text-windows-dark-accent mr-3 text-xl">→</span>
-                          <span className="text-windows-dark-text-secondary text-base md:text-lg leading-relaxed">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Features */}
+                  <ul className="space-y-1 text-xs text-windows-dark-text-secondary">
+                    {product.features.slice(0, 2).map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-1">
+                        <Check className="w-3 h-3 text-windows-dark-accent" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Price */}
+                  <div className="pt-2 border-t border-windows-dark-border">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-xl md:text-2xl font-bold text-windows-dark-accent">
+                        {product.price}
+                      </span>
+                      {product.originalPrice && (
+                        <span className="text-sm text-windows-dark-text-secondary line-through">
+                          {product.originalPrice}
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-2 mt-2 text-xs text-windows-dark-text-secondary">
+                      <Truck className="w-4 h-4" />
+                      {product.shipping}
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-2 pt-4">
+                    <button className="flex-1 windows-button windows-button-primary text-sm py-2 flex items-center justify-center gap-2">
+                      <ShoppingCart className="w-4 h-4" />
+                      Add to Cart
+                    </button>
+                    <button className="px-4 py-2 windows-button text-sm">
+                      <Shield className="w-4 h-4" />
+                    </button>
                   </div>
                 </div>
-              </section>
+              </div>
             ))}
+          </div>
+        </div>
+
+        {/* Trust Badges */}
+        <div className="bg-windows-dark-surface border-t border-windows-dark-border py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div>
+                <Truck className="w-8 h-8 text-windows-dark-accent mx-auto mb-2" />
+                <div className="text-sm font-semibold text-white">Free Shipping</div>
+                <div className="text-xs text-windows-dark-text-secondary">On orders over $100</div>
+              </div>
+              <div>
+                <Shield className="w-8 h-8 text-windows-dark-accent mx-auto mb-2" />
+                <div className="text-sm font-semibold text-white">Secure Payment</div>
+                <div className="text-xs text-windows-dark-text-secondary">100% Protected</div>
+              </div>
+              <div>
+                <Check className="w-8 h-8 text-windows-dark-accent mx-auto mb-2" />
+                <div className="text-sm font-semibold text-white">30-Day Returns</div>
+                <div className="text-xs text-windows-dark-text-secondary">Money-back guarantee</div>
+              </div>
+              <div>
+                <Star className="w-8 h-8 text-windows-dark-accent mx-auto mb-2" />
+                <div className="text-sm font-semibold text-white">24/7 Support</div>
+                <div className="text-xs text-windows-dark-text-secondary">Expert assistance</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
   )
 }
-

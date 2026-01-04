@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { MapPin, Mail, Phone } from 'lucide-react'
+import { MapPin, Mail, Phone, Github } from 'lucide-react'
 
 export default function Footer() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
@@ -42,7 +42,18 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 md:gap-8">
           <div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">Old West Solutions</h3>
+            <div className="flex items-center gap-2 mb-3 md:mb-4">
+              <h3 className="text-lg md:text-xl font-bold text-white">Old West Solutions</h3>
+              <a 
+                href="https://www.github.com/oldwestsolutions" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-windows-dark-text-secondary hover:text-windows-dark-accent transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+            </div>
             <p className="text-windows-dark-text-secondary text-xs md:text-sm">
               Enterprise IT services and solutions for modern businesses.
             </p>
