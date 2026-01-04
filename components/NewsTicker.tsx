@@ -36,7 +36,7 @@ export default function NewsTicker() {
           setCurrentIndex((idx) => (idx + 1) % applications.length)
           return 0
         }
-        return prev + 2
+        return prev + 1.5
       })
     }, 100)
 
@@ -54,7 +54,7 @@ export default function NewsTicker() {
       
       <div className="relative h-56 md:h-64 overflow-hidden">
         <div
-          className="transition-transform duration-700 ease-in-out"
+          className="transition-transform duration-1000 ease-in-out"
           style={{
             transform: `translateY(-${currentIndex * 100}%)`,
           }}
