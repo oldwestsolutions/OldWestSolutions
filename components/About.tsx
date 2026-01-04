@@ -1,5 +1,7 @@
 'use client'
 
+import { useState } from 'react'
+
 const partners = [
   { name: 'Snowflake', logo: '❄️', color: 'from-blue-500/20 to-cyan-500/20' },
   { name: 'IBM', logo: '🔵', color: 'from-blue-600/20 to-indigo-600/20' },
@@ -7,6 +9,56 @@ const partners = [
   { name: 'Google Cloud', logo: '🌐', color: 'from-blue-400/20 to-green-400/20' },
   { name: 'Salesforce', logo: '☁️', color: 'from-blue-300/20 to-cyan-300/20' },
 ]
+
+function NewsletterForm() {
+  const [email, setEmail] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    
+    console.log('Newsletter subscription:', email)
+    setIsSubmitted(true)
+    setEmail('')
+    setIsSubmitting(false)
+    
+    // Reset success message after 5 seconds
+    setTimeout(() => {
+      setIsSubmitted(false)
+    }, 5000)
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+        placeholder="Enter your email address"
+        className="windows-input flex-1"
+        disabled={isSubmitting || isSubmitted}
+      />
+      <button
+        type="submit"
+        disabled={isSubmitting || isSubmitted}
+        className="windows-button windows-button-primary whitespace-nowrap px-6 md:px-8"
+      >
+        {isSubmitting ? 'Subscribing...' : isSubmitted ? 'Subscribed!' : 'Subscribe'}
+      </button>
+      {isSubmitted && (
+        <p className="text-windows-dark-accent text-sm md:text-base mt-2 sm:mt-0 sm:ml-4 flex items-center">
+          ✓ Thank you for subscribing!
+        </p>
+      )}
+    </form>
+  )
+}
 
 export default function About() {
 
@@ -98,48 +150,15 @@ export default function About() {
           </div>
         </div>
 
-        {/* About Us Section */}
+        {/* Rockefeller Press Newsletter Section */}
         <div className="mt-12 md:mt-20">
           <div className="windows-card p-8 md:p-12 bg-gradient-to-br from-windows-dark-surface to-windows-dark-bg">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">About Us</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">Subscribe to Rockefeller Press</h2>
+            <p className="text-windows-dark-text-secondary text-base md:text-lg mb-6 md:mb-8">
+              Stay informed with the latest crypto news, DeFi updates, and cryptocurrency reviews from Rockefeller Press.
+            </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-8 md:mb-12">
-              <div>
-                <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">Our Vision</h3>
-                <p className="text-windows-dark-text-secondary text-base md:text-lg leading-relaxed mb-6">
-                  To be the leading enterprise IT solutions provider, empowering businesses worldwide 
-                  to achieve digital transformation through innovative technology, strategic partnerships, 
-                  and unparalleled expertise.
-                </p>
-                <p className="text-windows-dark-text-secondary text-base md:text-lg leading-relaxed">
-                  We envision a future where every organization, regardless of size, has access to 
-                  enterprise-grade technology solutions that drive growth, efficiency, and competitive advantage.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">Our Mission</h3>
-                <p className="text-windows-dark-text-secondary text-base md:text-lg leading-relaxed mb-6">
-                  To deliver cutting-edge IT solutions and services that transform how businesses operate, 
-                  compete, and succeed in the digital age. We combine deep technical expertise with strategic 
-                  business insight to help our clients achieve their goals.
-                </p>
-                <p className="text-windows-dark-text-secondary text-base md:text-lg leading-relaxed">
-                  Established in 2026, Old West Solutions is committed to providing world-class technology 
-                  services, fostering innovation, and building lasting partnerships with our clients and 
-                  technology partners.
-                </p>
-              </div>
-            </div>
-
-            <div className="pt-6 md:pt-8 border-t border-windows-dark-border">
-              <a 
-                href="/about" 
-                className="windows-button windows-button-primary inline-block"
-              >
-                Learn More About Us →
-              </a>
-            </div>
+            <NewsletterForm />
           </div>
         </div>
       </div>
