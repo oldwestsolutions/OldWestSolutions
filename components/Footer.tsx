@@ -16,10 +16,9 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-3 md:mb-4 text-sm md:text-base">Products</h4>
             <ul className="space-y-2 text-xs md:text-sm text-windows-dark-text-secondary">
               <li><a href="/products/virtual-machines" className="hover:text-windows-dark-accent">Virtual Machines</a></li>
-              <li><a href="/products/applications" className="hover:text-windows-dark-accent">Applications</a></li>
-              <li><a href="/products/blockchain" className="hover:text-windows-dark-accent">Blockchain</a></li>
-              <li><a href="/products/artificial-intelligence" className="hover:text-windows-dark-accent">Artificial Intelligence</a></li>
-              <li><a href="/products/quantum-computing" className="hover:text-windows-dark-accent">Quantum Computing</a></li>
+              <li><a href="/products/software" className="hover:text-windows-dark-accent">Software</a></li>
+              <li><a href="/products/hardware" className="hover:text-windows-dark-accent">Hardware</a></li>
+              <li><a href="/products/decentralized" className="hover:text-windows-dark-accent">Decentralized</a></li>
               <li><a href="/products/crypto" className="hover:text-windows-dark-accent">Crypto</a></li>
             </ul>
           </div>
