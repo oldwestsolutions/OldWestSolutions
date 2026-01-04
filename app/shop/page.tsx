@@ -1,5 +1,21 @@
+import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Old West Solutions',
+  description: 'Shop Old West Solutions products and applications. Managed servers, virtual machines, email solutions, hardware, and custom software applications including Consequence, PayPhone, Wintergarden, and more.',
+  keywords: 'IT products, managed servers, virtual machines, email solutions, hardware, software applications, Consequence, PayPhone, Wintergarden, enterprise software',
+  alternates: {
+    canonical: '/shop',
+  },
+  openGraph: {
+    title: 'Shop - Old West Solutions Products & Applications',
+    description: 'Shop Old West Solutions products and applications. Managed servers, virtual machines, email solutions, hardware, and custom software applications.',
+    url: 'https://oldwestsolutions.com/shop',
+    type: 'website',
+  },
+}
 
 const applications = [
   {

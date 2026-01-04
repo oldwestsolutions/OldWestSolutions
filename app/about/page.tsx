@@ -1,5 +1,21 @@
+import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Old West Solutions',
+  description: 'Learn about Old West Solutions - Enterprise IT services provider established in 2026. Our vision, mission, team, and values. Certified partners with Salesforce, Microsoft Azure, Google Cloud, Snowflake, and IBM.',
+  keywords: 'Old West Solutions, IT company, enterprise IT services, IT team, company history, IT vision, IT mission, Dallas Texas IT services',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About Old West Solutions - Enterprise IT Services',
+    description: 'Learn about Old West Solutions - Enterprise IT services provider established in 2026. Our vision, mission, team, and values.',
+    url: 'https://oldwestsolutions.com/about',
+    type: 'website',
+  },
+}
 
 export default function AboutPage() {
   return (
