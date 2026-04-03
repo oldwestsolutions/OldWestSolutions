@@ -93,65 +93,68 @@ function DashboardMockup() {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-8 sm:pt-10 md:pt-12">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35]"
-        style={{
-          backgroundImage: `
+    <section className="relative overflow-hidden">
+      {/* Full-viewport headline block */}
+      <div className="relative flex min-h-[calc(100dvh-5.5rem)] flex-col justify-center px-4 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-12 md:min-h-[calc(100dvh-6rem)] lg:px-8">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.35]"
+          style={{
+            backgroundImage: `
             linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
           `,
-          backgroundSize: "48px 48px",
-          maskImage: "linear-gradient(to bottom, black 0%, transparent 70%)",
-        }}
-      />
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[min(90vw,720px)] -translate-x-1/2 rounded-full bg-accent/[0.05] blur-[100px]" />
+            backgroundSize: "48px 48px",
+            maskImage: "linear-gradient(to bottom, black 0%, transparent 85%)",
+          }}
+        />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[min(80vw,640px)] w-[min(90vw,720px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/[0.06] blur-[120px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20 md:pb-24">
-        <div className="mx-auto max-w-4xl text-center">
-          <motion.h1
-            variants={slideLeft}
-            initial="hidden"
-            animate="visible"
-            custom={0}
-            className="luxury-title luxury-title-center text-balance text-3xl font-bold leading-[1.06] tracking-[-0.035em] text-white min-[400px]:text-4xl sm:text-5xl lg:text-[3.25rem]"
-          >
-            Distributed systems and managed infrastructure
-            <br className="hidden sm:inline" />
-            {" "}for <span className="text-accent">domain-led operators</span>
-          </motion.h1>
+        <div className="relative z-10 mx-auto w-full max-w-7xl">
+          <div className="mx-auto max-w-4xl text-center">
+            <motion.h1
+              variants={slideLeft}
+              initial="hidden"
+              animate="visible"
+              custom={0}
+              className="luxury-title luxury-title-center text-balance text-3xl font-bold leading-[1.06] tracking-[-0.035em] text-white min-[400px]:text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem]"
+            >
+              Distributed systems and managed infrastructure
+              <br className="hidden sm:inline" />
+              {" "}for <span className="text-accent">domain-led operators</span>
+            </motion.h1>
 
-          <motion.p
-            variants={slideLeft}
-            initial="hidden"
-            animate="visible"
-            custom={0.08}
-            className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-text-muted sm:text-lg"
-          >
-            We design multi-region data planes, durable storage tiers, AI-ready
-            compute, and hardened network edges — the same primitives large
-            enterprises expect — and we can deliver them as part of how you
-            acquire and activate premium domains.
-          </motion.p>
+            <motion.p
+              variants={slideLeft}
+              initial="hidden"
+              animate="visible"
+              custom={0.08}
+              className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-text-muted sm:mt-10 sm:text-lg md:text-xl md:leading-relaxed"
+            >
+              We design multi-region data planes, durable storage tiers, AI-ready
+              compute, and hardened network edges — the same primitives large
+              enterprises expect — and we can deliver them as part of how you
+              acquire and activate premium domains.
+            </motion.p>
 
-          <motion.div
-            variants={slideLeft}
-            initial="hidden"
-            animate="visible"
-            custom={0.12}
-            className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-x-6 gap-y-2 border-y border-white/[0.06] py-5 text-[11px] font-medium uppercase tracking-[0.2em] text-text-muted sm:text-xs"
-          >
-            <span className="text-text-secondary">Multi-region</span>
-            <span className="hidden h-3 w-px bg-white/10 sm:block" aria-hidden />
-            <span className="text-text-secondary">Encrypted data plane</span>
-            <span className="hidden h-3 w-px bg-white/10 sm:block" aria-hidden />
-            <span className="text-text-secondary">Observable by default</span>
-            <span className="hidden h-3 w-px bg-white/10 sm:block" aria-hidden />
-            <span className="text-text-secondary">Vendor-neutral architecture</span>
-          </motion.div>
+            <motion.div
+              variants={slideLeft}
+              initial="hidden"
+              animate="visible"
+              custom={0.12}
+              className="mx-auto mt-10 flex max-w-xl flex-wrap items-center justify-center gap-x-8 gap-y-3 border-y border-white/[0.08] py-6 text-[11px] font-medium uppercase tracking-[0.22em] text-text-muted sm:mt-12 sm:text-xs"
+            >
+              <span className="text-text-secondary">Multi-region</span>
+              <span className="hidden h-3 w-px bg-white/15 sm:block" aria-hidden />
+              <span className="text-text-secondary">Encrypted data plane</span>
+              <span className="hidden h-3 w-px bg-white/15 sm:block" aria-hidden />
+              <span className="text-text-secondary">Observable by default</span>
+            </motion.div>
+          </div>
         </div>
+      </div>
 
-        <div className="mx-auto mt-12 grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+      <div className="relative z-10 mx-auto max-w-7xl w-full px-4 pb-16 sm:px-6 sm:pb-20 md:pb-24 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
           <motion.div variants={slideLeft} initial="hidden" animate="visible" custom={0.18}>
             <span className="label-caps text-accent">Control plane</span>
             <h2 className="luxury-title mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
@@ -241,25 +244,57 @@ export default function Hero() {
           </motion.div>
         </div>
 
+        {/* Post-acquisition + vendor stack — tight grouping */}
         <div className="mx-auto mt-16 max-w-5xl border-t border-white/[0.06] pt-10">
-          <p className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted">
-            Built on the same public-company stacks the Fortune 500 standardizes on
-          </p>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-xs leading-relaxed text-text-muted/90">
-            We architect and operate on hyperscaler and category-leading vendor
-            platforms — not proprietary black boxes — so your workloads remain
-            portable, auditable, and finance-friendly.
-          </p>
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 sm:gap-x-10">
-            {infrastructureVendors.map((name) => (
-              <span
-                key={name}
-                className="text-[11px] font-semibold tracking-wide text-white/45 transition-colors hover:text-white/75 sm:text-xs"
-              >
-                {name}
-              </span>
-            ))}
-          </div>
+          <motion.div
+            variants={slideLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-40px" }}
+            custom={0}
+            className="text-center"
+          >
+            <span className="label-caps text-accent">Post-acquisition</span>
+            <h2 className="luxury-title luxury-title-center mt-3 text-balance text-2xl font-bold leading-tight tracking-[-0.02em] text-white sm:text-3xl md:text-4xl">
+              Infrastructure you can attach
+              <br />
+              to every domain sale
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-text-muted sm:text-lg">
+              When we broker a domain, we can carry the full stack: data stores,
+              durable object tiers, AI-ready compute, container orchestration, and
+              edge security — designed like an enterprise program, not a single
+              shared host.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={slideLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-40px" }}
+            custom={0.06}
+            className="mt-8 border-t border-white/[0.05] pt-8"
+          >
+            <p className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted">
+              Built on the same public-company stacks the Fortune 500 standardizes on
+            </p>
+            <p className="mx-auto mt-3 max-w-2xl text-center text-xs leading-relaxed text-text-muted/90">
+              We architect and operate on hyperscaler and category-leading vendor
+              platforms — not proprietary black boxes — so your workloads remain
+              portable, auditable, and finance-friendly.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 sm:gap-x-10">
+              {infrastructureVendors.map((name) => (
+                <span
+                  key={name}
+                  className="text-[11px] font-semibold tracking-wide text-white/45 transition-colors hover:text-white/75 sm:text-xs"
+                >
+                  {name}
+                </span>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

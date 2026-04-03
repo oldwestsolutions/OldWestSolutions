@@ -42,85 +42,41 @@ const iconMap: Record<string, JSX.Element> = {
   ),
 };
 
-function ServiceCard({
-  service,
-  featured = false,
-  fullWidth = false,
-  delay,
-}: {
-  service: (typeof services)[number];
-  featured?: boolean;
-  fullWidth?: boolean;
-  delay: number;
-}) {
+function ServiceCard({ service, delay }: { service: (typeof services)[number]; delay: number }) {
   return (
     <motion.div
       variants={fadeUp}
       custom={delay}
-      className={`group relative cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/[0.06] bg-[#1a1a1e] p-7 shadow-card transition-all duration-300 hover:border-accent/25 hover:shadow-glow-sm ${
-        featured ? "min-h-[280px] md:row-span-2" : ""
-      } ${fullWidth ? "md:col-span-3" : ""}`}
+      className="group relative flex min-h-[240px] flex-col overflow-hidden rounded-[1.5rem] border border-white/[0.06] bg-[#1a1a1e] p-6 shadow-card transition-all duration-300 hover:border-accent/25 hover:shadow-glow-sm sm:min-h-[260px] sm:p-7"
     >
       <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-accent/[0.07] blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
-      <div className="relative">
-        <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/15 bg-accent/[0.08] text-accent transition-colors duration-300 group-hover:bg-accent/[0.12]">
+      <div className="relative flex flex-1 flex-col">
+        <div className="mb-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-accent/15 bg-accent/[0.08] text-accent transition-colors duration-300 group-hover:bg-accent/[0.12]">
           {iconMap[service.icon]}
         </div>
         <h3 className="mb-2.5 text-lg font-semibold text-white transition-colors duration-300 group-hover:text-accent">
           {service.title}
         </h3>
-        <p className={`text-sm leading-relaxed text-text-muted ${featured ? "max-w-md" : ""}`}>
-          {service.description}
-        </p>
+        <p className="text-sm leading-relaxed text-text-muted">{service.description}</p>
       </div>
     </motion.div>
   );
 }
 
 export default function Services() {
-  const [featured, ...rest] = services;
-  const quad = rest.slice(0, 4);
-  const wide = rest[4];
-
   return (
-    <section id="services" className="relative border-t border-white/[0.06] bg-[#111113] py-24 md:py-32">
+    <section id="services" className="relative border-t border-white/[0.06] bg-[#111113] py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          custom={0}
-          className="mx-auto mb-14 max-w-2xl text-center md:mb-16"
-        >
-          <span className="label-caps text-accent">Post-acquisition</span>
-          <h2 className="luxury-title luxury-title-center mt-4 text-balance text-3xl font-bold leading-tight tracking-[-0.02em] text-white md:text-4xl lg:text-[44px]">
-            Infrastructure you can attach
-            <br />
-            to every domain sale
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-text-muted">
-            When we broker a domain, we can carry the full stack: data stores,
-            durable object tiers, AI-ready compute, container orchestration, and
-            edge security — designed like an enterprise program, not a single
-            shared host.
-          </p>
-        </motion.div>
-
         <motion.div
           variants={stagger}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 gap-4 md:grid-cols-3"
+          className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:grid-rows-3 lg:grid-cols-3 lg:grid-rows-2"
         >
-          <ServiceCard service={featured} featured delay={0} />
-          {quad.map((service, i) => (
-            <ServiceCard key={service.title} service={service} delay={(i + 1) * 0.06} />
+          {services.map((service, i) => (
+            <ServiceCard key={service.title} service={service} delay={i * 0.05} />
           ))}
-          {wide ? (
-            <ServiceCard service={wide} fullWidth delay={0.35} />
-          ) : null}
         </motion.div>
       </div>
     </section>
