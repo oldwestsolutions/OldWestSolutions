@@ -24,15 +24,15 @@ export default function Navbar() {
       initial={{ y: -10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 inset-x-0 z-50 pt-[env(safe-area-inset-top,0px)] transition-all duration-300 ${
         scrolled
           ? "bg-[#1F1F1F]/95 backdrop-blur-lg border-b border-white/[0.06] shadow-lg shadow-black/20"
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[72px] h-[72px] flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 shrink-0">
+        <a href="/" className="flex items-center gap-2.5 shrink-0 min-h-[44px] min-w-[44px] -ml-1 pl-1 touch-manipulation" aria-label="OldWestSolutions home">
           <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
             <span className="text-white font-bold text-sm tracking-tight">OW</span>
           </div>
@@ -71,9 +71,11 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
+          type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden w-9 h-9 flex items-center justify-center"
-          aria-label="Menu"
+          className="lg:hidden min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
         >
           <div className="flex flex-col gap-[5px]">
             <span className={`block w-5 h-[1.5px] bg-white transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-[3.25px]" : ""}`} />

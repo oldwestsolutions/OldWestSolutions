@@ -5,15 +5,15 @@ import { footerLinks } from "@/lib/constants";
 export default function Footer() {
   return (
     <footer className="bg-[#141414] border-t border-white/[0.04]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Brand */}
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2.5 mb-4">
+            <a href="/" className="inline-flex items-center gap-2.5 mb-4 touch-manipulation rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
               <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
                 <span className="text-white font-bold text-sm tracking-tight">OW</span>
               </div>
-              <div className="flex flex-col leading-none">
+              <div className="flex flex-col leading-none text-left">
                 <span className="text-white font-semibold text-[15px] tracking-tight">
                   OldWestSolutions
                 </span>
@@ -21,7 +21,7 @@ export default function Footer() {
                   Digital Infrastructure
                 </span>
               </div>
-            </div>
+            </a>
             <p className="text-text-muted text-sm leading-relaxed max-w-sm mt-4">
               We design, build, and scale custom software for companies that
               need enterprise-grade systems. From architecture to deployment —

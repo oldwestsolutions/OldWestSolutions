@@ -15,7 +15,7 @@ const industryIcons = [
 export default function Industries() {
   return (
     <section id="industries" className="relative py-24 md:py-32 bg-[#1a1a1a]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           variants={fadeUp}

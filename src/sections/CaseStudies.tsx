@@ -7,7 +7,7 @@ import { caseStudies } from "@/lib/constants";
 export default function CaseStudies() {
   return (
     <section id="projects" className="relative py-24 md:py-32 bg-[#1F1F1F]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           variants={fadeUp}

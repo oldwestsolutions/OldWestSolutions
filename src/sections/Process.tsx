@@ -7,7 +7,7 @@ import { processSteps } from "@/lib/constants";
 export default function Process() {
   return (
     <section id="process" className="relative py-24 md:py-32 bg-[#1a1a1a]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           variants={fadeUp}
@@ -15,7 +15,7 @@ export default function Process() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           custom={0}
-          className="text-center max-w-2xl mx-auto mb-20"
+          className="text-center max-w-2xl mx-auto mb-12 md:mb-20"
         >
           <span className="text-accent text-xs font-semibold tracking-widest uppercase">
             Our Process
@@ -23,7 +23,7 @@ export default function Process() {
           <h2 className="mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight">
             How We Deliver Results
           </h2>
-          <p className="mt-4 text-text-muted text-lg leading-relaxed">
+          <p className="mt-4 text-text-muted text-base sm:text-lg leading-relaxed px-0">
             A structured, proven delivery framework that eliminates risk and
             ensures predictable outcomes at every stage.
           </p>

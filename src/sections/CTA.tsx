@@ -9,7 +9,7 @@ export default function CTA() {
       {/* Subtle accent glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/[0.025] rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             variants={fadeUp}
@@ -56,7 +56,7 @@ export default function CTA() {
           >
             <a
               href="#"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-accent text-white text-sm font-semibold hover:bg-[#2560e8] transition-all duration-200 shadow-lg shadow-accent/20 w-full sm:w-auto"
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 px-8 py-4 rounded-xl bg-accent text-white text-sm font-semibold hover:bg-[#2560e8] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-accent/20 w-full sm:w-auto touch-manipulation"
             >
               Book a Call
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -65,7 +65,7 @@ export default function CTA() {
             </a>
             <a
               href="#"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-white/[0.1] text-text-secondary text-sm font-medium hover:bg-white/[0.04] hover:border-white/[0.15] transition-all duration-200 w-full sm:w-auto"
+              className="inline-flex min-h-[48px] items-center justify-center px-8 py-4 rounded-xl border border-white/[0.1] text-text-secondary text-sm font-medium hover:bg-white/[0.04] hover:border-white/[0.15] active:scale-[0.98] transition-all duration-200 w-full sm:w-auto touch-manipulation"
             >
               Start a Project
             </a>
@@ -78,18 +78,18 @@ export default function CTA() {
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             custom={0.4}
-            className="mt-12 flex items-center justify-center gap-6 text-text-muted text-xs"
+            className="mt-12 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-text-muted text-xs text-center"
           >
-            <div className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <div className="flex items-center justify-center gap-2">
+              <svg className="w-4 h-4 shrink-0 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
               No commitment required
             </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <div className="flex items-center justify-center gap-2">
+              <svg className="w-4 h-4 shrink-0 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
               Response within 24 hours
             </div>
-            <div className="hidden sm:flex items-center gap-2">
-              <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <div className="flex items-center justify-center gap-2 basis-full sm:basis-auto">
+              <svg className="w-4 h-4 shrink-0 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
               NDA available
             </div>
           </motion.div>

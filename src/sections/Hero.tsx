@@ -68,15 +68,15 @@ function DashboardMockup() {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-[72px]">
+    <section className="relative min-h-[100dvh] flex items-center overflow-hidden pt-[calc(72px+env(safe-area-inset-top,0px))]">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#1F1F1F] via-[#1a1a1a] to-[#161616]" />
       <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-0 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 w-full">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left content */}
-          <div>
+          <div className="min-w-0">
             <motion.div
               variants={slideLeft}
               initial="hidden"
@@ -94,7 +94,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0.1}
-              className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-white leading-[1.08] tracking-tight"
+              className="text-3xl min-[400px]:text-4xl sm:text-5xl lg:text-[56px] font-bold text-white leading-[1.08] tracking-tight"
             >
               Custom Digital Infrastructure for{" "}
               <span className="text-accent">Modern Systems</span>
@@ -105,7 +105,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0.2}
-              className="mt-6 text-lg text-text-muted leading-relaxed max-w-xl"
+              className="mt-5 sm:mt-6 text-base sm:text-lg text-text-muted leading-relaxed max-w-xl"
             >
               We design, build, and scale software across finance, automation,
               and decentralized networks. Enterprise-grade systems built for
@@ -121,7 +121,7 @@ export default function Hero() {
             >
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-accent text-white text-sm font-semibold hover:bg-[#2560e8] transition-all duration-200 shadow-lg shadow-accent/20"
+                className="inline-flex min-h-[48px] items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-accent text-white text-sm font-semibold hover:bg-[#2560e8] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-accent/20 w-full sm:w-auto touch-manipulation"
               >
                 Book a Consultation
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -130,7 +130,7 @@ export default function Hero() {
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl border border-white/[0.1] text-text-secondary text-sm font-medium hover:bg-white/[0.04] hover:border-white/[0.15] transition-all duration-200"
+                className="inline-flex min-h-[48px] items-center justify-center px-7 py-3.5 rounded-xl border border-white/[0.1] text-text-secondary text-sm font-medium hover:bg-white/[0.04] hover:border-white/[0.15] active:scale-[0.98] transition-all duration-200 w-full sm:w-auto touch-manipulation"
               >
                 View Services
               </a>
@@ -143,7 +143,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.2}
-            className="hidden lg:block"
+            className="w-full max-w-xl mx-auto lg:max-w-none"
           >
             <DashboardMockup />
           </motion.div>
