@@ -7,7 +7,7 @@ import { caseStudies } from "@/lib/constants";
 export default function CaseStudies() {
   return (
     <section
-      id="projects"
+      id="news"
       className="relative border-t border-white/[0.06] bg-[#111113] py-24 md:py-32"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,13 +19,14 @@ export default function CaseStudies() {
           custom={0}
           className="max-w-2xl mb-16"
         >
-          <span className="label-caps text-accent">Platforms</span>
+          <span className="label-caps text-accent">News</span>
           <h2 className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
-            Ecosystem Deployments
+            From the OldWestSolutions wire
           </h2>
           <p className="mt-4 text-text-muted text-lg leading-relaxed">
-            Infrastructure systems deployed across the OldWestSolutions ecosystem
-            — each platform interconnected and operating at scale.
+            Product milestones, platform updates, and customer-facing programs
+            across domains, managed services, and our product lines — short
+            briefs you can forward to stakeholders.
           </p>
         </motion.div>
 

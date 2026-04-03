@@ -16,8 +16,7 @@ export const infrastructureVendors = [
 
 export const navLinks = [
   { label: "Services", href: "/managed-services" },
-  { label: "Process", href: "#process" },
-  { label: "Platforms", href: "#projects" },
+  { label: "News", href: "#news" },
   { label: "Infrastructure", href: "#industries" },
   { label: "About", href: "#about" },
 ];
@@ -96,28 +95,37 @@ export const processSteps = [
 
 export const caseStudies = [
   {
-    title: "OldWest Search & Staking",
-    industry: "Ecosystem",
-    problem: "No viable decentralized alternative combined AI search, private communication, and staking in a single platform.",
-    solution: "Deployed the OldWest platform with integrated AI-powered search indexing, encrypted email exchange, and blockchain staking infrastructure.",
-    outcome: "Unified search, communication, and staking under one decentralized system with enterprise-grade uptime.",
-    tags: ["AI Search", "Blockchain", "Staking", "Private Email"],
+    title: "OldWest expands AI search and private mail in one control plane",
+    industry: "Product",
+    problem:
+      "Teams that acquire premium domains still juggle separate vendors for discovery, inbox, and on-chain programs — slowing launches and audits.",
+    solution:
+      "OldWest now pairs AI-assisted search indexing with encrypted mail and staking-ready infrastructure so operators can stage a full stack behind a single brand.",
+    outcome:
+      "Early adopters report faster time-to-revenue on high-value names because DNS, application, and messaging tiers ship under one managed contract.",
+    tags: ["OldWest", "AI Search", "Private Mail", "Domains"],
   },
   {
-    title: "FirstClassMail + Teleport",
-    industry: "Communications",
-    problem: "Fragmented messaging infrastructure across email, voice, and SMS with inconsistent delivery rates and no unified management layer.",
-    solution: "Integrated FirstClassMail for scalable email delivery with Teleport for programmable voice and VoIP — managed through a single infrastructure control plane.",
-    outcome: "99.8% delivery rate, white-labeled communications stack, unified billing and monitoring across all channels.",
-    tags: ["Email Delivery", "VoIP", "Messaging", "White-Label"],
+    title: "FirstClassMail and Teleport tighten shared telemetry for resellers",
+    industry: "Partnership",
+    problem:
+      "Resellers needed proof of delivery and voice quality without logging into two different consoles during customer QBRs.",
+    solution:
+      "A unified observability export now ties FirstClassMail delivery metrics to Teleport voice sessions so support teams see one timeline per tenant.",
+    outcome:
+      "Partner NOCs cut mean-time-to-innocence on deliverability tickets and can white-label the combined dashboard for enterprise buyers.",
+    tags: ["FirstClassMail", "Teleport", "Resellers", "Observability"],
   },
   {
-    title: "Lubbock.Cloud Deployment",
-    industry: "Compute & Storage",
-    problem: "Enterprise clients required decentralized compute and storage without sacrificing the reliability of systems like Pure Storage or NetApp.",
-    solution: "Deployed Lubbock.Cloud with GPU tokenization, distributed storage nodes, and enterprise-grade data replication across multiple regions.",
-    outcome: "40% reduction in compute costs, tokenized GPU access, multi-region redundancy with 99.99% availability.",
-    tags: ["GPU Tokenization", "Distributed Storage", "Enterprise Data", "Multi-Region"],
+    title: "Lubbock.Cloud rolls out tokenized GPU pools for burst inference",
+    industry: "Infrastructure",
+    problem:
+      "GPU shortages left domain-led products stuck between expensive long-term contracts and unreliable spot markets.",
+    solution:
+      "Lubbock.Cloud introduced fractional GPU reservations with transparent token accounting so workloads can scale for marketing spikes without idle waste.",
+    outcome:
+      "Pilot customers balanced inference spend against revenue events while keeping data residency policies intact across regions.",
+    tags: ["Lubbock.Cloud", "GPU", "Inference", "Multi-Region"],
   },
 ];
 
@@ -191,8 +199,7 @@ export const footerLinks = [
     title: "Company",
     links: [
       { label: "About", href: "#about" },
-      { label: "Process", href: "#process" },
-      { label: "Platforms", href: "#projects" },
+      { label: "News", href: "#news" },
       { label: "Contact", href: "#contact" },
     ],
   },

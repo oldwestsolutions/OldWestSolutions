@@ -125,16 +125,17 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0.12}
-              className="mx-auto mt-10 flex max-w-5xl flex-row flex-wrap items-center justify-center gap-x-5 gap-y-4 border-y border-white/[0.08] py-6 sm:mt-12 md:flex-nowrap md:justify-center md:gap-x-8"
+              className="mx-auto mt-10 flex max-w-5xl flex-row flex-wrap items-center justify-center gap-x-6 gap-y-4 border-y border-white/[0.08] py-6 sm:mt-12 md:flex-nowrap md:justify-center md:gap-x-8"
             >
-              <div className="flex flex-shrink-0 flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-medium uppercase tracking-[0.22em] text-text-muted sm:text-xs md:flex-nowrap">
-                <span className="text-text-secondary">Multi-region</span>
-                <span className="hidden h-3 w-px bg-white/15 sm:block" aria-hidden />
-                <span className="text-text-secondary">Encrypted data plane</span>
-                <span className="hidden h-3 w-px bg-white/15 sm:block" aria-hidden />
+              <div className="flex flex-col items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-text-muted sm:text-xs">
+                <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+                  <span className="text-text-secondary">Multi-region</span>
+                  <span className="hidden h-3 w-px bg-white/15 sm:block" aria-hidden />
+                  <span className="text-text-secondary">Encrypted data plane</span>
+                </div>
                 <span className="text-text-secondary">Observable by default</span>
               </div>
-              <div className="hidden h-6 w-px shrink-0 bg-white/10 md:block" aria-hidden />
+              <div className="hidden h-10 w-px shrink-0 bg-white/10 md:block" aria-hidden />
               <a
                 href="#contact"
                 className="inline-flex min-h-[40px] shrink-0 items-center justify-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-[12px] font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white active:scale-[0.98] sm:px-5 sm:text-[13px]"
@@ -152,22 +153,22 @@ export default function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl w-full px-4 pb-16 sm:px-6 sm:pb-20 md:pb-24 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
           <motion.div variants={slideLeft} initial="hidden" animate="visible" custom={0.18}>
-            <span className="label-caps text-accent">Infrastructure services</span>
+            <span className="label-caps text-accent">Managed services</span>
             <h2 className="luxury-title mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              Your domains deserve a full operations team behind them
+              We run the stack so you can run the business on the domain
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-text-muted sm:text-base">
-              We handle capacity planning, change management, incident response,
-              and cost optimization so you can focus on the business attached to
-              the name. Whether you need a single production workload or a
-              portfolio-wide standard, we build environments that stay reliable,
-              auditable, and easy to grow.
+              Managed services means we own the day-to-day: patching, scaling,
+              incident response, backup verification, and vendor coordination across
+              the environments tied to your names. You get predictable operations
+              and clear escalation paths instead of hiring a full platform org for
+              every portfolio asset.
             </p>
             <ul className="mt-6 space-y-2.5 text-left text-sm text-text-secondary">
               {[
-                "Databases, storage, compute, and networking — provisioned and maintained",
-                "Automated backups, failover, and disaster-recovery runbooks included",
-                "Monitoring, logging, and alerting from day one — not bolted on later",
+                "SLA-minded runbooks for databases, object storage, compute, and edge networking",
+                "Tested failover paths and recovery drills — not shelf-ware documentation",
+                "Unified metrics, logs, and alerts with named engineers on the pager",
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent/80" />
