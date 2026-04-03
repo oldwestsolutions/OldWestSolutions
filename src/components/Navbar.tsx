@@ -30,7 +30,7 @@ export default function Navbar() {
               OldWestSolutions
             </span>
             <span className="mt-0.5 text-[10px] uppercase tracking-[0.18em] text-text-muted">
-              Infrastructure Ecosystem
+              Distributed Systems
             </span>
           </div>
         </a>

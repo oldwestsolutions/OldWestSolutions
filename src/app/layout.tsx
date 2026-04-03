@@ -6,11 +6,11 @@ const siteName = "OldWestSolutions";
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteName} | Infrastructure Ecosystem`,
+    default: `${siteName} | Distributed Systems`,
     template: `%s | ${siteName}`,
   },
   description:
-    "Scalable infrastructure systems across communication, compute, search, and financial networks. OldWest, FirstClassMail, Teleport, and Lubbock.Cloud — unified under one ecosystem.",
+    "Enterprise distributed systems and managed infrastructure for domain operators: databases, durable storage, AI-ready compute, and full-stack delivery on leading public-cloud platforms.",
 };
 
 export const viewport: Viewport = {

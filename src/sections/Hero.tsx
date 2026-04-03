@@ -3,28 +3,21 @@
 import { motion } from "framer-motion";
 import { slideLeft, slideRight } from "@/lib/animations";
 
-const ecosystemPlatforms = ["OldWest", "FirstClassMail", "Teleport", "Lubbock.Cloud", "DNS Management", "Managed Hosting"];
-
-function HeroVisual() {
-  return (
-    <div className="relative w-full overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-[#0e0e12] shadow-card sm:rounded-[2rem]">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-25"
-        style={{
-          background:
-            "repeating-linear-gradient(0deg, transparent, transparent 14px, rgba(255,255,255,0.04) 14px, rgba(255,255,255,0.04) 15px)",
-        }}
-      />
-      <div className="pointer-events-none absolute -left-1/4 top-1/2 h-[120%] w-[80%] -translate-y-1/2 rounded-full bg-accent/10 blur-[100px]" />
-
-      <div className="relative flex min-h-[240px] items-center justify-center py-12 sm:min-h-[300px] md:min-h-[340px]">
-        <div className="absolute h-40 w-40 rounded-full bg-accent/15 opacity-80 blur-xl sm:h-48 sm:w-48" />
-        <div className="relative h-28 w-28 rounded-[2rem] border border-white/20 bg-accent/15 shadow-glow sm:h-36 sm:w-36 sm:rounded-3xl" />
-        <div className="absolute h-20 w-20 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm sm:h-24 sm:w-24" />
-      </div>
-    </div>
-  );
-}
+/** Public-company platforms and vendors we design and operate on top of */
+const infrastructureVendors = [
+  "Amazon Web Services",
+  "Microsoft Azure",
+  "Google Cloud",
+  "Oracle Cloud",
+  "IBM Cloud",
+  "Cloudflare",
+  "Akamai",
+  "Snowflake",
+  "MongoDB",
+  "Datadog",
+  "Palo Alto Networks",
+  "CrowdStrike",
+];
 
 function DashboardMockup() {
   return (
@@ -36,16 +29,16 @@ function DashboardMockup() {
           <div className="h-2.5 w-2.5 rounded-full bg-white/10" />
         </div>
         <div className="flex flex-1 justify-center">
-          <div className="h-4 w-32 rounded bg-white/[0.04]" />
+          <div className="h-4 w-40 rounded bg-white/[0.04]" />
         </div>
       </div>
 
       <div className="space-y-3 p-4">
         <div className="grid grid-cols-3 gap-2">
           {[
-            { label: "Throughput", value: "1.2M req/s", change: "+18.4%" },
-            { label: "Nodes Active", value: "342", change: "+12 nodes" },
-            { label: "System Uptime", value: "99.99%", change: "Stable" },
+            { label: "Write TPS", value: "48.2k", change: "+6.1% QoQ" },
+            { label: "Regions active", value: "6", change: "Multi-master" },
+            { label: "SLO budget", value: "0.12%", change: "Within target" },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -55,20 +48,20 @@ function DashboardMockup() {
                 {stat.label}
               </div>
               <div className="mt-1 text-sm font-semibold text-white">{stat.value}</div>
-              <div className="mt-0.5 text-[9px] text-emerald-400">{stat.change}</div>
+              <div className="mt-0.5 text-[9px] text-emerald-400/90">{stat.change}</div>
             </div>
           ))}
         </div>
 
         <div className="h-28 rounded-xl border border-white/[0.04] bg-white/[0.02] p-3">
           <div className="mb-2 text-[9px] uppercase tracking-wider text-text-muted">
-            Network Performance
+            Cross-region replication lag (p99)
           </div>
           <div className="flex h-16 items-end gap-1">
-            {[40, 55, 35, 65, 50, 75, 60, 80, 70, 90, 85, 95].map((h, i) => (
+            {[32, 48, 28, 58, 44, 68, 52, 76, 64, 82, 74, 88].map((h, i) => (
               <div
                 key={i}
-                className="flex-1 rounded-sm bg-accent/35"
+                className="flex-1 rounded-sm bg-gradient-to-t from-accent/20 to-accent/45"
                 style={{ height: `${h}%` }}
               />
             ))}
@@ -76,16 +69,20 @@ function DashboardMockup() {
         </div>
 
         <div className="overflow-hidden rounded-xl border border-white/[0.04]">
-          {["OldWest Search", "FirstClassMail", "Lubbock.Cloud"].map((name, i) => (
+          {[
+            { name: "Primary data plane", state: "Healthy" },
+            { name: "Inference pool", state: "Autoscaling" },
+            { name: "Edge / WAF", state: "Mitigating 0" },
+          ].map((row, i) => (
             <div
-              key={name}
+              key={row.name}
               className={`flex items-center justify-between px-3 py-2 ${i > 0 ? "border-t border-white/[0.04]" : ""}`}
             >
               <div className="flex items-center gap-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span className="text-[10px] text-text-secondary">{name}</span>
+                <span className="text-[10px] text-text-secondary">{row.name}</span>
               </div>
-              <span className="text-[9px] text-text-muted">Operational</span>
+              <span className="text-[9px] text-text-muted">{row.state}</span>
             </div>
           ))}
         </div>
@@ -97,66 +94,115 @@ function DashboardMockup() {
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-8 sm:pt-10 md:pt-12">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[min(90vw,720px)] -translate-x-1/2 rounded-full bg-accent/[0.06] blur-[100px]" />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.35]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
+          `,
+          backgroundSize: "48px 48px",
+          maskImage: "linear-gradient(to bottom, black 0%, transparent 70%)",
+        }}
+      />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[min(90vw,720px)] -translate-x-1/2 rounded-full bg-accent/[0.05] blur-[100px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20 md:pb-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <motion.div variants={slideLeft} initial="hidden" animate="visible" custom={0}>
-            <span className="label-caps inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/[0.07] px-3 py-1.5 text-accent">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-glow-sm" />
-              Infrastructure ecosystem
-            </span>
-          </motion.div>
-
+        <div className="mx-auto max-w-4xl text-center">
           <motion.h1
             variants={slideLeft}
             initial="hidden"
             animate="visible"
-            custom={0.08}
-            className="luxury-title luxury-title-center mt-6 text-balance text-3xl font-bold leading-[1.08] tracking-[-0.03em] text-white min-[400px]:text-4xl sm:text-5xl lg:text-[3.35rem]"
+            custom={0}
+            className="luxury-title luxury-title-center text-balance text-3xl font-bold leading-[1.06] tracking-[-0.035em] text-white min-[400px]:text-4xl sm:text-5xl lg:text-[3.25rem]"
           >
-            Scalable infrastructure systems
+            Distributed systems and managed infrastructure
             <br className="hidden sm:inline" />
-            {" "}for the <span className="text-accent">modern internet</span>
+            {" "}for <span className="text-accent">domain-led operators</span>
           </motion.h1>
 
           <motion.p
             variants={slideLeft}
             initial="hidden"
             animate="visible"
-            custom={0.15}
-            className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-text-muted sm:text-lg"
+            custom={0.08}
+            className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-text-muted sm:text-lg"
           >
-            We build and operate infrastructure across communication, compute,
-            and financial networks — unified under one ecosystem with
-            enterprise-grade reliability.
+            We design multi-region data planes, durable storage tiers, AI-ready
+            compute, and hardened network edges — the same primitives large
+            enterprises expect — and we can deliver them as part of how you
+            acquire and activate premium domains.
           </motion.p>
-        </div>
 
-        <motion.div
-          variants={slideRight}
-          initial="hidden"
-          animate="visible"
-          custom={0.12}
-          className="mx-auto mt-12 max-w-4xl"
-        >
-          <HeroVisual />
-        </motion.div>
-
-        <div className="mx-auto mt-10 grid max-w-5xl gap-8 md:grid-cols-3 md:items-center md:gap-10">
           <motion.div
             variants={slideLeft}
             initial="hidden"
             animate="visible"
-            custom={0.2}
+            custom={0.12}
+            className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-x-6 gap-y-2 border-y border-white/[0.06] py-5 text-[11px] font-medium uppercase tracking-[0.2em] text-text-muted sm:text-xs"
+          >
+            <span className="text-text-secondary">Multi-region</span>
+            <span className="hidden h-3 w-px bg-white/10 sm:block" aria-hidden />
+            <span className="text-text-secondary">Encrypted data plane</span>
+            <span className="hidden h-3 w-px bg-white/10 sm:block" aria-hidden />
+            <span className="text-text-secondary">Observable by default</span>
+            <span className="hidden h-3 w-px bg-white/10 sm:block" aria-hidden />
+            <span className="text-text-secondary">Vendor-neutral architecture</span>
+          </motion.div>
+        </div>
+
+        <div className="mx-auto mt-12 grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+          <motion.div variants={slideLeft} initial="hidden" animate="visible" custom={0.18}>
+            <span className="label-caps text-accent">Control plane</span>
+            <h2 className="luxury-title mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+              Depth you would expect from an internal platform team
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-text-muted sm:text-base">
+              Capacity planning, change management, incident response, and
+              cost guardrails — articulated as architecture decisions, not
+              ad-hoc tickets. Whether you need a single high-trust workload or a
+              portfolio-wide standard, we align regions, accounts, and
+              environments so operations stay legible as you scale.
+            </p>
+            <ul className="mt-6 space-y-2.5 text-left text-sm text-text-secondary">
+              {[
+                "Reference designs for regulated and high-availability patterns",
+                "Infrastructure-as-code with reviewable, repeatable environments",
+                "Backup, failover, and chaos-ready recovery objectives",
+              ].map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent/80" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="#services"
+              className="mt-8 inline-flex rounded-full border border-white/[0.12] bg-white/[0.03] px-6 py-3 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-accent/25 hover:text-white"
+            >
+              Review service depth
+            </a>
+          </motion.div>
+          <motion.div variants={slideRight} initial="hidden" animate="visible" custom={0.1}>
+            <DashboardMockup />
+          </motion.div>
+        </div>
+
+        <div className="mx-auto mt-14 grid max-w-5xl gap-8 md:grid-cols-3 md:items-center md:gap-10">
+          <motion.div
+            variants={slideLeft}
+            initial="hidden"
+            animate="visible"
+            custom={0.22}
             className="text-center md:text-left"
           >
-            <h2 className="text-lg font-semibold text-white sm:text-xl">
-              Unified ecosystem
-            </h2>
+            <h3 className="text-lg font-semibold text-white sm:text-xl">
+              Data &amp; compute
+            </h3>
             <p className="mt-2 text-sm leading-relaxed text-text-muted">
-              Search, email, voice, compute, and storage — each platform
-              connected and managed through a single infrastructure layer.
+              OLTP, analytics, object stores, streaming, GPUs, and orchestration
+              — composed so each domain can support real products, not static
+              placeholders.
             </p>
           </motion.div>
 
@@ -164,14 +210,14 @@ export default function Hero() {
             variants={slideLeft}
             initial="hidden"
             animate="visible"
-            custom={0.25}
+            custom={0.26}
             className="flex justify-center"
           >
             <a
               href="#contact"
               className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98]"
             >
-              Get started
+              Engage on a domain
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -185,48 +231,30 @@ export default function Hero() {
             custom={0.3}
             className="text-center md:text-right"
           >
-            <h2 className="text-lg font-semibold text-white sm:text-xl">
-              Domain to deployment
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-text-muted">
-              From domain acquisition through server provisioning to managed
-              infrastructure — a complete pipeline for digital operations.
-            </p>
-          </motion.div>
-        </div>
-
-        <div className="mx-auto mt-14 grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-          <motion.div variants={slideLeft} initial="hidden" animate="visible" custom={0.35}>
-            <span className="label-caps text-accent">Live systems</span>
-            <h3 className="luxury-title mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              Infrastructure that stays operational at scale
+            <h3 className="text-lg font-semibold text-white sm:text-xl">
+              Edge &amp; identity
             </h3>
-            <p className="mt-3 text-text-muted leading-relaxed">
-              Real-time monitoring, distributed nodes, and service-level
-              observability across every platform in the ecosystem — the
-              operational clarity enterprise deployments require.
+            <p className="mt-2 text-sm leading-relaxed text-text-muted">
+              DNS, TLS, zero-trust access patterns, CDN and WAF policies —
+              tuned so traffic and trust attach cleanly to the name you own.
             </p>
-            <a
-              href="#services"
-              className="mt-6 inline-flex rounded-full border border-white/[0.12] bg-white/[0.03] px-6 py-3 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-accent/25 hover:text-white"
-            >
-              Explore the ecosystem
-            </a>
-          </motion.div>
-          <motion.div variants={slideRight} initial="hidden" animate="visible" custom={0.28}>
-            <DashboardMockup />
           </motion.div>
         </div>
 
-        <div className="mx-auto mt-16 max-w-4xl border-t border-white/[0.06] pt-10">
+        <div className="mx-auto mt-16 max-w-5xl border-t border-white/[0.06] pt-10">
           <p className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted">
-            Part of the OldWestSolutions ecosystem
+            Built on the same public-company stacks the Fortune 500 standardizes on
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 opacity-50 grayscale sm:gap-x-14">
-            {ecosystemPlatforms.map((name) => (
+          <p className="mx-auto mt-3 max-w-2xl text-center text-xs leading-relaxed text-text-muted/90">
+            We architect and operate on hyperscaler and category-leading vendor
+            platforms — not proprietary black boxes — so your workloads remain
+            portable, auditable, and finance-friendly.
+          </p>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 sm:gap-x-10">
+            {infrastructureVendors.map((name) => (
               <span
                 key={name}
-                className="text-sm font-semibold tracking-wide text-white transition-opacity hover:opacity-80"
+                className="text-[11px] font-semibold tracking-wide text-white/45 transition-colors hover:text-white/75 sm:text-xs"
               >
                 {name}
               </span>

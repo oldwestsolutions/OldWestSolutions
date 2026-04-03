@@ -1,5 +1,5 @@
 export const navLinks = [
-  { label: "Ecosystem", href: "#services" },
+  { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
   { label: "Platforms", href: "#projects" },
   { label: "Infrastructure", href: "#industries" },
@@ -8,40 +8,40 @@ export const navLinks = [
 
 export const services = [
   {
-    title: "OldWest Platform",
+    title: "Full-stack delivery with every domain",
     description:
-      "A unified digital platform combining AI-powered search, private email exchange, and blockchain-based staking infrastructure — a decentralized alternative to traditional search and communication systems.",
+      "Beyond transfer and DNS: we can architect and run the environment behind the name — authoritative DNS, TLS, application hosting, email authentication, and operational runbooks — so the asset is production-ready rather than an empty hostname.",
     icon: "blocks",
   },
   {
-    title: "FirstClassMail",
+    title: "Managed databases",
     description:
-      "High-performance email delivery and communications platform designed for scalable messaging, marketing automation, and infrastructure-level reliability.",
-    icon: "code",
-  },
-  {
-    title: "Teleport",
-    description:
-      "Programmable communications platform providing white-labeled voice, messaging, and VoIP infrastructure for modern applications.",
-    icon: "cloud",
-  },
-  {
-    title: "Lubbock.Cloud",
-    description:
-      "Decentralized compute and storage infrastructure enabling GPU tokenization and enterprise-grade data systems built on technologies similar to Pure Storage and NetApp.",
+      "Relational and document engines on tier-one hyperscaler platforms — provisioning, automated backups, point-in-time recovery, read replicas, parameter tuning, and connection pooling matched to transactional or analytical workloads.",
     icon: "database",
   },
   {
-    title: "Domain Brokerage",
+    title: "Durable storage & data lifecycle",
     description:
-      "Strategic domain acquisition and brokerage services for enterprises seeking premium digital identities — with full DNS management and transfer support.",
-    icon: "trending",
+      "Object, block, and file services with versioning, lifecycle rules, cross-region replication, and cold tiers — structured for media libraries, application state, logs, and long-retention compliance without manual tape logic.",
+    icon: "cloud",
   },
   {
-    title: "Server Management",
+    title: "AI, inference & data platforms",
     description:
-      "Post-acquisition server provisioning, monitoring, and managed hosting infrastructure for domains brokered through OldWestSolutions — ensuring uptime, security, and scalability from day one.",
+      "GPU-backed inference, managed model endpoints, vector search, streaming ingestion, and batch pipelines — enough depth to ship RAG, embeddings, and internal copilots without standing up an entire ML platform org.",
+    icon: "spark",
+  },
+  {
+    title: "Compute, containers & orchestration",
+    description:
+      "Bare metal, VMs, autoscaling groups, containers, and Kubernetes — hardened images, secrets management, service boundaries, and CI/CD integration for teams that outgrow a single box but still want operator discipline.",
     icon: "cpu",
+  },
+  {
+    title: "Network edge, security & observability",
+    description:
+      "Global load balancing, CDN and WAF placement, private connectivity, structured logging, metrics, tracing, and alerting — composed as one operational surface so incidents are visible before customers are.",
+    icon: "trending",
   },
 ];
 
@@ -162,12 +162,12 @@ export const whyUs = [
 
 export const footerLinks = [
   {
-    title: "Ecosystem",
+    title: "Capabilities",
     links: [
-      { label: "OldWest Platform", href: "#services" },
-      { label: "FirstClassMail", href: "#services" },
-      { label: "Teleport", href: "#services" },
-      { label: "Lubbock.Cloud", href: "#services" },
+      { label: "Databases", href: "#services" },
+      { label: "Storage & lifecycle", href: "#services" },
+      { label: "AI & inference", href: "#services" },
+      { label: "Compute & orchestration", href: "#services" },
     ],
   },
   {
