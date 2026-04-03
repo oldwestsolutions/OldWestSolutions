@@ -16,7 +16,7 @@ export const infrastructureVendors = [
 
 export const navLinks = [
   { label: "Services", href: "/managed-services" },
-  { label: "News", href: "#news" },
+  { label: "Systems", href: "#systems" },
   { label: "Products", href: "#industries" },
   { label: "About", href: "#about" },
 ];
@@ -95,37 +95,37 @@ export const processSteps = [
 
 export const caseStudies = [
   {
-    title: "OldWest expands AI search and private mail in one control plane",
-    industry: "Product",
+    title: "Old West runs discovery, mail, and apps as one distributed system",
+    industry: "Distributed systems",
     problem:
-      "Teams that acquire premium domains still juggle separate vendors for discovery, inbox, and on-chain programs — slowing launches and audits.",
+      "Treating DNS, search, encrypted mail, and application tiers as unrelated stacks creates split-brain config, uneven failure domains, and audits that never line up with how traffic actually flows.",
     solution:
-      "OldWest now pairs AI-assisted search indexing with encrypted mail and staking-ready infrastructure so operators can stage a full stack behind a single brand.",
+      "Old West is engineered as a distributed system: replicated services, explicit boundaries between discovery and messaging, and horizontal scale so capacity and failover are designed in — not bolted on after the fact.",
     outcome:
-      "Early adopters report faster time-to-revenue on high-value names because DNS, application, and messaging tiers ship under one managed contract.",
-    tags: ["OldWest", "AI Search", "Private Mail", "Domains"],
+      "Teams operate premium domains as a single coherent estate: predictable replication, regional presence where it matters, and one operational story from name resolution through application and inbox.",
+    tags: ["Old West", "Distributed systems", "Control plane", "Resilience"],
   },
   {
-    title: "FirstClassMail and Teleport tighten shared telemetry for resellers",
-    industry: "Partnership",
+    title: "FirstClassMail and Teleport ship as composable microservices",
+    industry: "Microservice",
     problem:
-      "Resellers needed proof of delivery and voice quality without logging into two different consoles during customer QBRs.",
+      "Resellers and integrators were forced into monolithic adapters whenever mail delivery, reputation, and voice telemetry shipped on different release cycles — slowing QBR prep and making tenant-wide incidents hard to trace.",
     solution:
-      "A unified observability export now ties FirstClassMail delivery metrics to Teleport voice sessions so support teams see one timeline per tenant.",
+      "FirstClassMail and Teleport are exposed as focused microservices: delivery, reputation, and session data behind versioned APIs and contracts, so partners compose one tenant timeline without a single fat binary or shared schema coupling everything.",
     outcome:
-      "Partner NOCs cut mean-time-to-innocence on deliverability tickets and can white-label the combined dashboard for enterprise buyers.",
-    tags: ["FirstClassMail", "Teleport", "Resellers", "Observability"],
+      "Smaller deployable units, independent scaling, and shared observability across mail and voice cut time-to-innocence on deliverability and call-quality tickets while staying white-label friendly for enterprise programs.",
+    tags: ["FirstClassMail", "Teleport", "Microservices", "APIs"],
   },
   {
-    title: "Lubbock.Cloud rolls out tokenized GPU pools for burst inference",
-    industry: "Infrastructure",
+    title: "Lubbock.Cloud treats inference as governed AI systems, not ad-hoc GPUs",
+    industry: "AI systems",
     problem:
-      "GPU shortages left domain-led products stuck between expensive long-term contracts and unreliable spot markets.",
+      "Notebook-style GPU jobs and opaque spend made it impossible to run models as production AI systems — with budgets, residency, burst during campaigns, and clear handoff between training-ish experiments and always-on serving.",
     solution:
-      "Lubbock.Cloud introduced fractional GPU reservations with transparent token accounting so workloads can scale for marketing spikes without idle waste.",
+      "Lubbock.Cloud layers tokenized capacity, policy-aware routing, and multi-region placement so inference and adjacent workloads behave as managed AI systems: measurable units, governed expansion, and room to spike without idle long-term locks.",
     outcome:
-      "Pilot customers balanced inference spend against revenue events while keeping data residency policies intact across regions.",
-    tags: ["Lubbock.Cloud", "GPU", "Inference", "Multi-Region"],
+      "Pilot teams align model serving with revenue and compliance events, balance burst against steady-state cost, and keep data residency and failover explicit instead of an afterthought on a single cluster.",
+    tags: ["Lubbock.Cloud", "AI systems", "Inference", "Governance"],
   },
 ];
 
@@ -182,7 +182,7 @@ export const footerLinks = [
     title: "Company",
     links: [
       { label: "About", href: "#about" },
-      { label: "News", href: "#news" },
+      { label: "Systems", href: "#systems" },
       { label: "Contact", href: "#contact" },
     ],
   },
