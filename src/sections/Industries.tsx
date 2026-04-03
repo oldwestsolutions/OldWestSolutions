@@ -9,29 +9,13 @@ const industryIcons = [
   <svg key="defi" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
   <svg key="cloud" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" /></svg>,
   <svg key="ai" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>,
-  <svg key="ent" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016A3.001 3.001 0 0021 9.349m-18 0a2.999 2.999 0 00.621-1.827L4.5 4.5h15l.879 3.022A3.001 3.001 0 0021 9.35" /></svg>,
 ];
 
-const flowSteps = [
-  {
-    step: "01",
-    title: "Capture the request",
-    detail:
-      "Whether it is a net-new subscription, a renewal, or a transfer, we document the solution (Microsoft 365, Google Workspace, Adobe, DocuSign, Azure, AWS, security SKUs, and more), seat or license counts, optional hardware, and your notes — plus attachments such as invoices or screenshots when they help us price faster.",
-  },
-  {
-    step: "02",
-    title: "Normalize & quote",
-    detail:
-      "We map what you need to the right vendor programs and commercial terms, reconcile quantities and license types, and return a clear quote your customer can approve — without you chasing SKUs across a dozen portals.",
-  },
-  {
-    step: "03",
-    title: "Fulfill & renew",
-    detail:
-      "After approval, we support ordering and provisioning handoffs and keep renewals on radar so subscriptions, cloud commitments, and security services do not quietly lapse.",
-  },
-];
+const securityCardCopy = {
+  title: "Security, backup & compliance",
+  description:
+    "Proofpoint, Mimecast, Carbonite, Bitdefender, Acronis, Trend Micro, Check Point, managed detection and response, cloud firewall and VPN clients, penetration testing, and virus or phishing protection — quoted under the same security and backup categories you already use. Hardware when needed, provider specifics in free text, attachments optional to speed reconciliation.",
+};
 
 export default function Industries() {
   return (
@@ -62,22 +46,24 @@ export default function Industries() {
               can stand behind.
             </p>
 
-            <div className="mt-10 space-y-4">
-              {flowSteps.map((item) => (
-                <div
-                  key={item.step}
-                  className="flex gap-4 rounded-2xl border border-white/[0.06] bg-[#141416] p-4 sm:p-5"
-                >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-accent/20 bg-accent/[0.08] text-xs font-bold text-accent">
-                    {item.step}
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-white">{item.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-text-muted">{item.detail}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-40px" }}
+              custom={0.08}
+              className="mt-10 flex gap-4 rounded-2xl border border-white/[0.06] bg-[#141416] p-4 sm:p-5"
+            >
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-accent/20 bg-accent/[0.08] text-accent">
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-base font-semibold text-white">{securityCardCopy.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-text-muted">{securityCardCopy.description}</p>
+              </div>
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -91,7 +77,7 @@ export default function Industries() {
               Same quote process — different vendors & SKUs
             </p>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {industries.slice(0, 4).map((industry, i) => (
+              {industries.map((industry, i) => (
                 <motion.article
                   key={industry.title}
                   variants={fadeUp}
@@ -110,28 +96,6 @@ export default function Industries() {
                 </motion.article>
               ))}
             </div>
-            <motion.article
-              variants={fadeUp}
-              custom={0.28}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-40px" }}
-              className="group mt-4 rounded-[1.35rem] border border-white/[0.07] bg-gradient-to-br from-[#161618] to-[#121214] p-6 sm:p-7 shadow-card transition-all duration-300 hover:border-accent/25"
-            >
-              <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-6">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-accent/15 bg-accent/[0.07] text-accent">
-                  {industryIcons[4]}
-                </div>
-                <div>
-                  <h3 className="text-base font-semibold text-white group-hover:text-accent sm:text-lg">
-                    {industries[4].title}
-                  </h3>
-                  <p className="mt-2.5 text-sm leading-relaxed text-text-muted sm:text-[15px]">
-                    {industries[4].description}
-                  </p>
-                </div>
-              </div>
-            </motion.article>
           </motion.div>
         </div>
       </div>

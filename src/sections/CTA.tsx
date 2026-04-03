@@ -8,7 +8,7 @@ export default function CTA() {
   return (
     <section
       id="contact"
-      className="relative border-t border-white/[0.06] bg-[#141416] py-24 md:py-32"
+      className="relative border-t border-white/[0.06] bg-[#141416] pb-16 pt-10 md:pb-20 md:pt-12"
     >
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[min(90vw,640px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/[0.07] blur-[120px]" />
 
@@ -20,17 +20,12 @@ export default function CTA() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           custom={0}
-          className="mx-auto max-w-4xl border-b border-white/[0.06] pb-12 md:pb-14"
+          className="mx-auto max-w-4xl border-b border-white/[0.06] pb-6 md:pb-8"
         >
           <p className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted">
             Trusted technology partners
           </p>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-xs leading-relaxed text-text-muted/90">
-            Every environment we build runs on publicly traded, enterprise-grade
-            platforms — the same providers used by the world&apos;s largest
-            organizations. No proprietary lock-in, full portability, clean audits.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3.5 sm:gap-x-9">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-7 gap-y-3.5 sm:gap-x-9">
             {infrastructureVendors.map((name) => (
               <span
                 key={name}
@@ -43,7 +38,7 @@ export default function CTA() {
         </motion.div>
 
         {/* Two-column CTA */}
-        <div className="mx-auto grid max-w-6xl gap-10 pt-14 md:grid-cols-2 md:items-start md:gap-14 md:pt-16">
+        <div className="mx-auto grid max-w-6xl gap-8 pt-8 md:grid-cols-2 md:items-start md:gap-12 md:pt-10">
           {/* Left — messaging */}
           <motion.div
             variants={fadeUp}

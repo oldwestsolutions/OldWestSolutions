@@ -142,37 +142,28 @@ export const industries = [
     description:
       "Microsoft Copilot, Google Gemini, Devs.ai, and other AI or developer-adjacent subscriptions that attach to core productivity or cloud estates. We treat them like any other seat-based SKU in the quote tool so bundle economics and renewals stay legible for finance and IT.",
   },
-  {
-    title: "Security, backup & compliance",
-    description:
-      "Proofpoint, Mimecast, Carbonite, Bitdefender, Acronis, Trend Micro, Check Point, managed detection and response, cloud firewall and VPN clients, penetration testing, and virus or phishing protection — quoted under the same security and backup categories you already use. Hardware when needed, provider specifics in free text, attachments optional to speed reconciliation.",
-  },
 ];
 
 export const whyUs = [
   {
-    title: "Unified Ecosystem",
-    description: "Every platform — OldWest, FirstClassMail, Teleport, Lubbock.Cloud — is part of a single, interconnected infrastructure layer.",
+    title: "Four platforms, one connected stack",
+    description:
+      "OldWest, FirstClassMail, Teleport, and Lubbock.Cloud are engineered to interoperate—so you sell and operate them as one infrastructure story, not four disconnected vendors.",
   },
   {
-    title: "Infrastructure-First Approach",
-    description: "We build scalable systems, not one-off applications. Every deployment is designed for long-term operational leverage.",
+    title: "Built to scale, not to sunset",
+    description:
+      "We ship systems meant for years of traffic and change—not one-off apps that collapse the first time load spikes or compliance asks hard questions.",
   },
   {
-    title: "Domain-to-Deployment Pipeline",
-    description: "From domain acquisition through server provisioning to managed hosting — a seamless pipeline from identity to infrastructure.",
+    title: "From premium domain to production footprint",
+    description:
+      "Acquisition, DNS, hosting, and managed services chain together: the name your customer buys is backed by an environment that is ready when they are.",
   },
   {
-    title: "Enterprise-Grade Security",
-    description: "Encrypted data at rest and in transit, role-based access controls, and full audit logging across every platform in the ecosystem.",
-  },
-  {
-    title: "Decentralized by Design",
-    description: "Distributed compute, tokenized resources, and blockchain-backed systems reduce single points of failure across the stack.",
-  },
-  {
-    title: "Operational Transparency",
-    description: "Unified monitoring, real-time dashboards, and clear SLAs across all ecosystem services. No black boxes.",
+    title: "Security posture buyers can defend",
+    description:
+      "Encryption in transit and at rest, role-based access, and audit-friendly logging across the layer—so procurement and IT reviews stay straightforward.",
   },
 ];
 
