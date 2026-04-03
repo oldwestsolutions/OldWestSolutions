@@ -7,10 +7,10 @@ import CaseStudies from "@/sections/CaseStudies";
 import Industries from "@/sections/Industries";
 import WhyChooseUs from "@/sections/WhyChooseUs";
 import CTA from "@/sections/CTA";
-import { CinematicScrollSection } from "@/components/scroll";
+import { ScrollRevealImageSection } from "@/components/scroll";
 import CinematicAccent from "@/components/illustrations/CinematicAccent";
 
-const cinematicPhases = [
+const foundationPanels = [
   {
     eyebrow: "Foundation",
     title: "Infrastructure built for leverage — not one-off launches.",
@@ -38,11 +38,10 @@ export default function Home() {
       <main>
         <Hero />
 
-        <CinematicScrollSection
-          phases={cinematicPhases}
-          sliceCount={12}
-          heightVh={380}
-          mobileHeightVh={280}
+        <ScrollRevealImageSection
+          panels={foundationPanels}
+          heightVh={300}
+          mobileHeightVh={240}
           imageSrc="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80"
           imageAlt="City towers and structured skyline at golden hour"
           decoration={<CinematicAccent className="w-full h-8 sm:h-10" />}
