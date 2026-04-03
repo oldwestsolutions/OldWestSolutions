@@ -159,8 +159,18 @@ export const whyUs = [
 
 export const footerLinks = [
   {
+    title: "Domains",
+    links: [
+      { label: "Find a domain", href: "#contact" },
+      { label: "Premium names", href: "#about" },
+      { label: "DNS & TLS", href: "/managed-services" },
+      { label: "Transfers", href: "#contact" },
+    ],
+  },
+  {
     title: "Solutions",
     links: [
+      { label: "Managed services", href: "/managed-services" },
       { label: "Databases", href: "/managed-services" },
       { label: "Storage & lifecycle", href: "/managed-services" },
       { label: "AI & inference", href: "/managed-services" },
@@ -169,7 +179,7 @@ export const footerLinks = [
     ],
   },
   {
-    title: "OldWest.net",
+    title: "Products",
     links: [
       { label: "Markets & execution", href: "#about" },
       { label: "Compute & storage", href: "#about" },
@@ -184,14 +194,18 @@ export const footerLinks = [
       { label: "About", href: "#about" },
       { label: "Systems", href: "#systems" },
       { label: "Contact", href: "#contact" },
+      { label: "Careers", href: "#" },
     ],
   },
   {
-    title: "Connect",
+    title: "Resources",
     links: [
+      { label: "Documentation", href: "#" },
+      { label: "Changelog", href: "#" },
+      { label: "Status", href: "#" },
       { label: "GitHub", href: "https://github.com/oldwestsolutions" },
       { label: "LinkedIn", href: "#" },
-      { label: "Twitter", href: "#" },
+      { label: "Twitter / X", href: "#" },
     ],
   },
 ];

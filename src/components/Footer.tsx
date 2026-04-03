@@ -6,9 +6,9 @@ export default function Footer() {
   return (
     <footer className="rounded-b-[1.75rem] border-t border-white/[0.06] bg-[#0c0c0e] sm:rounded-b-[2rem]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-2 gap-10 md:grid-cols-12 md:gap-8">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-10 xl:gap-14">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-4">
+          <div className="shrink-0 lg:max-w-[min(100%,280px)] xl:max-w-xs">
             <a href="/" className="inline-flex items-center gap-2.5 mb-4 touch-manipulation rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
               <div className="flex flex-col leading-none text-left">
                 <span className="text-white font-semibold text-[15px] tracking-tight">
@@ -33,9 +33,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Link columns */}
+          {/* Link columns: Domains, Solutions, Products, Company, Resources */}
+          <div className="grid min-w-0 flex-1 grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-5">
           {footerLinks.map((group) => (
-            <div key={group.title} className="md:col-span-2">
+            <div key={group.title} className="min-w-0">
               <h4 className="text-white text-xs font-semibold tracking-wider uppercase mb-4">
                 {group.title}
               </h4>
@@ -53,6 +54,7 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+          </div>
         </div>
 
         {/* Bottom bar */}

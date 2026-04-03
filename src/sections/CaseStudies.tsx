@@ -21,7 +21,7 @@ export default function CaseStudies() {
         >
           <span className="label-caps text-accent">Systems</span>
           <h2 className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
-            From the Old West Solutions Wire
+            The Difference
           </h2>
           <p className="mt-4 text-text-muted text-lg leading-relaxed">
             Architecture notes on capacity, service boundaries, and inference —
