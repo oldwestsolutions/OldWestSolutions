@@ -13,9 +13,24 @@ const industryIcons = [
 ];
 
 const flowSteps = [
-  { step: "01", title: "Edge & ingress", detail: "DNS, TLS, WAF, and authenticated APIs terminate risk before it reaches your apps." },
-  { step: "02", title: "Regional data plane", detail: "Stateful tiers replicate across zones; stateless tiers scale on demand behind clear contracts." },
-  { step: "03", title: "Control & observability", detail: "One plane for deploys, policies, logs, metrics, and traces — no shadow consoles." },
+  {
+    step: "01",
+    title: "Capture the request",
+    detail:
+      "Whether it is a net-new subscription, a renewal, or a transfer, we document the solution (Microsoft 365, Google Workspace, Adobe, DocuSign, Azure, AWS, security SKUs, and more), seat or license counts, optional hardware, and your notes — plus attachments such as invoices or screenshots when they help us price faster.",
+  },
+  {
+    step: "02",
+    title: "Normalize & quote",
+    detail:
+      "We map what you need to the right vendor programs and commercial terms, reconcile quantities and license types, and return a clear quote your customer can approve — without you chasing SKUs across a dozen portals.",
+  },
+  {
+    step: "03",
+    title: "Fulfill & renew",
+    detail:
+      "After approval, we support ordering and provisioning handoffs and keep renewals on radar so subscriptions, cloud commitments, and security services do not quietly lapse.",
+  },
 ];
 
 export default function Industries() {
@@ -38,12 +53,13 @@ export default function Industries() {
               Systems across verticals
             </h2>
             <p className="mt-5 text-base leading-relaxed text-text-muted md:text-lg">
-              Our distributed systems repeat the same pattern everywhere: traffic
-              lands on a hardened edge, work runs in regional cells with explicit
-              failure domains, and a control plane keeps deploys and telemetry
-              consistent. What changes per vertical is how strict the boundaries
-              are and which data stores sit in the path — not whether the system
-              is &ldquo;distributed&rdquo; in name only.
+              OldWestSolutions sits at the intersection of domains, cloud, SaaS,
+              and security procurement. The same disciplined quoting workflow
+              applies whether your customer needs Microsoft 365 and Copilot,
+              Google Workspace and Gemini, hyperscaler capacity, collaboration
+              tools, backup and DR, or a full security stack — you submit once;
+              we translate vendor catalogs and programs into pricing your team
+              can stand behind.
             </p>
 
             <div className="mt-10 space-y-4">
@@ -72,7 +88,7 @@ export default function Industries() {
             className="lg:col-span-7"
           >
             <p className="mb-6 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-text-muted lg:text-left">
-              Same architecture — different constraints
+              Same quote process — different vendors & SKUs
             </p>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {industries.slice(0, 4).map((industry, i) => (

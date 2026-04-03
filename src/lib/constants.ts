@@ -123,29 +123,29 @@ export const caseStudies = [
 
 export const industries = [
   {
-    title: "Communication Systems",
+    title: "Collaboration & communications",
     description:
-      "Traffic enters through anycast edges and authenticated APIs; message work is queued and drained by regional worker fleets with back-pressure and idempotency. Delivery state is replicated so a zone loss does not erase your pipeline — metrics cover latency, deferrals, and abuse in one plane.",
+      "Quotes for how teams actually work together: DocuSign, Zoom, Microsoft Exchange Online, SharePoint, OneDrive, Google Workspace basics, and adjacent collaboration SKUs. We handle new seats, renewals, and transfers with the same intake — license counts, mixed SKUs in the notes, and attachments when you have an incumbent bill to match.",
   },
   {
-    title: "Decentralized Finance",
+    title: "Productivity & line-of-business SaaS",
     description:
-      "Public interfaces sit behind strict rate limits and WAF rules; signing and custody boundaries stay isolated from web tiers. Append-only audit trails and structured logs pair with horizontally scaled API cells so reads scale without weakening the trust model around keys and settlement paths.",
+      "Microsoft 365, Adobe, QuickBooks, Zoho, CRM and ERP categories, ServiceNow, and other business applications your customers already run. Tell us seat mix, edition, and term; we return commercial options aligned to how you sell — without you becoming the SKU encyclopedia for every vendor.",
   },
   {
-    title: "Cloud & Compute",
+    title: "Cloud platforms & infrastructure",
     description:
-      "Workloads are placed in regional cells: stateless compute in front, replicated storage behind, and network policies that contain blast radius per account. Autoscaling follows signals from the control plane — not hand-tuned boxes — so bursts absorb cleanly across zones.",
+      "Microsoft Azure, AWS, and Google Cloud — consumption, commitments, and the surrounding services customers expect on an invoice. Whether the ask is IaaS, PaaS, or bundled cloud backup and recovery, we quote in the same structured flow: solution, scale, optional hardware, and narrative in additional notes.",
   },
   {
-    title: "AI & Search",
+    title: "AI & modern work add-ons",
     description:
-      "Inference runs on dedicated pools with queue-aware autoscaling; embeddings and vector indices live beside transactional stores with their own replication and backup SLAs. Batch and streaming pipelines feed features without letting training data paths bleed into serving subnets.",
+      "Microsoft Copilot, Google Gemini, Devs.ai, and other AI or developer-adjacent subscriptions that attach to core productivity or cloud estates. We treat them like any other seat-based SKU in the quote tool so bundle economics and renewals stay legible for finance and IT.",
   },
   {
-    title: "Enterprise Platforms",
+    title: "Security, backup & compliance",
     description:
-      "Every hostname inherits the same baseline: DNS and TLS at the edge, federated identity, centralized logging, secrets, and CI hooks. Domains become attach points to a shared platform — brokerage and hosting stay one operational story instead of a pile of one-offs.",
+      "Proofpoint, Mimecast, Carbonite, Bitdefender, Acronis, Trend Micro, Check Point, managed detection and response, cloud firewall and VPN clients, penetration testing, and virus or phishing protection — quoted under the same security and backup categories you already use. Hardware when needed, provider specifics in free text, attachments optional to speed reconciliation.",
   },
 ];
 

@@ -125,22 +125,22 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0.12}
-              className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-6 border-y border-white/[0.08] py-6 sm:mt-12 sm:flex-row sm:justify-center sm:gap-8"
+              className="mx-auto mt-10 flex max-w-5xl flex-row flex-wrap items-center justify-center gap-x-5 gap-y-4 border-y border-white/[0.08] py-6 sm:mt-12 md:flex-nowrap md:justify-center md:gap-x-8"
             >
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-medium uppercase tracking-[0.22em] text-text-muted sm:text-xs">
+              <div className="flex flex-shrink-0 flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-medium uppercase tracking-[0.22em] text-text-muted sm:text-xs md:flex-nowrap">
                 <span className="text-text-secondary">Multi-region</span>
                 <span className="hidden h-3 w-px bg-white/15 sm:block" aria-hidden />
                 <span className="text-text-secondary">Encrypted data plane</span>
                 <span className="hidden h-3 w-px bg-white/15 sm:block" aria-hidden />
                 <span className="text-text-secondary">Observable by default</span>
               </div>
-              <div className="hidden h-6 w-px bg-white/10 sm:block" aria-hidden />
+              <div className="hidden h-6 w-px shrink-0 bg-white/10 md:block" aria-hidden />
               <a
                 href="#contact"
-                className="inline-flex min-h-[40px] items-center justify-center gap-2 rounded-full bg-accent px-5 py-2 text-[13px] font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98]"
+                className="inline-flex min-h-[40px] shrink-0 items-center justify-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-[12px] font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white active:scale-[0.98] sm:px-5 sm:text-[13px]"
               >
                 Find a domain
-                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="h-3.5 w-3.5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
