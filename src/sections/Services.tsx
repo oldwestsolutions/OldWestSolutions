@@ -39,10 +39,9 @@ const iconMap: Record<string, JSX.Element> = {
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-24 md:py-32 bg-[#0a0a0a]">
-      <div className="absolute inset-0 grid-pattern opacity-20" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="relative bg-[#1F1F1F] py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section header */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -51,53 +50,50 @@ export default function Services() {
           custom={0}
           className="max-w-2xl mb-16"
         >
-          <span className="text-accent text-[11px] font-mono font-semibold tracking-[0.25em] uppercase">
-            {"// Protocol Services"}
+          <span className="text-accent text-xs font-semibold tracking-widest uppercase">
+            Services
           </span>
-          <h2 className="mt-4 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
-            Full-Stack Web3{" "}
-            <span className="bg-gradient-to-r from-accent to-accent-violet bg-clip-text text-transparent">
-              Engineering
-            </span>
+          <h2 className="mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight">
+            Maximize Productivity with Enterprise Solutions
           </h2>
           <p className="mt-4 text-text-muted text-lg leading-relaxed">
-            From smart contracts to production frontends — we ship
-            protocols that survive adversarial environments.
+            From architecture to deployment, we deliver full-cycle engineering for
+            companies that need systems built right the first time.
           </p>
         </motion.div>
 
+        {/* Service cards grid */}
         <motion.div
           variants={stagger}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
           {services.map((service, i) => (
             <motion.div
               key={service.title}
               variants={fadeUp}
               custom={i * 0.06}
-              className="group relative rounded-2xl glass glass-border p-7 hover:border-accent/20 transition-all duration-500 cursor-pointer overflow-hidden"
+              className="group relative rounded-2xl bg-[#242424] border border-white/[0.04] p-7 hover:border-accent/20 hover:bg-[#272727] transition-all duration-300 cursor-pointer"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.03] to-accent-violet/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="w-12 h-12 rounded-xl bg-accent/[0.08] flex items-center justify-center text-accent mb-5 group-hover:bg-accent/[0.12] transition-colors duration-300">
+                {iconMap[service.icon]}
+              </div>
 
-              <div className="relative">
-                <div className="w-12 h-12 rounded-xl bg-accent/[0.08] border border-accent/[0.12] flex items-center justify-center text-accent mb-5 group-hover:border-accent/30 group-hover:shadow-glow-sm transition-all duration-500">
-                  {iconMap[service.icon]}
-                </div>
+              <h3 className="text-white font-semibold text-lg mb-2.5 group-hover:text-accent transition-colors duration-300">
+                {service.title}
+              </h3>
 
-                <h3 className="text-white font-semibold text-lg mb-2.5 group-hover:text-accent transition-colors duration-300">
-                  {service.title}
-                </h3>
+              <p className="text-text-muted text-sm leading-relaxed">
+                {service.description}
+              </p>
 
-                <p className="text-text-muted text-sm leading-relaxed">
-                  {service.description}
-                </p>
-
-                <div className="mt-5 inline-flex items-center gap-1.5 text-[11px] text-accent font-mono font-medium opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
-                  explore →
-                </div>
+              <div className="mt-5 inline-flex items-center gap-1.5 text-xs text-accent font-medium opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
+                Learn More
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </div>
             </motion.div>
           ))}

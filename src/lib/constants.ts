@@ -1,46 +1,46 @@
 export const navLinks = [
-  { label: "Protocol", href: "#services" },
+  { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
-  { label: "Deployments", href: "#projects" },
-  { label: "Verticals", href: "#industries" },
+  { label: "Projects", href: "#projects" },
+  { label: "Industries", href: "#industries" },
   { label: "About", href: "#about" },
 ];
 
 export const services = [
   {
-    title: "Smart Contract Engineering",
+    title: "Custom Software Development",
     description:
-      "Audited Solidity & Rust smart contracts for DeFi protocols, DAOs, and token infrastructure — battle-tested for mainnet.",
-    icon: "blocks",
-  },
-  {
-    title: "AI & Neural Systems",
-    description:
-      "On-chain inference pipelines, predictive models, and autonomous agents that operate at the intersection of AI and decentralized compute.",
-    icon: "cpu",
-  },
-  {
-    title: "DeFi Protocol Architecture",
-    description:
-      "AMMs, lending protocols, yield aggregators, and cross-chain bridges engineered for composability and maximal capital efficiency.",
-    icon: "trending",
-  },
-  {
-    title: "Full-Stack dApp Development",
-    description:
-      "End-to-end decentralized application engineering — from wallet integration and subgraph indexing to production-grade frontends.",
+      "End-to-end design and engineering of bespoke platforms tailored to your operational requirements and growth trajectory.",
     icon: "code",
   },
   {
-    title: "Infrastructure & DevOps",
+    title: "AI & Automation Systems",
     description:
-      "Node operations, RPC infrastructure, containerized deployments, and multi-chain monitoring for zero-downtime protocols.",
+      "Intelligent automation pipelines, predictive analytics, and machine learning systems that reduce overhead and accelerate decisions.",
+    icon: "cpu",
+  },
+  {
+    title: "Web3 & Blockchain",
+    description:
+      "Smart contracts, decentralized applications, and token infrastructure engineered for institutional-grade security and scale.",
+    icon: "blocks",
+  },
+  {
+    title: "Fintech & Trading Systems",
+    description:
+      "Real-time trading dashboards, payment infrastructure, and financial data systems built for speed and regulatory compliance.",
+    icon: "trending",
+  },
+  {
+    title: "Cloud Infrastructure & DevOps",
+    description:
+      "Scalable cloud architecture, CI/CD pipelines, containerization, and multi-region deployments for high-availability workloads.",
     icon: "cloud",
   },
   {
-    title: "Data Indexing & APIs",
+    title: "Data Engineering & APIs",
     description:
-      "Custom subgraphs, real-time event streaming, analytics dashboards, and API layers that surface actionable on-chain intelligence.",
+      "Custom APIs, ETL pipelines, data warehousing, and analytics platforms that turn raw data into actionable intelligence.",
     icon: "database",
   },
 ];
@@ -48,141 +48,126 @@ export const services = [
 export const processSteps = [
   {
     step: "01",
-    title: "Discovery & Threat Model",
+    title: "Discovery",
     description:
-      "Deep analysis of protocol requirements, attack surfaces, economic models, and governance constraints before a single line of code.",
+      "Deep-dive into your business goals, technical requirements, and market landscape to define the optimal system architecture.",
   },
   {
     step: "02",
-    title: "Architecture & Specification",
+    title: "Architecture",
     description:
-      "Formal specifications, system diagrams, and modular architecture design — optimized for gas, composability, and upgradeability.",
+      "Design scalable system blueprints, select technology stacks, and plan modular infrastructure for long-term extensibility.",
   },
   {
     step: "03",
-    title: "Engineering & Audit",
+    title: "Development",
     description:
-      "Test-driven development with invariant testing, fuzzing, and internal audit cycles. External audits coordinated pre-deployment.",
+      "Agile engineering with 2-week sprints, continuous integration, code reviews, and transparent progress tracking at every stage.",
   },
   {
     step: "04",
-    title: "Deployment & Monitoring",
+    title: "Deployment",
     description:
-      "Multi-sig deployments, on-chain verification, real-time alerting, and incident response runbooks from block one.",
+      "Zero-downtime releases with automated testing, staging environments, and production-grade monitoring from day one.",
   },
   {
     step: "05",
-    title: "Iteration & Scaling",
+    title: "Scaling",
     description:
-      "Governance upgrades, cross-chain expansion, performance optimization, and ongoing protocol maintenance.",
+      "Performance optimization, horizontal scaling, and ongoing iteration to ensure your platform grows with your business.",
   },
 ];
 
 export const caseStudies = [
   {
     title: "808 Brokers",
-    industry: "DeFi",
-    problem:
-      "Legacy brokerage platform with fragmented liquidity and manual settlement workflows creating latency and counterparty risk.",
-    solution:
-      "Engineered an on-chain settlement layer with automated market making, real-time portfolio tracking, and programmable compliance.",
-    outcome:
-      "3x faster settlements, 60% cost reduction, full on-chain audit trail.",
-    tags: ["Solidity", "React", "The Graph", "AWS"],
+    industry: "Fintech",
+    problem: "Legacy brokerage platform with fragmented client data and manual workflows slowing deal velocity.",
+    solution: "Built a unified CRM and deal management system with real-time portfolio tracking and automated compliance checks.",
+    outcome: "3x faster deal closings, 60% reduction in manual data entry, full regulatory audit trail.",
+    tags: ["React", "Node.js", "PostgreSQL", "AWS"],
   },
   {
     title: "AutoEquityGroup",
-    industry: "RWA Tokenization",
-    problem:
-      "Opaque vehicle lifecycle data with no verifiable ownership history or real-time equity visibility for dealers.",
-    solution:
-      "Built a tokenized asset registry with on-chain provenance, real-time valuation oracles, and fractional ownership primitives.",
-    outcome:
-      "45% improvement in asset turnover, $2.3M incremental revenue in year one.",
-    tags: ["Rust", "Next.js", "Chainlink", "GCP"],
+    industry: "Automotive",
+    problem: "Disconnected dealership operations with no visibility into vehicle lifecycle or equity positions.",
+    solution: "Engineered an automotive equity intelligence platform with real-time valuation APIs and inventory optimization.",
+    outcome: "45% improvement in inventory turnover, $2.3M incremental revenue in first year.",
+    tags: ["Next.js", "Python", "Redis", "GCP"],
   },
   {
     title: "Payphone.cc",
     industry: "Payments",
-    problem:
-      "Cross-border payment flows fragmented across fiat and crypto rails with high failure rates and poor reconciliation.",
-    solution:
-      "Designed a hybrid payment orchestration protocol with stablecoin settlement, smart routing, and instant finality.",
-    outcome:
-      "99.7% success rate, 40% lower processing costs, multi-chain compatible.",
-    tags: ["TypeScript", "Solana", "Circle", "Azure"],
+    problem: "Merchant payment flows were fragmented across multiple providers with high failure rates and poor reconciliation.",
+    solution: "Designed a unified payment orchestration layer with smart routing, retry logic, and real-time settlement tracking.",
+    outcome: "99.7% payment success rate, 40% reduction in processing costs, PCI-DSS compliant.",
+    tags: ["TypeScript", ".NET", "Kafka", "Azure"],
   },
 ];
 
 export const industries = [
   {
-    title: "DeFi & Trading",
+    title: "Finance & Trading",
     description:
-      "DEX protocols, perpetual exchanges, yield infrastructure, and on-chain derivatives for institutional-grade decentralized finance.",
+      "Trading platforms, payment rails, portfolio management, and compliance infrastructure for institutional-grade financial operations.",
   },
   {
-    title: "NFT & Digital Assets",
+    title: "Insurance & Health Tech",
     description:
-      "Minting infrastructure, marketplace protocols, royalty enforcement, and dynamic metadata systems for next-gen digital ownership.",
+      "Claims processing, underwriting systems, patient data management, and HIPAA-compliant health technology platforms.",
   },
   {
-    title: "DAO & Governance",
+    title: "Automotive & Logistics",
     description:
-      "On-chain governance frameworks, treasury management, delegation systems, and proposal execution infrastructure.",
+      "Fleet management, inventory optimization, supply chain visibility, and dealership operations platforms.",
   },
   {
-    title: "AI & Decentralized Compute",
+    title: "AI & Machine Learning",
     description:
-      "GPU marketplaces, federated learning networks, on-chain inference, and autonomous agent infrastructure.",
+      "Custom ML pipelines, NLP systems, computer vision, and predictive analytics platforms for data-driven enterprises.",
   },
   {
-    title: "Cross-Chain & Bridges",
+    title: "Marketplaces & SaaS",
     description:
-      "Bridge protocols, messaging layers, multi-chain deployment tooling, and interoperability infrastructure.",
+      "Multi-tenant SaaS platforms, marketplace infrastructure, subscription billing, and user management at scale.",
   },
 ];
 
 export const whyUs = [
   {
-    title: "Protocol-Native Thinking",
-    description:
-      "We don't bolt blockchain onto legacy patterns. Every system is designed from first principles for decentralized environments.",
+    title: "Scalable Architecture",
+    description: "Systems designed for 10x growth from day one — modular, extensible, and built to last.",
   },
   {
-    title: "Audit-Ready Code",
-    description:
-      "Invariant tests, fuzzing, formal verification prep — our code ships audit-ready, saving weeks and reducing risk.",
+    title: "Fast Deployment Cycles",
+    description: "Agile delivery with 2-week sprints, CI/CD automation, and rapid iteration based on real feedback.",
   },
   {
-    title: "East-European Engineering",
-    description:
-      "Deep technical talent from Minsk, Kyiv, and Amsterdam — combining Eastern European rigor with Western delivery standards.",
+    title: "Modular Systems",
+    description: "Component-based infrastructure that scales independently — swap, extend, or replace without downtime.",
   },
   {
-    title: "Gas-Optimized Architecture",
-    description:
-      "Assembly-level optimization, storage packing, and minimal proxy patterns that reduce deployment and execution costs.",
+    title: "Enterprise-Grade Security",
+    description: "SOC 2 practices, encrypted data at rest and in transit, role-based access, and full audit logging.",
   },
   {
-    title: "Dedicated Protocol Teams",
-    description:
-      "Senior engineers embedded in your protocol — not rotating contractors, but long-term technical partners.",
+    title: "Dedicated Engineering Teams",
+    description: "Senior engineers embedded in your workflow — not outsourced bodies, but strategic technical partners.",
   },
   {
-    title: "Transparent & Verifiable",
-    description:
-      "Open audit logs, on-chain deployments, public test suites. Full visibility into every decision and deployment.",
+    title: "Transparent Process",
+    description: "Full visibility into progress, costs, and decisions. Weekly demos, shared dashboards, zero surprises.",
   },
 ];
 
 export const footerLinks = [
   {
-    title: "Protocol",
+    title: "Services",
     links: [
-      { label: "Smart Contracts", href: "#services" },
-      { label: "DeFi Architecture", href: "#services" },
-      { label: "Infrastructure", href: "#services" },
-      { label: "AI Systems", href: "#services" },
+      { label: "Custom Software", href: "#services" },
+      { label: "AI & Automation", href: "#services" },
+      { label: "Cloud Infrastructure", href: "#services" },
+      { label: "Web3 & Blockchain", href: "#services" },
     ],
   },
   {
@@ -190,16 +175,16 @@ export const footerLinks = [
     links: [
       { label: "About", href: "#about" },
       { label: "Process", href: "#process" },
-      { label: "Deployments", href: "#projects" },
+      { label: "Projects", href: "#projects" },
       { label: "Contact", href: "#contact" },
     ],
   },
   {
-    title: "Network",
+    title: "Connect",
     links: [
       { label: "GitHub", href: "https://github.com/oldwestsolutions" },
       { label: "LinkedIn", href: "#" },
-      { label: "X / Twitter", href: "#" },
+      { label: "Twitter", href: "#" },
     ],
   },
 ];
