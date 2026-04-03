@@ -98,7 +98,35 @@ export type CinematicScrollSectionProps = {
   decoration?: ReactNode;
 };
 
-export default function CinematicScrollSection({
+function CinematicScrollSectionReduced({
+  imageSrc = DEFAULT_IMAGE,
+  imageAlt = "Structural composition",
+  phases,
+  decoration,
+}: CinematicScrollSectionProps) {
+  return (
+    <section className="relative bg-[#141414] py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div className="relative aspect-[21/9] max-h-[360px] rounded-2xl overflow-hidden border border-white/[0.06]">
+          <Image src={imageSrc} alt={imageAlt} fill className="object-cover" sizes="100vw" />
+          <div className="absolute inset-0 bg-[#1F1F1F]/50" />
+        </div>
+        {phases.map((p) => (
+          <div key={p.title} className="text-center max-w-2xl mx-auto">
+            {p.eyebrow && (
+              <span className="text-accent text-xs font-semibold tracking-widest uppercase">{p.eyebrow}</span>
+            )}
+            <h2 className="mt-3 text-3xl font-bold text-white">{p.title}</h2>
+            {p.subtitle && <p className="mt-3 text-text-muted">{p.subtitle}</p>}
+          </div>
+        ))}
+        {decoration && <div className="flex justify-center opacity-70">{decoration}</div>}
+      </div>
+    </section>
+  );
+}
+
+function CinematicScrollSectionAnimated({
   imageSrc = DEFAULT_IMAGE,
   imageAlt = "Structural composition",
   phases,
@@ -108,9 +136,6 @@ export default function CinematicScrollSection({
   decoration,
 }: CinematicScrollSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const reduceMotion = useReducedMotion();
-  const reduce = reduceMotion === true;
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
@@ -118,29 +143,6 @@ export default function CinematicScrollSection({
 
   const scrim = useTransform(scrollYProgress, [0, 0.5, 1], [0.55, 0.35, 0.5]);
   const stripCount = Math.max(sliceCount, 1);
-
-  if (reduce) {
-    return (
-      <section className="relative bg-[#141414] py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          <div className="relative aspect-[21/9] max-h-[360px] rounded-2xl overflow-hidden border border-white/[0.06]">
-            <Image src={imageSrc} alt={imageAlt} fill className="object-cover" sizes="100vw" />
-            <div className="absolute inset-0 bg-[#1F1F1F]/50" />
-          </div>
-          {phases.map((p) => (
-            <div key={p.title} className="text-center max-w-2xl mx-auto">
-              {p.eyebrow && (
-                <span className="text-accent text-xs font-semibold tracking-widest uppercase">{p.eyebrow}</span>
-              )}
-              <h2 className="mt-3 text-3xl font-bold text-white">{p.title}</h2>
-              {p.subtitle && <p className="mt-3 text-text-muted">{p.subtitle}</p>}
-            </div>
-          ))}
-          {decoration && <div className="flex justify-center opacity-70">{decoration}</div>}
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section
@@ -196,4 +198,12 @@ export default function CinematicScrollSection({
       </div>
     </section>
   );
+}
+
+export default function CinematicScrollSection(props: CinematicScrollSectionProps) {
+  const prefersReducedMotion = useReducedMotion();
+  if (prefersReducedMotion === true) {
+    return <CinematicScrollSectionReduced {...props} />;
+  }
+  return <CinematicScrollSectionAnimated {...props} />;
 }

@@ -25,7 +25,41 @@ export type PinnedSectionProps = {
   illustration?: ReactNode;
 };
 
-export default function PinnedSection({
+function PinnedSectionReduced({
+  steps,
+  eyebrow,
+  headline,
+  subline,
+  illustration,
+}: PinnedSectionProps) {
+  return (
+    <section className="bg-[#1a1a1a] py-24 md:py-32 border-y border-white/[0.04]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {eyebrow && (
+          <span className="text-accent text-xs font-semibold tracking-widest uppercase">{eyebrow}</span>
+        )}
+        {headline && (
+          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white max-w-2xl">{headline}</h2>
+        )}
+        {subline && <p className="mt-4 text-text-muted max-w-xl">{subline}</p>}
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {steps.map((s) => (
+            <div key={s.title} className="rounded-2xl border border-white/[0.06] bg-[#242424] p-6">
+              {s.kicker && (
+                <span className="text-accent text-[10px] font-semibold tracking-widest uppercase">{s.kicker}</span>
+              )}
+              <h3 className="mt-2 text-lg font-semibold text-white">{s.title}</h3>
+              <p className="mt-2 text-sm text-text-muted leading-relaxed">{s.description}</p>
+            </div>
+          ))}
+        </div>
+        {illustration && <div className="mt-12 flex justify-center max-w-md mx-auto">{illustration}</div>}
+      </div>
+    </section>
+  );
+}
+
+function PinnedSectionAnimated({
   steps,
   heightVh = 260,
   mobileHeightVh = 200,
@@ -35,9 +69,6 @@ export default function PinnedSection({
   illustration,
 }: PinnedSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const reduceMotion = useReducedMotion();
-  const reduce = reduceMotion === true;
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
@@ -45,34 +76,6 @@ export default function PinnedSection({
 
   const n = Math.max(steps.length, 1);
   const seg = 1 / n;
-
-  if (reduce) {
-    return (
-      <section className="bg-[#1a1a1a] py-24 md:py-32 border-y border-white/[0.04]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {eyebrow && (
-            <span className="text-accent text-xs font-semibold tracking-widest uppercase">{eyebrow}</span>
-          )}
-          {headline && (
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white max-w-2xl">{headline}</h2>
-          )}
-          {subline && <p className="mt-4 text-text-muted max-w-xl">{subline}</p>}
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {steps.map((s) => (
-              <div key={s.title} className="rounded-2xl border border-white/[0.06] bg-[#242424] p-6">
-                {s.kicker && (
-                  <span className="text-accent text-[10px] font-semibold tracking-widest uppercase">{s.kicker}</span>
-                )}
-                <h3 className="mt-2 text-lg font-semibold text-white">{s.title}</h3>
-                <p className="mt-2 text-sm text-text-muted leading-relaxed">{s.description}</p>
-              </div>
-            ))}
-          </div>
-          {illustration && <div className="mt-12 flex justify-center max-w-md mx-auto">{illustration}</div>}
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section
@@ -121,7 +124,6 @@ export default function PinnedSection({
           )}
         </div>
 
-        {/* Progress rail */}
         <div className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-2">
           {steps.map((_, i) => (
             <ProgressDot key={i} index={i} seg={seg} progress={scrollYProgress} />
@@ -190,4 +192,12 @@ function ProgressDot({
       style={{ opacity, scale }}
     />
   );
+}
+
+export default function PinnedSection(props: PinnedSectionProps) {
+  const prefersReducedMotion = useReducedMotion();
+  if (prefersReducedMotion === true) {
+    return <PinnedSectionReduced {...props} />;
+  }
+  return <PinnedSectionAnimated {...props} />;
 }
