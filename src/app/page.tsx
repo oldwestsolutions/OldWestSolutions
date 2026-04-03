@@ -13,9 +13,9 @@ export default function Home() {
         <Navbar />
         <main className="bg-[#111113]">
           <Hero />
-          <CaseStudies />
           <Industries />
           <WhyChooseUs />
+          <CaseStudies />
           <CTA />
         </main>
         <Footer />

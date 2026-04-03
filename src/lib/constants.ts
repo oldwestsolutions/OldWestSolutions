@@ -129,49 +129,31 @@ export const caseStudies = [
   },
 ];
 
-export const industries = [
+export const whyUs = [
+  {
+    title: "Security, backup & compliance",
+    description:
+      "Proofpoint through Check Point, MDR, cloud firewall/VPN, pen tests, malware protection—mapped to your security and backup quote lines. Hardware optional; drop provider names and attachments when you need a fast match.",
+  },
   {
     title: "Collaboration & communications",
     description:
-      "Quotes for how teams actually work together: DocuSign, Zoom, Microsoft Exchange Online, SharePoint, OneDrive, Google Workspace basics, and adjacent collaboration SKUs. We handle new seats, renewals, and transfers with the same intake — license counts, mixed SKUs in the notes, and attachments when you have an incumbent bill to match.",
+      "DocuSign, Zoom, Exchange, SharePoint, OneDrive, Workspace—new seats, renewals, or transfers in one intake: counts, mixed SKUs in notes, bills attached when helpful.",
   },
   {
     title: "Productivity & line-of-business SaaS",
     description:
-      "Microsoft 365, Adobe, QuickBooks, Zoho, CRM and ERP categories, ServiceNow, and other business applications your customers already run. Tell us seat mix, edition, and term; we return commercial options aligned to how you sell — without you becoming the SKU encyclopedia for every vendor.",
+      "Microsoft 365, Adobe, QuickBooks, Zoho, CRM/ERP, ServiceNow—we quote seat mix, edition, and term so you are not the living SKU database for every vendor.",
   },
   {
     title: "Cloud platforms & infrastructure",
     description:
-      "Microsoft Azure, AWS, and Google Cloud — consumption, commitments, and the surrounding services customers expect on an invoice. Whether the ask is IaaS, PaaS, or bundled cloud backup and recovery, we quote in the same structured flow: solution, scale, optional hardware, and narrative in additional notes.",
+      "Azure, AWS, and GCP—usage or commits, plus backup/DR where it belongs on the same form: solution, scale, optional hardware, context in additional notes.",
   },
   {
     title: "AI & modern work add-ons",
     description:
-      "Microsoft Copilot, Google Gemini, Devs.ai, and other AI or developer-adjacent subscriptions that attach to core productivity or cloud estates. We treat them like any other seat-based SKU in the quote tool so bundle economics and renewals stay legible for finance and IT.",
-  },
-];
-
-export const whyUs = [
-  {
-    title: "Four platforms, one connected stack",
-    description:
-      "OldWest, FirstClassMail, Teleport, and Lubbock.Cloud are engineered to interoperate—so you sell and operate them as one infrastructure story, not four disconnected vendors.",
-  },
-  {
-    title: "Built to scale, not to sunset",
-    description:
-      "We ship systems meant for years of traffic and change—not one-off apps that collapse the first time load spikes or compliance asks hard questions.",
-  },
-  {
-    title: "From premium domain to production footprint",
-    description:
-      "Acquisition, DNS, hosting, and managed services chain together: the name your customer buys is backed by an environment that is ready when they are.",
-  },
-  {
-    title: "Security posture buyers can defend",
-    description:
-      "Encryption in transit and at rest, role-based access, and audit-friendly logging across the layer—so procurement and IT reviews stay straightforward.",
+      "Copilot, Gemini, Devs.ai, and similar add-ons priced like any other subscription so bundles and renewals stay clear for finance and IT.",
   },
 ];
 
