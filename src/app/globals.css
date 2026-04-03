@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #1F1F1F;
-  --foreground: #F2F2F2;
+  --background: #0a0a0a;
+  --foreground: #e8e8e8;
+  --accent: #00e5ff;
+  --accent-violet: #8b5cf6;
+  --surface: #111111;
+  --surface-raised: #161616;
+  --border: rgba(255, 255, 255, 0.06);
 }
 
 * {
@@ -27,25 +32,25 @@ body {
 }
 
 ::selection {
-  background: rgba(47, 107, 255, 0.3);
-  color: #F2F2F2;
+  background: rgba(0, 229, 255, 0.2);
+  color: #fff;
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1F1F1F;
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3A3A3A;
-  border-radius: 3px;
+  background: rgba(0, 229, 255, 0.2);
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: rgba(0, 229, 255, 0.4);
 }
 
 @layer base {
@@ -57,5 +62,29 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .glass {
+    background: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(20px) saturate(1.2);
+    -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  }
+
+  .glass-border {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .neon-glow {
+    box-shadow:
+      0 0 20px rgba(0, 229, 255, 0.08),
+      0 0 60px rgba(0, 229, 255, 0.04),
+      inset 0 0 20px rgba(0, 229, 255, 0.02);
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
   }
 }

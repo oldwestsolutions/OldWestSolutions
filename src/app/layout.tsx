@@ -1,29 +1,36 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
   variable: "--font-inter",
   display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 const siteName = "OldWestSolutions";
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteName} | Enterprise Software & Digital Infrastructure`,
+    default: `${siteName} | Web3 Infrastructure & Decentralized Systems`,
     template: `%s | ${siteName}`,
   },
   description:
-    "We design, build, and scale enterprise software across finance, AI automation, Web3, fintech, and cloud. Custom systems for serious teams.",
+    "We architect, build, and scale decentralized infrastructure across Web3, DeFi, AI, and enterprise systems. Precision-engineered software for the next era.",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#1F1F1F",
+  themeColor: "#0a0a0a",
   colorScheme: "dark",
 };
 
@@ -35,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} font-sans antialiased bg-primary text-text-primary min-h-screen`}
+        className={`${inter.variable} ${mono.variable} font-sans antialiased bg-primary text-text-primary min-h-screen`}
       >
         {children}
       </body>

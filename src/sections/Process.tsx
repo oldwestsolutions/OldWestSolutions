@@ -6,28 +6,30 @@ import { processSteps } from "@/lib/constants";
 
 export default function Process() {
   return (
-    <section
-      id="process"
-      className="relative border-t border-white/[0.06] bg-[#1a1a1a] py-24 md:py-32"
-    >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="process" className="relative py-24 md:py-32 bg-[#080808]">
+      <div className="absolute inset-0 grid-pattern opacity-15" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           custom={0}
-          className="mx-auto mb-12 max-w-2xl text-center md:mb-20"
+          className="mx-auto mb-16 max-w-2xl text-center"
         >
-          <span className="text-xs font-semibold uppercase tracking-widest text-accent">
-            Our Process
+          <span className="text-accent text-[11px] font-mono font-semibold tracking-[0.25em] uppercase">
+            {"// Delivery Framework"}
           </span>
-          <h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[44px]">
-            How We Deliver Results
+          <h2 className="mt-4 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[44px] tracking-[-0.02em]">
+            How We Ship{" "}
+            <span className="bg-gradient-to-r from-accent to-accent-violet bg-clip-text text-transparent">
+              Protocols
+            </span>
           </h2>
-          <p className="mt-4 px-0 text-base leading-relaxed text-text-muted sm:text-lg">
-            A structured, proven delivery framework that eliminates risk and
-            ensures predictable outcomes at every stage.
+          <p className="mt-4 text-base leading-relaxed text-text-muted sm:text-lg">
+            A battle-tested pipeline from threat model to mainnet —
+            no ambiguity, no shortcuts.
           </p>
         </motion.div>
 
@@ -36,47 +38,39 @@ export default function Process() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="relative"
+          className="relative max-w-3xl mx-auto"
         >
-          <div className="absolute bottom-0 left-1/2 top-0 hidden w-px -translate-x-1/2 bg-white/[0.06] md:block" />
+          {/* Vertical neon line */}
+          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-accent/40 via-accent-violet/20 to-transparent" />
 
-          <div className="space-y-6 md:space-y-0">
-            {processSteps.map((step, i) => {
-              const isLeft = i % 2 === 0;
-              return (
-                <motion.div
-                  key={step.step}
-                  variants={fadeUp}
-                  custom={i * 0.1}
-                  className={`relative md:flex md:items-center ${
-                    isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
-                >
-                  <div
-                    className={`md:w-1/2 ${isLeft ? "md:pr-16 md:text-right" : "md:pl-16"}`}
-                  >
-                    <div className="group rounded-2xl border border-white/[0.04] bg-[#242424] p-6 transition-all duration-300 hover:border-accent/15 md:p-8">
-                      <div className="mb-3 flex items-center gap-3 md:hidden">
-                        <span className="text-lg font-bold text-accent">{step.step}</span>
-                        <div className="h-px flex-1 bg-white/[0.06]" />
-                      </div>
-                      <h3 className="mb-2 text-xl font-semibold text-white transition-colors duration-200 group-hover:text-accent">
-                        {step.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed text-text-muted">
-                        {step.description}
-                      </p>
-                    </div>
+          <div className="space-y-0">
+            {processSteps.map((step, i) => (
+              <motion.div
+                key={step.step}
+                variants={fadeUp}
+                custom={i * 0.1}
+                className="group relative flex gap-6 md:gap-8 py-8 first:pt-0 last:pb-0"
+              >
+                {/* Step indicator */}
+                <div className="relative z-10 shrink-0">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl glass glass-border flex items-center justify-center group-hover:border-accent/30 group-hover:shadow-glow-sm transition-all duration-500">
+                    <span className="text-accent font-mono font-bold text-sm md:text-base">
+                      {step.step}
+                    </span>
                   </div>
+                </div>
 
-                  <div className="absolute left-1/2 top-1/2 z-10 hidden h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/[0.08] bg-[#1a1a1a] text-xs font-bold text-accent md:flex">
-                    {step.step}
-                  </div>
-
-                  <div className="hidden md:block md:w-1/2" />
-                </motion.div>
-              );
-            })}
+                {/* Content */}
+                <div className="pt-1 md:pt-3">
+                  <h3 className="text-white font-semibold text-lg md:text-xl mb-2 group-hover:text-accent transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  <p className="text-text-muted text-sm leading-relaxed md:text-[15px]">
+                    {step.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
