@@ -178,9 +178,7 @@ export const footerLinks = [
     title: "Products",
     links: [
       { label: "Markets & execution", href: "/#about" },
-      { label: "Compute & storage", href: "/#about" },
       { label: "Communications", href: "/#about" },
-      { label: "Search & discovery", href: "/#about" },
       { label: "Transactional mail", href: "/#about" },
     ],
   },
