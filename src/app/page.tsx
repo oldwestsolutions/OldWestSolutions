@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/sections/Hero";
 import CaseStudies from "@/sections/CaseStudies";
-import Industries from "@/sections/Industries";
 import WhyChooseUs from "@/sections/WhyChooseUs";
 import CTA from "@/sections/CTA";
 
@@ -13,7 +12,6 @@ export default function Home() {
         <Navbar />
         <main className="bg-[#111113]">
           <Hero />
-          <Industries />
           <WhyChooseUs />
           <CaseStudies />
           <CTA />

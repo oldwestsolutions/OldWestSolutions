@@ -24,10 +24,8 @@ export default function CaseStudies() {
             From the OldWestSolutions wire
           </h2>
           <p className="mt-4 text-text-muted text-lg leading-relaxed">
-            Architecture notes on how we run distributed platforms — capacity,
-            boundaries, and AI-backed workloads across Old West, Teleport,
-            FirstClassMail, and Lubbock.Cloud — concise briefs for engineering
-            and stakeholder alignment.
+            Architecture notes on capacity, service boundaries, and inference —
+            concise briefs for engineering and stakeholder alignment.
           </p>
         </motion.div>
 
@@ -36,16 +34,16 @@ export default function CaseStudies() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch"
         >
           {caseStudies.map((study, i) => (
             <motion.div
               key={study.title}
               variants={fadeUp}
               custom={i * 0.1}
-              className="group overflow-hidden rounded-[1.5rem] border border-white/[0.06] bg-[#1a1a1e] shadow-card transition-all duration-300 hover:border-accent/20"
+              className="group flex h-full min-h-0 flex-col overflow-hidden rounded-[1.5rem] border border-white/[0.06] bg-[#1a1a1e] shadow-card transition-all duration-300 hover:border-accent/20"
             >
-              <div className="px-7 pt-7 pb-5 border-b border-white/[0.04]">
+              <div className="shrink-0 px-7 pt-7 pb-5 border-b border-white/[0.04]">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[10px] font-semibold tracking-widest uppercase text-accent bg-accent/[0.08] px-2.5 py-1 rounded-md">
                     {study.industry}
@@ -56,7 +54,7 @@ export default function CaseStudies() {
                 </h3>
               </div>
 
-              <div className="px-7 py-5 space-y-4">
+              <div className="flex flex-1 flex-col px-7 py-5 space-y-4">
                 <div>
                   <div className="text-[10px] font-semibold tracking-widest uppercase text-text-muted mb-1.5">
                     Challenge
@@ -83,7 +81,7 @@ export default function CaseStudies() {
                 </div>
               </div>
 
-              <div className="px-7 pb-6 pt-2 flex flex-wrap gap-1.5">
+              <div className="mt-auto shrink-0 px-7 pb-6 pt-2 flex flex-wrap gap-1.5">
                 {study.tags.map((tag) => (
                   <span
                     key={tag}

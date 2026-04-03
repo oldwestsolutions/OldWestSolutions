@@ -14,31 +14,32 @@ export default function WhyChooseUs() {
   return (
     <section id="about" className="relative border-t border-white/[0.06] bg-[#111113] pt-20 pb-12 md:pt-24 md:pb-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             custom={0}
+            className="flex h-full min-h-0 flex-col"
           >
-            <span className="label-caps text-accent">Why OldWestSolutions</span>
+            <span className="label-caps text-accent">Network</span>
             <h2 className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
-              One Ecosystem,{" "}
-              <span className="text-accent">Complete Control</span>
+              Old <span className="text-accent">West</span>
             </h2>
             <p className="mt-4 text-text-muted text-lg leading-relaxed">
-              We are not a collection of separate projects. We are a unified
-              infrastructure company — every platform engineered to interoperate,
-              scale independently, and serve enterprise-level clients.
+              Old West is the network we operate for teams who need markets,
+              compute, communications, search, and mail to behave as one
+              disciplined surface — shared observability, explicit service
+              boundaries, and operator-grade controls without stitching together
+              unrelated vendors.
             </p>
 
-            <div className="mt-8 rounded-[1.5rem] border border-white/[0.06] bg-[#17171a] p-6 shadow-card">
+            <div className="mt-auto pt-8 rounded-[1.5rem] border border-white/[0.06] bg-[#17171a] p-6 shadow-card">
               <p className="text-text-secondary text-sm leading-relaxed italic">
-                &ldquo;OldWestSolutions consolidated our communication, compute,
-                and domain infrastructure into a single managed ecosystem.
-                The operational efficiency gains were immediate and
-                measurable.&rdquo;
+                &ldquo;Routing our stack through oldwest.net gave us one contract
+                and one operational story across execution, voice, and mail.
+                The efficiency gains were immediate and measurable.&rdquo;
               </p>
               <div className="mt-4 flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center">
@@ -57,14 +58,14 @@ export default function WhyChooseUs() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1"
+            className="grid h-full min-h-0 gap-4 sm:grid-cols-2 lg:grid-cols-1 auto-rows-fr"
           >
             {whyUs.map((item, i) => (
               <motion.div
                 key={item.title}
                 variants={fadeUp}
                 custom={i * 0.08}
-                className="group flex gap-4 rounded-[1.25rem] border border-white/[0.06] bg-[#17171a] p-5 shadow-card transition-all duration-300 hover:border-accent/20"
+                className="group flex h-full min-h-0 gap-4 rounded-[1.25rem] border border-white/[0.06] bg-[#17171a] p-5 shadow-card transition-all duration-300 hover:border-accent/20"
               >
                 {checkIcon}
                 <div>

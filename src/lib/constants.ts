@@ -17,7 +17,6 @@ export const infrastructureVendors = [
 export const navLinks = [
   { label: "Services", href: "/managed-services" },
   { label: "Systems", href: "#systems" },
-  { label: "Products", href: "#industries" },
   { label: "About", href: "#about" },
 ];
 
@@ -95,65 +94,66 @@ export const processSteps = [
 
 export const caseStudies = [
   {
-    title: "Old West runs discovery, mail, and apps as one distributed system",
+    title: "Discovery, mail, and application tiers as one distributed system",
     industry: "Distributed systems",
     problem:
       "Treating DNS, search, encrypted mail, and application tiers as unrelated stacks creates split-brain config, uneven failure domains, and audits that never line up with how traffic actually flows.",
     solution:
-      "Old West is engineered as a distributed system: replicated services, explicit boundaries between discovery and messaging, and horizontal scale so capacity and failover are designed in — not bolted on after the fact.",
+      "The platform is engineered as a distributed system: replicated services, explicit boundaries between discovery and messaging, and horizontal scale so capacity and failover are designed in — not bolted on after the fact.",
     outcome:
-      "Teams operate premium domains as a single coherent estate: predictable replication, regional presence where it matters, and one operational story from name resolution through application and inbox.",
-    tags: ["Old West", "Distributed systems", "Control plane", "Resilience"],
+      "Operators run name, application, and inbox paths as a single coherent estate: predictable replication, regional presence where it matters, and one operational story from resolution through application and messaging.",
+    tags: ["Distributed systems", "Control plane", "Replication", "Resilience"],
   },
   {
-    title: "FirstClassMail and Teleport ship as composable microservices",
+    title: "Composable microservices for communications workloads",
     industry: "Microservice",
     problem:
-      "Resellers and integrators were forced into monolithic adapters whenever mail delivery, reputation, and voice telemetry shipped on different release cycles — slowing QBR prep and making tenant-wide incidents hard to trace.",
+      "Integrators were forced into monolithic adapters whenever delivery, reputation, and session telemetry shipped on different release cycles — slowing reviews and making tenant-wide incidents hard to trace.",
     solution:
-      "FirstClassMail and Teleport are exposed as focused microservices: delivery, reputation, and session data behind versioned APIs and contracts, so partners compose one tenant timeline without a single fat binary or shared schema coupling everything.",
+      "Communications capabilities are exposed as focused microservices: delivery, reputation, and session data behind versioned APIs and contracts, so partners compose one tenant timeline without a single fat binary or shared schema coupling everything.",
     outcome:
-      "Smaller deployable units, independent scaling, and shared observability across mail and voice cut time-to-innocence on deliverability and call-quality tickets while staying white-label friendly for enterprise programs.",
-    tags: ["FirstClassMail", "Teleport", "Microservices", "APIs"],
+      "Smaller deployable units, independent scaling, and shared observability cut time-to-innocence on deliverability and quality tickets while staying suitable for white-label enterprise programs.",
+    tags: ["Microservices", "APIs", "Observability", "Tenancy"],
   },
   {
-    title: "Lubbock.Cloud treats inference as governed AI systems, not ad-hoc GPUs",
+    title: "Governed AI systems instead of ad-hoc GPU jobs",
     industry: "AI systems",
     problem:
-      "Notebook-style GPU jobs and opaque spend made it impossible to run models as production AI systems — with budgets, residency, burst during campaigns, and clear handoff between training-ish experiments and always-on serving.",
+      "Notebook-style GPU jobs and opaque spend made it impossible to run models as production AI systems — with budgets, residency, burst during campaigns, and clear handoff between experiments and always-on serving.",
     solution:
-      "Lubbock.Cloud layers tokenized capacity, policy-aware routing, and multi-region placement so inference and adjacent workloads behave as managed AI systems: measurable units, governed expansion, and room to spike without idle long-term locks.",
+      "Inference layers combine tokenized capacity, policy-aware routing, and multi-region placement so workloads behave as managed AI systems: measurable units, governed expansion, and room to spike without idle long-term locks.",
     outcome:
-      "Pilot teams align model serving with revenue and compliance events, balance burst against steady-state cost, and keep data residency and failover explicit instead of an afterthought on a single cluster.",
-    tags: ["Lubbock.Cloud", "AI systems", "Inference", "Governance"],
+      "Teams align model serving with revenue and compliance events, balance burst against steady-state cost, and keep data residency and failover explicit instead of an afterthought on a single cluster.",
+    tags: ["AI systems", "Inference", "Governance", "Multi-region"],
   },
 ];
 
+/** Capability areas delivered through oldwest.net */
 export const whyUs = [
   {
-    title: "General.exchange",
+    title: "Markets & execution",
     description:
-      "Our trading platform for digital assets and market-style workflows—built for serious participants who need reliable execution, clear risk boundaries, and an environment that scales with volume.",
+      "oldwest.net supports institutional-style trading workflows: reliable execution paths, clear risk boundaries, and capacity that scales with participation — without treating markets as a bolt-on next to your core stack.",
   },
   {
-    title: "Lubbock.Cloud",
+    title: "Distributed compute & storage",
     description:
-      "Decentralized compute and storage for workloads that outgrow a single region—GPU-aware capacity, durable data tiers, and architecture that treats the cloud as a distributed system, not a single vendor closet.",
+      "GPU-aware capacity, durable data tiers, and multi-region thinking on oldwest.net so workloads behave as a distributed system rather than a single-region rental with hidden coupling.",
   },
   {
-    title: "Teleport Services",
+    title: "Programmable communications",
     description:
-      "Programmable voice, SMS, and VoIP infrastructure you can embed in your own products—white-label friendly, API-first, and operated with the same uptime discipline we apply across the stack.",
+      "Voice, SMS, and VoIP exposed API-first on oldwest.net for embedding in your products — contract-driven integrations, observable sessions, and uptime treated as infrastructure, not a side project.",
   },
   {
-    title: "Old West",
+    title: "Search & discovery",
     description:
-      "The Old West line (OldWest.net) anchors search, discovery, and identity-forward experiences for audiences who expect a modern web surface behind premium domains and operator-grade infrastructure.",
+      "Identity-forward search and presence on oldwest.net — a modern surface behind premium names, authoritative routing, and operator-grade delivery for audiences who expect the domain to mean something.",
   },
   {
-    title: "FirstClassMail",
+    title: "Transactional mail",
     description:
-      "Transactional and marketing email with delivery metrics that matter—authentication, throughput, and reputation handled as infrastructure so your messages land in the inbox, not the promotions graveyard.",
+      "Authentication, throughput, and reputation managed on oldwest.net so transactional and campaign mail lands in the inbox with metrics your team can defend in audits and QBRs.",
   },
 ];
 
@@ -169,13 +169,13 @@ export const footerLinks = [
     ],
   },
   {
-    title: "Products",
+    title: "OldWest.net",
     links: [
-      { label: "General.exchange", href: "#" },
-      { label: "Lubbock.Cloud", href: "#" },
-      { label: "Teleport Services", href: "#" },
-      { label: "Old West", href: "#" },
-      { label: "FirstClassMail", href: "#" },
+      { label: "Markets & execution", href: "#about" },
+      { label: "Compute & storage", href: "#about" },
+      { label: "Communications", href: "#about" },
+      { label: "Search & discovery", href: "#about" },
+      { label: "Transactional mail", href: "#about" },
     ],
   },
   {
