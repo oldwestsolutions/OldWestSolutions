@@ -30,7 +30,7 @@ export default function Navbar() {
               OldWestSolutions
             </span>
             <span className="mt-0.5 text-[10px] uppercase tracking-[0.18em] text-text-muted">
-              Data Infrastructure
+              Distributed Systems
             </span>
           </div>
         </a>
@@ -50,7 +50,7 @@ export default function Navbar() {
         <div className="flex items-center justify-end gap-2 justify-self-end">
           <div className="hidden items-center gap-2 lg:flex">
             <a
-              href="#contact"
+              href="/#contact"
               className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-[12px] font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white sm:px-5 sm:text-[13px]"
             >
               Book an appointment
@@ -99,7 +99,7 @@ export default function Navbar() {
               ))}
               <div className="mt-4 flex flex-col gap-3 sm:mt-5">
                 <a
-                  href="#contact"
+                  href="/#contact"
                   onClick={() => setMobileOpen(false)}
                   className="flex min-h-[48px] items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-4 text-center text-sm font-medium text-text-secondary transition-colors touch-manipulation hover:border-accent/25 hover:text-white active:scale-[0.99]"
                 >

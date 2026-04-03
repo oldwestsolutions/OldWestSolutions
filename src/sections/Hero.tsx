@@ -137,7 +137,7 @@ export default function Hero() {
               </div>
               <div className="hidden h-10 w-px shrink-0 bg-white/10 md:block" aria-hidden />
               <a
-                href="#contact"
+                href="/find-a-domain"
                 className="inline-flex min-h-[40px] shrink-0 items-center justify-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-[12px] font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white active:scale-[0.98] sm:px-5 sm:text-[13px]"
               >
                 Find a domain

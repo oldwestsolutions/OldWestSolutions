@@ -59,6 +59,12 @@ export default function WhyChooseUs() {
                   <div className="text-text-muted text-xs">VP Infrastructure, Enterprise Client</div>
                 </div>
               </div>
+              <a
+                href="/#contact"
+                className="mt-6 inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white touch-manipulation sm:w-auto"
+              >
+                Join our network
+              </a>
             </div>
           </motion.div>
 

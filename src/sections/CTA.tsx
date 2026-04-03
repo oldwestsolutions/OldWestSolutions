@@ -8,7 +8,7 @@ export default function CTA() {
   return (
     <section
       id="contact"
-      className="relative border-t border-white/[0.06] bg-[#141416] pb-14 pt-8 md:pb-16 md:pt-10"
+      className="relative border-t border-white/[0.06] bg-[#141416] pb-14 pt-10 md:pb-16 md:pt-12"
     >
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[min(90vw,640px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/[0.07] blur-[120px]" />
 
@@ -20,7 +20,7 @@ export default function CTA() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           custom={0}
-          className="mx-auto max-w-4xl border-b border-white/[0.06] pb-8 md:pb-10"
+          className="mx-auto max-w-4xl border-b border-white/[0.06] py-10 md:py-12"
         >
           <p className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted">
             Trusted technology partners

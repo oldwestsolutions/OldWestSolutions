@@ -16,8 +16,8 @@ export const infrastructureVendors = [
 
 export const navLinks = [
   { label: "Services", href: "/managed-services" },
-  { label: "Systems", href: "#systems" },
-  { label: "About", href: "#about" },
+  { label: "Systems", href: "/#systems" },
+  { label: "About", href: "/#about" },
 ];
 
 export const services = [
@@ -94,15 +94,15 @@ export const processSteps = [
 
 export const caseStudies = [
   {
-    title: "Discovery, mail, and application tiers as one distributed system",
-    industry: "Distributed systems",
+    title: "One security story from DNS and mail through application tiers",
+    industry: "Security",
     problem:
-      "Treating DNS, search, encrypted mail, and application tiers as unrelated stacks creates split-brain config, uneven failure domains, and audits that never line up with how traffic actually flows.",
+      "When discovery, encrypted mail, and applications are protected by different consoles and policies, gaps show up in TLS, identity, logging, and incident response — and audits rarely match how traffic actually flows.",
     solution:
-      "The platform is engineered as a distributed system: replicated services, explicit boundaries between discovery and messaging, and horizontal scale so capacity and failover are designed in — not bolted on after the fact.",
+      "Security is run as a single program: consistent identity and access patterns, certificate and key lifecycle, mail authentication at scale, and edge controls tied to the same inventory as your names and workloads.",
     outcome:
-      "Operators run name, application, and inbox paths as a single coherent estate: predictable replication, regional presence where it matters, and one operational story from resolution through application and messaging.",
-    tags: ["Distributed systems", "Control plane", "Replication"],
+      "Teams defend one coherent posture from resolution through messaging and apps — fewer blind spots, faster triage, and evidence that lines up when stakeholders ask hard questions.",
+    tags: ["Security", "Zero trust", "TLS", "Identity"],
   },
   {
     title: "Composable microservices for communications workloads",
@@ -116,15 +116,15 @@ export const caseStudies = [
     tags: ["Microservices", "APIs", "Observability", "Tenancy"],
   },
   {
-    title: "Governed AI systems instead of ad-hoc GPU jobs",
-    industry: "AI systems",
+    title: "Governed AI instead of ad-hoc GPU jobs",
+    industry: "AI",
     problem:
-      "Notebook-style GPU jobs and opaque spend made it impossible to run models as production AI systems — with budgets, residency, burst during campaigns, and clear handoff between experiments and always-on serving.",
+      "Notebook-style GPU jobs and opaque spend made it impossible to run models as production AI — with budgets, residency, burst during campaigns, and clear handoff between experiments and always-on serving.",
     solution:
-      "Inference layers combine tokenized capacity, policy-aware routing, and multi-region placement so workloads behave as managed AI systems: measurable units, governed expansion, and room to spike without idle long-term locks.",
+      "Inference layers combine tokenized capacity, policy-aware routing, and multi-region placement so workloads behave as governed AI: measurable units, controlled expansion, and room to spike without idle long-term locks.",
     outcome:
       "Teams align model serving with revenue and compliance events, balance burst against steady-state cost, and keep data residency and failover explicit instead of an afterthought on a single cluster.",
-    tags: ["AI systems", "Inference", "Governance", "Multi-region"],
+    tags: ["AI", "Inference", "Governance", "Multi-region"],
   },
 ];
 
@@ -161,17 +161,16 @@ export const footerLinks = [
   {
     title: "Domains",
     links: [
-      { label: "Find a domain", href: "#contact" },
-      { label: "Premium names", href: "#about" },
-      { label: "DNS & TLS", href: "/managed-services" },
-      { label: "Transfers", href: "#contact" },
+      { label: "Find A Domain", href: "/find-a-domain" },
+      { label: "Broker Services", href: "/broker-services" },
+      { label: "Transfers", href: "/transfers" },
     ],
   },
   {
     title: "Solutions",
     links: [
-      { label: "Managed services", href: "/managed-services" },
-      { label: "Databases", href: "/managed-services" },
+      { label: "Managed Services", href: "/managed-services" },
+      { label: "Integration", href: "/integration" },
       { label: "Storage & lifecycle", href: "/managed-services" },
       { label: "AI & inference", href: "/managed-services" },
       { label: "Compute & orchestration", href: "/managed-services" },
@@ -181,19 +180,19 @@ export const footerLinks = [
   {
     title: "Products",
     links: [
-      { label: "Markets & execution", href: "#about" },
-      { label: "Compute & storage", href: "#about" },
-      { label: "Communications", href: "#about" },
-      { label: "Search & discovery", href: "#about" },
-      { label: "Transactional mail", href: "#about" },
+      { label: "Markets & execution", href: "/#about" },
+      { label: "Compute & storage", href: "/#about" },
+      { label: "Communications", href: "/#about" },
+      { label: "Search & discovery", href: "/#about" },
+      { label: "Transactional mail", href: "/#about" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About", href: "#about" },
-      { label: "Systems", href: "#systems" },
-      { label: "Contact", href: "#contact" },
+      { label: "About", href: "/#about" },
+      { label: "Systems", href: "/#systems" },
+      { label: "Contact", href: "/#contact" },
       { label: "Careers", href: "#" },
     ],
   },

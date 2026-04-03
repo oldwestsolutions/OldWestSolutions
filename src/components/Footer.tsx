@@ -15,7 +15,7 @@ export default function Footer() {
                   OldWestSolutions
                 </span>
                 <span className="text-text-muted text-[10px] tracking-wider uppercase mt-0.5">
-                  Data Infrastructure
+                  Distributed Systems
                 </span>
               </div>
             </a>
