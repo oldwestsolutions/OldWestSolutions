@@ -4,27 +4,35 @@ import { footerLinks } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#141414] border-t border-white/5">
+    <footer className="bg-[#141414] border-t border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-md bg-accent/10 border border-accent/20 flex items-center justify-center">
-                <span className="text-accent font-bold text-sm">OW</span>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+          {/* Brand */}
+          <div className="md:col-span-5">
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
+                <span className="text-white font-bold text-sm tracking-tight">OW</span>
               </div>
-              <span className="text-text-primary font-semibold text-lg tracking-tight">
-                OldWest<span className="text-text-muted">Solutions</span>
-              </span>
+              <div className="flex flex-col leading-none">
+                <span className="text-white font-semibold text-[15px] tracking-tight">
+                  OldWestSolutions
+                </span>
+                <span className="text-text-muted text-[10px] tracking-wider uppercase mt-0.5">
+                  Digital Infrastructure
+                </span>
+              </div>
             </div>
-            <p className="text-text-muted text-sm leading-relaxed max-w-sm">
-              Scalable systems across finance, automation, and decentralized
-              networks. Built for control, efficiency, and long-term leverage.
+            <p className="text-text-muted text-sm leading-relaxed max-w-sm mt-4">
+              We design, build, and scale custom software for companies that
+              need enterprise-grade systems. From architecture to deployment —
+              infrastructure done right.
             </p>
           </div>
 
+          {/* Link columns */}
           {footerLinks.map((group) => (
-            <div key={group.title}>
-              <h4 className="text-text-secondary text-sm font-medium mb-4">
+            <div key={group.title} className="md:col-span-2">
+              <h4 className="text-white text-xs font-semibold tracking-wider uppercase mb-4">
                 {group.title}
               </h4>
               <ul className="space-y-3">
@@ -32,7 +40,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-text-muted text-sm hover:text-text-primary transition-colors duration-200"
+                      className="text-text-muted text-sm hover:text-white transition-colors duration-200"
                     >
                       {link.label}
                     </a>
@@ -43,22 +51,17 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Bottom bar */}
+        <div className="mt-14 pt-6 border-t border-white/[0.04] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-text-muted text-xs">
             &copy; {new Date().getFullYear()} OldWestSolutions. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <a
-              href="#"
-              className="text-text-muted text-xs hover:text-text-primary transition-colors duration-200"
-            >
-              Privacy
+          <div className="flex items-center gap-5">
+            <a href="#" className="text-text-muted text-xs hover:text-white transition-colors duration-200">
+              Privacy Policy
             </a>
-            <a
-              href="#"
-              className="text-text-muted text-xs hover:text-text-primary transition-colors duration-200"
-            >
-              Terms
+            <a href="#" className="text-text-muted text-xs hover:text-white transition-colors duration-200">
+              Terms of Service
             </a>
           </div>
         </div>

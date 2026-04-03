@@ -1,143 +1,197 @@
+export const navLinks = [
+  { label: "Services", href: "#services" },
+  { label: "Process", href: "#process" },
+  { label: "Projects", href: "#projects" },
+  { label: "Industries", href: "#industries" },
+  { label: "About", href: "#about" },
+];
+
+export const stats = [
+  { value: "100+", label: "Projects Delivered" },
+  { value: "40+", label: "Enterprise Clients" },
+  { value: "99.9%", label: "Uptime Guarantee" },
+  { value: "12", label: "Global Regions" },
+];
+
 export const services = [
   {
-    title: "AI Automation Systems",
+    title: "Custom Software Development",
     description:
-      "Intelligent automation pipelines that reduce operational overhead and scale decision-making across your organization.",
+      "End-to-end design and engineering of bespoke platforms tailored to your operational requirements and growth trajectory.",
+    icon: "code",
+  },
+  {
+    title: "AI & Automation Systems",
+    description:
+      "Intelligent automation pipelines, predictive analytics, and machine learning systems that reduce overhead and accelerate decisions.",
     icon: "cpu",
   },
   {
-    title: "Financial Infrastructure & Trading Tools",
+    title: "Web3 & Blockchain",
     description:
-      "Robust trading systems, payment rails, and financial data infrastructure built for speed and compliance.",
-    icon: "trending",
-  },
-  {
-    title: "Web3 & Blockchain Development",
-    description:
-      "Smart contracts, decentralized applications, and token infrastructure engineered for security and scale.",
+      "Smart contracts, decentralized applications, and token infrastructure engineered for institutional-grade security and scale.",
     icon: "blocks",
   },
   {
-    title: "Cloud & Backend Systems",
+    title: "Fintech & Trading Systems",
     description:
-      "Scalable cloud architecture, microservices, and backend systems designed for high availability and performance.",
+      "Real-time trading dashboards, payment infrastructure, and financial data systems built for speed and regulatory compliance.",
+    icon: "trending",
+  },
+  {
+    title: "Cloud Infrastructure & DevOps",
+    description:
+      "Scalable cloud architecture, CI/CD pipelines, containerization, and multi-region deployments for high-availability workloads.",
     icon: "cloud",
   },
   {
-    title: "Data Intelligence & APIs",
+    title: "Data Engineering & APIs",
     description:
-      "Custom APIs, data pipelines, and analytics platforms that transform raw data into actionable intelligence.",
+      "Custom APIs, ETL pipelines, data warehousing, and analytics platforms that turn raw data into actionable intelligence.",
     icon: "database",
   },
 ];
 
-export const solutions = [
+export const processSteps = [
   {
-    title: "Lead Generation & Marketing Systems",
+    step: "01",
+    title: "Discovery",
     description:
-      "Automated lead capture, nurturing pipelines, and conversion-optimized marketing infrastructure.",
-    metric: "40%",
-    metricLabel: "Conversion Lift",
+      "Deep-dive into your business goals, technical requirements, and market landscape to define the optimal system architecture.",
   },
   {
-    title: "Insurance & Health Tech Infrastructure",
+    step: "02",
+    title: "Architecture",
     description:
-      "Compliant, scalable platforms for insurance underwriting, claims processing, and health data management.",
-    metric: "99.9%",
-    metricLabel: "Uptime SLA",
+      "Design scalable system blueprints, select technology stacks, and plan modular infrastructure for long-term extensibility.",
   },
   {
-    title: "Automotive & Logistics Platforms",
+    step: "03",
+    title: "Development",
     description:
-      "End-to-end solutions for fleet management, inventory systems, and logistics optimization.",
-    metric: "3x",
-    metricLabel: "Throughput Gain",
+      "Agile engineering with 2-week sprints, continuous integration, code reviews, and transparent progress tracking at every stage.",
   },
   {
-    title: "Trading Dashboards & Analytics",
+    step: "04",
+    title: "Deployment",
     description:
-      "Real-time dashboards, portfolio analytics, and risk management tools for institutional-grade trading.",
-    metric: "<10ms",
-    metricLabel: "Latency",
+      "Zero-downtime releases with automated testing, staging environments, and production-grade monitoring from day one.",
   },
   {
-    title: "Custom Enterprise Systems",
+    step: "05",
+    title: "Scaling",
     description:
-      "Bespoke enterprise solutions tailored to your operational requirements and growth trajectory.",
-    metric: "100%",
-    metricLabel: "Custom Built",
+      "Performance optimization, horizontal scaling, and ongoing iteration to ensure your platform grows with your business.",
   },
 ];
 
-export const products = [
+export const caseStudies = [
   {
-    name: "808 Brokers",
-    description:
-      "Advanced brokerage platform powering seamless deal flow and client management for modern financial advisors.",
-    href: "#",
+    title: "808 Brokers",
+    industry: "Fintech",
+    problem: "Legacy brokerage platform with fragmented client data and manual workflows slowing deal velocity.",
+    solution: "Built a unified CRM and deal management system with real-time portfolio tracking and automated compliance checks.",
+    outcome: "3x faster deal closings, 60% reduction in manual data entry, full regulatory audit trail.",
+    tags: ["React", "Node.js", "PostgreSQL", "AWS"],
   },
   {
-    name: "AutoEquityGroup",
-    description:
-      "Automotive equity intelligence platform streamlining dealership operations and vehicle lifecycle management.",
-    href: "#",
+    title: "AutoEquityGroup",
+    industry: "Automotive",
+    problem: "Disconnected dealership operations with no visibility into vehicle lifecycle or equity positions.",
+    solution: "Engineered an automotive equity intelligence platform with real-time valuation APIs and inventory optimization.",
+    outcome: "45% improvement in inventory turnover, $2.3M incremental revenue in first year.",
+    tags: ["Next.js", "Python", "Redis", "GCP"],
   },
   {
-    name: "Payphone.cc",
-    description:
-      "Next-generation payment communication infrastructure connecting merchants with frictionless transaction systems.",
-    href: "#",
-  },
-  {
-    name: "OldWest Network",
-    description:
-      "Decentralized infrastructure network enabling secure, high-throughput data transmission across distributed systems.",
-    href: "#",
-  },
-];
-
-export const infrastructure = [
-  {
-    title: "Modular Architecture",
-    description: "Component-based systems that scale independently and deploy incrementally.",
-  },
-  {
-    title: "API Layer",
-    description: "RESTful and GraphQL APIs with rate limiting, versioning, and comprehensive documentation.",
-  },
-  {
-    title: "Cloud Deployment",
-    description: "Multi-region cloud infrastructure with auto-scaling, load balancing, and disaster recovery.",
-  },
-  {
-    title: "Data Pipelines",
-    description: "Real-time and batch processing pipelines for ETL, analytics, and machine learning workflows.",
+    title: "Payphone.cc",
+    industry: "Payments",
+    problem: "Merchant payment flows were fragmented across multiple providers with high failure rates and poor reconciliation.",
+    solution: "Designed a unified payment orchestration layer with smart routing, retry logic, and real-time settlement tracking.",
+    outcome: "99.7% payment success rate, 40% reduction in processing costs, PCI-DSS compliant.",
+    tags: ["TypeScript", ".NET", "Kafka", "Azure"],
   },
 ];
 
-export const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Products", href: "#products" },
-  { label: "Infrastructure", href: "#infrastructure" },
-  { label: "About", href: "#about" },
+export const industries = [
+  {
+    title: "Finance & Trading",
+    description:
+      "Trading platforms, payment rails, portfolio management, and compliance infrastructure for institutional-grade financial operations.",
+  },
+  {
+    title: "Insurance & Health Tech",
+    description:
+      "Claims processing, underwriting systems, patient data management, and HIPAA-compliant health technology platforms.",
+  },
+  {
+    title: "Automotive & Logistics",
+    description:
+      "Fleet management, inventory optimization, supply chain visibility, and dealership operations platforms.",
+  },
+  {
+    title: "AI & Machine Learning",
+    description:
+      "Custom ML pipelines, NLP systems, computer vision, and predictive analytics platforms for data-driven enterprises.",
+  },
+  {
+    title: "Marketplaces & SaaS",
+    description:
+      "Multi-tenant SaaS platforms, marketplace infrastructure, subscription billing, and user management at scale.",
+  },
+];
+
+export const whyUs = [
+  {
+    title: "Scalable Architecture",
+    description: "Systems designed for 10x growth from day one — modular, extensible, and built to last.",
+  },
+  {
+    title: "Fast Deployment Cycles",
+    description: "Agile delivery with 2-week sprints, CI/CD automation, and rapid iteration based on real feedback.",
+  },
+  {
+    title: "Modular Systems",
+    description: "Component-based infrastructure that scales independently — swap, extend, or replace without downtime.",
+  },
+  {
+    title: "Enterprise-Grade Security",
+    description: "SOC 2 practices, encrypted data at rest and in transit, role-based access, and full audit logging.",
+  },
+  {
+    title: "Dedicated Engineering Teams",
+    description: "Senior engineers embedded in your workflow — not outsourced bodies, but strategic technical partners.",
+  },
+  {
+    title: "Transparent Process",
+    description: "Full visibility into progress, costs, and decisions. Weekly demos, shared dashboards, zero surprises.",
+  },
 ];
 
 export const footerLinks = [
   {
-    title: "Platform",
+    title: "Services",
     links: [
-      { label: "Services", href: "#services" },
-      { label: "Solutions", href: "#solutions" },
-      { label: "Products", href: "#products" },
+      { label: "Custom Software", href: "#services" },
+      { label: "AI & Automation", href: "#services" },
+      { label: "Cloud Infrastructure", href: "#services" },
+      { label: "Web3 & Blockchain", href: "#services" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About", href: "#about" },
-      { label: "Infrastructure", href: "#infrastructure" },
-      { label: "GitHub", href: "https://github.com" },
+      { label: "Process", href: "#process" },
+      { label: "Projects", href: "#projects" },
+      { label: "Contact", href: "#contact" },
+    ],
+  },
+  {
+    title: "Connect",
+    links: [
+      { label: "GitHub", href: "https://github.com/oldwestsolutions" },
+      { label: "LinkedIn", href: "#" },
+      { label: "Twitter", href: "#" },
     ],
   },
 ];

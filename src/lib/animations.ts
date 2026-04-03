@@ -1,62 +1,76 @@
 import type { Variants } from "framer-motion";
 
-export const fadeIn: Variants = {
-  hidden: { opacity: 0, y: 20 },
+export const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
   visible: (delay: number = 0) => ({
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
       delay,
-      ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     },
   }),
 };
 
-export const fadeInScale: Variants = {
-  hidden: { opacity: 0, scale: 0.95 },
+export const fadeIn: Variants = {
+  hidden: { opacity: 0 },
+  visible: (delay: number = 0) => ({
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    },
+  }),
+};
+
+export const slideLeft: Variants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: (delay: number = 0) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+      delay,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    },
+  }),
+};
+
+export const slideRight: Variants = {
+  hidden: { opacity: 0, x: 40 },
+  visible: (delay: number = 0) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+      delay,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    },
+  }),
+};
+
+export const stagger: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+export const scaleIn: Variants = {
+  hidden: { opacity: 0, scale: 0.92 },
   visible: (delay: number = 0) => ({
     opacity: 1,
     scale: 1,
     transition: {
       duration: 0.5,
       delay,
-      ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     },
   }),
-};
-
-export const staggerContainer: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-export const slideInLeft: Variants = {
-  hidden: { opacity: 0, x: -30 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
-    },
-  },
-};
-
-export const slideInRight: Variants = {
-  hidden: { opacity: 0, x: 30 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
-    },
-  },
 };
