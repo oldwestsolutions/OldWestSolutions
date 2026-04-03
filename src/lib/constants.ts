@@ -1,173 +1,173 @@
 export const navLinks = [
-  { label: "Services", href: "#services" },
+  { label: "Ecosystem", href: "#services" },
   { label: "Process", href: "#process" },
-  { label: "Projects", href: "#projects" },
-  { label: "Industries", href: "#industries" },
+  { label: "Platforms", href: "#projects" },
+  { label: "Infrastructure", href: "#industries" },
   { label: "About", href: "#about" },
 ];
 
 export const services = [
   {
-    title: "Custom Software Development",
+    title: "OldWest Platform",
     description:
-      "End-to-end design and engineering of bespoke platforms tailored to your operational requirements and growth trajectory.",
-    icon: "code",
-  },
-  {
-    title: "AI & Automation Systems",
-    description:
-      "Intelligent automation pipelines, predictive analytics, and machine learning systems that reduce overhead and accelerate decisions.",
-    icon: "cpu",
-  },
-  {
-    title: "Web3 & Blockchain",
-    description:
-      "Smart contracts, decentralized applications, and token infrastructure engineered for institutional-grade security and scale.",
+      "A unified digital platform combining AI-powered search, private email exchange, and blockchain-based staking infrastructure — a decentralized alternative to traditional search and communication systems.",
     icon: "blocks",
   },
   {
-    title: "Fintech & Trading Systems",
+    title: "FirstClassMail",
     description:
-      "Real-time trading dashboards, payment infrastructure, and financial data systems built for speed and regulatory compliance.",
-    icon: "trending",
+      "High-performance email delivery and communications platform designed for scalable messaging, marketing automation, and infrastructure-level reliability.",
+    icon: "code",
   },
   {
-    title: "Cloud Infrastructure & DevOps",
+    title: "Teleport",
     description:
-      "Scalable cloud architecture, CI/CD pipelines, containerization, and multi-region deployments for high-availability workloads.",
+      "Programmable communications platform providing white-labeled voice, messaging, and VoIP infrastructure for modern applications.",
     icon: "cloud",
   },
   {
-    title: "Data Engineering & APIs",
+    title: "Lubbock.Cloud",
     description:
-      "Custom APIs, ETL pipelines, data warehousing, and analytics platforms that turn raw data into actionable intelligence.",
+      "Decentralized compute and storage infrastructure enabling GPU tokenization and enterprise-grade data systems built on technologies similar to Pure Storage and NetApp.",
     icon: "database",
+  },
+  {
+    title: "Domain Brokerage",
+    description:
+      "Strategic domain acquisition and brokerage services for enterprises seeking premium digital identities — with full DNS management and transfer support.",
+    icon: "trending",
+  },
+  {
+    title: "Server Management",
+    description:
+      "Post-acquisition server provisioning, monitoring, and managed hosting infrastructure for domains brokered through OldWestSolutions — ensuring uptime, security, and scalability from day one.",
+    icon: "cpu",
   },
 ];
 
 export const processSteps = [
   {
     step: "01",
-    title: "Discovery",
+    title: "Assessment",
     description:
-      "Deep-dive into your business goals, technical requirements, and market landscape to define the optimal system architecture.",
+      "Evaluate your infrastructure requirements, domain portfolio, and platform needs to define the optimal deployment strategy across the OldWestSolutions ecosystem.",
   },
   {
     step: "02",
-    title: "Architecture",
+    title: "Domain & Infrastructure Planning",
     description:
-      "Design scalable system blueprints, select technology stacks, and plan modular infrastructure for long-term extensibility.",
+      "Secure premium domains, architect server environments, and select the right combination of ecosystem platforms — OldWest, FirstClassMail, Teleport, or Lubbock.Cloud.",
   },
   {
     step: "03",
-    title: "Development",
+    title: "Platform Deployment",
     description:
-      "Agile engineering with 2-week sprints, continuous integration, code reviews, and transparent progress tracking at every stage.",
+      "Provision and configure infrastructure across compute, communication, and search layers with automated pipelines, DNS integration, and production-grade security.",
   },
   {
     step: "04",
-    title: "Deployment",
+    title: "Integration & Activation",
     description:
-      "Zero-downtime releases with automated testing, staging environments, and production-grade monitoring from day one.",
+      "Connect ecosystem services — email delivery through FirstClassMail, voice via Teleport, compute through Lubbock.Cloud — into a unified, operational system.",
   },
   {
     step: "05",
-    title: "Scaling",
+    title: "Monitoring & Scaling",
     description:
-      "Performance optimization, horizontal scaling, and ongoing iteration to ensure your platform grows with your business.",
+      "Continuous observability, performance optimization, and horizontal scaling to ensure every platform in your deployment grows with your operational demands.",
   },
 ];
 
 export const caseStudies = [
   {
-    title: "808 Brokers",
-    industry: "Fintech",
-    problem: "Legacy brokerage platform with fragmented client data and manual workflows slowing deal velocity.",
-    solution: "Built a unified CRM and deal management system with real-time portfolio tracking and automated compliance checks.",
-    outcome: "3x faster deal closings, 60% reduction in manual data entry, full regulatory audit trail.",
-    tags: ["React", "Node.js", "PostgreSQL", "AWS"],
+    title: "OldWest Search & Staking",
+    industry: "Ecosystem",
+    problem: "No viable decentralized alternative combined AI search, private communication, and staking in a single platform.",
+    solution: "Deployed the OldWest platform with integrated AI-powered search indexing, encrypted email exchange, and blockchain staking infrastructure.",
+    outcome: "Unified search, communication, and staking under one decentralized system with enterprise-grade uptime.",
+    tags: ["AI Search", "Blockchain", "Staking", "Private Email"],
   },
   {
-    title: "AutoEquityGroup",
-    industry: "Automotive",
-    problem: "Disconnected dealership operations with no visibility into vehicle lifecycle or equity positions.",
-    solution: "Engineered an automotive equity intelligence platform with real-time valuation APIs and inventory optimization.",
-    outcome: "45% improvement in inventory turnover, $2.3M incremental revenue in first year.",
-    tags: ["Next.js", "Python", "Redis", "GCP"],
+    title: "FirstClassMail + Teleport",
+    industry: "Communications",
+    problem: "Fragmented messaging infrastructure across email, voice, and SMS with inconsistent delivery rates and no unified management layer.",
+    solution: "Integrated FirstClassMail for scalable email delivery with Teleport for programmable voice and VoIP — managed through a single infrastructure control plane.",
+    outcome: "99.8% delivery rate, white-labeled communications stack, unified billing and monitoring across all channels.",
+    tags: ["Email Delivery", "VoIP", "Messaging", "White-Label"],
   },
   {
-    title: "Payphone.cc",
-    industry: "Payments",
-    problem: "Merchant payment flows were fragmented across multiple providers with high failure rates and poor reconciliation.",
-    solution: "Designed a unified payment orchestration layer with smart routing, retry logic, and real-time settlement tracking.",
-    outcome: "99.7% payment success rate, 40% reduction in processing costs, PCI-DSS compliant.",
-    tags: ["TypeScript", ".NET", "Kafka", "Azure"],
+    title: "Lubbock.Cloud Deployment",
+    industry: "Compute & Storage",
+    problem: "Enterprise clients required decentralized compute and storage without sacrificing the reliability of systems like Pure Storage or NetApp.",
+    solution: "Deployed Lubbock.Cloud with GPU tokenization, distributed storage nodes, and enterprise-grade data replication across multiple regions.",
+    outcome: "40% reduction in compute costs, tokenized GPU access, multi-region redundancy with 99.99% availability.",
+    tags: ["GPU Tokenization", "Distributed Storage", "Enterprise Data", "Multi-Region"],
   },
 ];
 
 export const industries = [
   {
-    title: "Finance & Trading",
+    title: "Communication Systems",
     description:
-      "Trading platforms, payment rails, portfolio management, and compliance infrastructure for institutional-grade financial operations.",
+      "Scalable email delivery, programmable voice, and messaging infrastructure powering enterprise communication at any volume.",
   },
   {
-    title: "Insurance & Health Tech",
+    title: "Decentralized Finance",
     description:
-      "Claims processing, underwriting systems, patient data management, and HIPAA-compliant health technology platforms.",
+      "Blockchain staking, token infrastructure, and smart contract systems for institutional-grade financial operations.",
   },
   {
-    title: "Automotive & Logistics",
+    title: "Cloud & Compute",
     description:
-      "Fleet management, inventory optimization, supply chain visibility, and dealership operations platforms.",
+      "GPU tokenization, distributed storage, and enterprise data systems delivering decentralized compute at scale.",
   },
   {
-    title: "AI & Machine Learning",
+    title: "AI & Search",
     description:
-      "Custom ML pipelines, NLP systems, computer vision, and predictive analytics platforms for data-driven enterprises.",
+      "AI-powered search indexing, natural language processing, and intelligent query systems for next-generation information retrieval.",
   },
   {
-    title: "Marketplaces & SaaS",
+    title: "Enterprise Platforms",
     description:
-      "Multi-tenant SaaS platforms, marketplace infrastructure, subscription billing, and user management at scale.",
+      "Domain brokerage, managed hosting, server provisioning, and full-lifecycle infrastructure management for organizations at scale.",
   },
 ];
 
 export const whyUs = [
   {
-    title: "Scalable Architecture",
-    description: "Systems designed for 10x growth from day one — modular, extensible, and built to last.",
+    title: "Unified Ecosystem",
+    description: "Every platform — OldWest, FirstClassMail, Teleport, Lubbock.Cloud — is part of a single, interconnected infrastructure layer.",
   },
   {
-    title: "Fast Deployment Cycles",
-    description: "Agile delivery with 2-week sprints, CI/CD automation, and rapid iteration based on real feedback.",
+    title: "Infrastructure-First Approach",
+    description: "We build scalable systems, not one-off applications. Every deployment is designed for long-term operational leverage.",
   },
   {
-    title: "Modular Systems",
-    description: "Component-based infrastructure that scales independently — swap, extend, or replace without downtime.",
+    title: "Domain-to-Deployment Pipeline",
+    description: "From domain acquisition through server provisioning to managed hosting — a seamless pipeline from identity to infrastructure.",
   },
   {
     title: "Enterprise-Grade Security",
-    description: "SOC 2 practices, encrypted data at rest and in transit, role-based access, and full audit logging.",
+    description: "Encrypted data at rest and in transit, role-based access controls, and full audit logging across every platform in the ecosystem.",
   },
   {
-    title: "Dedicated Engineering Teams",
-    description: "Senior engineers embedded in your workflow — not outsourced bodies, but strategic technical partners.",
+    title: "Decentralized by Design",
+    description: "Distributed compute, tokenized resources, and blockchain-backed systems reduce single points of failure across the stack.",
   },
   {
-    title: "Transparent Process",
-    description: "Full visibility into progress, costs, and decisions. Weekly demos, shared dashboards, zero surprises.",
+    title: "Operational Transparency",
+    description: "Unified monitoring, real-time dashboards, and clear SLAs across all ecosystem services. No black boxes.",
   },
 ];
 
 export const footerLinks = [
   {
-    title: "Services",
+    title: "Ecosystem",
     links: [
-      { label: "Custom Software", href: "#services" },
-      { label: "AI & Automation", href: "#services" },
-      { label: "Cloud Infrastructure", href: "#services" },
-      { label: "Web3 & Blockchain", href: "#services" },
+      { label: "OldWest Platform", href: "#services" },
+      { label: "FirstClassMail", href: "#services" },
+      { label: "Teleport", href: "#services" },
+      { label: "Lubbock.Cloud", href: "#services" },
     ],
   },
   {
@@ -175,7 +175,7 @@ export const footerLinks = [
     links: [
       { label: "About", href: "#about" },
       { label: "Process", href: "#process" },
-      { label: "Projects", href: "#projects" },
+      { label: "Platforms", href: "#projects" },
       { label: "Contact", href: "#contact" },
     ],
   },

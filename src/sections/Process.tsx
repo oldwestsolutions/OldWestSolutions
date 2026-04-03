@@ -21,11 +21,12 @@ export default function Process() {
         >
           <span className="label-caps text-accent">Our Process</span>
           <h2 className="luxury-title luxury-title-center mt-3 text-3xl font-bold leading-tight tracking-[-0.02em] text-white md:text-4xl lg:text-[44px]">
-            How We Deliver Results
+            From Assessment to Deployment
           </h2>
           <p className="mt-4 px-0 text-base leading-relaxed text-text-muted sm:text-lg">
-            A structured, proven delivery framework that eliminates risk and
-            ensures predictable outcomes at every stage.
+            A systematic deployment framework for provisioning infrastructure
+            across the OldWestSolutions ecosystem — from initial assessment
+            through continuous scaling.
           </p>
         </motion.div>
 

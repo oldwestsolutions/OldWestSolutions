@@ -94,15 +94,16 @@ export default function Services() {
           custom={0}
           className="mx-auto mb-14 max-w-2xl text-center md:mb-16"
         >
-          <span className="label-caps text-accent">Services</span>
+          <span className="label-caps text-accent">Ecosystem</span>
           <h2 className="luxury-title luxury-title-center mt-4 text-balance text-3xl font-bold leading-tight tracking-[-0.02em] text-white md:text-4xl lg:text-[44px]">
-            Built like a product.
+            Platforms and services
             <br />
-            Engineered like infrastructure.
+            across the infrastructure stack
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-text-muted">
-            A bento-style view of how we help teams ship — from core platform work
-            to specialized capabilities.
+            From domain brokerage and server management to decentralized compute
+            and programmable communications — every service connected under one
+            ecosystem.
           </p>
         </motion.div>
 

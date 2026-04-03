@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { slideLeft, slideRight } from "@/lib/animations";
 
-const partners = ["AWS", "Google Cloud", "Ethereum", "Solidity", "Kubernetes", "Temporal"];
+const ecosystemPlatforms = ["OldWest", "FirstClassMail", "Teleport", "Lubbock.Cloud", "DNS Management", "Managed Hosting"];
 
 function HeroVisual() {
   return (
@@ -43,9 +43,9 @@ function DashboardMockup() {
       <div className="space-y-3 p-4">
         <div className="grid grid-cols-3 gap-2">
           {[
-            { label: "Revenue", value: "$2.4M", change: "+12.3%" },
-            { label: "Active Users", value: "84.2K", change: "+8.7%" },
-            { label: "Uptime", value: "99.99%", change: "Stable" },
+            { label: "Throughput", value: "1.2M req/s", change: "+18.4%" },
+            { label: "Nodes Active", value: "342", change: "+12 nodes" },
+            { label: "System Uptime", value: "99.99%", change: "Stable" },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -62,7 +62,7 @@ function DashboardMockup() {
 
         <div className="h-28 rounded-xl border border-white/[0.04] bg-white/[0.02] p-3">
           <div className="mb-2 text-[9px] uppercase tracking-wider text-text-muted">
-            Performance
+            Network Performance
           </div>
           <div className="flex h-16 items-end gap-1">
             {[40, 55, 35, 65, 50, 75, 60, 80, 70, 90, 85, 95].map((h, i) => (
@@ -76,7 +76,7 @@ function DashboardMockup() {
         </div>
 
         <div className="overflow-hidden rounded-xl border border-white/[0.04]">
-          {["API Gateway", "Auth Service", "Data Pipeline"].map((name, i) => (
+          {["OldWest Search", "FirstClassMail", "Lubbock.Cloud"].map((name, i) => (
             <div
               key={name}
               className={`flex items-center justify-between px-3 py-2 ${i > 0 ? "border-t border-white/[0.04]" : ""}`}
@@ -104,7 +104,7 @@ export default function Hero() {
           <motion.div variants={slideLeft} initial="hidden" animate="visible" custom={0}>
             <span className="label-caps inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/[0.07] px-3 py-1.5 text-accent">
               <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-glow-sm" />
-              Enterprise software partner
+              Infrastructure ecosystem
             </span>
           </motion.div>
 
@@ -115,9 +115,9 @@ export default function Hero() {
             custom={0.08}
             className="luxury-title luxury-title-center mt-6 text-balance text-3xl font-bold leading-[1.08] tracking-[-0.03em] text-white min-[400px]:text-4xl sm:text-5xl lg:text-[3.35rem]"
           >
-            Custom digital infrastructure
+            Scalable infrastructure systems
             <br className="hidden sm:inline" />
-            {" "}for <span className="text-accent">modern systems</span>
+            {" "}for the <span className="text-accent">modern internet</span>
           </motion.h1>
 
           <motion.p
@@ -127,9 +127,9 @@ export default function Hero() {
             custom={0.15}
             className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-text-muted sm:text-lg"
           >
-            We design, build, and scale software across finance, automation, and
-            decentralized networks — with the polish of a premium product team and
-            the rigor of core infrastructure.
+            We build and operate infrastructure across communication, compute,
+            and financial networks — unified under one ecosystem with
+            enterprise-grade reliability.
           </motion.p>
         </div>
 
@@ -152,11 +152,11 @@ export default function Hero() {
             className="text-center md:text-left"
           >
             <h2 className="text-lg font-semibold text-white sm:text-xl">
-              Protocol-grade delivery
+              Unified ecosystem
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-text-muted">
-              Architecture, implementation, and observability aligned before scope
-              accelerates — so shipping stays predictable.
+              Search, email, voice, compute, and storage — each platform
+              connected and managed through a single infrastructure layer.
             </p>
           </motion.div>
 
@@ -171,7 +171,7 @@ export default function Hero() {
               href="#contact"
               className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98]"
             >
-              Start now
+              Get started
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -186,11 +186,11 @@ export default function Hero() {
             className="text-center md:text-right"
           >
             <h2 className="text-lg font-semibold text-white sm:text-xl">
-              AI & automation ready
+              Domain to deployment
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-text-muted">
-              Pipelines, integrations, and intelligent workflows engineered for
-              long-running operations and measurable ROI.
+              From domain acquisition through server provisioning to managed
+              infrastructure — a complete pipeline for digital operations.
             </p>
           </motion.div>
         </div>
@@ -199,18 +199,18 @@ export default function Hero() {
           <motion.div variants={slideLeft} initial="hidden" animate="visible" custom={0.35}>
             <span className="label-caps text-accent">Live systems</span>
             <h3 className="luxury-title mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              Operations that stay legible at scale
+              Infrastructure that stays operational at scale
             </h3>
             <p className="mt-3 text-text-muted leading-relaxed">
-              Dashboards, alerts, and service boundaries designed so teams can move
-              fast without losing control — the same cues you expect from high-end
-              product software.
+              Real-time monitoring, distributed nodes, and service-level
+              observability across every platform in the ecosystem — the
+              operational clarity enterprise deployments require.
             </p>
             <a
               href="#services"
               className="mt-6 inline-flex rounded-full border border-white/[0.12] bg-white/[0.03] px-6 py-3 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-accent/25 hover:text-white"
             >
-              Explore capabilities
+              Explore the ecosystem
             </a>
           </motion.div>
           <motion.div variants={slideRight} initial="hidden" animate="visible" custom={0.28}>
@@ -220,10 +220,10 @@ export default function Hero() {
 
         <div className="mx-auto mt-16 max-w-4xl border-t border-white/[0.06] pt-10">
           <p className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted">
-            Trusted stack & ecosystems
+            Part of the OldWestSolutions ecosystem
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 opacity-50 grayscale sm:gap-x-14">
-            {partners.map((name) => (
+            {ecosystemPlatforms.map((name) => (
               <span
                 key={name}
                 className="text-sm font-semibold tracking-wide text-white transition-opacity hover:opacity-80"

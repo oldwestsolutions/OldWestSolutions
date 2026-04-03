@@ -31,7 +31,7 @@ export default function CTA() {
             custom={0.1}
             className="luxury-title luxury-title-center mt-4 text-3xl font-bold leading-tight tracking-[-0.02em] text-white md:text-4xl lg:text-[52px]"
           >
-            Let&apos;s build your system
+            Deploy your infrastructure
           </motion.h2>
 
           <motion.p
@@ -42,8 +42,9 @@ export default function CTA() {
             custom={0.2}
             className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-text-muted"
           >
-            Tell us what you&apos;re building. We&apos;ll help you execute with
-            the architecture, team, and process to ship it right.
+            Tell us what you need — domain brokerage, managed servers,
+            communication platforms, or decentralized compute. We deploy
+            the right infrastructure from our ecosystem.
           </motion.p>
 
           <motion.div
@@ -58,7 +59,7 @@ export default function CTA() {
               href="#"
               className="inline-flex min-h-[48px] w-full touch-manipulation items-center justify-center gap-2 rounded-full bg-accent px-8 py-4 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98] sm:w-auto"
             >
-              Book a call
+              Schedule a consultation
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -67,7 +68,7 @@ export default function CTA() {
               href="#services"
               className="inline-flex min-h-[48px] w-full touch-manipulation items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-8 py-4 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-accent/25 hover:text-white active:scale-[0.98] sm:w-auto"
             >
-              Start a project
+              Explore the ecosystem
             </a>
           </motion.div>
 

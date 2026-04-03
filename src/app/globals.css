@@ -6,7 +6,7 @@
   --background: #111113;
   --foreground: #f2f2f2;
   --canvas: #080809;
-  --accent-violet: #a78bfa;
+  --accent-blue: #0f62fe;
 }
 
 * {
@@ -29,7 +29,7 @@ body {
 }
 
 ::selection {
-  background: rgba(167, 139, 250, 0.35);
+  background: rgba(15, 98, 254, 0.35);
   color: #f2f2f2;
 }
 
@@ -42,17 +42,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(167, 139, 250, 0.25);
+  background: rgba(15, 98, 254, 0.25);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(167, 139, 250, 0.45);
+  background: rgba(15, 98, 254, 0.45);
 }
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight;
+    @apply font-display tracking-tight;
   }
 }
 
@@ -65,7 +65,6 @@ body {
     @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-text-muted;
   }
 
-  /* Luxury title — fine hairline beneath */
   .luxury-title {
     @apply relative pb-5;
   }

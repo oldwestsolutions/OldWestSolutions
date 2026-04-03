@@ -19,12 +19,13 @@ export default function CaseStudies() {
           custom={0}
           className="max-w-2xl mb-16"
         >
-          <span className="label-caps text-accent">Projects</span>
+          <span className="label-caps text-accent">Platforms</span>
           <h2 className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
-            Our Latest Works
+            Ecosystem Deployments
           </h2>
           <p className="mt-4 text-text-muted text-lg leading-relaxed">
-            Real systems we&apos;ve built for companies that needed more than templates.
+            Infrastructure systems deployed across the OldWestSolutions ecosystem
+            — each platform interconnected and operating at scale.
           </p>
         </motion.div>
 

@@ -24,29 +24,29 @@ export default function WhyChooseUs() {
           >
             <span className="label-caps text-accent">Why OldWestSolutions</span>
             <h2 className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
-              Built Different,{" "}
-              <span className="text-accent">By Design</span>
+              One Ecosystem,{" "}
+              <span className="text-accent">Complete Control</span>
             </h2>
             <p className="mt-4 text-text-muted text-lg leading-relaxed">
-              We&apos;re not a dev shop. We&apos;re a systems engineering company
-              that builds infrastructure designed for control, efficiency, and
-              long-term leverage across industries.
+              We are not a collection of separate projects. We are a unified
+              infrastructure company — every platform engineered to interoperate,
+              scale independently, and serve enterprise-level clients.
             </p>
 
             <div className="mt-8 rounded-[1.5rem] border border-white/[0.06] bg-[#17171a] p-6 shadow-card">
               <p className="text-text-secondary text-sm leading-relaxed italic">
-                &ldquo;OldWestSolutions delivered a system that cut our
-                operational costs by 40% and scaled seamlessly from 1K to
-                100K users. Their architecture decisions saved us months of
-                rework.&rdquo;
+                &ldquo;OldWestSolutions consolidated our communication, compute,
+                and domain infrastructure into a single managed ecosystem.
+                The operational efficiency gains were immediate and
+                measurable.&rdquo;
               </p>
               <div className="mt-4 flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center">
-                  <span className="text-accent font-bold text-xs">JK</span>
+                  <span className="text-accent font-bold text-xs">MR</span>
                 </div>
                 <div>
-                  <div className="text-white text-sm font-medium">James K.</div>
-                  <div className="text-text-muted text-xs">CTO, Fintech Startup</div>
+                  <div className="text-white text-sm font-medium">M. Reeves</div>
+                  <div className="text-text-muted text-xs">VP Infrastructure, Enterprise Client</div>
                 </div>
               </div>
             </div>

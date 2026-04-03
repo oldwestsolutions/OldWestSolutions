@@ -15,14 +15,14 @@ export default function Footer() {
                   OldWestSolutions
                 </span>
                 <span className="text-text-muted text-[10px] tracking-wider uppercase mt-0.5">
-                  Digital Infrastructure
+                  Infrastructure Ecosystem
                 </span>
               </div>
             </a>
             <p className="text-text-muted text-sm leading-relaxed max-w-sm mt-4">
-              We design, build, and scale custom software for companies that
-              need enterprise-grade systems. From architecture to deployment —
-              infrastructure done right.
+              Scalable infrastructure systems across communication, compute,
+              and financial networks — unified under one ecosystem. Part of
+              the OldWestSolutions infrastructure layer.
             </p>
           </div>
 

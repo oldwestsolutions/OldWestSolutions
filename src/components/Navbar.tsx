@@ -30,7 +30,7 @@ export default function Navbar() {
               OldWestSolutions
             </span>
             <span className="mt-0.5 text-[10px] uppercase tracking-[0.18em] text-text-muted">
-              Digital Infrastructure
+              Infrastructure Ecosystem
             </span>
           </div>
         </a>
@@ -52,7 +52,7 @@ export default function Navbar() {
             href="#contact"
             className="hidden rounded-full border border-white/[0.1] bg-white/[0.04] px-5 py-2.5 text-[13px] font-medium text-text-secondary shadow-sm transition-all duration-200 hover:border-accent/25 hover:text-white lg:inline-flex"
           >
-            Book a Consultation
+            Get Started
           </a>
           <button
             type="button"
@@ -94,7 +94,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="mt-4 rounded-full bg-accent py-3 text-center text-sm font-semibold text-white"
               >
-                Book a Consultation
+                Get Started
               </a>
             </div>
           </motion.div>
