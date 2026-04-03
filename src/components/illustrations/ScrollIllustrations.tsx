@@ -21,25 +21,6 @@ export function ArchitectureFrame({ className = "" }: { className?: string }) {
   );
 }
 
-export function OrbitalNodes({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 320 320"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden
-    >
-      <circle cx="160" cy="160" r="120" stroke="rgba(255,255,255,0.06)" strokeWidth="1" strokeDasharray="4 8" />
-      <circle cx="160" cy="160" r="72" stroke="rgba(47,107,255,0.15)" strokeWidth="1" />
-      <circle cx="160" cy="64" r="8" fill="rgba(47,107,255,0.4)" />
-      <circle cx="252" cy="200" r="6" fill="rgba(255,255,255,0.2)" />
-      <circle cx="88" cy="210" r="6" fill="rgba(255,255,255,0.15)" />
-      <path d="M160 72l88 128M160 72L92 206M248 200L92 206" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-    </svg>
-  );
-}
-
 export function LayeredStack({ className = "" }: { className?: string }) {
   return (
     <svg

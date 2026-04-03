@@ -8,37 +8,8 @@ import CaseStudies from "@/sections/CaseStudies";
 import Industries from "@/sections/Industries";
 import WhyChooseUs from "@/sections/WhyChooseUs";
 import CTA from "@/sections/CTA";
-import {
-  CinematicScrollSection,
-  ScrollRevealImageSection,
-  PinnedSection,
-} from "@/components/scroll";
-import {
-  ArchitectureFrame,
-  OrbitalNodes,
-  LayeredStack,
-} from "@/components/illustrations/ScrollIllustrations";
-
-const cinematicPhases = [
-  {
-    eyebrow: "Narrative",
-    title: "Systems engineered for leverage — not launches.",
-    subtitle:
-      "We partner with teams who treat software as core infrastructure: measured, sovereign, and built to endure market cycles.",
-  },
-  {
-    eyebrow: "Discipline",
-    title: "Clarity before code. Architecture before acceleration.",
-    subtitle:
-      "Every engagement begins with hard constraints: risk, compliance, throughput, and the real cost of getting it wrong.",
-  },
-  {
-    eyebrow: "Partnership",
-    title: "The velocity you need — with the control you cannot compromise.",
-    subtitle:
-      "From discovery to scale, we stay in the critical path until your platform earns trust across stakeholders and production traffic.",
-  },
-];
+import { ScrollRevealImageSection, PinnedSection } from "@/components/scroll";
+import { ArchitectureFrame, LayeredStack } from "@/components/illustrations/ScrollIllustrations";
 
 const pinnedPrinciples = [
   {
@@ -74,16 +45,6 @@ export default function Home() {
       <main>
         <Hero />
         <TrustBar />
-
-        <CinematicScrollSection
-          phases={cinematicPhases}
-          sliceCount={9}
-          heightVh={300}
-          mobileHeightVh={240}
-          imageSrc="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1920&q=80"
-          imageAlt="Modern architecture and glass facade at dusk"
-          decoration={<OrbitalNodes className="w-full h-auto max-h-[160px] text-white" />}
-        />
 
         <Services />
 
