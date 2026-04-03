@@ -11,7 +11,7 @@ import {
 } from "framer-motion";
 
 const DEFAULT_IMAGE =
-  "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1920&q=80";
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80";
 
 export type CinematicPhase = {
   eyebrow?: string;
@@ -23,13 +23,13 @@ export type CinematicScrollSectionProps = {
   imageSrc?: string;
   imageAlt?: string;
   phases: CinematicPhase[];
-  /** Horizontal mask strips — more = finer reveal */
   sliceCount?: number;
   heightVh?: number;
   mobileHeightVh?: number;
   decoration?: ReactNode;
 };
 
+/** Soft-stepped mask fade — avoids linear “blinds” popping */
 function MaskStrip({
   index,
   total,
@@ -40,17 +40,23 @@ function MaskStrip({
   progress: MotionValue<number>;
 }) {
   const n = Math.max(total, 1);
-  const span = 0.8;
-  const start = (index / n) * span + 0.03;
-  const end = Math.min(start + 0.12, 0.96);
-  const opacity = useTransform(progress, [start, end], [1, 0]);
+  const revealSpan = 0.74;
+  const wave = 0.04;
+  const start = (index / n) * revealSpan + 0.05 + wave * Math.sin((index / Math.max(n - 1, 1)) * Math.PI * 0.35);
+  const fadeLen = 0.2;
+  const a = start;
+  const b = Math.min(start + fadeLen * 0.35, 0.94);
+  const c = Math.min(start + fadeLen * 0.72, 0.97);
+  const d = Math.min(start + fadeLen, 0.99);
+
+  const opacity = useTransform(progress, [a, b, c, d], [1, 0.88, 0.22, 0]);
 
   return (
     <motion.div
-      className="absolute inset-x-0 bg-[#1F1F1F] border-b border-white/[0.03]"
+      className="absolute inset-x-0 bg-gradient-to-b from-[#1F1F1F] via-[#1F1F1F] to-[#1F1F1F]/92 border-b border-white/[0.02] shadow-[inset_0_-20px_30px_-18px_rgba(0,0,0,0.35)]"
       style={{
         top: `${(index / n) * 100}%`,
-        height: `${100 / n + 0.35}%`,
+        height: `${100 / n + 0.45}%`,
         opacity,
       }}
     />
@@ -69,30 +75,32 @@ function PhaseLayer({
   progress: MotionValue<number>;
 }) {
   const n = Math.max(phaseCount, 1);
-  const slot = (1 - 0.14) / n;
-  const t0 = 0.07 + phaseIndex * slot;
-  const t1 = t0 + slot * 0.38;
-  const t2 = t0 + slot * 0.82;
+  const slot = (1 - 0.1) / n;
+  const t0 = 0.05 + phaseIndex * slot;
+  const tIn0 = t0 + slot * 0.08;
+  const tIn1 = t0 + slot * 0.22;
+  const tOut0 = t0 + slot * 0.62;
+  const tOut1 = t0 + slot * 0.9;
 
-  const opacity = useTransform(progress, [t0, t1, t2], [0, 1, 0]);
-  const y = useTransform(progress, [t0, t1], [18, 0]);
+  const opacity = useTransform(progress, [t0, tIn0, tIn1, tOut0, tOut1], [0, 0.35, 1, 1, 0]);
+  const y = useTransform(progress, [t0, tIn1], [22, 0]);
 
   return (
     <motion.div
-      className="absolute inset-0 z-20 flex items-center justify-center px-4 sm:px-8 pointer-events-none"
+      className="absolute inset-0 z-20 flex items-center justify-center px-5 sm:px-10 pointer-events-none"
       style={{ opacity }}
     >
-      <motion.div className="max-w-2xl text-center" style={{ y }}>
+      <motion.div className="max-w-[34rem] sm:max-w-2xl text-center" style={{ y }}>
         {phase.eyebrow && (
-          <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-accent/90 mb-4 sm:mb-5">
+          <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-accent mb-5 sm:mb-6">
             {phase.eyebrow}
           </span>
         )}
-        <h2 className="text-2xl sm:text-4xl md:text-[2.75rem] font-semibold text-white leading-[1.12] tracking-tight text-balance">
+        <h2 className="text-[1.65rem] leading-[1.15] sm:text-4xl md:text-[2.85rem] font-semibold text-white tracking-[-0.02em] text-balance">
           {phase.title}
         </h2>
         {phase.subtitle && (
-          <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-text-muted leading-relaxed max-w-lg mx-auto">
+          <p className="mt-5 sm:mt-7 text-sm sm:text-base text-text-secondary leading-[1.65] max-w-md sm:max-w-lg mx-auto">
             {phase.subtitle}
           </p>
         )}
@@ -117,7 +125,7 @@ function CinematicReduced({
         {phases.map((p, i) => (
           <div key={`${p.title}-${i}`} className="text-center max-w-2xl mx-auto">
             {p.eyebrow && (
-              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">{p.eyebrow}</span>
+              <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-accent">{p.eyebrow}</span>
             )}
             <h2 className="mt-3 text-2xl sm:text-3xl font-semibold text-white tracking-tight">{p.title}</h2>
             {p.subtitle && <p className="mt-3 text-text-muted leading-relaxed">{p.subtitle}</p>}
@@ -133,9 +141,9 @@ function CinematicAnimated({
   imageSrc = DEFAULT_IMAGE,
   imageAlt = "Architecture",
   phases,
-  sliceCount = 8,
-  heightVh = 300,
-  mobileHeightVh = 240,
+  sliceCount = 12,
+  heightVh = 380,
+  mobileHeightVh = 280,
   decoration,
 }: CinematicScrollSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -144,13 +152,16 @@ function CinematicAnimated({
     offset: ["start start", "end end"],
   });
 
-  const scrimOpacity = useTransform(scrollYProgress, [0, 0.45, 1], [0.5, 0.32, 0.48]);
+  const scrimOpacity = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], [0.52, 0.28, 0.26, 0.42]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.09, 1]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-2%", "0%"]);
+  const progressScale = useTransform(scrollYProgress, [0, 1], [0.04, 1]);
   const slices = Math.max(sliceCount, 1);
 
   return (
     <section
       ref={ref}
-      className="relative w-full bg-[#141414] [height:var(--cin-h)] md:[height:var(--cin-h-lg)]"
+      className="relative w-full bg-[#0a0a0a] [height:var(--cin-h)] md:[height:var(--cin-h-lg)]"
       style={
         {
           "--cin-h": `${mobileHeightVh}vh`,
@@ -158,32 +169,42 @@ function CinematicAnimated({
         } as CSSProperties
       }
     >
-      <div className="sticky top-0 h-[100dvh] min-h-[100svh] w-full overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            fill
-            className="object-cover object-[50%_42%] scale-[1.02]"
-            sizes="100vw"
-            priority={false}
-          />
+      <div className="sticky top-0 h-[100dvh] min-h-[100svh] w-full overflow-hidden ring-1 ring-inset ring-white/[0.06]">
+        {/* Background + Ken Burns */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <motion.div
+            className="absolute inset-[-8%] will-change-transform"
+            style={{ scale: imageScale, y: imageY }}
+          >
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              className="object-cover object-[50%_45%]"
+              sizes="100vw"
+              priority={false}
+            />
+          </motion.div>
           <motion.div
             className="absolute inset-0 bg-[#1F1F1F] pointer-events-none"
             style={{ opacity: scrimOpacity }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1F1F1F]/75 via-transparent to-[#141414]/90 pointer-events-none" />
+          <div
+            className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_85%_70%_at_50%_45%,transparent_0%,rgba(10,10,10,0.5)_70%,rgba(10,10,10,0.88)_100%)]"
+            aria-hidden
+          />
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1F1F1F]/90 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#141414] to-transparent pointer-events-none" />
         </div>
 
-        {/* Mask strips — progressive reveal */}
+        {/* Masks */}
         <div className="absolute inset-0 z-10 pointer-events-none">
           {Array.from({ length: slices }, (_, i) => (
             <MaskStrip key={i} index={i} total={slices} progress={scrollYProgress} />
           ))}
         </div>
 
-        {/* Phased copy */}
+        {/* Copy */}
         <div className="absolute inset-0 z-[15]">
           {phases.map((phase, i) => (
             <PhaseLayer
@@ -196,8 +217,16 @@ function CinematicAnimated({
           ))}
         </div>
 
+        {/* Scroll progress */}
+        <div className="absolute bottom-0 left-0 right-0 z-[30] h-px bg-white/[0.08] pointer-events-none">
+          <motion.div
+            className="h-full w-full bg-accent/45 origin-left will-change-transform"
+            style={{ scaleX: progressScale }}
+          />
+        </div>
+
         {decoration ? (
-          <div className="absolute bottom-6 sm:bottom-10 left-1/2 z-20 w-[min(88vw,400px)] -translate-x-1/2 opacity-[0.55] pointer-events-none">
+          <div className="absolute bottom-5 sm:bottom-8 left-1/2 z-20 w-[min(88vw,420px)] -translate-x-1/2 opacity-[0.5] pointer-events-none">
             {decoration}
           </div>
         ) : null}
@@ -206,10 +235,6 @@ function CinematicAnimated({
   );
 }
 
-/**
- * Pinned cinematic section: sticky viewport + scroll-driven masks + phased narrative.
- * Reduced-motion users get a static stack (no useScroll on an unmounted ref).
- */
 export default function CinematicScrollSection(props: CinematicScrollSectionProps) {
   const reduced = useReducedMotion();
   if (reduced === true) {

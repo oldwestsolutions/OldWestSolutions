@@ -6,13 +6,6 @@ export const navLinks = [
   { label: "About", href: "#about" },
 ];
 
-export const stats = [
-  { value: "100+", label: "Projects Delivered" },
-  { value: "40+", label: "Enterprise Clients" },
-  { value: "99.9%", label: "Uptime Guarantee" },
-  { value: "12", label: "Global Regions" },
-];
-
 export const services = [
   {
     title: "Custom Software Development",

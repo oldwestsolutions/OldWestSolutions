@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/sections/Hero";
-import TrustBar from "@/sections/TrustBar";
 import Services from "@/sections/Services";
 import Process from "@/sections/Process";
 import CaseStudies from "@/sections/CaseStudies";
@@ -38,15 +37,14 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <TrustBar />
 
         <CinematicScrollSection
           phases={cinematicPhases}
-          sliceCount={8}
-          heightVh={300}
-          mobileHeightVh={240}
-          imageSrc="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1920&q=80"
-          imageAlt="Modern building exterior with structured glass lines"
+          sliceCount={12}
+          heightVh={380}
+          mobileHeightVh={280}
+          imageSrc="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80"
+          imageAlt="City towers and structured skyline at golden hour"
           decoration={<CinematicAccent className="w-full h-8 sm:h-10" />}
         />
 
