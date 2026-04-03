@@ -7,7 +7,6 @@ import {
   useScroll,
   useTransform,
   useReducedMotion,
-  useMotionTemplate,
   type MotionValue,
 } from "framer-motion";
 
@@ -27,8 +26,9 @@ type CinematicStripProps = {
 };
 
 function CinematicStrip({ index, total, progress }: CinematicStripProps) {
+  const safeTotal = Math.max(total, 1);
   const span = 0.78;
-  const start = (index / total) * span + 0.04;
+  const start = (index / safeTotal) * span + 0.04;
   const end = Math.min(start + 0.14, 0.96);
   const opacity = useTransform(progress, [start, end], [1, 0]);
 
@@ -36,8 +36,8 @@ function CinematicStrip({ index, total, progress }: CinematicStripProps) {
     <motion.div
       className="absolute left-0 right-0 bg-[#1F1F1F]/95 backdrop-blur-[2px]"
       style={{
-        top: `${(index / total) * 100}%`,
-        height: `${100 / total + 0.4}%`,
+        top: `${(index / safeTotal) * 100}%`,
+        height: `${100 / safeTotal + 0.4}%`,
         opacity,
       }}
     />
@@ -55,22 +55,21 @@ function PhaseBlock({
   totalPhases: number;
   progress: MotionValue<number>;
 }) {
-  const slot = (1 - 0.16) / totalPhases;
+  const safePhases = Math.max(totalPhases, 1);
+  const slot = (1 - 0.16) / safePhases;
   const start = 0.08 + phaseIndex * slot;
   const mid = start + slot * 0.4;
   const end = start + slot * 0.85;
 
   const opacity = useTransform(progress, [start, mid, end], [0, 1, 0]);
   const y = useTransform(progress, [start, mid], [20, 0]);
-  const blur = useTransform(progress, [start, mid], [4, 0]);
-  const blurFilter = useMotionTemplate`blur(${blur}px)`;
 
   return (
     <motion.div
       className="absolute inset-0 flex items-center justify-center px-4 pointer-events-none"
       style={{ opacity }}
     >
-      <motion.div className="max-w-2xl text-center" style={{ y, filter: blurFilter }}>
+      <motion.div className="max-w-2xl text-center will-change-transform" style={{ y }}>
         {phase.eyebrow && (
           <span className="inline-block text-accent text-xs font-semibold tracking-widest uppercase mb-4 sm:mb-5">
             {phase.eyebrow}
@@ -109,7 +108,8 @@ export default function CinematicScrollSection({
   decoration,
 }: CinematicScrollSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
+  const reduceMotion = useReducedMotion();
+  const reduce = reduceMotion === true;
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -117,6 +117,7 @@ export default function CinematicScrollSection({
   });
 
   const scrim = useTransform(scrollYProgress, [0, 0.5, 1], [0.55, 0.35, 0.5]);
+  const stripCount = Math.max(sliceCount, 1);
 
   if (reduce) {
     return (
@@ -170,8 +171,8 @@ export default function CinematicScrollSection({
         </div>
 
         <div className="absolute inset-0 z-[15] pointer-events-none">
-          {Array.from({ length: sliceCount }).map((_, i) => (
-            <CinematicStrip key={i} index={i} total={sliceCount} progress={scrollYProgress} />
+          {Array.from({ length: stripCount }).map((_, i) => (
+            <CinematicStrip key={i} index={i} total={stripCount} progress={scrollYProgress} />
           ))}
         </div>
 
@@ -181,7 +182,7 @@ export default function CinematicScrollSection({
               key={`${phase.title}-${i}`}
               phase={phase}
               phaseIndex={i}
-              totalPhases={phases.length}
+              totalPhases={Math.max(phases.length, 1)}
               progress={scrollYProgress}
             />
           ))}

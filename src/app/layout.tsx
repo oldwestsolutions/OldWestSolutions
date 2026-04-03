@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
 import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
 import JsonLd from "@/components/JsonLd";
+import VercelAnalytics from "@/components/VercelAnalytics";
 import { siteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -82,7 +83,7 @@ export const viewport: Viewport = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en" className="dark">
@@ -91,7 +92,7 @@ export default function RootLayout({
       >
         <JsonLd />
         {children}
-        <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );

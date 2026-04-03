@@ -20,9 +20,10 @@ type StripProps = {
 };
 
 function HorizontalRevealStrip({ index, total, progress }: StripProps) {
+  const safeTotal = Math.max(total, 1);
   const pad = 0.04;
   const span = 0.85;
-  const start = (index / total) * span;
+  const start = (index / safeTotal) * span;
   const end = Math.min(start + 0.12 + pad, 0.98);
   const opacity = useTransform(progress, [start, end], [1, 0]);
 
@@ -30,8 +31,8 @@ function HorizontalRevealStrip({ index, total, progress }: StripProps) {
     <motion.div
       className="absolute left-0 right-0 bg-[#1F1F1F] shadow-[inset_0_-1px_0_rgba(255,255,255,0.04)]"
       style={{
-        top: `${(index / total) * 100}%`,
-        height: `${100 / total + 0.35}%`,
+        top: `${(index / safeTotal) * 100}%`,
+        height: `${100 / safeTotal + 0.35}%`,
         opacity,
       }}
     />
@@ -64,7 +65,8 @@ export default function ScrollRevealImageSection({
   illustration,
 }: ScrollRevealImageSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
+  const reduceMotion = useReducedMotion();
+  const reduce = reduceMotion === true;
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -73,6 +75,8 @@ export default function ScrollRevealImageSection({
 
   const captionOpacity = useTransform(scrollYProgress, [0.15, 0.35, 0.85, 1], [0, 1, 1, 0.4]);
   const captionY = useTransform(scrollYProgress, [0.15, 0.4], [24, 0]);
+
+  const stripCount = Math.max(slices, 1);
 
   if (reduce) {
     return (
@@ -124,8 +128,8 @@ export default function ScrollRevealImageSection({
 
         {/* Reveal strips */}
         <div className="absolute inset-0 z-10 pointer-events-none">
-          {Array.from({ length: slices }).map((_, i) => (
-            <HorizontalRevealStrip key={i} index={i} total={slices} progress={scrollYProgress} />
+          {Array.from({ length: stripCount }).map((_, i) => (
+            <HorizontalRevealStrip key={i} index={i} total={stripCount} progress={scrollYProgress} />
           ))}
         </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
+import { useRef, type CSSProperties, type ReactNode } from "react";
 import {
   motion,
   useScroll,
@@ -35,7 +35,8 @@ export default function PinnedSection({
   illustration,
 }: PinnedSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
+  const reduceMotion = useReducedMotion();
+  const reduce = reduceMotion === true;
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -81,7 +82,7 @@ export default function PinnedSection({
         {
           "--pin-height": `${heightVh}vh`,
           "--pin-height-mobile": `${mobileHeightVh}vh`,
-        } as React.CSSProperties
+        } as CSSProperties
       }
     >
       <div className="sticky top-0 h-[100dvh] min-h-[100svh] flex flex-col justify-center overflow-hidden border-y border-white/[0.04]">
