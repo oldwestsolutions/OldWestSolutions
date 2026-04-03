@@ -20,7 +20,7 @@ export default function CTA() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           custom={0}
-          className="mx-auto max-w-4xl border-b border-white/[0.06] pb-6 md:pb-8"
+          className="mx-auto max-w-4xl border-b border-white/[0.06] pb-8 md:pb-10"
         >
           <p className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted">
             Trusted technology partners
@@ -38,7 +38,7 @@ export default function CTA() {
         </motion.div>
 
         {/* Two-column CTA */}
-        <div className="mx-auto grid max-w-6xl gap-8 pt-6 md:grid-cols-2 md:items-start md:gap-10 md:pt-8">
+        <div className="mx-auto grid max-w-6xl gap-8 pt-7 md:grid-cols-2 md:items-start md:gap-10 md:pt-9">
           {/* Left — messaging */}
           <motion.div
             variants={fadeUp}

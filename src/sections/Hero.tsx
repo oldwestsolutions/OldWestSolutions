@@ -79,7 +79,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden">
       {/* Full-viewport headline block */}
-      <div className="relative flex min-h-[calc(100dvh-5.5rem)] flex-col justify-center px-4 pb-8 pt-10 sm:px-6 sm:pb-12 sm:pt-12 md:min-h-[calc(100dvh-6rem)] lg:px-8">
+      <div className="relative flex min-h-[calc(100dvh-5.5rem)] flex-col justify-center px-4 pb-10 pt-10 sm:px-6 sm:pb-14 sm:pt-12 md:min-h-[calc(100dvh-6rem)] lg:px-8">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.35]"
           style={{
@@ -150,7 +150,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl w-full px-4 pb-10 sm:px-6 sm:pb-12 md:pb-14 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl w-full px-4 pb-14 pt-6 sm:px-6 sm:pb-16 sm:pt-8 md:pb-20 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2 lg:items-center lg:gap-10">
           <motion.div variants={slideLeft} initial="hidden" animate="visible" custom={0.18}>
             <span className="label-caps text-accent">Managed services</span>

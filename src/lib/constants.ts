@@ -102,7 +102,7 @@ export const caseStudies = [
       "The platform is engineered as a distributed system: replicated services, explicit boundaries between discovery and messaging, and horizontal scale so capacity and failover are designed in — not bolted on after the fact.",
     outcome:
       "Operators run name, application, and inbox paths as a single coherent estate: predictable replication, regional presence where it matters, and one operational story from resolution through application and messaging.",
-    tags: ["Distributed systems", "Control plane", "Replication", "Resilience"],
+    tags: ["Distributed systems", "Control plane", "Replication"],
   },
   {
     title: "Composable microservices for communications workloads",

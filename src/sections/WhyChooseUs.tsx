@@ -15,7 +15,7 @@ export default function WhyChooseUs() {
     <section
       id="about"
       aria-labelledby="network-flagship-heading"
-      className="relative border-t border-white/[0.06] bg-[#111113] pt-10 pb-8 md:pt-14 md:pb-10"
+      className="relative border-t border-white/[0.06] bg-[#111113] pt-14 pb-8 md:pt-20 md:pb-10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
