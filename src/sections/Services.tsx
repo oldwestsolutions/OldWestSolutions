@@ -39,7 +39,7 @@ const iconMap: Record<string, JSX.Element> = {
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-24 md:py-32 bg-[#1F1F1F]">
+    <section id="services" className="relative bg-[#1F1F1F] py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
