@@ -8,7 +8,6 @@ const partners = ["AWS", "Google Cloud", "Ethereum", "Solidity", "Kubernetes", "
 function HeroVisual() {
   return (
     <div className="relative w-full overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-[#0e0e12] shadow-card sm:rounded-[2rem]">
-      <div className="bg-hero-mesh absolute inset-0" />
       <div
         className="pointer-events-none absolute inset-0 opacity-25"
         style={{
@@ -17,13 +16,11 @@ function HeroVisual() {
         }}
       />
       <div className="pointer-events-none absolute -left-1/4 top-1/2 h-[120%] w-[80%] -translate-y-1/2 rounded-full bg-accent/10 blur-[100px]" />
-      <div className="pointer-events-none absolute bottom-0 left-1/2 h-[55%] w-[140%] -translate-x-1/2 bg-gradient-to-t from-violet-600/25 via-transparent to-transparent blur-3xl" />
 
-      {/* Abstract “chrome” orb */}
       <div className="relative flex min-h-[240px] items-center justify-center py-12 sm:min-h-[300px] md:min-h-[340px]">
-        <div className="absolute h-40 w-40 rounded-full bg-gradient-to-br from-white/25 via-accent/30 to-accent-deep/40 opacity-80 blur-xl sm:h-48 sm:w-48" />
-        <div className="relative h-28 w-28 rounded-[2rem] border border-white/20 bg-gradient-to-br from-zinc-300/40 via-accent/25 to-violet-900/50 shadow-glow sm:h-36 sm:w-36 sm:rounded-3xl" />
-        <div className="absolute h-20 w-20 rounded-2xl border border-white/10 bg-gradient-to-tr from-white/5 to-transparent backdrop-blur-sm sm:h-24 sm:w-24" />
+        <div className="absolute h-40 w-40 rounded-full bg-accent/15 opacity-80 blur-xl sm:h-48 sm:w-48" />
+        <div className="relative h-28 w-28 rounded-[2rem] border border-white/20 bg-accent/15 shadow-glow sm:h-36 sm:w-36 sm:rounded-3xl" />
+        <div className="absolute h-20 w-20 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm sm:h-24 sm:w-24" />
       </div>
     </div>
   );
@@ -116,12 +113,11 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.08}
-            className="mt-6 text-balance text-3xl font-bold leading-[1.08] tracking-tight text-white min-[400px]:text-4xl sm:text-5xl lg:text-[3.35rem]"
+            className="luxury-title luxury-title-center mt-6 text-balance text-3xl font-bold leading-[1.08] tracking-[-0.03em] text-white min-[400px]:text-4xl sm:text-5xl lg:text-[3.35rem]"
           >
-            Custom digital infrastructure for{" "}
-            <span className="bg-gradient-to-r from-white via-accent to-accent-deep bg-clip-text text-transparent">
-              modern systems
-            </span>
+            Custom digital infrastructure
+            <br className="hidden sm:inline" />
+            {" "}for <span className="text-accent">modern systems</span>
           </motion.h1>
 
           <motion.p
@@ -173,7 +169,7 @@ export default function Hero() {
           >
             <a
               href="#contact"
-              className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-gradient-accent px-8 py-3.5 text-sm font-semibold text-white shadow-glow transition-transform duration-200 hover:brightness-110 active:scale-[0.98]"
+              className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98]"
             >
               Start now
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -202,7 +198,7 @@ export default function Hero() {
         <div className="mx-auto mt-14 grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
           <motion.div variants={slideLeft} initial="hidden" animate="visible" custom={0.35}>
             <span className="label-caps text-accent">Live systems</span>
-            <h3 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+            <h3 className="luxury-title mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
               Operations that stay legible at scale
             </h3>
             <p className="mt-3 text-text-muted leading-relaxed">

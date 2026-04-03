@@ -11,7 +11,6 @@ export default function CaseStudies() {
       className="relative border-t border-white/[0.06] bg-[#111113] py-24 md:py-32"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -21,7 +20,7 @@ export default function CaseStudies() {
           className="max-w-2xl mb-16"
         >
           <span className="label-caps text-accent">Projects</span>
-          <h2 className="mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight">
+          <h2 className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
             Our Latest Works
           </h2>
           <p className="mt-4 text-text-muted text-lg leading-relaxed">
@@ -29,7 +28,6 @@ export default function CaseStudies() {
           </p>
         </motion.div>
 
-        {/* Case study cards */}
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -42,9 +40,8 @@ export default function CaseStudies() {
               key={study.title}
               variants={fadeUp}
               custom={i * 0.1}
-              className="group overflow-hidden rounded-[1.5rem] border border-white/[0.06] bg-gradient-card shadow-card transition-all duration-300 hover:border-accent/20"
+              className="group overflow-hidden rounded-[1.5rem] border border-white/[0.06] bg-[#1a1a1e] shadow-card transition-all duration-300 hover:border-accent/20"
             >
-              {/* Header */}
               <div className="px-7 pt-7 pb-5 border-b border-white/[0.04]">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[10px] font-semibold tracking-widest uppercase text-accent bg-accent/[0.08] px-2.5 py-1 rounded-md">
@@ -56,7 +53,6 @@ export default function CaseStudies() {
                 </h3>
               </div>
 
-              {/* Body */}
               <div className="px-7 py-5 space-y-4">
                 <div>
                   <div className="text-[10px] font-semibold tracking-widest uppercase text-text-muted mb-1.5">
@@ -84,7 +80,6 @@ export default function CaseStudies() {
                 </div>
               </div>
 
-              {/* Footer - Tags */}
               <div className="px-7 pb-6 pt-2 flex flex-wrap gap-1.5">
                 {study.tags.map((tag) => (
                   <span

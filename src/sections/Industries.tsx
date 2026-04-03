@@ -16,7 +16,6 @@ export default function Industries() {
   return (
     <section id="industries" className="relative border-t border-white/[0.06] bg-[#141416] py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -25,10 +24,8 @@ export default function Industries() {
           custom={0}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="text-accent text-xs font-semibold tracking-widest uppercase">
-            Industries
-          </span>
-          <h2 className="mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight">
+          <span className="label-caps text-accent">Industries</span>
+          <h2 className="luxury-title luxury-title-center mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
             Solutions Across Verticals
           </h2>
           <p className="mt-4 text-text-muted text-lg leading-relaxed">
@@ -37,7 +34,6 @@ export default function Industries() {
           </p>
         </motion.div>
 
-        {/* Industries grid */}
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -50,7 +46,7 @@ export default function Industries() {
               key={industry.title}
               variants={fadeUp}
               custom={i * 0.08}
-              className={`group rounded-[1.5rem] border border-white/[0.06] bg-gradient-card p-7 shadow-card transition-all duration-300 hover:border-accent/20 ${
+              className={`group rounded-[1.5rem] border border-white/[0.06] bg-[#1a1a1e] p-7 shadow-card transition-all duration-300 hover:border-accent/20 ${
                 i >= 3 ? "lg:col-span-1 lg:last:col-start-2" : ""
               }`}
             >

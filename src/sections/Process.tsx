@@ -20,7 +20,7 @@ export default function Process() {
           className="mx-auto mb-12 max-w-2xl text-center md:mb-20"
         >
           <span className="label-caps text-accent">Our Process</span>
-          <h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[44px]">
+          <h2 className="luxury-title luxury-title-center mt-3 text-3xl font-bold leading-tight tracking-[-0.02em] text-white md:text-4xl lg:text-[44px]">
             How We Deliver Results
           </h2>
           <p className="mt-4 px-0 text-base leading-relaxed text-text-muted sm:text-lg">
@@ -53,7 +53,7 @@ export default function Process() {
                   <div
                     className={`md:w-1/2 ${isLeft ? "md:pr-16 md:text-right" : "md:pl-16"}`}
                   >
-                    <div className="group rounded-2xl border border-white/[0.04] bg-[#242424] p-6 transition-all duration-300 hover:border-accent/15 md:p-8">
+                    <div className="group rounded-2xl border border-white/[0.04] bg-[#1a1a1e] p-6 transition-all duration-300 hover:border-accent/15 md:p-8">
                       <div className="mb-3 flex items-center gap-3 md:hidden">
                         <span className="text-lg font-bold text-accent">{step.step}</span>
                         <div className="h-px flex-1 bg-white/[0.06]" />

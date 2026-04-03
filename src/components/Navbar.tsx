@@ -5,14 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { navLinks } from "@/lib/constants";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -24,11 +17,7 @@ export default function Navbar() {
       initial={{ y: -8, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.45 }}
-      className={`sticky top-0 z-50 rounded-t-[1.75rem] sm:rounded-t-[2rem] pt-[env(safe-area-inset-top,0px)] transition-colors duration-300 ${
-        scrolled
-          ? "border-b border-white/[0.06] bg-[#111113]/88 backdrop-blur-xl shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)]"
-          : "border-b border-transparent bg-transparent"
-      }`}
+      className="relative z-50 rounded-t-[1.75rem] border-b border-white/[0.06] bg-[#111113] pt-[env(safe-area-inset-top,0px)] sm:rounded-t-[2rem]"
     >
       <nav className="mx-auto grid h-[72px] min-h-[72px] max-w-7xl grid-cols-2 items-center gap-4 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
         <a
@@ -80,13 +69,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Trust strip — BloomFi / TARS cue */}
-      <div className="border-b border-white/[0.04] px-4 pb-3 sm:px-6 lg:px-8">
-        <p className="text-center text-[10px] font-medium uppercase tracking-[0.28em] text-text-muted">
-          Enterprise delivery · Security-first · Full-cycle ownership
-        </p>
-      </div>
-
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -94,7 +76,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="border-b border-white/[0.06] bg-[#111113]/98 backdrop-blur-xl lg:hidden"
+            className="border-b border-white/[0.06] bg-[#111113] lg:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-8">
               {navLinks.map((link) => (
@@ -110,7 +92,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 rounded-full bg-gradient-accent py-3 text-center text-sm font-semibold text-white shadow-glow-sm"
+                className="mt-4 rounded-full bg-accent py-3 text-center text-sm font-semibold text-white"
               >
                 Book a Consultation
               </a>

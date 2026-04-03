@@ -29,7 +29,7 @@ export default function CTA() {
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             custom={0.1}
-            className="mt-4 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[52px]"
+            className="luxury-title luxury-title-center mt-4 text-3xl font-bold leading-tight tracking-[-0.02em] text-white md:text-4xl lg:text-[52px]"
           >
             Let&apos;s build your system
           </motion.h2>
@@ -56,7 +56,7 @@ export default function CTA() {
           >
             <a
               href="#"
-              className="inline-flex min-h-[48px] w-full touch-manipulation items-center justify-center gap-2 rounded-full bg-gradient-accent px-8 py-4 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:brightness-110 active:scale-[0.98] sm:w-auto"
+              className="inline-flex min-h-[48px] w-full touch-manipulation items-center justify-center gap-2 rounded-full bg-accent px-8 py-4 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98] sm:w-auto"
             >
               Book a call
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

@@ -34,16 +34,6 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-dark":
-          "linear-gradient(180deg, #111113 0%, #0c0c0e 50%, #080809 100%)",
-        "gradient-card":
-          "linear-gradient(135deg, #1e1e22 0%, #141416 100%)",
-        "gradient-surface":
-          "linear-gradient(180deg, #1a1a1e 0%, #111113 100%)",
-        "gradient-accent": "linear-gradient(135deg, #c4b5fd 0%, #8b5cf6 50%, #6d28d9 100%)",
-      },
       boxShadow: {
         glow: "0 0 28px rgba(167, 139, 250, 0.12)",
         "glow-sm": "0 0 14px rgba(167, 139, 250, 0.08)",

@@ -52,7 +52,7 @@ function ServiceCard({
     <motion.div
       variants={fadeUp}
       custom={delay}
-      className={`group relative cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/[0.06] bg-gradient-card p-7 shadow-card transition-all duration-300 hover:border-accent/25 hover:shadow-glow-sm ${
+      className={`group relative cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/[0.06] bg-[#1a1a1e] p-7 shadow-card transition-all duration-300 hover:border-accent/25 hover:shadow-glow-sm ${
         featured ? "min-h-[280px] md:row-span-2" : ""
       } ${fullWidth ? "md:col-span-3" : ""}`}
     >
@@ -84,7 +84,7 @@ export default function Services() {
   const wide = rest[4];
 
   return (
-    <section id="services" className="relative bg-[#111113] py-24 md:py-32">
+    <section id="services" className="relative border-t border-white/[0.06] bg-[#111113] py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={fadeUp}
@@ -95,8 +95,10 @@ export default function Services() {
           className="mx-auto mb-14 max-w-2xl text-center md:mb-16"
         >
           <span className="label-caps text-accent">Services</span>
-          <h2 className="mt-4 text-balance text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl lg:text-[44px]">
-            Built like a product. Engineered like infrastructure.
+          <h2 className="luxury-title luxury-title-center mt-4 text-balance text-3xl font-bold leading-tight tracking-[-0.02em] text-white md:text-4xl lg:text-[44px]">
+            Built like a product.
+            <br />
+            Engineered like infrastructure.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-text-muted">
             A bento-style view of how we help teams ship — from core platform work

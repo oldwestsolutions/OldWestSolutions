@@ -15,7 +15,6 @@ export default function WhyChooseUs() {
     <section id="about" className="relative border-t border-white/[0.06] bg-[#111113] py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -24,7 +23,7 @@ export default function WhyChooseUs() {
             custom={0}
           >
             <span className="label-caps text-accent">Why OldWestSolutions</span>
-            <h2 className="mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight">
+            <h2 className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
               Built Different,{" "}
               <span className="text-accent">By Design</span>
             </h2>
@@ -53,13 +52,12 @@ export default function WhyChooseUs() {
             </div>
           </motion.div>
 
-          {/* Right - Why us grid */}
           <motion.div
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            className="space-y-4"
+            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1"
           >
             {whyUs.map((item, i) => (
               <motion.div
