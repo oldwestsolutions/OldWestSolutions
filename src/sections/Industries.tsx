@@ -50,7 +50,7 @@ export default function Industries() {
               {flowSteps.map((item) => (
                 <div
                   key={item.step}
-                  className="relative flex gap-4 rounded-2xl border border-white/[0.06] bg-[#141416] p-4 sm:p-5"
+                  className="flex gap-4 rounded-2xl border border-white/[0.06] bg-[#141416] p-4 sm:p-5"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-accent/20 bg-accent/[0.08] text-xs font-bold text-accent">
                     {item.step}
