@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/sections/Hero";
-import Services from "@/sections/Services";
 import Process from "@/sections/Process";
 import CaseStudies from "@/sections/CaseStudies";
 import Industries from "@/sections/Industries";
@@ -15,7 +14,6 @@ export default function Home() {
         <Navbar />
         <main className="bg-[#111113]">
           <Hero />
-          <Services />
           <Process />
           <CaseStudies />
           <Industries />

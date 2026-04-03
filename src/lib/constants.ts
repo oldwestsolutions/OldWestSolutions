@@ -15,7 +15,7 @@ export const infrastructureVendors = [
 ];
 
 export const navLinks = [
-  { label: "Services", href: "#services" },
+  { label: "Services", href: "/managed-services" },
   { label: "Process", href: "#process" },
   { label: "Platforms", href: "#projects" },
   { label: "Infrastructure", href: "#industries" },
@@ -180,11 +180,11 @@ export const footerLinks = [
   {
     title: "Solutions",
     links: [
-      { label: "Databases", href: "#services" },
-      { label: "Storage & lifecycle", href: "#services" },
-      { label: "AI & inference", href: "#services" },
-      { label: "Compute & orchestration", href: "#services" },
-      { label: "Edge & security", href: "#services" },
+      { label: "Databases", href: "/managed-services" },
+      { label: "Storage & lifecycle", href: "/managed-services" },
+      { label: "AI & inference", href: "/managed-services" },
+      { label: "Compute & orchestration", href: "/managed-services" },
+      { label: "Edge & security", href: "/managed-services" },
     ],
   },
   {

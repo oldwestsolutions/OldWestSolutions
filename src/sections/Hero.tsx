@@ -135,20 +135,15 @@ export default function Hero() {
                 <span className="text-text-secondary">Observable by default</span>
               </div>
               <div className="hidden h-6 w-px bg-white/10 sm:block" aria-hidden />
-              <div className="flex items-center gap-2.5">
-                <a
-                  href="#contact"
-                  className="inline-flex min-h-[40px] items-center justify-center rounded-full border border-white/[0.14] bg-white/[0.04] px-5 py-2 text-[13px] font-medium text-text-secondary transition-all duration-200 hover:border-accent/35 hover:text-white active:scale-[0.98]"
-                >
-                  Book an appointment
-                </a>
-                <a
-                  href="/portal"
-                  className="inline-flex min-h-[40px] items-center justify-center rounded-full bg-accent px-5 py-2 text-[13px] font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98]"
-                >
-                  Portal
-                </a>
-              </div>
+              <a
+                href="#contact"
+                className="inline-flex min-h-[40px] items-center justify-center gap-2 rounded-full bg-accent px-5 py-2 text-[13px] font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98]"
+              >
+                Find a domain
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
             </motion.div>
           </div>
         </div>
@@ -157,22 +152,22 @@ export default function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl w-full px-4 pb-16 sm:px-6 sm:pb-20 md:pb-24 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
           <motion.div variants={slideLeft} initial="hidden" animate="visible" custom={0.18}>
-            <span className="label-caps text-accent">Control plane</span>
+            <span className="label-caps text-accent">Infrastructure services</span>
             <h2 className="luxury-title mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              Depth you would expect from an internal platform team
+              Your domains deserve a full operations team behind them
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-text-muted sm:text-base">
-              Capacity planning, change management, incident response, and
-              cost guardrails — articulated as architecture decisions, not
-              ad-hoc tickets. Whether you need a single high-trust workload or a
-              portfolio-wide standard, we align regions, accounts, and
-              environments so operations stay legible as you scale.
+              We handle capacity planning, change management, incident response,
+              and cost optimization so you can focus on the business attached to
+              the name. Whether you need a single production workload or a
+              portfolio-wide standard, we build environments that stay reliable,
+              auditable, and easy to grow.
             </p>
             <ul className="mt-6 space-y-2.5 text-left text-sm text-text-secondary">
               {[
-                "Reference designs for regulated and high-availability patterns",
-                "Infrastructure-as-code with reviewable, repeatable environments",
-                "Backup, failover, and chaos-ready recovery objectives",
+                "Databases, storage, compute, and networking — provisioned and maintained",
+                "Automated backups, failover, and disaster-recovery runbooks included",
+                "Monitoring, logging, and alerting from day one — not bolted on later",
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent/80" />
@@ -181,10 +176,10 @@ export default function Hero() {
               ))}
             </ul>
             <a
-              href="#services"
+              href="/managed-services"
               className="mt-8 inline-flex rounded-full border border-white/[0.12] bg-white/[0.03] px-6 py-3 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-accent/25 hover:text-white"
             >
-              Review service depth
+              Managed Services
             </a>
           </motion.div>
           <motion.div variants={slideRight} initial="hidden" animate="visible" custom={0.1}>
@@ -223,31 +218,6 @@ export default function Hero() {
             <p className="mt-2 text-sm leading-relaxed text-text-muted">
               DNS, TLS, zero-trust access patterns, CDN and WAF policies —
               tuned so traffic and trust attach cleanly to the name you own.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Post-acquisition + vendor stack — tight grouping */}
-        <div className="mx-auto mt-16 max-w-5xl border-t border-white/[0.06] pt-10">
-          <motion.div
-            variants={slideLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-40px" }}
-            custom={0}
-            className="text-center"
-          >
-            <span className="label-caps text-accent">Post-acquisition</span>
-            <h2 className="luxury-title luxury-title-center mt-3 text-balance text-2xl font-bold leading-tight tracking-[-0.02em] text-white sm:text-3xl md:text-4xl">
-              Infrastructure you can attach
-              <br />
-              to every domain sale
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-text-muted sm:text-lg">
-              When we broker a domain, we can carry the full stack: data stores,
-              durable object tiers, AI-ready compute, container orchestration, and
-              edge security — designed like an enterprise program, not a single
-              shared host.
             </p>
           </motion.div>
         </div>
