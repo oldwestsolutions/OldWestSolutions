@@ -1,10 +1,16 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import JsonLd from "@/components/JsonLd";
-import VercelAnalytics from "@/components/VercelAnalytics";
 import { siteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
+
+/** Must load from Server Component — `ssr: false` is not valid inside Client Components. */
+const Analytics = dynamic(
+  () => import("@vercel/analytics/react").then((mod) => mod.Analytics),
+  { ssr: false }
+);
 
 const inter = Inter({
   subsets: ["latin"],
@@ -92,7 +98,7 @@ export default function RootLayout({
       >
         <JsonLd />
         {children}
-        <VercelAnalytics />
+        <Analytics />
       </body>
     </html>
   );
