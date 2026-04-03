@@ -28,8 +28,10 @@ export default function CaseStudies() {
             The Difference
           </h2>
           <p className="mt-4 text-pretty text-text-muted text-base leading-relaxed sm:text-lg">
-            Architecture notes on capacity, service boundaries, and inference —
-            concise briefs for engineering and stakeholder alignment.
+            How we engineer capacity, boundaries, and inference when products
+            span traditional settlement and digital-asset programs — concise
+            briefs so infrastructure and finance teams stay aligned on the same
+            facts.
           </p>
         </motion.div>
 

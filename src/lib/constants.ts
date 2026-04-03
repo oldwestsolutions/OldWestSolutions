@@ -106,7 +106,7 @@ export const caseStudies = [
   },
   {
     title: "Composable microservices for communications workloads",
-    industry: "Microservice",
+    industry: "Microservices",
     problem:
       "Integrators were forced into monolithic adapters whenever delivery, reputation, and session telemetry shipped on different release cycles — slowing reviews and making tenant-wide incidents hard to trace.",
     solution:
@@ -133,27 +133,27 @@ export const whyUs = [
   {
     title: "Markets & execution",
     description:
-      "Institutional-style trading on oldwest.net — reliable execution, clear risk boundaries, and capacity that scales with participation.",
+      "Execution on oldwest.net treats digital assets, stablecoins, and conventional rails with the same operational rigor — limits, monitoring, and throughput your risk function can sign off on.",
   },
   {
     title: "Distributed compute & storage",
     description:
-      "GPU-aware capacity and durable tiers on oldwest.net, built as a distributed system instead of a single-region rental.",
+      "GPU-aware capacity and durable tiers that stay coherent when workloads mix everyday applications with chain-adjacent indexing, signing, or inference — one distributed fabric, not a patchwork of silos.",
   },
   {
     title: "Programmable communications",
     description:
-      "Voice, SMS, and VoIP API-first on oldwest.net — embed in your products with contract-driven integrations and observable sessions.",
+      "Voice, SMS, and VoIP exposed API-first so receipts, alerts, and lifecycle messages can align with how value actually moves — programmable hooks without a separate console for every rail.",
   },
   {
     title: "Search & discovery",
     description:
-      "Search and presence on oldwest.net behind premium names — modern surface, authoritative routing, operator-grade delivery.",
+      "Discovery and presence behind premium names — routing and signals that can respect both traditional web identity and on-chain context where your policies allow, without fragmenting the operator story.",
   },
   {
     title: "Transactional mail",
     description:
-      "Auth, throughput, and reputation on oldwest.net so mail reaches the inbox with metrics you can stand behind in reviews.",
+      "Authentication, throughput, and reputation tuned for programs that span cards, bank rails, and digital-asset settlement — inbox delivery with metrics you can defend in audits and reviews.",
   },
 ];
 

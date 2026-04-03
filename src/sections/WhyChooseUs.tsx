@@ -34,18 +34,21 @@ export default function WhyChooseUs() {
               Our <span className="text-accent">Flagship</span>
             </h2>
             <p className="mt-4 text-pretty text-text-muted text-base leading-relaxed sm:text-lg">
-              OldWest.net is the network we operate for teams who need markets,
-              compute, communications, search, and mail on one disciplined
-              surface — shared observability, explicit service boundaries, and
-              operator-grade controls without stitching together unrelated
-              vendors.
+              OldWest.net is the flagship network we operate for teams who treat
+              the domain as the product — markets, compute, communications,
+              search, and mail on one disciplined surface. Where your policies
+              allow, stablecoin and crypto-native flows plug into the same
+              contracts, telemetry, and controls as conventional settlement, so
+              you are not running parallel stacks every time the financial layer
+              evolves.
             </p>
 
             <div className="mt-6 rounded-[1.5rem] border border-white/[0.06] bg-[#17171a] p-6 shadow-card">
               <p className="text-text-secondary text-sm leading-relaxed italic">
-                &ldquo;Routing our stack through oldwest.net gave us one contract
-                and one operational story across execution, voice, and mail.
-                The efficiency gains were immediate and measurable.&rdquo;
+                &ldquo;We wanted the familiarity of a single operator contract
+                with room for digital-asset rails — oldwest.net gave us one
+                timeline for execution, messaging, and value movement instead of
+                reconciling three consoles after every release.&rdquo;
               </p>
               <div className="mt-4 flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center">
