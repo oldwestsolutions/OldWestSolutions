@@ -47,13 +47,21 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center justify-end gap-3 justify-self-end">
-          <a
-            href="#contact"
-            className="hidden rounded-full border border-white/[0.1] bg-white/[0.04] px-5 py-2.5 text-[13px] font-medium text-text-secondary shadow-sm transition-all duration-200 hover:border-accent/25 hover:text-white lg:inline-flex"
-          >
-            Get Started
-          </a>
+        <div className="flex items-center justify-end gap-2 justify-self-end">
+          <div className="hidden items-center gap-2 lg:flex">
+            <a
+              href="#contact"
+              className="inline-flex min-h-[40px] items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-[12px] font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white sm:px-5 sm:text-[13px]"
+            >
+              Book an appointment
+            </a>
+            <a
+              href="/portal"
+              className="inline-flex min-h-[40px] items-center justify-center rounded-full bg-accent px-4 py-2 text-[12px] font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98] sm:px-5 sm:text-[13px]"
+            >
+              Portal
+            </a>
+          </div>
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -89,13 +97,22 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setMobileOpen(false)}
-                className="mt-4 rounded-full bg-accent py-3 text-center text-sm font-semibold text-white"
-              >
-                Get Started
-              </a>
+              <div className="mt-5 flex flex-col gap-3">
+                <a
+                  href="#contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-full border border-white/[0.12] bg-white/[0.03] py-3 text-center text-sm font-medium text-text-secondary transition-colors hover:border-accent/25 hover:text-white"
+                >
+                  Book an appointment
+                </a>
+                <a
+                  href="/portal"
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-full bg-accent py-3 text-center text-sm font-semibold text-white shadow-glow"
+                >
+                  Portal
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

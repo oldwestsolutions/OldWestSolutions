@@ -1,3 +1,19 @@
+/** Public-company stacks referenced on-site (CTA trust band, etc.) */
+export const infrastructureVendors = [
+  "Amazon Web Services",
+  "Microsoft Azure",
+  "Google Cloud",
+  "Oracle Cloud",
+  "IBM Cloud",
+  "Cloudflare",
+  "Akamai",
+  "Snowflake",
+  "MongoDB",
+  "Datadog",
+  "Palo Alto Networks",
+  "CrowdStrike",
+];
+
 export const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
@@ -109,27 +125,27 @@ export const industries = [
   {
     title: "Communication Systems",
     description:
-      "Scalable email delivery, programmable voice, and messaging infrastructure powering enterprise communication at any volume.",
+      "Traffic enters through anycast edges and authenticated APIs; message work is queued and drained by regional worker fleets with back-pressure and idempotency. Delivery state is replicated so a zone loss does not erase your pipeline — metrics cover latency, deferrals, and abuse in one plane.",
   },
   {
     title: "Decentralized Finance",
     description:
-      "Blockchain staking, token infrastructure, and smart contract systems for institutional-grade financial operations.",
+      "Public interfaces sit behind strict rate limits and WAF rules; signing and custody boundaries stay isolated from web tiers. Append-only audit trails and structured logs pair with horizontally scaled API cells so reads scale without weakening the trust model around keys and settlement paths.",
   },
   {
     title: "Cloud & Compute",
     description:
-      "GPU tokenization, distributed storage, and enterprise data systems delivering decentralized compute at scale.",
+      "Workloads are placed in regional cells: stateless compute in front, replicated storage behind, and network policies that contain blast radius per account. Autoscaling follows signals from the control plane — not hand-tuned boxes — so bursts absorb cleanly across zones.",
   },
   {
     title: "AI & Search",
     description:
-      "AI-powered search indexing, natural language processing, and intelligent query systems for next-generation information retrieval.",
+      "Inference runs on dedicated pools with queue-aware autoscaling; embeddings and vector indices live beside transactional stores with their own replication and backup SLAs. Batch and streaming pipelines feed features without letting training data paths bleed into serving subnets.",
   },
   {
     title: "Enterprise Platforms",
     description:
-      "Domain brokerage, managed hosting, server provisioning, and full-lifecycle infrastructure management for organizations at scale.",
+      "Every hostname inherits the same baseline: DNS and TLS at the edge, federated identity, centralized logging, secrets, and CI hooks. Domains become attach points to a shared platform — brokerage and hosting stay one operational story instead of a pile of one-offs.",
   },
 ];
 

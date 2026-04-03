@@ -3,22 +3,6 @@
 import { motion } from "framer-motion";
 import { slideLeft, slideRight } from "@/lib/animations";
 
-/** Public-company platforms and vendors we design and operate on top of */
-const infrastructureVendors = [
-  "Amazon Web Services",
-  "Microsoft Azure",
-  "Google Cloud",
-  "Oracle Cloud",
-  "IBM Cloud",
-  "Cloudflare",
-  "Akamai",
-  "Snowflake",
-  "MongoDB",
-  "Datadog",
-  "Palo Alto Networks",
-  "CrowdStrike",
-];
-
 function DashboardMockup() {
   return (
     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/[0.06] bg-[#151518] sm:rounded-3xl">
@@ -149,6 +133,27 @@ export default function Hero() {
               <span className="hidden h-3 w-px bg-white/15 sm:block" aria-hidden />
               <span className="text-text-secondary">Observable by default</span>
             </motion.div>
+
+            <motion.div
+              variants={slideLeft}
+              initial="hidden"
+              animate="visible"
+              custom={0.16}
+              className="mx-auto mt-10 flex flex-wrap items-center justify-center gap-3 sm:mt-12"
+            >
+              <a
+                href="#contact"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/[0.14] bg-white/[0.04] px-6 py-3 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-accent/35 hover:text-white active:scale-[0.98]"
+              >
+                Book an appointment
+              </a>
+              <a
+                href="/portal"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98]"
+              >
+                Portal
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -214,16 +219,19 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.26}
-            className="flex justify-center"
+            className="flex flex-wrap items-center justify-center gap-3"
           >
             <a
               href="#contact"
-              className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98]"
+              className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white"
             >
-              Engage on a domain
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              Book an appointment
+            </a>
+            <a
+              href="/portal"
+              className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep"
+            >
+              Portal
             </a>
           </motion.div>
 
@@ -266,34 +274,6 @@ export default function Hero() {
               edge security — designed like an enterprise program, not a single
               shared host.
             </p>
-          </motion.div>
-
-          <motion.div
-            variants={slideLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-40px" }}
-            custom={0.06}
-            className="mt-8 border-t border-white/[0.05] pt-8"
-          >
-            <p className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted">
-              Built on the same public-company stacks the Fortune 500 standardizes on
-            </p>
-            <p className="mx-auto mt-3 max-w-2xl text-center text-xs leading-relaxed text-text-muted/90">
-              We architect and operate on hyperscaler and category-leading vendor
-              platforms — not proprietary black boxes — so your workloads remain
-              portable, auditable, and finance-friendly.
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 sm:gap-x-10">
-              {infrastructureVendors.map((name) => (
-                <span
-                  key={name}
-                  className="text-[11px] font-semibold tracking-wide text-white/45 transition-colors hover:text-white/75 sm:text-xs"
-                >
-                  {name}
-                </span>
-              ))}
-            </div>
           </motion.div>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { fadeUp } from "@/lib/animations";
+import { infrastructureVendors } from "@/lib/constants";
 
 export default function CTA() {
   return (
@@ -12,15 +13,43 @@ export default function CTA() {
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[min(90vw,640px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/[0.07] blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          custom={0}
+          className="mx-auto max-w-4xl border-b border-white/[0.06] pb-12 md:pb-14"
+        >
+          <p className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted">
+            Built on the same public-company stacks the Fortune 500 standardizes on
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-xs leading-relaxed text-text-muted/90">
+            We architect and operate on hyperscaler and category-leading vendor
+            platforms — not proprietary black boxes — so your workloads remain
+            portable, auditable, and finance-friendly.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3.5 sm:gap-x-9">
+            {infrastructureVendors.map((name) => (
+              <span
+                key={name}
+                className="text-[11px] font-semibold tracking-wide text-white/40 transition-colors hover:text-white/70 sm:text-xs"
+              >
+                {name}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        <div className="mx-auto max-w-3xl pt-14 text-center md:pt-16">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            custom={0}
+            custom={0.05}
           >
-            <span className="label-caps text-accent">Get started</span>
+            <span className="label-caps text-accent">Next step</span>
           </motion.div>
 
           <motion.h2
@@ -28,7 +57,7 @@ export default function CTA() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            custom={0.1}
+            custom={0.12}
             className="luxury-title luxury-title-center mt-4 text-3xl font-bold leading-tight tracking-[-0.02em] text-white md:text-4xl lg:text-[52px]"
           >
             Deploy your infrastructure
@@ -42,9 +71,10 @@ export default function CTA() {
             custom={0.2}
             className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-text-muted"
           >
-            Tell us what you need — domain brokerage, managed servers,
-            communication platforms, or decentralized compute. We deploy
-            the right infrastructure from our ecosystem.
+            Tell us what you need — domain brokerage, managed data and compute,
+            AI-ready platforms, or edge security. We assemble distributed systems
+            on the public-cloud foundations your finance and security teams already
+            recognize.
           </motion.p>
 
           <motion.div
@@ -52,7 +82,7 @@ export default function CTA() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            custom={0.3}
+            custom={0.28}
             className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
             <a
@@ -68,7 +98,7 @@ export default function CTA() {
               href="#services"
               className="inline-flex min-h-[48px] w-full touch-manipulation items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-8 py-4 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-accent/25 hover:text-white active:scale-[0.98] sm:w-auto"
             >
-              Explore the ecosystem
+              Explore capabilities
             </a>
           </motion.div>
 
@@ -77,7 +107,7 @@ export default function CTA() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            custom={0.4}
+            custom={0.36}
             className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-center text-xs text-text-muted"
           >
             <div className="flex items-center justify-center gap-2">
