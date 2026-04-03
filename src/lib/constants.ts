@@ -172,7 +172,6 @@ export const footerLinks = [
       { label: "Managed Services", href: "/managed-services" },
       { label: "Integration", href: "/integration" },
       { label: "Network", href: "/network" },
-      { label: "Systems", href: "/systems" },
     ],
   },
   {
@@ -189,20 +188,12 @@ export const footerLinks = [
     title: "Company",
     links: [
       { label: "About", href: "/#about" },
-      { label: "Systems", href: "/systems" },
       { label: "Contact", href: "/#contact" },
       { label: "Careers", href: "#" },
     ],
   },
   {
     title: "Resources",
-    links: [
-      { label: "Documentation", href: "#" },
-      { label: "Changelog", href: "#" },
-      { label: "Status", href: "#" },
-      { label: "GitHub", href: "https://github.com/oldwestsolutions" },
-      { label: "LinkedIn", href: "#" },
-      { label: "Twitter / X", href: "#" },
-    ],
+    links: [{ label: "Documentation", href: "#" }],
   },
 ];
