@@ -20,12 +20,12 @@ export default function CTA() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           custom={0}
-          className="mx-auto max-w-4xl border-b border-white/[0.06] py-10 md:py-12"
+          className="mx-auto max-w-4xl border-b border-white/[0.06] pt-8 pb-12 md:pt-10 md:pb-16"
         >
           <p className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted">
             Trusted technology partners
           </p>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-7 gap-y-3.5 sm:gap-x-9">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-7 gap-y-3.5 sm:mt-6 sm:gap-x-9">
             {infrastructureVendors.map((name) => (
               <span
                 key={name}
@@ -38,7 +38,7 @@ export default function CTA() {
         </motion.div>
 
         {/* Two-column CTA */}
-        <div className="mx-auto grid max-w-6xl gap-8 pt-7 md:grid-cols-2 md:items-start md:gap-10 md:pt-9">
+        <div className="mx-auto grid max-w-6xl gap-8 pt-12 md:grid-cols-2 md:items-start md:gap-10 md:pt-14">
           {/* Left — messaging */}
           <motion.div
             variants={fadeUp}
