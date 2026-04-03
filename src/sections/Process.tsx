@@ -8,7 +8,7 @@ export default function Process() {
   return (
     <section
       id="process"
-      className="relative border-t border-white/[0.06] bg-[#1a1a1a] py-24 md:py-32"
+      className="relative border-t border-white/[0.06] bg-[#141416] py-24 md:py-32"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -19,9 +19,7 @@ export default function Process() {
           custom={0}
           className="mx-auto mb-12 max-w-2xl text-center md:mb-20"
         >
-          <span className="text-xs font-semibold uppercase tracking-widest text-accent">
-            Our Process
-          </span>
+          <span className="label-caps text-accent">Our Process</span>
           <h2 className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[44px]">
             How We Deliver Results
           </h2>
@@ -69,7 +67,7 @@ export default function Process() {
                     </div>
                   </div>
 
-                  <div className="absolute left-1/2 top-1/2 z-10 hidden h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/[0.08] bg-[#1a1a1a] text-xs font-bold text-accent md:flex">
+                  <div className="absolute left-1/2 top-1/2 z-10 hidden h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-accent/25 bg-[#141416] text-xs font-bold text-accent shadow-glow-sm md:flex">
                     {step.step}
                   </div>
 

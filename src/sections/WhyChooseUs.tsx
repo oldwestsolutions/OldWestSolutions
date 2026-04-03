@@ -12,7 +12,7 @@ const checkIcon = (
 
 export default function WhyChooseUs() {
   return (
-    <section id="about" className="relative py-24 md:py-32 bg-[#1F1F1F]">
+    <section id="about" className="relative border-t border-white/[0.06] bg-[#111113] py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left */}
@@ -23,9 +23,7 @@ export default function WhyChooseUs() {
             viewport={{ once: true, margin: "-80px" }}
             custom={0}
           >
-            <span className="text-accent text-xs font-semibold tracking-widest uppercase">
-              Why OldWestSolutions
-            </span>
+            <span className="label-caps text-accent">Why OldWestSolutions</span>
             <h2 className="mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight">
               Built Different,{" "}
               <span className="text-accent">By Design</span>
@@ -36,7 +34,7 @@ export default function WhyChooseUs() {
               long-term leverage across industries.
             </p>
 
-            <div className="mt-8 p-6 rounded-2xl bg-[#242424] border border-white/[0.04]">
+            <div className="mt-8 rounded-[1.5rem] border border-white/[0.06] bg-[#17171a] p-6 shadow-card">
               <p className="text-text-secondary text-sm leading-relaxed italic">
                 &ldquo;OldWestSolutions delivered a system that cut our
                 operational costs by 40% and scaled seamlessly from 1K to
@@ -68,7 +66,7 @@ export default function WhyChooseUs() {
                 key={item.title}
                 variants={fadeUp}
                 custom={i * 0.08}
-                className="flex gap-4 p-5 rounded-xl bg-[#242424] border border-white/[0.04] hover:border-accent/10 transition-all duration-300 group"
+                className="group flex gap-4 rounded-[1.25rem] border border-white/[0.06] bg-[#17171a] p-5 shadow-card transition-all duration-300 hover:border-accent/20"
               >
                 {checkIcon}
                 <div>

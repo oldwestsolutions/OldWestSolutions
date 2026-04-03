@@ -14,7 +14,7 @@ const industryIcons = [
 
 export default function Industries() {
   return (
-    <section id="industries" className="relative py-24 md:py-32 bg-[#1a1a1a]">
+    <section id="industries" className="relative border-t border-white/[0.06] bg-[#141416] py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -43,14 +43,14 @@ export default function Industries() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
         >
           {industries.map((industry, i) => (
             <motion.div
               key={industry.title}
               variants={fadeUp}
               custom={i * 0.08}
-              className={`group rounded-2xl bg-[#242424] border border-white/[0.04] p-7 hover:border-accent/15 transition-all duration-300 ${
+              className={`group rounded-[1.5rem] border border-white/[0.06] bg-gradient-card p-7 shadow-card transition-all duration-300 hover:border-accent/20 ${
                 i >= 3 ? "lg:col-span-1 lg:last:col-start-2" : ""
               }`}
             >

@@ -11,23 +11,24 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#1F1F1F",
-          light: "#2B2B2B",
-          lighter: "#3A3A3A",
+          DEFAULT: "#111113",
+          light: "#17171a",
+          lighter: "#1e1e22",
         },
         surface: {
-          DEFAULT: "#2B2B2B",
-          raised: "#3A3A3A",
-          overlay: "#444444",
+          DEFAULT: "#17171a",
+          raised: "#1e1e22",
+          overlay: "#26262c",
         },
         text: {
-          primary: "#F2F2F2",
-          secondary: "#D9D9D9",
-          muted: "#A6A6A6",
+          primary: "#f2f2f2",
+          secondary: "#d9d9d9",
+          muted: "#8e8e96",
         },
         accent: {
-          DEFAULT: "#2F6BFF",
-          deep: "#1F3B73",
+          DEFAULT: "#a78bfa",
+          deep: "#6d28d9",
+          muted: "#7c3aed",
         },
       },
       fontFamily: {
@@ -36,18 +37,24 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-dark":
-          "linear-gradient(180deg, #1F1F1F 0%, #141414 50%, #0A0A0A 100%)",
+          "linear-gradient(180deg, #111113 0%, #0c0c0e 50%, #080809 100%)",
         "gradient-card":
-          "linear-gradient(135deg, #2B2B2B 0%, #1F1F1F 100%)",
+          "linear-gradient(135deg, #1e1e22 0%, #141416 100%)",
         "gradient-surface":
-          "linear-gradient(180deg, #2B2B2B 0%, #1F1F1F 100%)",
+          "linear-gradient(180deg, #1a1a1e 0%, #111113 100%)",
+        "gradient-accent": "linear-gradient(135deg, #c4b5fd 0%, #8b5cf6 50%, #6d28d9 100%)",
       },
       boxShadow: {
-        glow: "0 0 20px rgba(47, 107, 255, 0.15)",
-        "glow-sm": "0 0 10px rgba(47, 107, 255, 0.1)",
-        "glow-lg": "0 0 40px rgba(47, 107, 255, 0.2)",
-        card: "0 4px 24px rgba(0, 0, 0, 0.3)",
-        "card-hover": "0 8px 40px rgba(0, 0, 0, 0.4)",
+        glow: "0 0 28px rgba(167, 139, 250, 0.12)",
+        "glow-sm": "0 0 14px rgba(167, 139, 250, 0.08)",
+        "glow-lg": "0 0 56px rgba(139, 92, 246, 0.15)",
+        card: "0 4px 32px rgba(0, 0, 0, 0.45)",
+        "card-hover": "0 12px 48px rgba(0, 0, 0, 0.55)",
+        shell: "0 0 100px -28px rgba(139, 92, 246, 0.14)",
+      },
+      borderRadius: {
+        "4xl": "2rem",
+        "5xl": "2.5rem",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",
@@ -64,8 +71,8 @@ const config: Config = {
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         pulseGlow: {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(47, 107, 255, 0.1)" },
-          "50%": { boxShadow: "0 0 30px rgba(47, 107, 255, 0.2)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(167, 139, 250, 0.07)" },
+          "50%": { boxShadow: "0 0 36px rgba(167, 139, 250, 0.14)" },
         },
       },
     },

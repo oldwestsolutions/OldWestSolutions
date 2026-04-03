@@ -4,7 +4,7 @@ import { footerLinks } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#141414] border-t border-white/[0.04]">
+    <footer className="rounded-b-[1.75rem] border-t border-white/[0.06] bg-[#0c0c0e] sm:rounded-b-[2rem]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Brand */}
