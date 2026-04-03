@@ -6,9 +6,9 @@ export default function Footer() {
   return (
     <footer className="rounded-b-[1.75rem] border-t border-white/[0.06] bg-[#0c0c0e] sm:rounded-b-[2rem]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div className="grid grid-cols-2 gap-10 md:grid-cols-12 md:gap-8">
           {/* Brand */}
-          <div className="md:col-span-5">
+          <div className="col-span-2 md:col-span-4">
             <a href="/" className="inline-flex items-center gap-2.5 mb-4 touch-manipulation rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
               <div className="flex flex-col leading-none text-left">
                 <span className="text-white font-semibold text-[15px] tracking-tight">
@@ -24,6 +24,13 @@ export default function Footer() {
               operators — databases, storage, AI-ready compute, and full-stack
               delivery on major public-cloud platforms.
             </p>
+            <div className="mt-5 flex items-center gap-2 text-text-muted">
+              <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              <span className="text-xs">Plano, Texas</span>
+            </div>
           </div>
 
           {/* Link columns */}

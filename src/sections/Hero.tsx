@@ -125,34 +125,30 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0.12}
-              className="mx-auto mt-10 flex max-w-xl flex-wrap items-center justify-center gap-x-8 gap-y-3 border-y border-white/[0.08] py-6 text-[11px] font-medium uppercase tracking-[0.22em] text-text-muted sm:mt-12 sm:text-xs"
+              className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-6 border-y border-white/[0.08] py-6 sm:mt-12 sm:flex-row sm:justify-center sm:gap-8"
             >
-              <span className="text-text-secondary">Multi-region</span>
-              <span className="hidden h-3 w-px bg-white/15 sm:block" aria-hidden />
-              <span className="text-text-secondary">Encrypted data plane</span>
-              <span className="hidden h-3 w-px bg-white/15 sm:block" aria-hidden />
-              <span className="text-text-secondary">Observable by default</span>
-            </motion.div>
-
-            <motion.div
-              variants={slideLeft}
-              initial="hidden"
-              animate="visible"
-              custom={0.16}
-              className="mx-auto mt-10 flex flex-wrap items-center justify-center gap-3 sm:mt-12"
-            >
-              <a
-                href="#contact"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/[0.14] bg-white/[0.04] px-6 py-3 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-accent/35 hover:text-white active:scale-[0.98]"
-              >
-                Book an appointment
-              </a>
-              <a
-                href="/portal"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98]"
-              >
-                Portal
-              </a>
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-medium uppercase tracking-[0.22em] text-text-muted sm:text-xs">
+                <span className="text-text-secondary">Multi-region</span>
+                <span className="hidden h-3 w-px bg-white/15 sm:block" aria-hidden />
+                <span className="text-text-secondary">Encrypted data plane</span>
+                <span className="hidden h-3 w-px bg-white/15 sm:block" aria-hidden />
+                <span className="text-text-secondary">Observable by default</span>
+              </div>
+              <div className="hidden h-6 w-px bg-white/10 sm:block" aria-hidden />
+              <div className="flex items-center gap-2.5">
+                <a
+                  href="#contact"
+                  className="inline-flex min-h-[40px] items-center justify-center rounded-full border border-white/[0.14] bg-white/[0.04] px-5 py-2 text-[13px] font-medium text-text-secondary transition-all duration-200 hover:border-accent/35 hover:text-white active:scale-[0.98]"
+                >
+                  Book an appointment
+                </a>
+                <a
+                  href="/portal"
+                  className="inline-flex min-h-[40px] items-center justify-center rounded-full bg-accent px-5 py-2 text-[13px] font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98]"
+                >
+                  Portal
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -196,7 +192,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="mx-auto mt-14 grid max-w-5xl gap-8 md:grid-cols-3 md:items-center md:gap-10">
+        <div className="mx-auto mt-14 grid max-w-4xl gap-8 md:grid-cols-2 md:gap-12">
           <motion.div
             variants={slideLeft}
             initial="hidden"
@@ -218,28 +214,7 @@ export default function Hero() {
             variants={slideLeft}
             initial="hidden"
             animate="visible"
-            custom={0.26}
-            className="flex flex-wrap items-center justify-center gap-3"
-          >
-            <a
-              href="#contact"
-              className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white"
-            >
-              Book an appointment
-            </a>
-            <a
-              href="/portal"
-              className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep"
-            >
-              Portal
-            </a>
-          </motion.div>
-
-          <motion.div
-            variants={slideLeft}
-            initial="hidden"
-            animate="visible"
-            custom={0.3}
+            custom={0.28}
             className="text-center md:text-right"
           >
             <h3 className="text-lg font-semibold text-white sm:text-xl">

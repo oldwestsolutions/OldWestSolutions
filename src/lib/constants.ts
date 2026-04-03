@@ -178,12 +178,22 @@ export const whyUs = [
 
 export const footerLinks = [
   {
-    title: "Capabilities",
+    title: "Solutions",
     links: [
       { label: "Databases", href: "#services" },
       { label: "Storage & lifecycle", href: "#services" },
       { label: "AI & inference", href: "#services" },
       { label: "Compute & orchestration", href: "#services" },
+      { label: "Edge & security", href: "#services" },
+    ],
+  },
+  {
+    title: "Products",
+    links: [
+      { label: "OldWest", href: "#" },
+      { label: "FirstClassMail", href: "#" },
+      { label: "Teleport", href: "#" },
+      { label: "Lubbock.Cloud", href: "#" },
     ],
   },
   {
