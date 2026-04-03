@@ -7,17 +7,22 @@ import WhyChooseUs from "@/sections/WhyChooseUs";
 import CTA from "@/sections/CTA";
 
 export const metadata: Metadata = {
-  title:
-    "IT Services, Managed Cloud & Technology Solutions for Domain Operators",
+  title: { absolute: "Old West Solutions - IT Services" },
   description:
     "Find managed IT services, cloud infrastructure, and technology solutions: databases, storage, AI-ready compute, networking, and security — plus OldWest.net for integrated operator workflows. Based in Plano, Texas.",
   alternates: { canonical: "/" },
   openGraph: {
     title:
-      "Old West Solutions | IT Services, Managed Cloud & Technology Solutions",
+      "Old West Solutions — Managed IT, Cloud & Technology Solutions for Domain Operators",
     description:
       "Managed IT, cloud infrastructure, and tech solutions — multi-region systems, databases, AI-ready compute, and OldWest.net for operators who need one accountable partner.",
     url: "/",
+  },
+  twitter: {
+    title:
+      "Old West Solutions — IT Services, Cloud & Domain Infrastructure (Plano, TX)",
+    description:
+      "Managed IT, cloud infrastructure, and tech solutions — multi-region systems, databases, AI-ready compute, and OldWest.net for operators who need one accountable partner.",
   },
 };
 
