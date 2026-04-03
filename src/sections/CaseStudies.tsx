@@ -8,6 +8,7 @@ export default function CaseStudies() {
   return (
     <section
       id="systems"
+      aria-labelledby="systems-difference-heading"
       className="relative border-t border-white/[0.06] bg-[#111113] pt-10 pb-10 md:pt-14 md:pb-12"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,10 +21,13 @@ export default function CaseStudies() {
           className="max-w-2xl mb-10 md:mb-12"
         >
           <span className="label-caps text-accent">Systems</span>
-          <h2 className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
+          <h2
+            id="systems-difference-heading"
+            className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]"
+          >
             The Difference
           </h2>
-          <p className="mt-4 text-text-muted text-lg leading-relaxed">
+          <p className="mt-4 text-pretty text-text-muted text-base leading-relaxed sm:text-lg">
             Architecture notes on capacity, service boundaries, and inference —
             concise briefs for engineering and stakeholder alignment.
           </p>

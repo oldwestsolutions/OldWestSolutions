@@ -33,28 +33,30 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Link columns: Domains, Solutions, Products, Company, Resources */}
-          <div className="grid min-w-0 flex-1 grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-5">
-          {footerLinks.map((group) => (
-            <div key={group.title} className="min-w-0">
-              <h4 className="text-white text-xs font-semibold tracking-wider uppercase mb-4">
-                {group.title}
-              </h4>
-              <ul className="space-y-3">
-                {group.links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-text-muted text-sm hover:text-white transition-colors duration-200"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-          </div>
+          <nav
+            aria-label="Footer"
+            className="grid min-w-0 flex-1 grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-5"
+          >
+            {footerLinks.map((group) => (
+              <div key={group.title} className="min-w-0">
+                <h4 className="mb-4 text-xs font-semibold uppercase tracking-wider text-white">
+                  {group.title}
+                </h4>
+                <ul className="space-y-1 sm:space-y-2">
+                  {group.links.map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        className="inline-flex min-h-[40px] max-w-full items-center py-1.5 text-sm text-text-muted transition-colors duration-200 touch-manipulation hover:text-white sm:min-h-0 sm:py-0"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
         </div>
 
         {/* Bottom bar */}

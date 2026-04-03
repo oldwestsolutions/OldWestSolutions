@@ -112,7 +112,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0.08}
-              className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-text-muted sm:mt-10 sm:text-lg md:text-xl md:leading-relaxed"
+              className="mx-auto mt-8 max-w-3xl text-pretty text-base leading-relaxed text-text-muted sm:mt-10 sm:text-lg md:text-xl md:leading-relaxed"
             >
               We design multi-region data planes, durable storage tiers, AI-ready
               compute, and hardened network edges — the same primitives large

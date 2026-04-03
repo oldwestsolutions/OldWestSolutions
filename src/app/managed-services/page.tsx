@@ -58,7 +58,7 @@ export default function ManagedServicesPage() {
     <div className="min-h-screen bg-[#080809] px-2.5 pb-2.5 pt-2.5 sm:px-4 sm:pb-4 sm:pt-4 md:px-5 md:pb-5 md:pt-5">
       <div className="relative mx-auto max-w-[1400px] overflow-x-clip rounded-[1.75rem] border border-white/[0.07] bg-[#111113] shadow-shell sm:rounded-[2rem]">
         <Navbar />
-        <main className="bg-[#111113]">
+        <main id="main-content" className="bg-[#111113]">
           {/* Header */}
           <section className="relative overflow-hidden border-b border-white/[0.06] py-20 sm:py-28 md:py-32">
             <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[min(90vw,640px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/[0.06] blur-[120px]" />

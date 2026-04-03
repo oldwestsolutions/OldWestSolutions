@@ -12,7 +12,11 @@ const checkIcon = (
 
 export default function WhyChooseUs() {
   return (
-    <section id="about" className="relative border-t border-white/[0.06] bg-[#111113] pt-10 pb-8 md:pt-14 md:pb-10">
+    <section
+      id="about"
+      aria-labelledby="network-flagship-heading"
+      className="relative border-t border-white/[0.06] bg-[#111113] pt-10 pb-8 md:pt-14 md:pb-10"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <motion.div
@@ -23,15 +27,18 @@ export default function WhyChooseUs() {
             custom={0}
           >
             <span className="label-caps text-accent">Network</span>
-            <h2 className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
-              Old <span className="text-accent">West</span>
+            <h2
+              id="network-flagship-heading"
+              className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]"
+            >
+              Our <span className="text-accent">Flagship</span>
             </h2>
-            <p className="mt-4 text-text-muted text-lg leading-relaxed">
-              Old West is the network we operate for teams who need markets,
-              compute, communications, search, and mail to behave as one
-              disciplined surface — shared observability, explicit service
-              boundaries, and operator-grade controls without stitching together
-              unrelated vendors.
+            <p className="mt-4 text-pretty text-text-muted text-base leading-relaxed sm:text-lg">
+              OldWest.net is the network we operate for teams who need markets,
+              compute, communications, search, and mail on one disciplined
+              surface — shared observability, explicit service boundaries, and
+              operator-grade controls without stitching together unrelated
+              vendors.
             </p>
 
             <div className="mt-6 rounded-[1.5rem] border border-white/[0.06] bg-[#17171a] p-6 shadow-card">

@@ -51,13 +51,13 @@ export default function Navbar() {
           <div className="hidden items-center gap-2 lg:flex">
             <a
               href="#contact"
-              className="inline-flex min-h-[40px] items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-[12px] font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white sm:px-5 sm:text-[13px]"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-[12px] font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white sm:px-5 sm:text-[13px]"
             >
               Book an appointment
             </a>
             <a
               href="/portal"
-              className="inline-flex min-h-[40px] items-center justify-center rounded-full bg-accent px-4 py-2 text-[12px] font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98] sm:px-5 sm:text-[13px]"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-accent px-4 py-2 text-[12px] font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98] sm:px-5 sm:text-[13px]"
             >
               Portal
             </a>
@@ -86,29 +86,29 @@ export default function Navbar() {
             transition={{ duration: 0.25 }}
             className="border-b border-white/[0.06] bg-[#111113] lg:hidden"
           >
-            <div className="flex flex-col gap-1 px-6 py-8">
+            <div className="flex flex-col gap-0.5 px-4 py-6 sm:px-6 sm:py-8">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="border-b border-white/[0.04] py-3 text-base text-text-muted transition-colors duration-200 hover:text-white"
+                  className="flex min-h-[48px] items-center border-b border-white/[0.04] py-2 text-base text-text-muted transition-colors duration-200 touch-manipulation hover:text-white active:bg-white/[0.03]"
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="mt-5 flex flex-col gap-3">
+              <div className="mt-4 flex flex-col gap-3 sm:mt-5">
                 <a
                   href="#contact"
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-full border border-white/[0.12] bg-white/[0.03] py-3 text-center text-sm font-medium text-text-secondary transition-colors hover:border-accent/25 hover:text-white"
+                  className="flex min-h-[48px] items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-4 text-center text-sm font-medium text-text-secondary transition-colors touch-manipulation hover:border-accent/25 hover:text-white active:scale-[0.99]"
                 >
                   Book an appointment
                 </a>
                 <a
                   href="/portal"
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-full bg-accent py-3 text-center text-sm font-semibold text-white shadow-glow"
+                  className="flex min-h-[48px] items-center justify-center rounded-full bg-accent px-4 text-center text-sm font-semibold text-white shadow-glow touch-manipulation active:scale-[0.99]"
                 >
                   Portal
                 </a>
