@@ -3,45 +3,57 @@ import type { ReactNode } from "react";
 import OrganizationJsonLd from "@/components/OrganizationJsonLd";
 import "./globals.css";
 
-const siteName = "OldWestSolutions";
+/** Spaced brand — shown in `<title>`, Open Graph, and social cards. */
+const brandTitle = "Old West Solutions";
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://oldwestsolutions.com";
 const base = new URL(siteUrl.endsWith("/") ? siteUrl : `${siteUrl}/`);
 
 const defaultDescription =
-  "OldWestSolutions delivers distributed systems and managed infrastructure for domain operators — multi-region data planes, databases, durable storage, AI-ready compute, and OldWest.net, our flagship operator network.";
+  "Old West Solutions provides IT services, managed cloud infrastructure, and technology solutions for operators who need reliable systems: multi-region data planes, databases, storage, AI-ready compute, security and edge delivery, plus OldWest.net — our flagship operator network.";
 
 export const metadata: Metadata = {
   metadataBase: base,
   title: {
-    default: `${siteName} | Distributed Systems & Managed Infrastructure`,
-    template: `%s | ${siteName}`,
+    default: `${brandTitle} | IT Services, Cloud & Managed Infrastructure`,
+    template: `${brandTitle} | %s`,
   },
   description: defaultDescription,
-  applicationName: siteName,
+  applicationName: brandTitle,
   keywords: [
+    "Old West Solutions",
+    "IT services",
+    "managed IT services",
+    "technology solutions",
+    "tech solutions",
+    "managed cloud services",
+    "cloud infrastructure",
+    "enterprise IT",
     "managed infrastructure",
     "distributed systems",
-    "domain operators",
     "cloud databases",
+    "managed security",
+    "DevOps",
     "multi-region",
     "OldWest.net",
-    "managed services",
+    "Plano IT services",
+    "Texas technology company",
   ],
-  authors: [{ name: siteName }],
-  creator: siteName,
+  authors: [{ name: brandTitle, url: base }],
+  creator: brandTitle,
+  publisher: brandTitle,
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName,
-    title: `${siteName} | Distributed Systems & Managed Infrastructure`,
+    siteName: brandTitle,
+    title: `${brandTitle} | IT Services & Managed Cloud Infrastructure`,
     description: defaultDescription,
     url: base,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} | Distributed Systems`,
+    title: `${brandTitle} | IT Services & Technology Solutions`,
     description: defaultDescription,
   },
 };

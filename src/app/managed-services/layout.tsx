@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Managed Infrastructure Services",
+  title: "Managed IT & Cloud Infrastructure Services",
   description:
-    "Fully managed databases, storage, compute, networking, and security on platforms your team already trusts — 24/7 monitoring, backups, hardening, and direct engineer access.",
+    "Managed IT services and cloud infrastructure: 24/7 monitoring, databases, backups, compute, networking, and security hardening on AWS, Azure, GCP, and leading platforms — direct engineer access from Old West Solutions.",
   alternates: { canonical: "/managed-services" },
   openGraph: {
-    title: "Managed Infrastructure Services | OldWestSolutions",
+    title:
+      "Old West Solutions | Managed IT Services & Cloud Infrastructure",
     description:
-      "Fully managed cloud infrastructure: databases, storage, AI-ready compute, orchestration, and edge security with continuous operations.",
+      "Outsource day-to-day IT operations: managed databases, storage, Kubernetes, AI inference, edge security, and compliance-minded runbooks.",
     url: "/managed-services",
   },
 };

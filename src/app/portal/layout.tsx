@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Portal",
+  title: "Client Portal",
   description:
-    "Client and operator portal for OldWestSolutions — sign in to manage your environments and services.",
+    "Secure client and operator portal for Old West Solutions — sign in to manage environments, services, and infrastructure.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/portal" },
 };

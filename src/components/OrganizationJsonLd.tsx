@@ -6,10 +6,17 @@ export default function OrganizationJsonLd() {
   const payload = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "OldWestSolutions",
+    name: "Old West Solutions",
+    alternateName: ["OldWestSolutions"],
     url,
     description:
-      "Distributed systems and managed infrastructure for domain operators, including databases, storage, AI-ready compute, and full-stack delivery on leading public clouds.",
+      "IT services, managed cloud infrastructure, and technology solutions — databases, storage, AI-ready compute, networking, and security for domain-led operators. Plano, Texas.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Plano",
+      addressRegion: "TX",
+      addressCountry: "US",
+    },
     sameAs: ["https://github.com/oldwestsolutions"],
   };
 

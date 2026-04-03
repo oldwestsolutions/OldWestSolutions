@@ -7,14 +7,16 @@ import WhyChooseUs from "@/sections/WhyChooseUs";
 import CTA from "@/sections/CTA";
 
 export const metadata: Metadata = {
-  title: "Distributed Systems & Managed Infrastructure",
+  title:
+    "IT Services, Managed Cloud & Technology Solutions for Domain Operators",
   description:
-    "Multi-region data planes, managed services, and OldWest.net — the flagship network for domain-led operators. Databases, storage, AI-ready compute, and hardened edge delivery.",
+    "Find managed IT services, cloud infrastructure, and technology solutions: databases, storage, AI-ready compute, networking, and security — plus OldWest.net for integrated operator workflows. Based in Plano, Texas.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "OldWestSolutions | Distributed Systems & Managed Infrastructure",
+    title:
+      "Old West Solutions | IT Services, Managed Cloud & Technology Solutions",
     description:
-      "Multi-region data planes, managed services, and OldWest.net — the flagship network for domain-led operators.",
+      "Managed IT, cloud infrastructure, and tech solutions — multi-region systems, databases, AI-ready compute, and OldWest.net for operators who need one accountable partner.",
     url: "/",
   },
 };
