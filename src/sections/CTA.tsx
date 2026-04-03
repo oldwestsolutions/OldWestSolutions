@@ -8,7 +8,7 @@ export default function CTA() {
   return (
     <section
       id="contact"
-      className="relative border-t border-white/[0.06] bg-[#141416] pb-16 pt-10 md:pb-20 md:pt-12"
+      className="relative border-t border-white/[0.06] bg-[#141416] pb-14 pt-8 md:pb-16 md:pt-10"
     >
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[min(90vw,640px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/[0.07] blur-[120px]" />
 
@@ -38,7 +38,7 @@ export default function CTA() {
         </motion.div>
 
         {/* Two-column CTA */}
-        <div className="mx-auto grid max-w-6xl gap-8 pt-8 md:grid-cols-2 md:items-start md:gap-12 md:pt-10">
+        <div className="mx-auto grid max-w-6xl gap-8 pt-6 md:grid-cols-2 md:items-start md:gap-10 md:pt-8">
           {/* Left — messaging */}
           <motion.div
             variants={fadeUp}

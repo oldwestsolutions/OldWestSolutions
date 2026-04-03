@@ -12,9 +12,9 @@ const checkIcon = (
 
 export default function WhyChooseUs() {
   return (
-    <section id="about" className="relative border-t border-white/[0.06] bg-[#111113] pt-20 pb-12 md:pt-24 md:pb-14">
+    <section id="about" className="relative border-t border-white/[0.06] bg-[#111113] pt-10 pb-8 md:pt-14 md:pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <motion.div
             variants={fadeUp}
             initial="hidden"

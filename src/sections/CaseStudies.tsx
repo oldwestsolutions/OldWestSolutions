@@ -8,7 +8,7 @@ export default function CaseStudies() {
   return (
     <section
       id="systems"
-      className="relative border-t border-white/[0.06] bg-[#111113] pt-24 pb-12 md:pt-32 md:pb-16"
+      className="relative border-t border-white/[0.06] bg-[#111113] pt-10 pb-10 md:pt-14 md:pb-12"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -17,7 +17,7 @@ export default function CaseStudies() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           custom={0}
-          className="max-w-2xl mb-16"
+          className="max-w-2xl mb-10 md:mb-12"
         >
           <span className="label-caps text-accent">Systems</span>
           <h2 className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
