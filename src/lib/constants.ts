@@ -133,27 +133,27 @@ export const whyUs = [
   {
     title: "Markets & execution",
     description:
-      "oldwest.net supports institutional-style trading workflows: reliable execution paths, clear risk boundaries, and capacity that scales with participation — without treating markets as a bolt-on next to your core stack.",
+      "Institutional-style trading on oldwest.net — reliable execution, clear risk boundaries, and capacity that scales with participation.",
   },
   {
     title: "Distributed compute & storage",
     description:
-      "GPU-aware capacity, durable data tiers, and multi-region thinking on oldwest.net so workloads behave as a distributed system rather than a single-region rental with hidden coupling.",
+      "GPU-aware capacity and durable tiers on oldwest.net, built as a distributed system instead of a single-region rental.",
   },
   {
     title: "Programmable communications",
     description:
-      "Voice, SMS, and VoIP exposed API-first on oldwest.net for embedding in your products — contract-driven integrations, observable sessions, and uptime treated as infrastructure, not a side project.",
+      "Voice, SMS, and VoIP API-first on oldwest.net — embed in your products with contract-driven integrations and observable sessions.",
   },
   {
     title: "Search & discovery",
     description:
-      "Identity-forward search and presence on oldwest.net — a modern surface behind premium names, authoritative routing, and operator-grade delivery for audiences who expect the domain to mean something.",
+      "Search and presence on oldwest.net behind premium names — modern surface, authoritative routing, operator-grade delivery.",
   },
   {
     title: "Transactional mail",
     description:
-      "Authentication, throughput, and reputation managed on oldwest.net so transactional and campaign mail lands in the inbox with metrics your team can defend in audits and QBRs.",
+      "Auth, throughput, and reputation on oldwest.net so mail reaches the inbox with metrics you can stand behind in reviews.",
   },
 ];
 

@@ -14,14 +14,13 @@ export default function WhyChooseUs() {
   return (
     <section id="about" className="relative border-t border-white/[0.06] bg-[#111113] pt-20 pb-12 md:pt-24 md:pb-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             custom={0}
-            className="flex h-full min-h-0 flex-col"
           >
             <span className="label-caps text-accent">Network</span>
             <h2 className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
@@ -35,7 +34,7 @@ export default function WhyChooseUs() {
               unrelated vendors.
             </p>
 
-            <div className="mt-auto pt-8 rounded-[1.5rem] border border-white/[0.06] bg-[#17171a] p-6 shadow-card">
+            <div className="mt-6 rounded-[1.5rem] border border-white/[0.06] bg-[#17171a] p-6 shadow-card">
               <p className="text-text-secondary text-sm leading-relaxed italic">
                 &ldquo;Routing our stack through oldwest.net gave us one contract
                 and one operational story across execution, voice, and mail.

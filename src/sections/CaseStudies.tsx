@@ -8,7 +8,7 @@ export default function CaseStudies() {
   return (
     <section
       id="systems"
-      className="relative border-t border-white/[0.06] bg-[#111113] py-24 md:py-32"
+      className="relative border-t border-white/[0.06] bg-[#111113] pt-24 pb-12 md:pt-32 md:pb-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -21,7 +21,7 @@ export default function CaseStudies() {
         >
           <span className="label-caps text-accent">Systems</span>
           <h2 className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]">
-            From the OldWestSolutions wire
+            From the Old West Solutions Wire
           </h2>
           <p className="mt-4 text-text-muted text-lg leading-relaxed">
             Architecture notes on capacity, service boundaries, and inference —
