@@ -17,18 +17,17 @@ export default function Industries() {
           custom={0}
           className="mx-auto max-w-3xl text-center"
         >
-          <span className="label-caps text-accent">How it works</span>
+          <span className="label-caps text-accent">Products</span>
           <h2 className="luxury-title mt-3 text-3xl font-bold leading-[1.12] tracking-[-0.02em] text-white md:text-4xl lg:text-[2.5rem]">
-            Systems across verticals
+            One company, five product lines
           </h2>
           <p className="mt-5 text-base leading-relaxed text-text-muted md:text-lg">
-            OldWestSolutions sits at the intersection of domains, cloud, SaaS,
-            and security procurement. The same disciplined quoting workflow
-            applies whether your customer needs Microsoft 365 and Copilot,
-            Google Workspace and Gemini, hyperscaler capacity, collaboration
-            tools, backup and DR, or a full security stack — you submit once;
-            we translate vendor catalogs and programs into pricing your team
-            can stand behind.
+            OldWestSolutions builds and operates a connected portfolio: a trading
+            venue on General.exchange, decentralized compute on Lubbock.Cloud,
+            programmable voice and messaging through Teleport Services, discovery
+            and presence on Old West, and high-deliverability email on
+            FirstClassMail. Together they cover markets, cloud, communications,
+            and the domains that tie brands to infrastructure.
           </p>
         </motion.div>
       </div>

@@ -17,7 +17,7 @@ export const infrastructureVendors = [
 export const navLinks = [
   { label: "Services", href: "/managed-services" },
   { label: "News", href: "#news" },
-  { label: "Infrastructure", href: "#industries" },
+  { label: "Products", href: "#industries" },
   { label: "About", href: "#about" },
 ];
 
@@ -131,29 +131,29 @@ export const caseStudies = [
 
 export const whyUs = [
   {
-    title: "Security, backup & compliance",
+    title: "General.exchange",
     description:
-      "Proofpoint through Check Point, MDR, cloud firewall/VPN, pen tests, malware protection—mapped to your security and backup quote lines. Hardware optional; drop provider names and attachments when you need a fast match.",
+      "Our trading platform for digital assets and market-style workflows—built for serious participants who need reliable execution, clear risk boundaries, and an environment that scales with volume.",
   },
   {
-    title: "Collaboration & communications",
+    title: "Lubbock.Cloud",
     description:
-      "DocuSign, Zoom, Exchange, SharePoint, OneDrive, Workspace—new seats, renewals, or transfers in one intake: counts, mixed SKUs in notes, bills attached when helpful.",
+      "Decentralized compute and storage for workloads that outgrow a single region—GPU-aware capacity, durable data tiers, and architecture that treats the cloud as a distributed system, not a single vendor closet.",
   },
   {
-    title: "Productivity & line-of-business SaaS",
+    title: "Teleport Services",
     description:
-      "Microsoft 365, Adobe, QuickBooks, Zoho, CRM/ERP, ServiceNow—we quote seat mix, edition, and term so you are not the living SKU database for every vendor.",
+      "Programmable voice, SMS, and VoIP infrastructure you can embed in your own products—white-label friendly, API-first, and operated with the same uptime discipline we apply across the stack.",
   },
   {
-    title: "Cloud platforms & infrastructure",
+    title: "Old West",
     description:
-      "Azure, AWS, and GCP—usage or commits, plus backup/DR where it belongs on the same form: solution, scale, optional hardware, context in additional notes.",
+      "The Old West line (OldWest.net) anchors search, discovery, and identity-forward experiences for audiences who expect a modern web surface behind premium domains and operator-grade infrastructure.",
   },
   {
-    title: "AI & modern work add-ons",
+    title: "FirstClassMail",
     description:
-      "Copilot, Gemini, Devs.ai, and similar add-ons priced like any other subscription so bundles and renewals stay clear for finance and IT.",
+      "Transactional and marketing email with delivery metrics that matter—authentication, throughput, and reputation handled as infrastructure so your messages land in the inbox, not the promotions graveyard.",
   },
 ];
 
@@ -171,10 +171,11 @@ export const footerLinks = [
   {
     title: "Products",
     links: [
-      { label: "OldWest", href: "#" },
-      { label: "FirstClassMail", href: "#" },
-      { label: "Teleport", href: "#" },
+      { label: "General.exchange", href: "#" },
       { label: "Lubbock.Cloud", href: "#" },
+      { label: "Teleport Services", href: "#" },
+      { label: "Old West", href: "#" },
+      { label: "FirstClassMail", href: "#" },
     ],
   },
   {
