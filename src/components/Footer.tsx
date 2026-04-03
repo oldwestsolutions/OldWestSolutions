@@ -10,9 +10,6 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-5">
             <a href="/" className="inline-flex items-center gap-2.5 mb-4 touch-manipulation rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
-              <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
-                <span className="text-white font-bold text-sm tracking-tight">OW</span>
-              </div>
               <div className="flex flex-col leading-none text-left">
                 <span className="text-white font-semibold text-[15px] tracking-tight">
                   OldWestSolutions

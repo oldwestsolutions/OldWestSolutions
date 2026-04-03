@@ -32,10 +32,7 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[72px] h-[72px] flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2.5 shrink-0 min-h-[44px] min-w-[44px] -ml-1 pl-1 touch-manipulation" aria-label="OldWestSolutions home">
-          <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
-            <span className="text-white font-bold text-sm tracking-tight">OW</span>
-          </div>
+        <a href="/" className="flex items-center shrink-0 min-h-[44px] min-w-[44px] -ml-1 pl-1 touch-manipulation" aria-label="OldWestSolutions home">
           <div className="flex flex-col leading-none">
             <span className="text-white font-semibold text-[15px] tracking-tight">
               OldWestSolutions
