@@ -152,34 +152,6 @@ export default function UniversityPage() {
         </div>
       </section>
 
-      {/* Tracks */}
-      <section className="border-t border-white/[0.06] bg-[#0c0c0e] px-4 py-16 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-2xl font-bold text-white">Who it is for</h2>
-          <div className="mt-10 grid gap-6 text-left sm:grid-cols-3">
-            {[
-              {
-                role: "Engineers",
-                copy: "Deep dives on failure modes, limits, and safe change windows.",
-              },
-              {
-                role: "Product & program",
-                copy: "Enough architecture to scope honestly with customers and auditors.",
-              },
-              {
-                role: "Finance & procurement",
-                copy: "How metered capacity maps to line items for renewals.",
-              },
-            ].map((x) => (
-              <div key={x.role} className="rounded-xl border border-white/[0.06] bg-[#141416] p-6">
-                <div className="text-sm font-bold text-white">{x.role}</div>
-                <p className="mt-2 text-sm text-text-muted">{x.copy}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="px-4 py-16 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-3xl rounded-[2rem] border border-white/[0.08] bg-gradient-to-br from-[#1a1a1e] to-[#121214] p-10 text-center">
           <h2 className="text-xl font-bold text-white sm:text-2xl">Enroll your team</h2>

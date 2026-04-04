@@ -19,12 +19,17 @@ export default function NewsPageContent({ caseStudies }: Props) {
 
   const q = search.trim().toLowerCase();
 
+  const newsStudies = useMemo(
+    () => caseStudies.filter((s) => s.industry !== "Field operations"),
+    [caseStudies],
+  );
+
   const filteredStudies = useMemo(() => {
-    if (!q) return caseStudies;
-    return caseStudies.filter((s) =>
+    if (!q) return newsStudies;
+    return newsStudies.filter((s) =>
       matchesQuery([s.title, s.problem, s.outcome, s.industry, s.solution].join(" "), q),
     );
-  }, [caseStudies, q]);
+  }, [newsStudies, q]);
 
   const filteredTrending = useMemo(() => {
     if (!q) return trendingArticles;
@@ -40,9 +45,7 @@ export default function NewsPageContent({ caseStudies }: Props) {
     <ImmersiveSiteShell>
       <div className="border-b border-white/[0.06] bg-[#0a0a0c] px-4 py-3 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-wrap items-center gap-4">
-            <span className="font-semibold text-white">Old West Solutions</span>
-            <span className="hidden h-3 w-px bg-white/15 sm:block" aria-hidden />
+          <div className="flex flex-wrap items-center gap-3">
             <span className="text-[11px] text-text-muted sm:text-xs">News feed</span>
             <span className="rounded-full bg-white/[0.06] px-2 py-0.5 text-[10px] uppercase tracking-wider text-accent">
               Live
@@ -158,114 +161,71 @@ export default function NewsPageContent({ caseStudies }: Props) {
       </section>
 
       <section className="px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-          <div>
-            <h2 className="text-lg font-bold text-white">From the wire</h2>
-            <div className="mt-6 space-y-6 border-t border-white/[0.06] pt-6">
-              {filteredStudies.length ? (
-                filteredStudies.map((s) => (
-                  <article key={s.title} className="border-b border-white/[0.04] pb-6 last:border-0">
-                    <div className="text-[10px] font-semibold uppercase tracking-wider text-text-muted">Lead</div>
-                    <p className="mt-2 text-sm leading-relaxed text-text-secondary">{s.problem}</p>
-                    <div className="mt-3 text-[10px] font-semibold uppercase tracking-wider text-emerald-400/90">
-                      Impact
-                    </div>
-                    <p className="mt-2 text-sm font-medium leading-relaxed text-emerald-400/85">{s.outcome}</p>
-                  </article>
-                ))
-              ) : (
-                <p className="text-sm text-text-muted">No wire items for this search.</p>
-              )}
+        <div className="mx-auto max-w-2xl">
+          <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-b from-[#1a1a1e] to-[#121214] px-6 py-10 text-center sm:px-10 sm:py-12">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent">Newsletter</span>
+            <h2 className="mt-3 text-xl font-bold text-white sm:text-2xl">Stay in the loop</h2>
+            <p className="mt-4 text-sm leading-relaxed text-text-muted">
+              Subscribe for a regular digest of field briefs, product notes, and operator-friendly explainers — the same stories we track on
+              the home page <span className="text-text-secondary">News</span> module, plus subscriber-only context when it matters.
+            </p>
+            <div className="mt-8 border-t border-white/[0.06] pt-8 text-left">
+              <p className="text-[10px] font-semibold uppercase tracking-wider text-text-muted">What you get</p>
+              <ul className="mt-4 space-y-3 text-sm text-text-secondary">
+                <li className="flex gap-2">
+                  <span className="text-accent" aria-hidden>
+                    ·
+                  </span>
+                  <span>
+                    <strong className="text-white">Monthly digest</strong> — one clean email with headlines, links, and short summaries so you
+                    can skim in minutes.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-accent" aria-hidden>
+                    ·
+                  </span>
+                  <span>
+                    <strong className="text-white">Optional breaking alerts</strong> for maintenance windows, security advisories, and major
+                    platform changes (off by default; turn on anytime).
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-accent" aria-hidden>
+                    ·
+                  </span>
+                  <span>
+                    <strong className="text-white">Subscriber amenities</strong> — early looks at shop bundles, invite-only webinar invites,
+                    and PDF checklists aligned to our documentation and university tracks.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-accent" aria-hidden>
+                    ·
+                  </span>
+                  <span>
+                    <strong className="text-white">Privacy &amp; control</strong> — one-click unsubscribe, no list selling, and preference
+                    centers so you only get the lanes you want.
+                  </span>
+                </li>
+              </ul>
             </div>
-          </div>
-          <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-b from-[#1a1a1e] to-[#121214] p-8">
-            <h2 className="text-lg font-bold text-white">Stay in the loop</h2>
-            <p className="mt-3 text-sm leading-relaxed text-text-muted">
-              Briefs on this page mirror the home page <span className="text-text-secondary">News</span> section. Use the links below for
-              longer-form resources, product docs, scheduled conversations with our team, and editorial or press inquiries.
+            <p className="mt-8 text-[11px] leading-relaxed text-text-muted">
+              Full automation is on the way; for now, send a subscribe request and we will confirm you manually. Corporate domains welcome —
+              tell us your team size if you need a shared distribution list.
             </p>
-            <ul className="mt-6 space-y-2.5 border-t border-white/[0.06] pt-6 text-sm text-text-secondary">
-              <li className="flex gap-2">
-                <span className="text-accent" aria-hidden>
-                  ·
-                </span>
-                <span>
-                  <Link href="/documentation" className="text-white underline-offset-2 hover:underline">
-                    Developer &amp; API documentation
-                  </Link>{" "}
-                  for integrators and partners.
-                </span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-accent" aria-hidden>
-                  ·
-                </span>
-                <span>
-                  <Link href="/university" className="text-white underline-offset-2 hover:underline">
-                    University &amp; training tracks
-                  </Link>{" "}
-                  for structured learning paths.
-                </span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-accent" aria-hidden>
-                  ·
-                </span>
-                <span>
-                  <Link href="/shop" className="text-white underline-offset-2 hover:underline">
-                    Equipment &amp; add-ons (shop)
-                  </Link>{" "}
-                  referenced in field briefs.
-                </span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-accent" aria-hidden>
-                  ·
-                </span>
-                <span>
-                  <Link href="/schedule-consultation" className="text-white underline-offset-2 hover:underline">
-                    Schedule a consultation
-                  </Link>{" "}
-                  for roadmap and architecture conversations.
-                </span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-accent" aria-hidden>
-                  ·
-                </span>
-                <span>
-                  Press, podcast, or event requests:{" "}
-                  <a
-                    href="mailto:press@oldwestsolutions.com?subject=Editorial%20inquiry"
-                    className="text-white underline-offset-2 hover:underline"
-                  >
-                    press@oldwestsolutions.com
-                  </a>
-                  {" · "}
-                  General line{" "}
-                  <a href="tel:+19453824660" className="text-white underline-offset-2 hover:underline">
-                    (945) 382-4660
-                  </a>
-                  .
-                </span>
-              </li>
-            </ul>
-            <p className="mt-6 text-[11px] leading-relaxed text-text-muted">
-              RSS and email digests are on the roadmap; bookmark this feed or the homepage news module for now. For sensitive disclosures,
-              use encrypted channels your account team provides.
-            </p>
-            <div className="mt-8 flex flex-col gap-3">
-              <Link
-                href="/#news"
+            <div className="mt-8 flex flex-col gap-3 sm:mx-auto sm:max-w-md">
+              <a
+                href="mailto:newsletter@oldwestsolutions.com?subject=Subscribe%20%E2%80%94%20Old%20West%20Solutions%20newsletter"
                 className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-white hover:bg-accent-deep"
               >
-                View on homepage
-              </Link>
+                Subscribe by email
+              </a>
               <Link
-                href="/contact"
+                href="/#news"
                 className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-white/[0.12] px-6 py-2.5 text-sm font-medium text-text-secondary hover:border-accent/30 hover:text-white"
               >
-                Contact editorial
+                View on homepage
               </Link>
             </div>
           </div>
