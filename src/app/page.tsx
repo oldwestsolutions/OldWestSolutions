@@ -9,20 +9,20 @@ import CTA from "@/sections/CTA";
 export const metadata: Metadata = {
   title: { absolute: "Old West Solutions - IT Services" },
   description:
-    "Find managed IT services, cloud infrastructure, and technology solutions: databases, storage, AI-ready compute, networking, and security — plus OldWest.net for integrated operator workflows. Based in Plano, Texas.",
+    "Old West Solutions in Plano, TX provides fiber internet, broadband, phone systems, television, network equipment, managed IT services, cloud hosting, and cybersecurity for homes and businesses.",
   alternates: { canonical: "/" },
   openGraph: {
     title:
-      "Old West Solutions — Managed IT, Cloud & Technology Solutions for Domain Operators",
+      "Old West Solutions — IT Services, Fiber Internet & Technology Solutions | Plano, TX",
     description:
-      "Managed IT, cloud infrastructure, and tech solutions — multi-region systems, databases, AI-ready compute, and OldWest.net for operators who need one accountable partner.",
+      "Fiber internet, broadband, phone systems, TV, managed IT, cloud hosting, and cybersecurity — one company for all your technology needs in Plano, Texas.",
     url: "/",
   },
   twitter: {
     title:
-      "Old West Solutions — IT Services, Cloud & Domain Infrastructure (Plano, TX)",
+      "Old West Solutions — IT Services, Internet & Technology | Plano, TX",
     description:
-      "Managed IT, cloud infrastructure, and tech solutions — multi-region systems, databases, AI-ready compute, and OldWest.net for operators who need one accountable partner.",
+      "Fiber internet, broadband, phone systems, TV, managed IT, cloud hosting, and cybersecurity — one company for all your technology needs in Plano, Texas.",
   },
 };
 

@@ -4,12 +4,12 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "Systems",
   description:
-    "How Old West Solutions engineers distributed systems, microservices, and governed AI — architecture notes on security, communications workloads, and inference for finance and infrastructure teams.",
+    "How Old West Solutions builds reliable systems — blockchain for trusted records, microservices for scalable architecture, and smart tools for finance and trading teams.",
   alternates: { canonical: "/systems" },
   openGraph: {
-    title: "Old West Solutions — Distributed Systems, Microservices & AI Architecture",
+    title: "Old West Solutions — Blockchain, Microservices & Finance Technology",
     description:
-      "Security posture across tiers, composable communications services, and governed AI capacity — concise architecture briefs for operators who need one honest story from DNS to inference.",
+      "Blockchain record-keeping, composable microservices, and real-time finance tools — architecture briefs from Old West Solutions.",
     url: "/systems",
   },
   twitter: {

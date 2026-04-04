@@ -10,7 +10,7 @@ const siteUrl =
 const base = new URL(siteUrl.endsWith("/") ? siteUrl : `${siteUrl}/`);
 
 const defaultDescription =
-  "Old West Solutions provides IT services, managed cloud infrastructure, and technology solutions for operators who need reliable systems: multi-region data planes, databases, storage, AI-ready compute, security and edge delivery, plus OldWest.net — our flagship operator network.";
+  "Old West Solutions is a Plano, Texas IT company offering fiber internet, broadband, phone systems, television, network equipment, managed cloud infrastructure, web hosting, cybersecurity, and technology consulting for homes and businesses.";
 
 /** Document `<title>` stays short for the tab; Open Graph below carries full SEO headlines. */
 const tabTitleHome = `${brandTitle} - IT Services`;
@@ -26,21 +26,28 @@ export const metadata: Metadata = {
   keywords: [
     "Old West Solutions",
     "IT services",
-    "managed IT services",
-    "technology solutions",
-    "tech solutions",
+    "IT services Plano TX",
+    "managed IT services Texas",
+    "fiber internet Plano",
+    "broadband internet Texas",
+    "business phone systems",
+    "television service provider",
+    "network equipment",
     "managed cloud services",
     "cloud infrastructure",
-    "enterprise IT",
+    "web hosting Plano",
+    "cybersecurity services",
+    "technology consulting",
+    "internet service provider Texas",
+    "ISP Plano TX",
+    "business IT support",
     "managed infrastructure",
-    "distributed systems",
-    "cloud databases",
-    "managed security",
-    "DevOps",
-    "multi-region",
     "OldWest.net",
-    "Plano IT services",
-    "Texas technology company",
+    "Plano Texas technology company",
+    "fiber optic internet",
+    "enterprise IT solutions",
+    "network installation",
+    "IT support near me",
   ],
   authors: [{ name: brandTitle, url: base }],
   creator: brandTitle,
@@ -50,13 +57,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: brandTitle,
-    title: `${brandTitle} — Managed IT, Cloud Infrastructure & Technology Solutions`,
+    title: `${brandTitle} — IT Services, Fiber Internet & Technology Solutions in Plano, TX`,
     description: defaultDescription,
     url: base,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${brandTitle} — IT Services, Cloud & Managed Infrastructure`,
+    title: `${brandTitle} — IT Services, Internet & Technology Solutions | Plano, TX`,
     description: defaultDescription,
   },
 };

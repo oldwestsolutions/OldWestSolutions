@@ -4,47 +4,47 @@ export default function ProductsPage() {
   return (
     <LongFormPage
       eyebrow="Products"
-      title="Capability lines you can buy, meter, and defend"
-      lead="Products on OldWest.net are discrete capability areas — markets and execution, compute and storage, communications, discovery, and mail — delivered through the same observability, contracts, and controls. You choose the mix; we operate the spine."
+      title="Everything your home or business needs to stay connected"
+      lead="From fast internet to crystal-clear phone service and reliable TV — we provide the technology, the equipment, and the support to keep everything running smoothly."
       sections={[
         {
-          heading: "Markets & execution",
+          heading: "Fiber & Broadband Internet",
           paragraphs: [
-            "Institutional-style execution workflows with limits, monitoring, and throughput designed for risk review — including support for digital-asset and stablecoin rails where your policies allow, without forking your operational story from conventional settlement.",
+            "Fast, dependable internet built for the way people actually use it — streaming, video calls, remote work, gaming, and running a business. Our fiber-optic and broadband options deliver the speed and stability you need without the slowdowns.",
           ],
         },
         {
-          heading: "Distributed compute & storage",
+          heading: "Phone Systems",
           paragraphs: [
-            "GPU-aware capacity and durable tiers for workloads that mix traditional applications with chain-adjacent indexing, signing, or inference. Geography and residency are first-class inputs, not afterthoughts on a single cluster.",
+            "Clear, reliable phone service for homes and offices. Whether you need a simple single line or a full business phone setup with multiple extensions, voicemail, and call forwarding — we set it up and keep it working.",
           ],
         },
         {
-          heading: "Programmable communications",
+          heading: "Television",
           paragraphs: [
-            "Voice, SMS, and VoIP exposed API-first so lifecycle events, receipts, and alerts align with how value and state move through your systems — embeddable in your products with white-label friendly posture where required.",
+            "Hundreds of channels, on-demand shows and movies, and DVR so you never miss anything. Picture quality you can count on, delivered to every screen in your home or waiting room.",
           ],
         },
         {
-          heading: "Discovery & transactional mail",
+          heading: "Installation & Support",
           paragraphs: [
-            "Discovery and presence behind premium names, with mail programs tuned for authentication, throughput, and reputation — including programs that span cards, ACH, and digital-asset settlement with metrics you can show in audits and QBRs.",
+            "Our team comes to you, installs everything the right way, and makes sure it all works before we leave. After that, help is just a phone call away — real people, not a phone tree.",
           ],
         },
         {
-          heading: "Packaging and commercials",
+          heading: "Network Equipment",
           paragraphs: [
-            "Products are quoted and operated as metered or committed capacity with clear expansion paths. Finance sees line items that map to infrastructure reality; engineering sees APIs and SLOs that match what was sold.",
+            "Routers, modems, switches, access points, and cabling — the hardware that keeps your connection fast and reliable in every room and on every device. We help you pick the right gear and set it up properly.",
           ],
         },
       ]}
       relatedLinks={[
-        { label: "Network overview", href: "/network" },
-        { label: "Solutions", href: "/solutions" },
-        { label: "Home — Network section", href: "/#about" },
+        { label: "Contact us", href: "/contact" },
+        { label: "Managed IT services", href: "/managed-services" },
+        { label: "About Old West Solutions", href: "/about" },
       ]}
-      ctaHref="/book-appointment"
-      ctaLabel="Book an appointment"
+      ctaHref="/schedule-consultation"
+      ctaLabel="Schedule A Consultation"
     />
   );
 }

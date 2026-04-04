@@ -220,7 +220,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.28}
-            className="text-center md:text-right"
+            className="text-center md:text-left"
           >
             <h3 className="text-lg font-semibold text-white sm:text-xl">
               Safety &amp; speed

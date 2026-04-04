@@ -95,66 +95,66 @@ export const processSteps = [
 
 export const caseStudies = [
   {
-    title: "One security story from DNS and mail through application tiers",
-    industry: "Security",
+    title: "Blockchain records that everyone can trust",
+    industry: "Blockchain",
     problem:
-      "When discovery, encrypted mail, and applications are protected by different consoles and policies, gaps show up in TLS, identity, logging, and incident response — and audits rarely match how traffic actually flows.",
+      "When important records live in different places and different formats, it is hard to know which version is right. Teams waste time checking and rechecking, and mistakes slip through because no one has one clear source of truth.",
     solution:
-      "Security is run as a single program: consistent identity and access patterns, certificate and key lifecycle, mail authentication at scale, and edge controls tied to the same inventory as your names and workloads.",
+      "We use blockchain to create a shared record book that nobody can secretly change. Every entry is stamped with a time and linked to the one before it, so everyone — your team, your partners, your auditors — sees the same facts.",
     outcome:
-      "Teams defend one coherent posture from resolution through messaging and apps — fewer blind spots, faster triage, and evidence that lines up when stakeholders ask hard questions.",
-    tags: ["Security", "Zero trust", "TLS", "Identity"],
+      "Less time spent arguing about what happened, faster audits, and a level of trust between partners that spreadsheets and emails could never provide.",
+    tags: ["Blockchain", "Trust", "Records", "Audit"],
   },
   {
-    title: "Composable microservices for communications workloads",
+    title: "Small services that do one job really well",
     industry: "Microservices",
     problem:
-      "Integrators were forced into monolithic adapters whenever delivery, reputation, and session telemetry shipped on different release cycles — slowing reviews and making tenant-wide incidents hard to trace.",
+      "When a system tries to do everything in one place, it gets slow and tangled. Updating one part can break another, finding problems is like looking for a needle in a haystack, and the whole thing is hard for teams to understand.",
     solution:
-      "Communications capabilities are exposed as focused microservices: delivery, reputation, and session data behind versioned APIs and contracts, so partners compose one tenant timeline without a single fat binary or shared schema coupling everything.",
+      "We split the big system into small, focused services. Each one handles a single task — like sending a message, checking a status, or tracking activity. They connect through simple, clean interfaces so teams only use the pieces they need.",
     outcome:
-      "Smaller deployable units, independent scaling, and shared observability cut time-to-innocence on deliverability and quality tickets while staying suitable for white-label enterprise programs.",
-    tags: ["Microservices", "APIs", "Observability", "Tenancy"],
+      "Updates are faster because you only change one small piece. Problems are easier to find because each service has its own dashboard. The whole system grows without slowing down.",
+    tags: ["Microservices", "APIs", "Monitoring", "Scalability"],
   },
   {
-    title: "Governed AI instead of ad-hoc GPU jobs",
-    industry: "AI",
+    title: "Smart tools for trading and finance teams",
+    industry: "Finance",
     problem:
-      "Notebook-style GPU jobs and opaque spend made it impossible to run models as production AI — with budgets, residency, burst during campaigns, and clear handoff between experiments and always-on serving.",
+      "Trading desks and finance teams often juggle many different tools that do not talk to each other. Reports are slow, risk checks happen after the fact, and when markets move fast, the technology cannot keep up.",
     solution:
-      "Inference layers combine tokenized capacity, policy-aware routing, and multi-region placement so workloads behave as governed AI: measurable units, controlled expansion, and room to spike without idle long-term locks.",
+      "We build systems where trades, risk checks, and reporting all happen in the same place, in real time. Limits and alerts are built in from the start, so teams always know where they stand — no waiting for end-of-day reports.",
     outcome:
-      "Teams align model serving with revenue and compliance events, balance burst against steady-state cost, and keep data residency and failover explicit instead of an afterthought on a single cluster.",
-    tags: ["AI", "Inference", "Governance", "Multi-region"],
+      "Faster decisions, clearer risk visibility, and a single view of every position — so finance teams spend less time gathering data and more time acting on it.",
+    tags: ["Finance", "Trading", "Real-time", "Risk"],
   },
 ];
 
 /** Capability areas delivered through oldwest.net */
 export const whyUs = [
   {
-    title: "Markets & execution",
+    title: "Fiber & Broadband Internet",
     description:
-      "Execution on oldwest.net treats digital assets, stablecoins, and conventional rails with the same operational rigor — limits, monitoring, and throughput your risk function can sign off on.",
+      "Fast, reliable internet for homes and businesses — fiber-optic and broadband connections built for streaming, remote work, and everything in between.",
   },
   {
-    title: "Distributed compute & storage",
+    title: "Phone Systems",
     description:
-      "GPU-aware capacity and durable tiers that stay coherent when workloads mix everyday applications with chain-adjacent indexing, signing, or inference — one distributed fabric, not a patchwork of silos.",
+      "Modern phone service for your home or office — crystal-clear calls, voicemail, caller ID, and multi-line setups that just work.",
   },
   {
-    title: "Programmable communications",
+    title: "Television",
     description:
-      "Voice, SMS, and VoIP exposed API-first so receipts, alerts, and lifecycle messages can align with how value actually moves — programmable hooks without a separate console for every rail.",
+      "Hundreds of channels, on-demand content, and DVR built in — entertainment for the whole household with picture quality you can count on.",
   },
   {
-    title: "Search & discovery",
+    title: "Installation & Support",
     description:
-      "Discovery and presence behind premium names — routing and signals that can respect both traditional web identity and on-chain context where your policies allow, without fragmenting the operator story.",
+      "Professional setup from start to finish — our team comes to you, installs everything, and makes sure it all works before we leave. Help is a phone call away after that.",
   },
   {
-    title: "Transactional mail",
+    title: "Network Equipment",
     description:
-      "Authentication, throughput, and reputation tuned for programs that span cards, bank rails, and digital-asset settlement — inbox delivery with metrics you can defend in audits and reviews.",
+      "Routers, modems, switches, and access points — the hardware your connection needs to stay fast and reliable in every room and on every device.",
   },
 ];
 

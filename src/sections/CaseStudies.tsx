@@ -28,10 +28,9 @@ export default function CaseStudies() {
             The Difference
           </h2>
           <p className="mt-4 text-pretty text-text-muted text-base leading-relaxed sm:text-lg">
-            How we engineer capacity, boundaries, and inference when products
-            span traditional settlement and digital-asset programs — concise
-            briefs so infrastructure and finance teams stay aligned on the same
-            facts.
+            Here is how we solve real problems for businesses — simple
+            explanations of the challenges our customers face, what we build
+            for them, and the results they get.
           </p>
         </motion.div>
 
