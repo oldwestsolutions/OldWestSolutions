@@ -109,12 +109,11 @@ export default function Hero() {
                 Distributed infrastructure
               </span>
               <span className="block text-3xl leading-[1.08] min-[400px]:text-4xl sm:text-5xl sm:leading-[1.06] lg:text-[3.25rem] xl:text-[3.5rem]">
-                <span className="text-white">Control plane</span>
+                <span className="text-white">Enterprise Level</span>
                 <br className="hidden sm:inline" />
                 <span className="text-white/92">
                   {" "}
-                  for the{" "}
-                  <span className="text-accent">domains you operate</span>
+                  <span className="text-accent">Data Craft</span>
                 </span>
               </span>
             </motion.h1>
@@ -126,11 +125,10 @@ export default function Hero() {
               custom={0.08}
               className="mx-auto mt-8 max-w-3xl text-pretty text-base font-medium leading-relaxed text-text-secondary sm:mt-10 sm:text-lg md:text-xl md:leading-relaxed"
             >
-              We build and run the substrate enterprises standardize on — multi-region
-              data planes, encrypted durable storage, inference-ready compute, and
-              identity-aware edges — as one coherent layer behind your names, APIs,
-              and workloads. Same primitives as hyperscale; one contract, one
-              operational model.
+              We set up and take care of all the tech your business needs —
+              servers in many places, safe storage, smart computing, and
+              security — so it all works together behind your website. One
+              team, one plan, everything handled.
             </motion.p>
 
             <motion.div
