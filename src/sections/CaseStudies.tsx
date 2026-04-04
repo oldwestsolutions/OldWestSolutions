@@ -39,27 +39,27 @@ export default function CaseStudies() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch"
+          className="grid grid-cols-1 gap-6 md:grid-cols-3 md:items-stretch"
         >
           {caseStudies.map((study, i) => (
-            <motion.div
+            <motion.article
               key={study.title}
               variants={fadeUp}
               custom={i * 0.1}
               className="group flex h-full min-h-0 flex-col overflow-hidden rounded-[1.5rem] border border-white/[0.06] bg-[#1a1a1e] shadow-card transition-all duration-300 hover:border-accent/20"
             >
-              <div className="shrink-0 px-7 pt-7 pb-5 border-b border-white/[0.04]">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] font-semibold tracking-widest uppercase text-accent bg-accent/[0.08] px-2.5 py-1 rounded-md">
+              <div className="shrink-0 border-b border-white/[0.04] px-7 pb-5 pt-7">
+                <div className="mb-3 flex min-h-[1.75rem] items-center">
+                  <span className="rounded-md bg-accent/[0.08] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-accent">
                     {study.industry}
                   </span>
                 </div>
-                <h3 className="text-white font-semibold text-xl group-hover:text-accent transition-colors duration-200">
+                <h3 className="min-h-[4rem] text-xl font-semibold leading-snug text-white transition-colors duration-200 group-hover:text-accent md:min-h-[4.5rem]">
                   {study.title}
                 </h3>
               </div>
 
-              <div className="flex flex-1 flex-col px-7 py-5 space-y-4">
+              <div className="flex flex-1 flex-col space-y-4 px-7 py-5">
                 <div>
                   <div className="text-[10px] font-semibold tracking-widest uppercase text-text-muted mb-1.5">
                     Lead
@@ -89,15 +89,15 @@ export default function CaseStudies() {
               <div className="mt-auto shrink-0 border-t border-white/[0.04] px-7 py-4">
                 <a
                   href="/news"
-                  className="inline-flex min-h-[40px] w-full items-center justify-center gap-1.5 rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2.5 text-xs font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white sm:w-auto touch-manipulation"
+                  className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-medium text-accent underline-offset-2 transition-colors hover:text-white hover:underline touch-manipulation"
                 >
                   Read More
-                  <svg className="h-3 w-3 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
+                  <svg className="h-3.5 w-3.5 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </a>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </motion.div>
       </div>
