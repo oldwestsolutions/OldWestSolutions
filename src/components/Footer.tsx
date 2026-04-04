@@ -19,11 +19,6 @@ export default function Footer() {
                 </span>
               </div>
             </a>
-            <p className="text-text-muted text-sm leading-relaxed max-w-sm mt-4">
-              Distributed systems and managed infrastructure for domain
-              operators — databases, storage, AI-ready compute, and full-stack
-              delivery on major public-cloud platforms.
-            </p>
             <a
               href="tel:+19453824660"
               className="mt-5 flex items-center gap-2 text-text-muted transition-colors hover:text-white"
