@@ -86,6 +86,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${siteUrl}/orchestration`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
       url: `${siteUrl}/find-a-domain`,
       lastModified: now,
       changeFrequency: "monthly",

@@ -168,7 +168,7 @@ export const footerLinks = [
     title: "Solutions",
     links: [
       { label: "Managed Services", href: "/managed-services" },
-      { label: "Network", href: "/network" },
+      { label: "Orchestration", href: "/orchestration" },
       { label: "Integration", href: "/integration" },
     ],
   },
