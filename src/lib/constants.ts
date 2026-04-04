@@ -117,15 +117,15 @@ export const caseStudies = [
     tags: ["Microservices", "APIs", "Monitoring", "Scalability"],
   },
   {
-    title: "Smart tools for trading and finance teams",
-    industry: "Finance",
+    title: "Production AI with clear limits and live answers",
+    industry: "AI",
     problem:
-      "Trading desks and finance teams often juggle many different tools that do not talk to each other. Reports are slow, risk checks happen after the fact, and when markets move fast, the technology cannot keep up.",
+      "Machine learning work often spreads across notebooks, batch jobs, and one-off GPU rentals that never connect cleanly. Serving feels fragile, spend is hard to read, governance gets bolted on late, and when traffic spikes nobody can tell which model version actually answered the customer in production.",
     solution:
-      "We build systems where trades, risk checks, and reporting all happen in the same place, in real time. Limits and alerts are built in from the start, so teams always know where they stand — no waiting for end-of-day reports.",
+      "We design AI layers where training, evaluation, routing, and live inference share one control plane. Policies for data, regions, and budgets ride alongside the models, metrics cover latency and quality in real time, and releases roll through the same gates your engineering team already trusts.",
     outcome:
-      "Faster decisions, clearer risk visibility, and a single view of every position — so finance teams spend less time gathering data and more time acting on it.",
-    tags: ["Finance", "Trading", "Real-time", "Risk"],
+      "Shorter paths from experiment to production, fewer surprises in cost and performance, and one clear view for leadership of what is live and how it behaves under load.",
+    tags: ["AI", "Inference", "Governance", "Production"],
   },
 ];
 
