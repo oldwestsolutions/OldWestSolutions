@@ -109,11 +109,11 @@ export default function Hero() {
                 Distributed infrastructure
               </span>
               <span className="block text-3xl leading-[1.08] min-[400px]:text-4xl sm:text-5xl sm:leading-[1.06] lg:text-[3.25rem] xl:text-[3.5rem]">
-                <span className="text-white">Enterprise Level</span>
+                <span className="text-white">Big Business</span>
                 <br className="hidden sm:inline" />
                 <span className="text-white/92">
                   {" "}
-                  <span className="text-accent">Data Craft</span>
+                  <span className="text-accent">Data Power</span>
                 </span>
               </span>
             </motion.h1>
@@ -166,20 +166,19 @@ export default function Hero() {
           <motion.div variants={slideLeft} initial="hidden" animate="visible" custom={0.18}>
             <span className="label-caps text-accent">Managed services</span>
             <h2 className="luxury-title mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              Ship the app — we assemble everything under the name
+              Build your app — we handle everything else
             </h2>
             <p className="mt-4 text-sm font-medium leading-relaxed text-text-muted sm:text-base">
-              Point the domain at us after transfer and you get the full toolkit to
-              stand up a real product: runtime, data, APIs, mail, observability, and
-              edge policy — provisioned and operated as managed services. You focus
-              on features and customers; we own the platform glue so the hostname is
-              not a dead end.
+              Send your domain our way and we give you all the tools to build
+              a real product — the servers, the data, the email, and the
+              security. You work on your app and your customers. We take care
+              of the rest so your website actually does something.
             </p>
             <ul className="mt-6 space-y-2.5 text-left text-sm font-medium text-text-secondary">
               {[
-                "Composable primitives — databases, object storage, containers, queues, inference — with sane defaults and production guardrails",
-                "Environments and runbooks that behave like CI/CD targets, not one-off snowflakes",
-                "One telemetry plane — metrics, logs, traces — with named engineers on escalation, not a wall of vendor consoles",
+                "Building blocks you can mix and match — databases, file storage, apps, and smart tools — all set up the right way from the start",
+                "Ready-made setups that work the same every time, not one-off guesswork",
+                "One place to see how everything is running — with real people to call when something goes wrong",
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent/80" />
@@ -208,12 +207,11 @@ export default function Hero() {
             className="text-center md:text-left"
           >
             <h3 className="text-lg font-semibold text-white sm:text-xl">
-              Data &amp; compute
+              Data &amp; computing
             </h3>
             <p className="mt-2 text-sm font-medium leading-relaxed text-text-muted">
-              OLTP, analytics, object storage, streaming, GPUs, and orchestration —
-              the backend layer your app actually needs so traffic to the domain
-              lands on software, not a placeholder.
+              Databases, file storage, smart computing, and all the behind-the-scenes
+              power your app needs — so when people visit your site, it actually works.
             </p>
           </motion.div>
 
@@ -225,12 +223,12 @@ export default function Hero() {
             className="text-center md:text-right"
           >
             <h3 className="text-lg font-semibold text-white sm:text-xl">
-              Edge &amp; identity
+              Safety &amp; speed
             </h3>
             <p className="mt-2 text-sm font-medium leading-relaxed text-text-muted">
-              Authoritative DNS, TLS, zero-trust access, CDN and WAF — the edge
-              contract between the public internet and the stack we run for you
-              behind the name.
+              We keep your site safe, fast, and private — blocking bad traffic,
+              checking who gets in, and making sure pages load quickly for
+              everyone, everywhere.
             </p>
           </motion.div>
         </div>
