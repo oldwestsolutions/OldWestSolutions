@@ -3,37 +3,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-function createGlowTexture() {
-  const size = 256;
-  const canvas = document.createElement("canvas");
-  canvas.width = size;
-  canvas.height = size;
-
-  const context = canvas.getContext("2d");
-  if (!context) {
-    return null;
-  }
-
-  const gradient = context.createRadialGradient(
-    size / 2,
-    size / 2,
-    0,
-    size / 2,
-    size / 2,
-    size / 2,
-  );
-
-  gradient.addColorStop(0, "rgba(142, 211, 255, 0.95)");
-  gradient.addColorStop(0.3, "rgba(86, 168, 255, 0.38)");
-  gradient.addColorStop(0.65, "rgba(34, 94, 178, 0.14)");
-  gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
-
-  context.fillStyle = gradient;
-  context.fillRect(0, 0, size, size);
-
-  return new THREE.CanvasTexture(canvas);
-}
-
 export default function HeroStarfield() {
   const mountRef = useRef<HTMLDivElement>(null);
 
@@ -59,14 +28,6 @@ export default function HeroStarfield() {
 
     const ambientLight = new THREE.AmbientLight(0x7ab8ff, 0.95);
     scene.add(ambientLight);
-
-    const moonLight = new THREE.DirectionalLight(0xbfe2ff, 1.6);
-    moonLight.position.set(3, 5, 7);
-    scene.add(moonLight);
-
-    const moonBackLight = new THREE.PointLight(0x3477ff, 0.55, 28);
-    moonBackLight.position.set(-2, 4, -4);
-    scene.add(moonBackLight);
 
     const starGeometry = new THREE.BufferGeometry();
     const starCount = 1800;
@@ -139,36 +100,6 @@ export default function HeroStarfield() {
     );
     scene.add(accentStars);
 
-    const moonGroup = new THREE.Group();
-
-    const moon = new THREE.Mesh(
-      new THREE.SphereGeometry(1.4, 48, 48),
-      new THREE.MeshStandardMaterial({
-        color: "#5da8ea",
-        emissive: "#173964",
-        emissiveIntensity: 0.9,
-        roughness: 0.95,
-        metalness: 0.05,
-      }),
-    );
-
-    const glowTexture = createGlowTexture();
-    const moonGlow = new THREE.Sprite(
-      new THREE.SpriteMaterial({
-        map: glowTexture ?? undefined,
-        color: "#6dbaff",
-        transparent: true,
-        opacity: 0.46,
-        depthWrite: false,
-      }),
-    );
-    moonGlow.scale.set(7.5, 7.5, 1);
-
-    moonGroup.add(moonGlow);
-    moonGroup.add(moon);
-    moonGroup.position.set(0.4, 6.3, -7);
-    scene.add(moonGroup);
-
     const resize = () => {
       const { clientHeight, clientWidth } = mount;
       if (!clientWidth || !clientHeight) {
@@ -190,9 +121,6 @@ export default function HeroStarfield() {
       const elapsed = clock.getElapsedTime();
       stars.rotation.y = elapsed * 0.015;
       accentStars.rotation.y = -elapsed * 0.01;
-      moonGroup.position.y = 6.3 + Math.sin(elapsed * 0.55) * 0.18;
-      moon.rotation.y = elapsed * 0.22;
-      moonGlow.material.rotation = elapsed * 0.04;
       renderer.render(scene, camera);
     };
 
@@ -217,13 +145,9 @@ export default function HeroStarfield() {
 
       starGeometry.dispose();
       accentStarGeometry.dispose();
-      moon.geometry.dispose();
-      glowTexture?.dispose();
 
       (stars.material as THREE.Material).dispose();
       (accentStars.material as THREE.Material).dispose();
-      (moon.material as THREE.Material).dispose();
-      (moonGlow.material as THREE.Material).dispose();
 
       renderer.dispose();
     };
