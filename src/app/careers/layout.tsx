@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Careers at Old West Solutions — join our team in Plano, Texas and help businesses build and run reliable technology.",
+    "Browse open roles at Old West Solutions in Plano and the DFW metro — field fiber technicians, NOC, network engineering, sales, customer experience, and more. Apply online.",
   alternates: { canonical: "/careers" },
   openGraph: {
     title: "Old West Solutions — Careers",

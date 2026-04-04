@@ -37,7 +37,7 @@ export default function Home() {
           <CaseStudies />
           <CTA />
         </main>
-        <Footer />
+        <Footer variant="full" />
       </div>
     </div>
   );

@@ -2,16 +2,60 @@
 
 import { footerLinks } from "@/lib/constants";
 
-export default function Footer() {
+export type FooterVariant = "full" | "minimal";
+
+const footerShellClass =
+  "rounded-b-[1.75rem] border-t border-white/[0.06] bg-[#0c0c0e] sm:rounded-b-[2rem]";
+
+function LegalBar({ showTopDivider = false }: { showTopDivider?: boolean }) {
   return (
-    <footer className="rounded-b-[1.75rem] border-t border-white/[0.06] bg-[#0c0c0e] sm:rounded-b-[2rem]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div
+      className={
+        showTopDivider
+          ? "flex flex-col items-center justify-between gap-4 border-t border-white/[0.04] pt-6 md:flex-row"
+          : "flex flex-col items-center justify-between gap-4 md:flex-row"
+      }
+    >
+      <p className="text-center text-xs text-text-muted md:text-left">
+        &copy; {new Date().getFullYear()} Old West Solutions. All rights reserved.
+      </p>
+      <div className="flex items-center gap-5">
+        <a href="#" className="text-xs text-text-muted transition-colors duration-200 hover:text-white">
+          Privacy Policy
+        </a>
+        <a href="#" className="text-xs text-text-muted transition-colors duration-200 hover:text-white">
+          Terms of Service
+        </a>
+      </div>
+    </div>
+  );
+}
+
+type FooterProps = {
+  /** Only the homepage should pass `"full"`. All other pages use the legal strip only. */
+  variant?: FooterVariant;
+};
+
+export default function Footer({ variant = "minimal" }: FooterProps) {
+  if (variant !== "full") {
+    return (
+      <footer className={footerShellClass}>
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+          <LegalBar />
+        </div>
+      </footer>
+    );
+  }
+
+  return (
+    <footer className={footerShellClass}>
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-14 xl:gap-20">
           {/* Brand */}
           <div className="shrink-0 lg:max-w-[min(100%,280px)] xl:max-w-xs">
-            <a href="/" className="inline-flex items-center gap-2.5 mb-2 touch-manipulation rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+            <a href="/" className="mb-2 inline-flex items-center gap-2.5 touch-manipulation rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
               <div className="flex flex-col leading-none text-left">
-                <span className="text-white font-semibold text-[15px] tracking-tight">
+                <span className="text-[15px] font-semibold tracking-tight text-white">
                   Old West Solutions
                 </span>
               </div>
@@ -39,7 +83,7 @@ export default function Footer() {
               href="https://github.com/oldwestsolutions"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.08] text-text-muted transition-colors hover:border-accent/30 hover:text-white touch-manipulation"
+              className="mt-4 inline-flex h-10 w-10 touch-manipulation items-center justify-center rounded-full border border-white/[0.08] text-text-muted transition-colors hover:border-accent/30 hover:text-white"
               aria-label="Old West Solutions on GitHub"
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -69,7 +113,7 @@ export default function Footer() {
                         <a
                           href={link.href}
                           {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                          className="inline-flex min-h-[40px] max-w-full items-center py-1.5 text-sm text-text-muted transition-colors duration-200 touch-manipulation hover:text-white sm:min-h-0 sm:py-0"
+                          className="inline-flex min-h-[40px] max-w-full touch-manipulation items-center py-1.5 text-sm text-text-muted transition-colors duration-200 hover:text-white sm:min-h-0 sm:py-0"
                         >
                           {link.label}
                         </a>
@@ -82,19 +126,8 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-14 pt-6 border-t border-white/[0.04] flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-text-muted text-xs">
-            &copy; {new Date().getFullYear()} Old West Solutions. All rights reserved.
-          </p>
-          <div className="flex items-center gap-5">
-            <a href="#" className="text-text-muted text-xs hover:text-white transition-colors duration-200">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-text-muted text-xs hover:text-white transition-colors duration-200">
-              Terms of Service
-            </a>
-          </div>
+        <div className="mt-14">
+          <LegalBar showTopDivider />
         </div>
       </div>
     </footer>
