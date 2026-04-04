@@ -100,11 +100,12 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0}
-              className="luxury-title luxury-title-center text-balance text-3xl font-bold leading-[1.06] tracking-[-0.035em] text-white min-[400px]:text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem]"
+              className="luxury-title luxury-title-center text-balance text-3xl font-extrabold leading-[1.05] tracking-[-0.04em] text-white min-[400px]:text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem]"
             >
-              Distributed systems and managed infrastructure
+              Control plane for distributed infrastructure
               <br className="hidden sm:inline" />
-              {" "}for <span className="text-accent">domain-led operators</span>
+              <span className="text-white/95"> on the </span>
+              <span className="text-accent">domains you operate</span>
             </motion.h1>
 
             <motion.p
@@ -112,12 +113,13 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0.08}
-              className="mx-auto mt-8 max-w-3xl text-pretty text-base leading-relaxed text-text-muted sm:mt-10 sm:text-lg md:text-xl md:leading-relaxed"
+              className="mx-auto mt-8 max-w-3xl text-pretty text-base font-medium leading-relaxed text-text-secondary sm:mt-10 sm:text-lg md:text-xl md:leading-relaxed"
             >
-              We design multi-region data planes, durable storage tiers, AI-ready
-              compute, and hardened network edges — the same primitives large
-              enterprises expect — and we can deliver them as part of how you
-              acquire and activate premium domains.
+              We build and run the substrate enterprises standardize on — multi-region
+              data planes, encrypted durable storage, inference-ready compute, and
+              identity-aware edges — as one coherent layer behind your names, APIs,
+              and workloads. Same primitives as hyperscale; one contract, one
+              operational model.
             </motion.p>
 
             <motion.div
@@ -155,20 +157,20 @@ export default function Hero() {
           <motion.div variants={slideLeft} initial="hidden" animate="visible" custom={0.18}>
             <span className="label-caps text-accent">Managed services</span>
             <h2 className="luxury-title mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              We run the stack so you can run the business on the domain
+              Ship the app — we assemble everything under the name
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-text-muted sm:text-base">
-              Managed services means we own the day-to-day: patching, scaling,
-              incident response, backup verification, and vendor coordination across
-              the environments tied to your names. You get predictable operations
-              and clear escalation paths instead of hiring a full platform org for
-              every portfolio asset.
+            <p className="mt-4 text-sm font-medium leading-relaxed text-text-muted sm:text-base">
+              Point the domain at us after transfer and you get the full toolkit to
+              stand up a real product: runtime, data, APIs, mail, observability, and
+              edge policy — provisioned and operated as managed services. You focus
+              on features and customers; we own the platform glue so the hostname is
+              not a dead end.
             </p>
-            <ul className="mt-6 space-y-2.5 text-left text-sm text-text-secondary">
+            <ul className="mt-6 space-y-2.5 text-left text-sm font-medium text-text-secondary">
               {[
-                "SLA-minded runbooks for databases, object storage, compute, and edge networking",
-                "Tested failover paths and recovery drills — not shelf-ware documentation",
-                "Unified metrics, logs, and alerts with named engineers on the pager",
+                "Composable primitives — databases, object storage, containers, queues, inference — with sane defaults and production guardrails",
+                "Environments and runbooks that behave like CI/CD targets, not one-off snowflakes",
+                "One telemetry plane — metrics, logs, traces — with named engineers on escalation, not a wall of vendor consoles",
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent/80" />
@@ -199,10 +201,10 @@ export default function Hero() {
             <h3 className="text-lg font-semibold text-white sm:text-xl">
               Data &amp; compute
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-text-muted">
-              OLTP, analytics, object stores, streaming, GPUs, and orchestration
-              — composed so each domain can support real products, not static
-              placeholders.
+            <p className="mt-2 text-sm font-medium leading-relaxed text-text-muted">
+              OLTP, analytics, object storage, streaming, GPUs, and orchestration —
+              the backend layer your app actually needs so traffic to the domain
+              lands on software, not a placeholder.
             </p>
           </motion.div>
 
@@ -216,9 +218,10 @@ export default function Hero() {
             <h3 className="text-lg font-semibold text-white sm:text-xl">
               Edge &amp; identity
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-text-muted">
-              DNS, TLS, zero-trust access patterns, CDN and WAF policies —
-              tuned so traffic and trust attach cleanly to the name you own.
+            <p className="mt-2 text-sm font-medium leading-relaxed text-text-muted">
+              Authoritative DNS, TLS, zero-trust access, CDN and WAF — the edge
+              contract between the public internet and the stack we run for you
+              behind the name.
             </p>
           </motion.div>
         </div>
