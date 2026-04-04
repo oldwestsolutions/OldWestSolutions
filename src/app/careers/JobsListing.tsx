@@ -1,21 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Job, JobDepartment } from "@/lib/careers";
 import { jobDepartments } from "@/lib/careers";
+
+const PAGE_SIZE = 8;
 
 type Props = {
   jobs: Job[];
 };
-
-function applyHref(job: Job) {
-  const subject = encodeURIComponent(`Application: ${job.title}`);
-  const body = encodeURIComponent(
-    `Role: ${job.title}\nJob ID: ${job.id}\n\nPlease attach a resume and share your availability for a brief intro call.`,
-  );
-  return `mailto:careers@oldwestsolutions.com?subject=${subject}&body=${body}`;
-}
 
 function formatPosted(iso: string) {
   const d = new Date(iso + "T12:00:00");
@@ -35,6 +29,7 @@ export default function JobsListing({ jobs }: Props) {
   const [location, setLocation] = useState<string>("");
   const [sort, setSort] = useState<SortKey>("recent");
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
 
   const typeOptions = useMemo(() => Array.from(new Set(jobs.map((j) => j.type))).sort(), [jobs]);
   const workModeOptions = useMemo(() => Array.from(new Set(jobs.map((j) => j.workMode))).sort(), [jobs]);
@@ -73,6 +68,28 @@ export default function JobsListing({ jobs }: Props) {
     }
     return list;
   }, [jobs, query, dept, type, workMode, location, sort]);
+
+  const filterKey = useMemo(
+    () => `${query}|${dept}|${type}|${workMode}|${location}|${sort}`,
+    [query, dept, type, workMode, location, sort],
+  );
+
+  useEffect(() => {
+    setPage(1);
+  }, [filterKey]);
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const currentPage = Math.min(page, totalPages);
+
+  useEffect(() => {
+    if (page > totalPages) setPage(totalPages);
+  }, [page, totalPages]);
+
+  useEffect(() => {
+    setExpandedId(null);
+  }, [currentPage]);
+
+  const paginated = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
   const hasFilters = Boolean(query.trim() || dept || type || workMode || location);
 
@@ -189,6 +206,13 @@ export default function JobsListing({ jobs }: Props) {
               <span className="font-semibold tabular-nums text-white">{filtered.length}</span>
               {" position"}
               {filtered.length === 1 ? "" : "s"} match your criteria
+              {filtered.length > PAGE_SIZE ? (
+                <span className="text-text-muted">
+                  {" "}
+                  · Showing {(currentPage - 1) * PAGE_SIZE + 1}–
+                  {Math.min(currentPage * PAGE_SIZE, filtered.length)} of {filtered.length}
+                </span>
+              ) : null}
             </p>
             <div className="flex items-center gap-2">
               <label htmlFor="sort-positions" className="text-[11px] uppercase tracking-wider text-text-muted">
@@ -223,7 +247,7 @@ export default function JobsListing({ jobs }: Props) {
           </div>
 
           <ul className="divide-y divide-white/[0.06]" role="list">
-            {filtered.map((job) => {
+            {paginated.map((job) => {
               const open = expandedId === job.id;
               return (
                 <li key={job.id} className="py-1">
@@ -244,12 +268,12 @@ export default function JobsListing({ jobs }: Props) {
                     <p className="hidden text-sm text-text-secondary md:block">{job.type}</p>
                     <p className="hidden text-sm tabular-nums text-text-secondary md:block">{formatPosted(job.postedAt)}</p>
                     <div className="hidden justify-end md:flex">
-                      <a
-                        href={applyHref(job)}
+                      <Link
+                        href={`/careers/apply/${job.id}`}
                         className="text-xs font-semibold text-accent hover:text-accent-muted"
                       >
                         Apply
-                      </a>
+                      </Link>
                     </div>
                     {/* Mobile meta row */}
                     <div className="flex flex-wrap gap-x-4 gap-y-1 border-b border-white/[0.05] pb-3 text-xs text-text-muted md:hidden">
@@ -259,12 +283,12 @@ export default function JobsListing({ jobs }: Props) {
                       <span className="tabular-nums">{formatPosted(job.postedAt)}</span>
                     </div>
                     <div className="flex gap-3 pb-3 md:hidden">
-                      <a
-                        href={applyHref(job)}
+                      <Link
+                        href={`/careers/apply/${job.id}`}
                         className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-sm border border-accent/40 bg-accent/10 text-xs font-semibold text-accent"
                       >
                         Apply
-                      </a>
+                      </Link>
                       <button
                         type="button"
                         onClick={() => setExpandedId(open ? null : job.id)}
@@ -288,12 +312,12 @@ export default function JobsListing({ jobs }: Props) {
                         ))}
                       </ul>
                       <div className="mt-5 flex flex-wrap gap-3 border-t border-white/[0.06] pt-4">
-                        <a
-                          href={applyHref(job)}
+                        <Link
+                          href={`/careers/apply/${job.id}`}
                           className="inline-flex min-h-[44px] items-center justify-center rounded-sm bg-accent px-5 text-xs font-semibold text-white hover:bg-accent-deep"
                         >
                           Apply for this position
-                        </a>
+                        </Link>
                         <Link
                           href="/contact"
                           className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-white/[0.15] px-5 text-xs font-medium text-text-secondary hover:border-white/25 hover:text-white"
@@ -308,6 +332,54 @@ export default function JobsListing({ jobs }: Props) {
               );
             })}
           </ul>
+
+          {totalPages > 1 ? (
+            <nav
+              className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/[0.08] pt-8 sm:flex-row"
+              aria-label="Job results pages"
+            >
+              <p className="text-xs text-text-muted">
+                Page <span className="tabular-nums text-white">{currentPage}</span> of{" "}
+                <span className="tabular-nums text-white">{totalPages}</span>
+              </p>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  disabled={currentPage <= 1}
+                  onClick={() => setPage((p) => Math.max(1, p - 1))}
+                  className="min-h-[44px] min-w-[44px] rounded-sm border border-white/[0.12] px-4 text-xs font-semibold text-text-secondary transition hover:border-accent/30 hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
+                >
+                  Previous
+                </button>
+                <div className="flex flex-wrap justify-center gap-1">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+                    <button
+                      key={n}
+                      type="button"
+                      onClick={() => setPage(n)}
+                      className={
+                        n === currentPage
+                          ? "min-h-[44px] min-w-[44px] rounded-sm bg-accent text-xs font-bold text-white"
+                          : "min-h-[44px] min-w-[44px] rounded-sm border border-transparent text-xs font-medium text-text-muted hover:border-white/[0.1] hover:text-white"
+                      }
+                      aria-label={`Page ${n}`}
+                      aria-current={n === currentPage ? "page" : undefined}
+                    >
+                      {n}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  disabled={currentPage >= totalPages}
+                  onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                  className="min-h-[44px] min-w-[44px] rounded-sm border border-white/[0.12] px-4 text-xs font-semibold text-text-secondary transition hover:border-accent/30 hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
+                >
+                  Next
+                </button>
+              </div>
+            </nav>
+          ) : null}
 
           {filtered.length === 0 ? (
             <div className="py-16 text-center">

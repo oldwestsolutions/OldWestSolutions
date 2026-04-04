@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { jobApplicationIds } from "@/lib/careers";
+import { trendingArticles } from "@/lib/trendingNews";
 
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://oldwestsolutions.com"
@@ -55,6 +57,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.82,
     },
+    ...trendingArticles.map((a) => ({
+      url: `${siteUrl}/news/${a.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.78,
+    })),
+    ...jobApplicationIds.map((jobId) => ({
+      url: `${siteUrl}/careers/apply/${jobId}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+    })),
     {
       url: `${siteUrl}/services`,
       lastModified: now,

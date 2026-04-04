@@ -124,7 +124,19 @@ export const caseStudies = [
     outcome:
       "Executives see cost, model version, and performance in one view, and experiments graduate to full traffic without a second go-live playbook.",
   },
+  {
+    title: "Field dispatch cuts repeat truck rolls after one playbook",
+    industry: "Field operations",
+    problem:
+      "USA — Dispatchers texted techs in three apps while customers waited on vague arrival windows. Repeat visits stacked because nobody saw photos from the last roll.",
+    solution:
+      "Old West Solutions stood up one dispatch board tied to tickets, GPS, and photo checklists. Techs confirm closeouts before clearing a job; supervisors see backlog by neighborhood.",
+    outcome:
+      "Fewer second visits, clearer comms to subscribers, and install windows that leadership can forecast without calling each crew lead.",
+  },
 ];
+
+export type CaseStudy = (typeof caseStudies)[number];
 
 /** Capability areas delivered through oldwest.net */
 export const whyUs = [

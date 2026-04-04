@@ -186,3 +186,9 @@ export const openRoles: Job[] = [
     ],
   },
 ];
+
+export function getJobById(id: string): Job | undefined {
+  return openRoles.find((j) => j.id === id);
+}
+
+export const jobApplicationIds = openRoles.map((j) => j.id);
