@@ -80,7 +80,7 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       <div
         className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-55"
-        style={{ backgroundImage: "url('/assets/hero-night.png')" }}
+        style={{ backgroundImage: "url('/assets/nightmare%20%F0%9F%98%A7.jpg')" }}
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#05070dcc] via-[#0a0d14e6] to-[#111113]" />
       {/* Full-viewport headline block */}
