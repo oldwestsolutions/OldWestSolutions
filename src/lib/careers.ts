@@ -11,6 +11,8 @@ export type Job = {
   location: string;
   type: "Full-time" | "Part-time" | "Contract" | "Internship";
   workMode: "On-site" | "Hybrid" | "Remote-friendly";
+  /** ISO date (YYYY-MM-DD) for sort / display */
+  postedAt: string;
   summary: string;
   highlights: string[];
 };
@@ -30,6 +32,7 @@ export const openRoles: Job[] = [
     location: "Plano, TX · DFW metro",
     type: "Full-time",
     workMode: "On-site",
+    postedAt: "2026-03-28",
     summary:
       "Install and turn up fiber drops, customer premises equipment, and inside wiring while keeping every job photo-documented and ready for audit.",
     highlights: [
@@ -45,6 +48,7 @@ export const openRoles: Job[] = [
     location: "Plano, TX",
     type: "Full-time",
     workMode: "On-site",
+    postedAt: "2026-03-22",
     summary:
       "Pull, terminate, test, and label copper and fiber in offices, retail, and MDU builds — aligned to our ISP and managed-services standards.",
     highlights: [
@@ -60,6 +64,7 @@ export const openRoles: Job[] = [
     location: "Plano, TX",
     type: "Full-time",
     workMode: "Hybrid",
+    postedAt: "2026-04-01",
     summary:
       "Watch the network, own incidents, and communicate clearly with customers until green — triage, escalate, and improve runbooks as you go.",
     highlights: [
@@ -75,6 +80,7 @@ export const openRoles: Job[] = [
     location: "Plano, TX",
     type: "Full-time",
     workMode: "Hybrid",
+    postedAt: "2026-03-18",
     summary:
       "Design and operate core and access layers for business and residential services — from POP upgrades to customer edge policies.",
     highlights: [
@@ -90,6 +96,7 @@ export const openRoles: Job[] = [
     location: "Plano, TX",
     type: "Full-time",
     workMode: "Hybrid",
+    postedAt: "2026-03-30",
     summary:
       "Build the internal platforms our managed services run on — CI/CD, observability, and safe deploy patterns for customer-facing stacks.",
     highlights: [
@@ -105,6 +112,7 @@ export const openRoles: Job[] = [
     location: "Plano, TX",
     type: "Full-time",
     workMode: "On-site",
+    postedAt: "2026-03-12",
     summary:
       "Own deskside and remote support for business customers — identity, endpoints, M365/Google workspace, and network basics.",
     highlights: [
@@ -135,6 +143,7 @@ export const openRoles: Job[] = [
     location: "Plano, TX",
     type: "Full-time",
     workMode: "Hybrid",
+    postedAt: "2026-03-20",
     summary:
       "Be the steady voice on installs, billing questions, and service changes — proactive updates beat reactive fire drills.",
     highlights: [
@@ -150,6 +159,7 @@ export const openRoles: Job[] = [
     location: "Plano, TX",
     type: "Full-time",
     workMode: "Hybrid",
+    postedAt: "2026-02-14",
     summary:
       "Ship campaigns, local events, and partner co-marketing that make our coverage areas easy to understand and easy to buy.",
     highlights: [
@@ -165,6 +175,7 @@ export const openRoles: Job[] = [
     location: "Plano, TX",
     type: "Internship",
     workMode: "On-site",
+    postedAt: "2026-03-05",
     summary:
       "Rotate through NOC shadowing, documentation sprints, and lab builds — ideal for students pursuing networking or IT systems paths.",
     highlights: [

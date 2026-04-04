@@ -17,105 +17,308 @@ function applyHref(job: Job) {
   return `mailto:careers@oldwestsolutions.com?subject=${subject}&body=${body}`;
 }
 
+function formatPosted(iso: string) {
+  const d = new Date(iso + "T12:00:00");
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
+const selectClass =
+  "mt-1.5 w-full appearance-none rounded-sm border border-white/[0.12] bg-[#0a0b0f] px-3 py-2.5 pr-9 text-sm text-text-secondary outline-none transition focus:border-accent/50 focus:ring-1 focus:ring-accent/30";
+
+type SortKey = "recent" | "title-asc" | "title-desc";
+
 export default function JobsListing({ jobs }: Props) {
-  const [dept, setDept] = useState<JobDepartment | "All">("All");
+  const [query, setQuery] = useState("");
+  const [dept, setDept] = useState<JobDepartment | "">("");
+  const [type, setType] = useState<string>("");
+  const [workMode, setWorkMode] = useState<string>("");
+  const [location, setLocation] = useState<string>("");
+  const [sort, setSort] = useState<SortKey>("recent");
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
+  const typeOptions = useMemo(() => [...new Set(jobs.map((j) => j.type))].sort(), [jobs]);
+  const workModeOptions = useMemo(() => [...new Set(jobs.map((j) => j.workMode))].sort(), [jobs]);
+  const locationOptions = useMemo(() => [...new Set(jobs.map((j) => j.location))].sort(), [jobs]);
 
   const filtered = useMemo(() => {
-    if (dept === "All") return jobs;
-    return jobs.filter((j) => j.department === dept);
-  }, [jobs, dept]);
+    const q = query.trim().toLowerCase();
+    let list = jobs.filter((j) => {
+      if (dept && j.department !== dept) return false;
+      if (type && j.type !== type) return false;
+      if (workMode && j.workMode !== workMode) return false;
+      if (location && j.location !== location) return false;
+      if (!q) return true;
+      const blob = [
+        j.title,
+        j.department,
+        j.location,
+        j.type,
+        j.workMode,
+        j.id,
+        j.summary,
+        ...j.highlights,
+      ]
+        .join(" ")
+        .toLowerCase();
+      return blob.includes(q);
+    });
+
+    list = [...list];
+    if (sort === "recent") {
+      list.sort((a, b) => (a.postedAt < b.postedAt ? 1 : a.postedAt > b.postedAt ? -1 : a.title.localeCompare(b.title)));
+    } else if (sort === "title-asc") {
+      list.sort((a, b) => a.title.localeCompare(b.title));
+    } else {
+      list.sort((a, b) => b.title.localeCompare(a.title));
+    }
+    return list;
+  }, [jobs, query, dept, type, workMode, location, sort]);
+
+  const hasFilters = Boolean(query.trim() || dept || type || workMode || location);
+
+  function clearFilters() {
+    setQuery("");
+    setDept("");
+    setType("");
+    setWorkMode("");
+    setLocation("");
+    setSort("recent");
+  }
 
   return (
-    <div id="open-roles" className="scroll-mt-28">
-      <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Open roles</h2>
-          <p className="mt-3 max-w-xl text-pretty text-text-muted">
-            Every listing below is active. Filter by team, read the snapshot, and apply with one click — we read every message.
-          </p>
-        </div>
-        <p className="text-sm text-text-muted">
-          <span className="font-semibold text-white">{filtered.length}</span> role
-          {filtered.length === 1 ? "" : "s"} shown
-        </p>
+    <div className="mt-10">
+      <div className="relative">
+        <svg
+          className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={1.5}
+          aria-hidden
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search by job title, keyword, or requisition ID"
+          className="w-full rounded-sm border border-white/[0.12] bg-[#0a0b0f] py-3 pl-10 pr-4 text-sm text-white placeholder:text-text-muted outline-none transition focus:border-accent/50 focus:ring-1 focus:ring-accent/30"
+          aria-label="Search positions"
+        />
       </div>
 
-      <div
-        className="mt-8 flex flex-wrap gap-2"
-        role="tablist"
-        aria-label="Filter by department"
-      >
-        {(["All", ...jobDepartments] as const).map((d) => {
-          const active = dept === d;
-          return (
-            <button
-              key={d}
-              type="button"
-              role="tab"
-              aria-selected={active}
-              onClick={() => setDept(d)}
-              className={
-                active
-                  ? "rounded-full bg-accent px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-glow"
-                  : "rounded-full border border-white/[0.1] bg-white/[0.03] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-text-muted transition hover:border-accent/30 hover:text-white"
-              }
-            >
-              {d}
-            </button>
-          );
-        })}
-      </div>
-
-      <ul className="mt-10 space-y-5">
-        {filtered.map((job) => (
-          <li
-            key={job.id}
-            className="rounded-2xl border border-white/[0.06] bg-[#151518] p-6 shadow-card transition hover:border-accent/20 sm:p-8"
-          >
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-              <div className="min-w-0 flex-1">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-md bg-white/[0.06] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent">
-                    {job.department}
-                  </span>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-text-muted">{job.type}</span>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-text-muted">{job.workMode}</span>
-                </div>
-                <h3 className="mt-3 text-xl font-bold text-white sm:text-2xl">{job.title}</h3>
-                <p className="mt-1 text-sm text-text-muted">{job.location}</p>
-                <p className="mt-4 text-sm leading-relaxed text-text-secondary">{job.summary}</p>
-                <ul className="mt-4 space-y-2 text-sm text-text-muted">
-                  {job.highlights.map((h) => (
-                    <li key={h} className="flex gap-2">
-                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" aria-hidden />
-                      <span>{h}</span>
-                    </li>
+      <div className="mt-10 lg:grid lg:grid-cols-[minmax(0,240px)_1fr] lg:gap-12 xl:grid-cols-[minmax(0,280px)_1fr] xl:gap-16">
+        <aside className="mb-10 space-y-8 lg:mb-0" aria-label="Refine search">
+          <div>
+            <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-muted">Refine by</h2>
+            <div className="mt-6 space-y-5 border-t border-white/[0.08] pt-6">
+              <div>
+                <label htmlFor="filter-dept" className="text-xs font-medium text-white">
+                  Business unit
+                </label>
+                <select
+                  id="filter-dept"
+                  value={dept}
+                  onChange={(e) => setDept((e.target.value || "") as JobDepartment | "")}
+                  className={selectClass}
+                >
+                  <option value="">All business units</option>
+                  {jobDepartments.map((d) => (
+                    <option key={d} value={d}>
+                      {d}
+                    </option>
                   ))}
-                </ul>
-                <p className="mt-4 font-mono text-[11px] text-text-muted">Ref: {job.id}</p>
+                </select>
               </div>
-              <div className="flex shrink-0 flex-col gap-3 lg:items-end">
-                <a
-                  href={applyHref(job)}
-                  className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:bg-accent-deep lg:w-auto"
-                >
-                  Apply for this role
-                </a>
-                <Link
-                  href="/contact"
-                  className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full border border-white/[0.12] bg-transparent px-6 py-3 text-sm font-medium text-text-secondary transition hover:border-accent/30 hover:text-white lg:w-auto"
-                >
-                  Questions? Contact us
-                </Link>
+              <div>
+                <label htmlFor="filter-type" className="text-xs font-medium text-white">
+                  Position type
+                </label>
+                <select id="filter-type" value={type} onChange={(e) => setType(e.target.value)} className={selectClass}>
+                  <option value="">All types</option>
+                  {typeOptions.map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label htmlFor="filter-mode" className="text-xs font-medium text-white">
+                  Work arrangement
+                </label>
+                <select id="filter-mode" value={workMode} onChange={(e) => setWorkMode(e.target.value)} className={selectClass}>
+                  <option value="">All arrangements</option>
+                  {workModeOptions.map((w) => (
+                    <option key={w} value={w}>
+                      {w}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label htmlFor="filter-loc" className="text-xs font-medium text-white">
+                  Location
+                </label>
+                <select id="filter-loc" value={location} onChange={(e) => setLocation(e.target.value)} className={selectClass}>
+                  <option value="">All locations</option>
+                  {locationOptions.map((loc) => (
+                    <option key={loc} value={loc}>
+                      {loc}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
-          </li>
-        ))}
-      </ul>
+            {hasFilters ? (
+              <button
+                type="button"
+                onClick={clearFilters}
+                className="mt-6 text-xs font-medium text-accent hover:text-accent-muted"
+              >
+                Clear all filters
+              </button>
+            ) : null}
+          </div>
+        </aside>
 
-      {filtered.length === 0 ? (
-        <p className="mt-8 text-center text-text-muted">No roles in this filter right now — try another team or check back soon.</p>
-      ) : null}
+        <div className="min-w-0">
+          <div className="flex flex-col gap-4 border-b border-white/[0.1] pb-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-text-muted">
+              <span className="font-semibold tabular-nums text-white">{filtered.length}</span>
+              {" position"}
+              {filtered.length === 1 ? "" : "s"} match your criteria
+            </p>
+            <div className="flex items-center gap-2">
+              <label htmlFor="sort-positions" className="text-[11px] uppercase tracking-wider text-text-muted">
+                Sort
+              </label>
+              <select
+                id="sort-positions"
+                value={sort}
+                onChange={(e) => setSort(e.target.value as SortKey)}
+                className={`${selectClass} mt-0 max-w-[220px] py-2 text-xs`}
+              >
+                <option value="recent">Most recent</option>
+                <option value="title-asc">Job title (A–Z)</option>
+                <option value="title-desc">Job title (Z–A)</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Desktop table header */}
+          <div
+            className="mt-4 hidden grid-cols-[minmax(0,1fr)_minmax(0,140px)_minmax(0,160px)_minmax(0,88px)_minmax(0,100px)_72px] gap-4 border-b border-white/[0.08] px-1 pb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-text-muted md:grid"
+            role="row"
+          >
+            <span role="columnheader">Job title</span>
+            <span role="columnheader">Business unit</span>
+            <span role="columnheader">Location</span>
+            <span role="columnheader">Type</span>
+            <span role="columnheader">Posted</span>
+            <span role="columnheader" className="text-right">
+              Action
+            </span>
+          </div>
+
+          <ul className="divide-y divide-white/[0.06]" role="list">
+            {filtered.map((job) => {
+              const open = expandedId === job.id;
+              return (
+                <li key={job.id} className="py-1">
+                  <div className="rounded-sm md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,140px)_minmax(0,160px)_minmax(0,88px)_minmax(0,100px)_72px] md:items-center md:gap-4 md:px-1 md:py-3">
+                    <div className="min-w-0 py-3 md:py-0">
+                      <button
+                        type="button"
+                        onClick={() => setExpandedId(open ? null : job.id)}
+                        className="text-left text-[15px] font-medium text-white underline-offset-2 hover:underline md:no-underline md:hover:underline"
+                        aria-expanded={open}
+                      >
+                        {job.title}
+                      </button>
+                      <p className="mt-1 font-mono text-[10px] text-text-muted md:hidden">ID {job.id}</p>
+                    </div>
+                    <p className="hidden text-sm text-text-secondary md:block">{job.department}</p>
+                    <p className="hidden text-sm text-text-secondary md:block">{job.location}</p>
+                    <p className="hidden text-sm text-text-secondary md:block">{job.type}</p>
+                    <p className="hidden text-sm tabular-nums text-text-secondary md:block">{formatPosted(job.postedAt)}</p>
+                    <div className="hidden justify-end md:flex">
+                      <a
+                        href={applyHref(job)}
+                        className="text-xs font-semibold text-accent hover:text-accent-muted"
+                      >
+                        Apply
+                      </a>
+                    </div>
+                    {/* Mobile meta row */}
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 border-b border-white/[0.05] pb-3 text-xs text-text-muted md:hidden">
+                      <span>{job.department}</span>
+                      <span>{job.location}</span>
+                      <span>{job.type}</span>
+                      <span className="tabular-nums">{formatPosted(job.postedAt)}</span>
+                    </div>
+                    <div className="flex gap-3 pb-3 md:hidden">
+                      <a
+                        href={applyHref(job)}
+                        className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-sm border border-accent/40 bg-accent/10 text-xs font-semibold text-accent"
+                      >
+                        Apply
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => setExpandedId(open ? null : job.id)}
+                        className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-sm border border-white/[0.12] text-xs font-medium text-text-secondary"
+                      >
+                        {open ? "Hide details" : "View details"}
+                      </button>
+                    </div>
+                  </div>
+                  {open ? (
+                    <div className="mb-4 border border-white/[0.08] bg-[#08090d] px-4 py-5 md:mb-2 md:ml-1 md:mr-1">
+                      <p className="text-sm leading-relaxed text-text-secondary">{job.summary}</p>
+                      <ul className="mt-4 space-y-2 border-t border-white/[0.06] pt-4 text-sm text-text-muted">
+                        {job.highlights.map((h) => (
+                          <li key={h} className="flex gap-2 pl-1">
+                            <span className="text-accent" aria-hidden>
+                              ·
+                            </span>
+                            <span>{h}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-5 flex flex-wrap gap-3 border-t border-white/[0.06] pt-4">
+                        <a
+                          href={applyHref(job)}
+                          className="inline-flex min-h-[44px] items-center justify-center rounded-sm bg-accent px-5 text-xs font-semibold text-white hover:bg-accent-deep"
+                        >
+                          Apply for this position
+                        </a>
+                        <Link
+                          href="/contact"
+                          className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-white/[0.15] px-5 text-xs font-medium text-text-secondary hover:border-white/25 hover:text-white"
+                        >
+                          Contact recruiting
+                        </Link>
+                        <span className="self-center font-mono text-[10px] text-text-muted">Requisition {job.id}</span>
+                      </div>
+                    </div>
+                  ) : null}
+                </li>
+              );
+            })}
+          </ul>
+
+          {filtered.length === 0 ? (
+            <div className="py-16 text-center">
+              <p className="text-sm text-text-muted">No positions match your search and filters.</p>
+              <button type="button" onClick={clearFilters} className="mt-4 text-xs font-semibold text-accent hover:text-accent-muted">
+                Reset search and filters
+              </button>
+            </div>
+          ) : null}
+        </div>
+      </div>
     </div>
   );
 }
