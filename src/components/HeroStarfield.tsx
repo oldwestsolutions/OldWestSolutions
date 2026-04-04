@@ -3,107 +3,109 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-function createStarTexture(): THREE.CanvasTexture {
-  const size = 64;
-  const canvas = document.createElement("canvas");
-  canvas.width = size;
-  canvas.height = size;
-  const ctx = canvas.getContext("2d")!;
-
-  const gradient = ctx.createRadialGradient(
-    size / 2,
-    size / 2,
-    0,
-    size / 2,
-    size / 2,
-    size / 2,
-  );
-  gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
-  gradient.addColorStop(0.15, "rgba(255, 255, 255, 0.8)");
-  gradient.addColorStop(0.4, "rgba(200, 220, 255, 0.15)");
-  gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
-
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0, 0, size, size);
-
-  return new THREE.CanvasTexture(canvas);
-}
-
 export default function HeroStarfield() {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const mount = mountRef.current;
-    if (!mount) return;
+    if (!mount) {
+      return;
+    }
 
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
     const scene = new THREE.Scene();
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
     renderer.setClearColor(0x000000, 0);
     renderer.domElement.className = "h-full w-full";
     mount.appendChild(renderer.domElement);
 
-    const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 200);
-    camera.position.set(0, 0, 40);
+    const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
+    camera.position.set(0, 0.5, 18);
 
-    const starTexture = createStarTexture();
+    const ambientLight = new THREE.AmbientLight(0x7ab8ff, 0.95);
+    scene.add(ambientLight);
 
-    const starCount = 2200;
-    const positions = new Float32Array(starCount * 3);
-    const colors = new Float32Array(starCount * 3);
-    const sizes = new Float32Array(starCount);
+    const starGeometry = new THREE.BufferGeometry();
+    const starCount = 1800;
+    const starPositions = new Float32Array(starCount * 3);
+    const starColors = new Float32Array(starCount * 3);
+    const nearWhite = new THREE.Color("#f4fbff");
+    const coolBlue = new THREE.Color("#5aa9ff");
 
-    const nearWhite = new THREE.Color("#e8f0ff");
-    const coolBlue = new THREE.Color("#7eb8e8");
-    const warmWhite = new THREE.Color("#fff8ee");
+    for (let i = 0; i < starCount; i += 1) {
+      const offset = i * 3;
+      starPositions[offset] = (Math.random() - 0.5) * 44;
+      starPositions[offset + 1] = Math.random() * 26 - 1.5;
+      starPositions[offset + 2] = -Math.random() * 26;
 
-    for (let i = 0; i < starCount; i++) {
-      const i3 = i * 3;
-      positions[i3] = (Math.random() - 0.5) * 100;
-      positions[i3 + 1] = (Math.random() - 0.5) * 60;
-      positions[i3 + 2] = -Math.random() * 60;
-
-      const palette = Math.random();
-      const color =
-        palette < 0.6
-          ? nearWhite.clone()
-          : palette < 0.85
-            ? nearWhite.clone().lerp(coolBlue, Math.random() * 0.4)
-            : warmWhite.clone();
-
-      colors[i3] = color.r;
-      colors[i3 + 1] = color.g;
-      colors[i3 + 2] = color.b;
-
-      sizes[i] = 0.08 + Math.random() * 0.18;
+      const mix = Math.random();
+      const color = nearWhite.clone().lerp(coolBlue, mix * 0.75);
+      starColors[offset] = color.r;
+      starColors[offset + 1] = color.g;
+      starColors[offset + 2] = color.b;
     }
 
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
-    geometry.setAttribute("size", new THREE.BufferAttribute(sizes, 1));
+    starGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(starPositions, 3),
+    );
+    starGeometry.setAttribute(
+      "color",
+      new THREE.BufferAttribute(starColors, 3),
+    );
 
-    const material = new THREE.PointsMaterial({
-      map: starTexture,
-      size: 0.14,
-      sizeAttenuation: true,
-      transparent: true,
-      opacity: 0.7,
-      vertexColors: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-    });
-
-    const stars = new THREE.Points(geometry, material);
+    const stars = new THREE.Points(
+      starGeometry,
+      new THREE.PointsMaterial({
+        size: 0.1,
+        sizeAttenuation: true,
+        transparent: true,
+        opacity: 0.92,
+        vertexColors: true,
+        depthWrite: false,
+      }),
+    );
+    stars.position.y = 1.5;
     scene.add(stars);
 
+    const accentStarGeometry = new THREE.BufferGeometry();
+    const accentStarCount = 120;
+    const accentPositions = new Float32Array(accentStarCount * 3);
+
+    for (let i = 0; i < accentStarCount; i += 1) {
+      const offset = i * 3;
+      accentPositions[offset] = (Math.random() - 0.5) * 42;
+      accentPositions[offset + 1] = Math.random() * 22 + 1;
+      accentPositions[offset + 2] = -Math.random() * 18;
+    }
+
+    accentStarGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(accentPositions, 3),
+    );
+
+    const accentStars = new THREE.Points(
+      accentStarGeometry,
+      new THREE.PointsMaterial({
+        color: "#ffffff",
+        size: 0.22,
+        transparent: true,
+        opacity: 0.95,
+        depthWrite: false,
+      }),
+    );
+    scene.add(accentStars);
+
     const resize = () => {
-      const { clientWidth, clientHeight } = mount;
-      if (!clientWidth || !clientHeight) return;
+      const { clientHeight, clientWidth } = mount;
+      if (!clientWidth || !clientHeight) {
+        return;
+      }
+
       renderer.setSize(clientWidth, clientHeight, false);
       camera.aspect = clientWidth / clientHeight;
       camera.updateProjectionMatrix();
@@ -112,13 +114,13 @@ export default function HeroStarfield() {
     resize();
     window.addEventListener("resize", resize);
 
-    let frameId = 0;
+    let animationFrame = 0;
     const clock = new THREE.Clock();
 
     const render = () => {
-      const t = clock.getElapsedTime();
-      stars.rotation.y = t * 0.003;
-      stars.rotation.x = Math.sin(t * 0.08) * 0.002;
+      const elapsed = clock.getElapsedTime();
+      stars.rotation.y = elapsed * 0.015;
+      accentStars.rotation.y = -elapsed * 0.01;
       renderer.render(scene, camera);
     };
 
@@ -127,27 +129,29 @@ export default function HeroStarfield() {
     } else {
       const animate = () => {
         render();
-        frameId = requestAnimationFrame(animate);
+        animationFrame = window.requestAnimationFrame(animate);
       };
+
       animate();
     }
 
     return () => {
-      if (frameId) cancelAnimationFrame(frameId);
+      if (animationFrame) {
+        window.cancelAnimationFrame(animationFrame);
+      }
+
       window.removeEventListener("resize", resize);
       mount.removeChild(renderer.domElement);
-      geometry.dispose();
-      material.dispose();
-      starTexture.dispose();
+
+      starGeometry.dispose();
+      accentStarGeometry.dispose();
+
+      (stars.material as THREE.Material).dispose();
+      (accentStars.material as THREE.Material).dispose();
+
       renderer.dispose();
     };
   }, []);
 
-  return (
-    <div
-      ref={mountRef}
-      aria-hidden
-      className="pointer-events-none absolute inset-0"
-    />
-  );
+  return <div ref={mountRef} aria-hidden className="pointer-events-none absolute inset-0" />;
 }
