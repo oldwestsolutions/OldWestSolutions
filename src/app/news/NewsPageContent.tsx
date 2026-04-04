@@ -19,17 +19,12 @@ export default function NewsPageContent({ caseStudies }: Props) {
 
   const q = search.trim().toLowerCase();
 
-  const newsStudies = useMemo(
-    () => caseStudies.filter((s) => s.industry !== "Field operations"),
-    [caseStudies],
-  );
-
   const filteredStudies = useMemo(() => {
-    if (!q) return newsStudies;
-    return newsStudies.filter((s) =>
+    if (!q) return caseStudies;
+    return caseStudies.filter((s) =>
       matchesQuery([s.title, s.problem, s.outcome, s.industry, s.solution].join(" "), q),
     );
-  }, [newsStudies, q]);
+  }, [caseStudies, q]);
 
   const filteredTrending = useMemo(() => {
     if (!q) return trendingArticles;
