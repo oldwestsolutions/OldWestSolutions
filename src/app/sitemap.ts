@@ -32,6 +32,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.92,
     },
     {
+      url: `${siteUrl}/general-exchange`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${siteUrl}/first-class-mail`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${siteUrl}/teleport`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
       url: `${siteUrl}/services`,
       lastModified: now,
       changeFrequency: "weekly",

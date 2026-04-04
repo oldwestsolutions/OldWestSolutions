@@ -178,9 +178,9 @@ export const footerLinks = [
   {
     title: "Products",
     links: [
-      { label: "Markets & execution", href: "/#about" },
-      { label: "Communications", href: "/#about" },
-      { label: "Transactional mail", href: "/#about" },
+      { label: "General Exchange", href: "/general-exchange" },
+      { label: "First Class Mail", href: "/first-class-mail" },
+      { label: "Teleport", href: "/teleport" },
     ],
   },
   {
