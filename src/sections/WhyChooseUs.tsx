@@ -69,7 +69,7 @@ function MailEnvelopeIcon({ className }: { className?: string }) {
 }
 
 const flagshipBody =
-  "OldWest.net is the flagship network we operate for teams who treat the domain as the product — markets, compute, communications, search, and mail on one disciplined surface. Where your policies allow, stablecoin and crypto-native flows plug into the same contracts, telemetry, and controls as conventional settlement, so you are not running parallel stacks every time the financial layer evolves.";
+  "OldWest.net is our flagship network for teams who treat the domain as the product — markets, compute, communications, search, and mail on one disciplined surface, with shared contracts, telemetry, and controls so finance and infrastructure stay on the same facts.";
 
 function NetworkPhoneMockup() {
   return (
