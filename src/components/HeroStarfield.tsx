@@ -59,7 +59,7 @@ export default function HeroStarfield() {
     const stars = new THREE.Points(
       starGeometry,
       new THREE.PointsMaterial({
-        size: 0.1,
+        size: 0.07,
         sizeAttenuation: true,
         transparent: true,
         opacity: 0.92,
@@ -90,7 +90,7 @@ export default function HeroStarfield() {
       accentStarGeometry,
       new THREE.PointsMaterial({
         color: "#ffffff",
-        size: 0.22,
+        size: 0.16,
         transparent: true,
         opacity: 0.95,
         depthWrite: false,
@@ -114,8 +114,8 @@ export default function HeroStarfield() {
 
     const render = () => {
       const t = clock.getElapsedTime();
-      stars.rotation.y = t * 0.001;
-      accentStars.rotation.y = -t * 0.0008;
+      stars.rotation.y = t * 0.003;
+      accentStars.rotation.y = -t * 0.002;
       renderer.render(scene, camera);
     };
 
