@@ -32,22 +32,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.92,
     },
     {
-      url: `${siteUrl}/general-exchange`,
+      url: `${siteUrl}/about`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.82,
+      priority: 0.8,
     },
     {
-      url: `${siteUrl}/first-class-mail`,
+      url: `${siteUrl}/contact`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.82,
+      priority: 0.8,
     },
     {
-      url: `${siteUrl}/teleport`,
+      url: `${siteUrl}/careers`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.82,
+      priority: 0.7,
     },
     {
       url: `${siteUrl}/services`,

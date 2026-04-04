@@ -92,10 +92,10 @@ export default function CTA() {
 
             <div className="mt-6 flex flex-col gap-3">
               <a
-                href="#"
+                href="/schedule-consultation"
                 className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98]"
               >
-                Schedule a consultation
+                Schedule A Consultation
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -104,7 +104,7 @@ export default function CTA() {
                 href="/managed-services"
                 className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-text-secondary transition-all duration-200 hover:border-accent/25 hover:text-white active:scale-[0.98]"
               >
-                Explore managed services
+                Explore Managed Services
               </a>
             </div>
 

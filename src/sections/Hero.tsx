@@ -21,9 +21,9 @@ function DashboardMockup() {
       <div className="space-y-3 p-4">
         <div className="grid grid-cols-3 gap-2">
           {[
-            { label: "Write TPS", value: "48.2k", change: "+6.1% QoQ" },
-            { label: "Regions active", value: "6", change: "Multi-master" },
-            { label: "SLO budget", value: "0.12%", change: "Within target" },
+            { label: "Visitors", value: "24.7k", change: "+12.3% this month" },
+            { label: "Page views", value: "89.1k", change: "+8.5% this month" },
+            { label: "Bounce rate", value: "32%", change: "Below average" },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -40,7 +40,7 @@ function DashboardMockup() {
 
         <div className="h-28 rounded-xl border border-white/[0.04] bg-white/[0.02] p-3">
           <div className="mb-2 text-[9px] uppercase tracking-wider text-text-muted">
-            Cross-region replication lag (p99)
+            Traffic over time (last 30 days)
           </div>
           <div className="flex h-16 items-end gap-1">
             {[32, 48, 28, 58, 44, 68, 52, 76, 64, 82, 74, 88].map((h, i) => (
@@ -55,9 +55,9 @@ function DashboardMockup() {
 
         <div className="overflow-hidden rounded-xl border border-white/[0.04]">
           {[
-            { name: "Primary data plane", state: "Healthy" },
-            { name: "Inference pool", state: "Autoscaling" },
-            { name: "Edge / WAF", state: "Mitigating 0" },
+            { name: "Website", state: "Online" },
+            { name: "API", state: "Healthy" },
+            { name: "CDN / Security", state: "Protected" },
           ].map((row, i) => (
             <div
               key={row.name}

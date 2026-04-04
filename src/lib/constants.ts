@@ -178,17 +178,17 @@ export const footerLinks = [
   {
     title: "Products",
     links: [
-      { label: "General Exchange", href: "/general-exchange" },
-      { label: "First Class Mail", href: "/first-class-mail" },
-      { label: "Teleport", href: "/teleport" },
+      { label: "General Exchange", href: "https://www.general.exchange" },
+      { label: "First Class Mail", href: "https://www.firstclassmail.xyz" },
+      { label: "Teleport", href: "https://www.teleport.services" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About", href: "/#about" },
-      { label: "Contact", href: "/#contact" },
-      { label: "Careers", href: "#" },
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" },
+      { label: "Careers", href: "/careers" },
     ],
   },
   {

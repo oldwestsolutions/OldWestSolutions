@@ -62,16 +62,20 @@ export default function Footer() {
                   {group.title}
                 </h4>
                 <ul className="space-y-1 sm:space-y-2">
-                  {group.links.map((link) => (
-                    <li key={link.label}>
-                      <a
-                        href={link.href}
-                        className="inline-flex min-h-[40px] max-w-full items-center py-1.5 text-sm text-text-muted transition-colors duration-200 touch-manipulation hover:text-white sm:min-h-0 sm:py-0"
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
+                  {group.links.map((link) => {
+                    const isExternal = link.href.startsWith("http");
+                    return (
+                      <li key={link.label}>
+                        <a
+                          href={link.href}
+                          {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                          className="inline-flex min-h-[40px] max-w-full items-center py-1.5 text-sm text-text-muted transition-colors duration-200 touch-manipulation hover:text-white sm:min-h-0 sm:py-0"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}
