@@ -29,9 +29,6 @@ export default function Navbar() {
             <span className="text-[15px] font-semibold tracking-tight text-white">
               Old West Solutions
             </span>
-            <span className="mt-0.5 text-[10px] uppercase tracking-[0.18em] text-text-muted">
-              Distributed Systems
-            </span>
           </div>
         </a>
 
