@@ -2,20 +2,17 @@ import MarketingPageShell from "@/components/MarketingPageShell";
 
 export default function SystemsPage() {
   return (
-    <MarketingPageShell eyebrow="Systems" title="The difference">
+    <MarketingPageShell eyebrow="News" title="Latest updates">
       <p>
-        We publish short architecture briefs on how we run capacity, service
-        boundaries, and inference when your products span traditional settlement
-        and digital-asset programs — so infrastructure and finance teams read
-        from the same facts.
+        This page mirrors the News section on our homepage — short articles in
+        the same lead / report / impact format you see there, written for
+        customers, partners, and anyone following how we operate.
       </p>
       <p>
-        Themes include unified security from DNS and mail through applications,
-        microservices for communications workloads with clear API contracts, and
-        governed AI capacity instead of ad-hoc GPU spend. The homepage Systems
-        section illustrates representative challenge / solution / outcome cards;
-        this page anchors the topic for search, proposals, and internal
-        alignment.
+        Topics include trusted shared records for audits and partners,
+        platform work that breaks big apps into focused services with clear
+        APIs, and governed AI so inference, budgets, and releases stay in one
+        story. The cards on the home page are updated from the same themes.
       </p>
       <p>
         For a deeper engagement, start from{" "}
@@ -32,7 +29,8 @@ export default function SystemsPage() {
         >
           Integration
         </a>
-        — we scope systems work as part of the same operator contract.
+        — we scope projects under the same operator contract you read about in
+        the news briefs.
       </p>
     </MarketingPageShell>
   );

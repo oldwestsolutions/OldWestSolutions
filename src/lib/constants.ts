@@ -95,37 +95,37 @@ export const processSteps = [
 
 export const caseStudies = [
   {
-    title: "Blockchain records that everyone can trust",
-    industry: "Blockchain",
+    title: "Partners adopt one shared ledger auditors can follow",
+    industry: "Trust & records",
     problem:
-      "When important records live in different places and different formats, it is hard to know which version is right. Teams waste time checking and rechecking, and mistakes slip through because no one has one clear source of truth.",
+      "PLANO — Operations teams still trade spreadsheets over email, so nobody agrees which version is official. Small errors creep into partner statements, and month-end reviews drag because every line has to be checked twice.",
     solution:
-      "We use blockchain to create a shared record book that nobody can secretly change. Every entry is stamped with a time and linked to the one before it, so everyone — your team, your partners, your auditors — sees the same facts.",
+      "Old West Solutions introduced a shared record book where each entry is time-stamped and chained to the previous one. Partners, finance, and auditors now open the same timeline instead of reconciling attachments side by side.",
     outcome:
-      "Less time spent arguing about what happened, faster audits, and a level of trust between partners that spreadsheets and emails could never provide.",
-    tags: ["Blockchain", "Trust", "Records", "Audit"],
+      "Early programs report shorter close cycles, fewer arguments over who changed what, and a single story leadership can stand behind when questions come from the outside.",
+    tags: ["Ledger", "Partners", "Audit", "Compliance"],
   },
   {
-    title: "Small services that do one job really well",
-    industry: "Microservices",
+    title: "Operator retires monolith in favor of focused services",
+    industry: "Platform",
     problem:
-      "When a system tries to do everything in one place, it gets slow and tangled. Updating one part can break another, finding problems is like looking for a needle in a haystack, and the whole thing is hard for teams to understand.",
+      "FIELD REPORT — One large application handled messaging, billing hooks, and status pages together. A bug in notifications could freeze a pricing fix, incidents were noisy, and every deploy felt like moving a whole building.",
     solution:
-      "We split the big system into small, focused services. Each one handles a single task — like sending a message, checking a status, or tracking activity. They connect through simple, clean interfaces so teams only use the pieces they need.",
+      "Engineers carved the stack into smaller services behind versioned APIs: delivery here, health checks there, telemetry elsewhere. Teams scale and roll back one surface without touching unrelated code paths.",
     outcome:
-      "Updates are faster because you only change one small piece. Problems are easier to find because each service has its own dashboard. The whole system grows without slowing down.",
-    tags: ["Microservices", "APIs", "Monitoring", "Scalability"],
+      "Shipping picked up pace, on-call tickets point to a named service, and traffic spikes for one tenant no longer stall the entire product line.",
+    tags: ["Microservices", "APIs", "Reliability", "Shipping"],
   },
   {
-    title: "Production AI with clear limits and live answers",
-    industry: "AI",
+    title: "Governed AI layer keeps answers fast when traffic doubles",
+    industry: "AI desk",
     problem:
-      "Notebook work, batch jobs, and rented GPUs often sit in silos. Serving feels brittle, costs are unclear, and governance is an afterthought. When traffic spikes, nobody can name the model version customers actually hit.",
+      "BRIEFING — Models lived in notebooks and short-term GPU contracts with no shared scorecard. Finance could not tie spend to customer-facing answers, and at peak hours nobody could swear which build was actually serving requests.",
     solution:
-      "We connect training, evaluation, routing, and live inference behind one control plane. Policies for data, regions, and budgets travel with the models. Real-time metrics and releases use the gates your engineering team already trusts.",
+      "The team wired training, routing, and live inference to one control plane: budgets and data rules travel with each model, latency and quality metrics stream continuously, and releases use the same promotion gates as the rest of production.",
     outcome:
-      "Faster experiment-to-production paths, fewer cost and quality surprises, and one clear leadership view of what is live and how it behaves when load doubles.",
-    tags: ["AI", "Inference", "Governance", "Production"],
+      "Executives now scan cost, version, and performance in one place, and experiments graduate to full traffic without inventing a second launch playbook.",
+    tags: ["Inference", "Governance", "Production", "Telemetry"],
   },
 ];
 

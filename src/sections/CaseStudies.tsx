@@ -7,8 +7,8 @@ import { caseStudies } from "@/lib/constants";
 export default function CaseStudies() {
   return (
     <section
-      id="systems"
-      aria-labelledby="systems-difference-heading"
+      id="news"
+      aria-labelledby="news-heading"
       className="relative border-t border-white/[0.06] bg-[#111113] pt-10 pb-10 md:pt-14 md:pb-12"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,17 +20,17 @@ export default function CaseStudies() {
           custom={0}
           className="max-w-2xl mb-10 md:mb-12"
         >
-          <span className="label-caps text-accent">Systems</span>
+          <span className="label-caps text-accent">News</span>
           <h2
-            id="systems-difference-heading"
+            id="news-heading"
             className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]"
           >
-            The Difference
+            Latest updates
           </h2>
           <p className="mt-4 text-pretty text-text-muted text-base leading-relaxed sm:text-lg">
-            Here is how we solve real problems for businesses — simple
-            explanations of the challenges our customers face, what we build
-            for them, and the results they get.
+            Short briefs from our team — what we are seeing in the field, what
+            we shipped, and what it means for customers. Same format as before,
+            written like newsroom notes instead of slide decks.
           </p>
         </motion.div>
 
@@ -62,7 +62,7 @@ export default function CaseStudies() {
               <div className="flex flex-1 flex-col px-7 py-5 space-y-4">
                 <div>
                   <div className="text-[10px] font-semibold tracking-widest uppercase text-text-muted mb-1.5">
-                    Challenge
+                    Lead
                   </div>
                   <p className="text-text-muted text-sm leading-relaxed">
                     {study.problem}
@@ -70,7 +70,7 @@ export default function CaseStudies() {
                 </div>
                 <div>
                   <div className="text-[10px] font-semibold tracking-widest uppercase text-text-muted mb-1.5">
-                    Solution
+                    Report
                   </div>
                   <p className="text-text-secondary text-sm leading-relaxed">
                     {study.solution}
@@ -78,7 +78,7 @@ export default function CaseStudies() {
                 </div>
                 <div>
                   <div className="text-[10px] font-semibold tracking-widest uppercase text-emerald-400 mb-1.5">
-                    Outcome
+                    Impact
                   </div>
                   <p className="text-emerald-400/90 text-sm leading-relaxed font-medium">
                     {study.outcome}
