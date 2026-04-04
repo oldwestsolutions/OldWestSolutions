@@ -157,11 +157,11 @@ export const whyUs = [
 
 export const footerLinks = [
   {
-    title: "Domains",
+    title: "Services",
     links: [
-      { label: "Find A Domain", href: "/find-a-domain" },
-      { label: "Broker Services", href: "/broker-services" },
-      { label: "Transfers", href: "/transfers" },
+      { label: "Domains", href: "/find-a-domain" },
+      { label: "Cloud", href: "/integration" },
+      { label: "Orchestration", href: "/managed-services" },
     ],
   },
   {
