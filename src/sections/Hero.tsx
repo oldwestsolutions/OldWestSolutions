@@ -164,7 +164,7 @@ export default function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl w-full px-4 pb-14 pt-6 sm:px-6 sm:pb-16 sm:pt-8 md:pb-20 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2 lg:items-center lg:gap-10">
           <motion.div variants={slideLeft} initial="hidden" animate="visible" custom={0.18}>
-            <span className="label-caps text-accent">Managed services</span>
+            <span className="label-caps text-accent">Services</span>
             <h2 className="luxury-title mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
               Build your app — we handle everything else
             </h2>
