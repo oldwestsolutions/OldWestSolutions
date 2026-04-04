@@ -193,6 +193,9 @@ export const footerLinks = [
   },
   {
     title: "Resources",
-    links: [{ label: "Documentation", href: "#" }],
+    links: [
+      { label: "Documentation", href: "#" },
+      { label: "University", href: "/university" },
+    ],
   },
 ];
