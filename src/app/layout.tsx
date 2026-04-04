@@ -10,7 +10,7 @@ const siteUrl =
 const base = new URL(siteUrl.endsWith("/") ? siteUrl : `${siteUrl}/`);
 
 const defaultDescription =
-  "Old West Solutions is a Plano, Texas tech solutions company offering IT services, fiber internet, broadband, phone systems, television, network equipment, managed cloud infrastructure, web hosting, cybersecurity, and technology consulting for homes and businesses.";
+  "Old West Solutions provides IT services and tech solutions in Plano, Texas — fiber internet, broadband, phone systems, television, network equipment, managed cloud infrastructure, web hosting, cybersecurity, and technology consulting for homes and businesses.";
 
 /** Document `<title>` stays short for the tab; Open Graph below carries full SEO headlines. */
 const tabTitleHome = `${brandTitle} - IT Services`;
@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   applicationName: brandTitle,
   keywords: [
     "Old West Solutions",
+    "IT Services",
+    "Tech Solutions",
+    "IT services and tech solutions",
     "tech solutions",
     "tech solutions Plano TX",
     "tech solutions Texas",

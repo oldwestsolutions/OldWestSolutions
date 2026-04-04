@@ -10,14 +10,6 @@ const checkIcon = (
   </svg>
 );
 
-function TvIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75} aria-hidden>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M6 20h12M9 4v2m6-2v2M5 8h14v10a2 2 0 01-2 2H7a2 2 0 01-2-2V8z" />
-    </svg>
-  );
-}
-
 function WifiIcon({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75} aria-hidden>
@@ -34,112 +26,135 @@ function PhoneIcon({ className }: { className?: string }) {
   );
 }
 
+function CellSignalIcon({ className }: { className?: string }) {
+  return (
+    <svg className={`text-emerald-500/90 ${className ?? ""}`} viewBox="0 0 18 14" fill="currentColor" aria-hidden>
+      <rect x="0" y="9" width="2.5" height="5" rx="0.5" />
+      <rect x="4.5" y="6" width="2.5" height="8" rx="0.5" />
+      <rect x="9" y="3.5" width="2.5" height="10.5" rx="0.5" />
+      <rect x="13.5" y="0" width="2.5" height="14" rx="0.5" />
+    </svg>
+  );
+}
+
+function BatteryIcon({ className }: { className?: string }) {
+  return (
+    <svg className={`text-white/45 ${className ?? ""}`} viewBox="0 0 22 12" fill="none" aria-hidden>
+      <rect x="0.5" y="2.5" width="17" height="7" rx="1.5" stroke="currentColor" strokeWidth="1" />
+      <rect x="2" y="4" width="12" height="4" rx="0.5" fill="rgb(16 185 129 / 0.75)" />
+      <path d="M19 5v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const flagshipBody =
   "OldWest.net is the flagship network we operate for teams who treat the domain as the product — markets, compute, communications, search, and mail on one disciplined surface. Where your policies allow, stablecoin and crypto-native flows plug into the same contracts, telemetry, and controls as conventional settlement, so you are not running parallel stacks every time the financial layer evolves.";
 
-function NetworkIllustration() {
+function NetworkPhoneMockup() {
   return (
-    <div className="mx-auto w-full max-w-[16.5rem] sm:max-w-[17.5rem]">
+    <div className="mx-auto w-full max-w-[11.5rem] sm:max-w-[12.25rem]">
       <div
-        className="relative overflow-hidden rounded-xl border-[3px] border-[#2a2a2e] bg-[#0c0c0e] shadow-[0_0_0_1px_rgba(255,255,255,0.04),inset_0_1px_0_rgba(255,255,255,0.06)] sm:rounded-2xl"
+        className="relative rounded-[1.9rem] border-[5px] border-[#2e2e34] bg-gradient-to-b from-[#232328] via-[#18181c] to-[#121214] p-[5px] shadow-[0_24px_60px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.06)]"
         role="img"
-        aria-label="TV, internet, and voice service preview"
+        aria-label="Smartphone showing network status dashboard"
       >
-        {/* Monitor / TV bezel bar */}
-        <div className="flex items-center justify-between gap-2 border-b border-white/[0.06] bg-[#121214] px-2.5 py-1.5">
-          <div className="flex items-center gap-2 min-w-0">
-            <div className="flex shrink-0 items-center gap-1 text-accent/85">
-              <TvIcon className="h-3 w-3" />
-              <WifiIcon className="h-3 w-3" />
-              <PhoneIcon className="h-3 w-3" />
-            </div>
-            <span className="truncate text-[7px] font-semibold uppercase tracking-[0.14em] text-text-muted">
-              TV · Internet · Voice
-            </span>
-          </div>
-          <div className="flex shrink-0 gap-1">
-            <div className="h-1.5 w-1.5 rounded-full bg-emerald-500/70" title="Live" />
-            <div className="h-1.5 w-1.5 rounded-full bg-white/12" />
-            <div className="h-1.5 w-1.5 rounded-full bg-white/12" />
-          </div>
-        </div>
+        {/* Side buttons (phone hardware) */}
+        <div className="pointer-events-none absolute -left-[3px] top-[22%] h-9 w-[3px] rounded-l-sm bg-[#3a3a42]" aria-hidden />
+        <div className="pointer-events-none absolute -left-[3px] top-[32%] h-14 w-[3px] rounded-l-sm bg-[#3a3a42]" aria-hidden />
+        <div className="pointer-events-none absolute -right-[3px] top-[28%] h-16 w-[3px] rounded-r-sm bg-[#3a3a42]" aria-hidden />
 
-        {/* “Screen” content */}
-        <div className="space-y-2 bg-gradient-to-b from-[#151518] to-[#111113] p-2.5">
-          <div className="grid grid-cols-3 gap-1.5">
-            {[
-              { label: "Domains", value: "142", change: "Active" },
-              { label: "Uptime", value: "99.98%", change: "Last 90 days" },
-              { label: "Avg response", value: "38ms", change: "Global" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-lg border border-white/[0.05] bg-white/[0.02] px-1.5 py-1.5"
-              >
-                <div className="text-[7px] uppercase tracking-wider text-text-muted leading-tight">
-                  {stat.label}
-                </div>
-                <div className="mt-0.5 text-[11px] font-semibold leading-none text-white">
-                  {stat.value}
-                </div>
-                <div className="mt-0.5 text-[7px] text-emerald-400/90 leading-tight">{stat.change}</div>
-              </div>
-            ))}
+        <div className="relative overflow-hidden rounded-[1.42rem] bg-[#0e0e10] ring-1 ring-white/[0.07]">
+          {/* Status bar + dynamic island */}
+          <div className="relative z-10 flex h-8 items-center justify-between px-3 pt-1">
+            <span className="text-[9px] font-semibold tabular-nums text-white/80">9:41</span>
+            <div
+              className="absolute left-1/2 top-1.5 z-20 h-[11px] w-[4.25rem] -translate-x-1/2 rounded-full bg-black ring-1 ring-white/[0.12]"
+              aria-hidden
+            />
+            <div className="flex items-center gap-1 pr-0.5 text-white/55">
+              <CellSignalIcon className="h-2.5 w-[18px]" />
+              <WifiIcon className="h-2.5 w-2.5" />
+              <BatteryIcon className="h-2 w-[22px]" />
+            </div>
           </div>
 
-          <div className="rounded-lg border border-white/[0.05] bg-white/[0.02] p-2">
-            <div className="mb-1.5 flex items-center justify-between gap-2">
-              <span className="text-[7px] uppercase tracking-wider text-text-muted">
-                Network throughput (7 days)
-              </span>
-              <span className="flex items-center gap-0.5 text-[7px] text-accent/80">
-                <WifiIcon className="h-2.5 w-2.5" />
-                Fiber
-              </span>
+          {/* App-style header */}
+          <div className="border-b border-white/[0.05] px-3 pb-2 pt-0.5">
+            <div className="text-center text-[8px] font-semibold uppercase tracking-[0.16em] text-text-muted">
+              Network status
             </div>
-            <div className="flex h-11 items-end gap-0.5">
-              {[45, 62, 38, 72, 55, 80, 68, 85, 74, 90, 82, 95].map((h, i) => (
+          </div>
+
+          {/* Screen body */}
+          <div className="space-y-2 bg-gradient-to-b from-[#151518] to-[#101012] px-2.5 py-2.5">
+            <div className="grid grid-cols-3 gap-1.5">
+              {[
+                { label: "Domains", value: "142", change: "Active" },
+                { label: "Uptime", value: "99.98%", change: "Last 90 days" },
+                { label: "Avg response", value: "38ms", change: "Global" },
+              ].map((stat) => (
                 <div
-                  key={i}
-                  className="flex-1 rounded-[1px] bg-gradient-to-t from-accent/15 to-accent/40"
-                  style={{ height: `${h}%` }}
-                />
+                  key={stat.label}
+                  className="rounded-lg border border-white/[0.05] bg-white/[0.025] px-1.5 py-1.5"
+                >
+                  <div className="text-[6.5px] uppercase tracking-wider text-text-muted leading-tight">
+                    {stat.label}
+                  </div>
+                  <div className="mt-0.5 text-[10px] font-semibold leading-none text-white">{stat.value}</div>
+                  <div className="mt-0.5 text-[6.5px] text-emerald-400/90 leading-tight">{stat.change}</div>
+                </div>
               ))}
             </div>
-          </div>
 
-          <div className="overflow-hidden rounded-lg border border-white/[0.05]">
-            {[
-              { name: "DNS resolution", state: "Healthy", Icon: WifiIcon },
-              { name: "Edge network", state: "Active", Icon: TvIcon },
-              { name: "Mail delivery", state: "Delivering", Icon: PhoneIcon },
-            ].map((row, i) => {
-              const RowIcon = row.Icon;
-              return (
-              <div
-                key={row.name}
-                className={`flex items-center justify-between gap-2 px-2 py-1.5 ${i > 0 ? "border-t border-white/[0.04]" : ""}`}
-              >
-                <div className="flex min-w-0 items-center gap-1.5">
-                  <RowIcon className="h-2.5 w-2.5 shrink-0 text-accent/50" />
-                  <div className="h-1 w-1 shrink-0 rounded-full bg-emerald-400" />
-                  <span className="truncate text-[9px] text-text-secondary">{row.name}</span>
-                </div>
-                <span className="shrink-0 text-[8px] text-text-muted">{row.state}</span>
+            <div className="rounded-lg border border-white/[0.05] bg-white/[0.025] p-2">
+              <div className="mb-1.5 flex items-center justify-between gap-2">
+                <span className="text-[6.5px] uppercase tracking-wider text-text-muted">
+                  Network throughput (7 days)
+                </span>
+                <span className="flex items-center gap-0.5 text-[6.5px] font-medium text-accent/85">
+                  <WifiIcon className="h-2 w-2" />
+                  Fiber
+                </span>
               </div>
-              );
-            })}
+              <div className="flex h-10 items-end gap-0.5">
+                {[45, 62, 38, 72, 55, 80, 68, 85, 74, 90, 82, 95].map((h, i) => (
+                  <div
+                    key={i}
+                    className="flex-1 rounded-[1px] bg-gradient-to-t from-accent/12 to-accent/38"
+                    style={{ height: `${h}%` }}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-lg border border-white/[0.05] bg-white/[0.02]">
+              {[
+                { name: "DNS resolution", state: "Healthy", Icon: WifiIcon },
+                { name: "Edge network", state: "Active", Icon: CellSignalIcon },
+                { name: "Mail delivery", state: "Delivering", Icon: PhoneIcon },
+              ].map((row, i) => {
+                const RowIcon = row.Icon;
+                return (
+                  <div
+                    key={row.name}
+                    className={`flex items-center justify-between gap-2 px-2 py-1.5 ${i > 0 ? "border-t border-white/[0.04]" : ""}`}
+                  >
+                    <div className="flex min-w-0 items-center gap-1.5">
+                      <RowIcon className="h-2.5 w-2.5 shrink-0 text-accent/55" />
+                      <div className="h-1 w-1 shrink-0 rounded-full bg-emerald-400" />
+                      <span className="truncate text-[8.5px] text-text-secondary">{row.name}</span>
+                    </div>
+                    <span className="shrink-0 text-[7.5px] font-medium text-text-muted">{row.state}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
 
-        {/* Flagship copy directly under the panel */}
-        <div className="border-t border-white/[0.06] bg-[#121214]/95 px-2.5 py-2.5">
-          <p className="text-[10px] leading-relaxed text-text-muted sm:text-[11px]">{flagshipBody}</p>
-        </div>
-
-        {/* Simple stand hint */}
-        <div className="flex justify-center pb-1.5 pt-0.5">
-          <div className="h-1 w-10 rounded-b-sm bg-[#2a2a2e]" aria-hidden />
+          {/* Home indicator */}
+          <div className="flex justify-center pb-2 pt-0.5">
+            <div className="h-[3px] w-8 rounded-full bg-white/22" aria-hidden />
+          </div>
         </div>
       </div>
     </div>
@@ -178,7 +193,18 @@ export default function WhyChooseUs() {
               custom={0.1}
               className="mt-5"
             >
-              <NetworkIllustration />
+              <NetworkPhoneMockup />
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              custom={0.14}
+              className="mt-5 rounded-[1.5rem] border border-white/[0.06] bg-[#17171a] p-6 shadow-card"
+            >
+              <p className="text-text-muted text-sm leading-relaxed">{flagshipBody}</p>
             </motion.div>
 
             <a

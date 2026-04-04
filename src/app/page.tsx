@@ -9,7 +9,7 @@ import CTA from "@/sections/CTA";
 export const metadata: Metadata = {
   title: { absolute: "Old West Solutions - IT Services" },
   description:
-    "Old West Solutions — your tech solutions partner in Plano, TX. Fiber internet, broadband, phone systems, television, network equipment, managed IT services, cloud hosting, and cybersecurity for homes and businesses.",
+    "Old West Solutions — IT services and tech solutions in Plano, TX. Fiber internet, broadband, phone systems, television, network equipment, managed cloud, web hosting, and cybersecurity for homes and businesses.",
   alternates: { canonical: "/" },
   openGraph: {
     title:
