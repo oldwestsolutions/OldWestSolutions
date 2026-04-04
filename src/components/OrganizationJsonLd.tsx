@@ -9,10 +9,10 @@ export default function OrganizationJsonLd() {
     "@type": "LocalBusiness",
     "@id": `${url}/#organization`,
     name: "Old West Solutions",
-    alternateName: ["OldWestSolutions", "Old West Solutions LLC"],
+    alternateName: ["OldWestSolutions", "Old West Solutions LLC", "Old West Tech Solutions"],
     url,
     description:
-      "IT services, fiber internet, broadband, phone systems, television, network equipment, managed cloud infrastructure, web hosting, and cybersecurity for homes and businesses in Plano, Texas and beyond.",
+      "Tech solutions and IT services — fiber internet, broadband, phone systems, television, network equipment, managed cloud infrastructure, web hosting, and cybersecurity for homes and businesses in Plano, Texas and beyond.",
     telephone: "+1-945-382-4660",
     address: {
       "@type": "PostalAddress",
@@ -110,7 +110,7 @@ export default function OrganizationJsonLd() {
     url,
     name: "Old West Solutions",
     description:
-      "IT services, internet, phone, television, and managed technology solutions.",
+      "Old West Solutions — tech solutions, IT services, internet, phone, television, and managed technology for homes and businesses.",
     publisher: { "@id": `${url}/#organization` },
     potentialAction: {
       "@type": "SearchAction",

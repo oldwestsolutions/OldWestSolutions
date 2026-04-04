@@ -10,7 +10,7 @@ const siteUrl =
 const base = new URL(siteUrl.endsWith("/") ? siteUrl : `${siteUrl}/`);
 
 const defaultDescription =
-  "Old West Solutions is a Plano, Texas IT company offering fiber internet, broadband, phone systems, television, network equipment, managed cloud infrastructure, web hosting, cybersecurity, and technology consulting for homes and businesses.";
+  "Old West Solutions is a Plano, Texas tech solutions company offering IT services, fiber internet, broadband, phone systems, television, network equipment, managed cloud infrastructure, web hosting, cybersecurity, and technology consulting for homes and businesses.";
 
 /** Document `<title>` stays short for the tab; Open Graph below carries full SEO headlines. */
 const tabTitleHome = `${brandTitle} - IT Services`;
@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   applicationName: brandTitle,
   keywords: [
     "Old West Solutions",
+    "tech solutions",
+    "tech solutions Plano TX",
+    "tech solutions Texas",
+    "technology solutions",
     "IT services",
     "IT services Plano TX",
     "managed IT services Texas",
@@ -43,11 +47,15 @@ export const metadata: Metadata = {
     "business IT support",
     "managed infrastructure",
     "OldWest.net",
+    "oldwestsolutions",
+    "old west solutions",
     "Plano Texas technology company",
     "fiber optic internet",
     "enterprise IT solutions",
     "network installation",
     "IT support near me",
+    "tech company Plano",
+    "tech company Texas",
   ],
   authors: [{ name: brandTitle, url: base }],
   creator: brandTitle,
@@ -57,13 +65,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: brandTitle,
-    title: `${brandTitle} — IT Services, Fiber Internet & Technology Solutions in Plano, TX`,
+    title: `${brandTitle} — Tech Solutions, IT Services & Fiber Internet in Plano, TX`,
     description: defaultDescription,
     url: base,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${brandTitle} — IT Services, Internet & Technology Solutions | Plano, TX`,
+    title: `${brandTitle} — Tech Solutions, IT Services & Internet | Plano, TX`,
     description: defaultDescription,
   },
 };

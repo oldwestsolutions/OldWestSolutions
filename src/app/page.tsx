@@ -9,20 +9,20 @@ import CTA from "@/sections/CTA";
 export const metadata: Metadata = {
   title: { absolute: "Old West Solutions - IT Services" },
   description:
-    "Old West Solutions in Plano, TX provides fiber internet, broadband, phone systems, television, network equipment, managed IT services, cloud hosting, and cybersecurity for homes and businesses.",
+    "Old West Solutions — your tech solutions partner in Plano, TX. Fiber internet, broadband, phone systems, television, network equipment, managed IT services, cloud hosting, and cybersecurity for homes and businesses.",
   alternates: { canonical: "/" },
   openGraph: {
     title:
-      "Old West Solutions — IT Services, Fiber Internet & Technology Solutions | Plano, TX",
+      "Old West Solutions — Tech Solutions, IT Services & Fiber Internet | Plano, TX",
     description:
-      "Fiber internet, broadband, phone systems, TV, managed IT, cloud hosting, and cybersecurity — one company for all your technology needs in Plano, Texas.",
+      "Old West Solutions: tech solutions, fiber internet, broadband, phone systems, TV, managed IT, cloud hosting, and cybersecurity — one company for all your technology needs in Plano, Texas.",
     url: "/",
   },
   twitter: {
     title:
-      "Old West Solutions — IT Services, Internet & Technology | Plano, TX",
+      "Old West Solutions — Tech Solutions, IT Services & Internet | Plano, TX",
     description:
-      "Fiber internet, broadband, phone systems, TV, managed IT, cloud hosting, and cybersecurity — one company for all your technology needs in Plano, Texas.",
+      "Old West Solutions: tech solutions, fiber internet, broadband, phone systems, TV, managed IT, cloud hosting, and cybersecurity — one company for all your technology needs in Plano, Texas.",
   },
 };
 
