@@ -160,8 +160,8 @@ export const footerLinks = [
     title: "Services",
     links: [
       { label: "Domains", href: "/find-a-domain" },
-      { label: "Network", href: "/network" },
-      { label: "Cloud", href: "/integration" },
+      { label: "Network", href: "https://www.oldwest.net" },
+      { label: "Cloud", href: "https://www.lubbock.cloud" },
     ],
   },
   {
@@ -191,7 +191,7 @@ export const footerLinks = [
   {
     title: "Resources",
     links: [
-      { label: "Documentation", href: "#" },
+      { label: "Documentation", href: "/documentation" },
       { label: "University", href: "/university" },
       { label: "Shop", href: "/shop" },
     ],
