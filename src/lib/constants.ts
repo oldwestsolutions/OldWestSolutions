@@ -134,27 +134,27 @@ export const whyUs = [
   {
     title: "Fiber & Broadband Internet",
     description:
-      "Fast, reliable internet for homes and businesses — fiber-optic and broadband connections built for streaming, remote work, and everything in between.",
+      "Fast, reliable internet for homes and businesses — fiber-optic and broadband connections built for streaming, remote work, video calls, gaming, and smart-home devices all at once. We focus on steady speeds, low lag, and capacity that still feels roomy when the whole family or your whole office is online. Plans are sized for how you actually use the internet today, with room to grow as your needs change.",
   },
   {
     title: "Phone Systems",
     description:
-      "Modern phone service for your home or office — crystal-clear calls, voicemail, caller ID, and multi-line setups that just work.",
+      "Modern phone service for your home or office — crystal-clear calls, voicemail, caller ID, and multi-line setups that just work. Business customers get features like hunt groups, auto-attendants, and easy forwarding so customers always reach the right person. Whether you need one line or a full office footprint, we keep voice quality consistent and the billing easy to understand.",
   },
   {
     title: "Television",
     description:
-      "Hundreds of channels, on-demand content, and DVR built in — entertainment for the whole household with picture quality you can count on.",
+      "Hundreds of channels, on-demand content, and DVR built in — entertainment for the whole household with picture quality you can count on. Catch live sports, news, and family shows in one place, pause and rewind when life interrupts, and pick up where you left off on your schedule. We help you choose the right package so you are not paying for channels nobody watches.",
   },
   {
     title: "Installation & Support",
     description:
-      "Professional setup from start to finish — our team comes to you, installs everything, and makes sure it all works before we leave. Help is a phone call away after that.",
+      "Professional setup from start to finish — our team comes to you, installs everything, and makes sure it all works before we leave. We label cables, test speeds at the wall and over Wi-Fi, and walk you through the basics so you feel confident on day one. After that, help is a phone call away for troubleshooting, moves, add-ons, or simple questions — no runaround, no guessing who to contact.",
   },
   {
     title: "Network Equipment",
     description:
-      "Routers, modems, switches, and access points — the hardware your connection needs to stay fast and reliable in every room and on every device.",
+      "Routers, modems, switches, and access points — the hardware your connection needs to stay fast and reliable in every room and on every device. We recommend gear that matches your square footage, device count, and security needs, not a one-size-fits-all box from a big-box shelf. Firmware updates, placement, and handoff between wired and wireless are part of the story, so your network feels as solid as the pipe coming into the building.",
   },
 ];
 
