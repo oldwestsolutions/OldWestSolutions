@@ -1,22 +1,24 @@
-import Link from "next/link";
+import MarketingPageShell from "@/components/MarketingPageShell";
 
 export default function PortalPage() {
   return (
-    <main
-      id="main-content"
-      className="flex min-h-screen flex-col items-center justify-center bg-[#080809] px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-[max(1.5rem,env(safe-area-inset-top))] text-center"
-    >
-      <h1 className="text-2xl font-semibold tracking-tight text-white">Portal</h1>
-      <p className="mt-3 max-w-md text-sm text-white/55">
-        Client and operator access will live here. Replace this page with your sign-in
-        or dashboard when ready.
+    <MarketingPageShell eyebrow="Client access" title="Portal">
+      <p>
+        Secure sign-in for clients and operators will live here — dashboards,
+        tickets, and environment status in one place. Replace this page with your
+        sign-in flow or embedded app when you are ready.
       </p>
-      <Link
-        href="/"
-        className="mt-8 inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-sm font-medium text-accent touch-manipulation hover:text-accent/90"
-      >
-        ← Back to home
-      </Link>
-    </main>
+      <p>
+        Need time on the calendar first? Use{" "}
+        <a
+          href="/book-appointment"
+          className="text-accent underline-offset-2 hover:underline"
+        >
+          Book An Appointment
+        </a>
+        . For anything else, use Get in touch below or the contact block on the
+        home page.
+      </p>
+    </MarketingPageShell>
   );
 }

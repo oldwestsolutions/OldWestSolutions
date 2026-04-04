@@ -151,7 +151,7 @@ export default function Hero() {
                 href="/find-a-domain"
                 className="inline-flex min-h-[40px] shrink-0 items-center justify-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-[12px] font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white active:scale-[0.98] sm:px-5 sm:text-[13px]"
               >
-                Find a domain
+                Find A Domain
                 <svg className="h-3.5 w-3.5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

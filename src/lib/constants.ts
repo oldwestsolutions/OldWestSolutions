@@ -15,10 +15,10 @@ export const infrastructureVendors = [
 ];
 
 export const navLinks = [
-  { label: "Domains", href: "/domains" },
   { label: "Solutions", href: "/solutions" },
   { label: "Products", href: "/products" },
   { label: "Services", href: "/services" },
+  { label: "Company", href: "/about" },
 ];
 
 export const services = [
