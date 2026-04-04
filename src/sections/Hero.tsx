@@ -78,6 +78,11 @@ function DashboardMockup() {
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
+      <div
+        className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-55"
+        style={{ backgroundImage: "url('/assets/hero-night.png')" }}
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#05070dcc] via-[#0a0d14e6] to-[#111113]" />
       {/* Full-viewport headline block */}
       <div className="relative flex min-h-[calc(100dvh-5.5rem)] flex-col justify-center px-4 pb-10 pt-10 sm:px-6 sm:pb-14 sm:pt-12 md:min-h-[calc(100dvh-6rem)] lg:px-8">
         <div
