@@ -160,8 +160,8 @@ export const footerLinks = [
     title: "Services",
     links: [
       { label: "Domains", href: "/find-a-domain" },
-      { label: "Cloud", href: "/integration" },
       { label: "Network", href: "/network" },
+      { label: "Cloud", href: "/integration" },
     ],
   },
   {
