@@ -207,7 +207,7 @@ export default function Hero() {
             className="text-center md:text-left"
           >
             <h3 className="text-lg font-semibold text-white sm:text-xl">
-              Data &amp; computing
+              Compute
             </h3>
             <p className="mt-2 text-sm font-medium leading-relaxed text-text-muted">
               Databases, file storage, smart computing, and all the behind-the-scenes
@@ -223,7 +223,7 @@ export default function Hero() {
             className="text-center md:text-left"
           >
             <h3 className="text-lg font-semibold text-white sm:text-xl">
-              Safety &amp; speed
+              Integration
             </h3>
             <p className="mt-2 text-sm font-medium leading-relaxed text-text-muted">
               We keep your site safe, fast, and private — blocking bad traffic,
