@@ -48,22 +48,16 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center justify-end gap-1.5 justify-self-end sm:gap-2">
-          <div className="hidden flex-wrap items-center justify-end gap-1.5 lg:flex xl:gap-2">
-            <a
-              href="/schedule-consultation"
-              className="inline-flex min-h-[40px] max-w-[9.5rem] items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-2.5 py-1.5 text-center text-[10px] font-medium leading-snug text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white xl:max-w-none xl:min-h-[44px] xl:px-4 xl:text-xs xl:leading-normal 2xl:text-[13px]"
-            >
-              Schedule a Consultation
-            </a>
+          <div className="hidden items-center justify-end gap-2 lg:flex">
             <a
               href="/book-appointment"
-              className="inline-flex min-h-[40px] max-w-[9rem] items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-2.5 py-1.5 text-center text-[10px] font-medium leading-snug text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white xl:max-w-none xl:min-h-[44px] xl:px-4 xl:text-xs xl:leading-normal 2xl:text-[13px]"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-[12px] font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white sm:px-5 sm:text-[13px]"
             >
               Book An Appointment
             </a>
             <a
               href="/portal"
-              className="inline-flex min-h-[40px] shrink-0 items-center justify-center rounded-full bg-accent px-3 py-2 text-[11px] font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98] xl:min-h-[44px] xl:px-4 xl:text-xs 2xl:text-[13px]"
+              className="inline-flex min-h-[44px] shrink-0 items-center justify-center rounded-full bg-accent px-4 py-2 text-[12px] font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-deep active:scale-[0.98] sm:px-5 sm:text-[13px]"
             >
               Portal
             </a>
@@ -104,13 +98,6 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="mt-4 flex flex-col gap-3 sm:mt-5">
-                <a
-                  href="/schedule-consultation"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex min-h-[48px] items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.03] px-4 text-center text-sm font-medium text-text-secondary transition-colors touch-manipulation hover:border-accent/25 hover:text-white active:scale-[0.99]"
-                >
-                  Schedule a Consultation
-                </a>
                 <a
                   href="/book-appointment"
                   onClick={() => setMobileOpen(false)}
