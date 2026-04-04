@@ -120,11 +120,11 @@ export const caseStudies = [
     title: "Production AI with clear limits and live answers",
     industry: "AI",
     problem:
-      "Machine learning work often spreads across notebooks, batch jobs, and one-off GPU rentals that never connect cleanly. Serving feels fragile, spend is hard to read, governance gets bolted on late, and when traffic spikes nobody can tell which model version actually answered the customer in production.",
+      "Notebook work, batch jobs, and rented GPUs often sit in silos. Serving feels brittle, costs are unclear, and governance is an afterthought. When traffic spikes, nobody can name the model version customers actually hit.",
     solution:
-      "We design AI layers where training, evaluation, routing, and live inference share one control plane. Policies for data, regions, and budgets ride alongside the models, metrics cover latency and quality in real time, and releases roll through the same gates your engineering team already trusts.",
+      "We connect training, evaluation, routing, and live inference behind one control plane. Policies for data, regions, and budgets travel with the models. Real-time metrics and releases use the gates your engineering team already trusts.",
     outcome:
-      "Shorter paths from experiment to production, fewer surprises in cost and performance, and one clear view for leadership of what is live and how it behaves under load.",
+      "Faster experiment-to-production paths, fewer cost and quality surprises, and one clear leadership view of what is live and how it behaves when load doubles.",
     tags: ["AI", "Inference", "Governance", "Production"],
   },
 ];
@@ -134,27 +134,27 @@ export const whyUs = [
   {
     title: "Fiber & Broadband Internet",
     description:
-      "Fast, reliable internet for homes and businesses — fiber-optic and broadband connections built for streaming, remote work, video calls, gaming, and smart-home devices all at once. We focus on steady speeds, low lag, and capacity that still feels roomy when the whole family or your whole office is online. Plans are sized for how you actually use the internet today, with room to grow as your needs change.",
+      "Fiber and broadband for streaming, remote work, and daily life — steady speeds when the whole house or office is online.",
   },
   {
     title: "Phone Systems",
     description:
-      "Modern phone service for your home or office — crystal-clear calls, voicemail, caller ID, and multi-line setups that just work. Business customers get features like hunt groups, auto-attendants, and easy forwarding so customers always reach the right person. Whether you need one line or a full office footprint, we keep voice quality consistent and the billing easy to understand.",
+      "Clear calls, voicemail, caller ID, and multi-line setups. Add hunt groups and forwarding when your business needs them.",
   },
   {
     title: "Television",
     description:
-      "Hundreds of channels, on-demand content, and DVR built in — entertainment for the whole household with picture quality you can count on. Catch live sports, news, and family shows in one place, pause and rewind when life interrupts, and pick up where you left off on your schedule. We help you choose the right package so you are not paying for channels nobody watches.",
+      "Live channels, on-demand, and DVR in one lineup — sports, news, and family shows without juggling extra apps.",
   },
   {
     title: "Installation & Support",
     description:
-      "Professional setup from start to finish — our team comes to you, installs everything, and makes sure it all works before we leave. We label cables, test speeds at the wall and over Wi-Fi, and walk you through the basics so you feel confident on day one. After that, help is a phone call away for troubleshooting, moves, add-ons, or simple questions — no runaround, no guessing who to contact.",
+      "We install on-site, test your speeds, show you the basics, and pick up the phone when something needs a quick fix.",
   },
   {
     title: "Network Equipment",
     description:
-      "Routers, modems, switches, and access points — the hardware your connection needs to stay fast and reliable in every room and on every device. We recommend gear that matches your square footage, device count, and security needs, not a one-size-fits-all box from a big-box shelf. Firmware updates, placement, and handoff between wired and wireless are part of the story, so your network feels as solid as the pipe coming into the building.",
+      "Routers, modems, switches, and Wi‑Fi matched to your space and devices — coverage that holds up in every room.",
   },
 ];
 
