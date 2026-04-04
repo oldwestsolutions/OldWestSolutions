@@ -113,7 +113,7 @@ export default function Hero() {
                 <br className="hidden sm:inline" />
                 <span className="text-white/92">
                   {" "}
-                  <span className="text-accent">Data Power</span>
+                  <span className="text-accent">Data Systems</span>
                 </span>
               </span>
             </motion.h1>
