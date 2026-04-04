@@ -161,15 +161,15 @@ export const footerLinks = [
     links: [
       { label: "Domains", href: "/find-a-domain" },
       { label: "Cloud", href: "/integration" },
-      { label: "Orchestration", href: "/managed-services" },
+      { label: "Network", href: "/network" },
     ],
   },
   {
     title: "Solutions",
     links: [
       { label: "Managed Services", href: "/managed-services" },
-      { label: "Integration", href: "/integration" },
       { label: "Network", href: "/network" },
+      { label: "Integration", href: "/integration" },
     ],
   },
   {
