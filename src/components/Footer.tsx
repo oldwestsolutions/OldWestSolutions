@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="rounded-b-[1.75rem] border-t border-white/[0.06] bg-[#0c0c0e] sm:rounded-b-[2rem]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-10 xl:gap-14">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-14 xl:gap-20">
           {/* Brand */}
           <div className="shrink-0 lg:max-w-[min(100%,280px)] xl:max-w-xs">
             <a href="/" className="inline-flex items-center gap-2.5 mb-2 touch-manipulation rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
@@ -54,7 +54,7 @@ export default function Footer() {
 
           <nav
             aria-label="Footer"
-            className="grid min-w-0 flex-1 grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-5"
+            className="grid min-w-0 flex-1 grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-8 lg:pl-6 xl:gap-x-10 xl:pl-10"
           >
             {footerLinks.map((group) => (
               <div key={group.title} className="min-w-0">
