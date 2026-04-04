@@ -193,6 +193,7 @@ export const footerLinks = [
     links: [
       { label: "Documentation", href: "#" },
       { label: "University", href: "/university" },
+      { label: "Shop", href: "/shop" },
     ],
   },
 ];
