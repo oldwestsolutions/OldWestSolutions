@@ -6,11 +6,11 @@ export default function Footer() {
   return (
     <footer className="rounded-b-[1.75rem] border-t border-white/[0.06] bg-[#0c0c0e] sm:rounded-b-[2rem]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-14 xl:gap-20">
           {/* Brand */}
-          <div className="w-full max-w-xs text-center">
-            <a href="/" className="inline-flex items-center justify-center gap-2.5 mb-2 touch-manipulation rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
-              <div className="flex flex-col leading-none text-center">
+          <div className="shrink-0 lg:max-w-[min(100%,280px)] xl:max-w-xs">
+            <a href="/" className="inline-flex items-center gap-2.5 mb-2 touch-manipulation rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+              <div className="flex flex-col leading-none text-left">
                 <span className="text-white font-semibold text-[15px] tracking-tight">
                   Old West Solutions
                 </span>
@@ -18,19 +18,19 @@ export default function Footer() {
             </a>
             <a
               href="tel:+19453824660"
-              className="mt-3 flex items-center justify-center gap-2 text-text-muted transition-colors hover:text-white"
+              className="mt-3 flex items-center gap-2 text-text-muted transition-colors hover:text-white"
             >
               <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
               </svg>
               <span className="text-xs">(945) 382-4660</span>
             </a>
-            <div className="mt-3 flex items-start justify-center gap-2 text-text-muted">
+            <div className="mt-3 flex items-start gap-2 text-text-muted">
               <svg className="mt-0.5 h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
               </svg>
-              <span className="text-xs leading-relaxed text-center">
+              <span className="text-xs leading-relaxed">
                 7950 Legacy Dr<br />
                 Plano, Texas
               </span>
@@ -54,10 +54,10 @@ export default function Footer() {
 
           <nav
             aria-label="Footer"
-            className="mx-auto grid w-full max-w-5xl min-w-0 grid-cols-2 gap-x-8 gap-y-10 text-center sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-10"
+            className="grid min-w-0 flex-1 grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-8 lg:pl-6 xl:gap-x-10 xl:pl-10"
           >
             {footerLinks.map((group) => (
-              <div key={group.title} className="flex min-w-0 flex-col items-center">
+              <div key={group.title} className="min-w-0">
                 <h4 className="mb-4 text-xs font-semibold uppercase tracking-wider text-white">
                   {group.title}
                 </h4>
@@ -66,7 +66,7 @@ export default function Footer() {
                     <li key={link.label}>
                       <a
                         href={link.href}
-                        className="inline-flex min-h-[40px] max-w-full items-center justify-center py-1.5 text-sm text-text-muted transition-colors duration-200 touch-manipulation hover:text-white sm:min-h-0 sm:py-0"
+                        className="inline-flex min-h-[40px] max-w-full items-center py-1.5 text-sm text-text-muted transition-colors duration-200 touch-manipulation hover:text-white sm:min-h-0 sm:py-0"
                       >
                         {link.label}
                       </a>
