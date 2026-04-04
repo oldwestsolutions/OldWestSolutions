@@ -7,7 +7,7 @@ export default function OrganizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Old West Solutions",
-    alternateName: ["OldWestSolutions"],
+    alternateName: ["Old West Solutions"],
     url,
     description:
       "IT services, managed cloud infrastructure, and technology solutions — databases, storage, AI-ready compute, networking, and security for domain-led operators. Plano, Texas.",

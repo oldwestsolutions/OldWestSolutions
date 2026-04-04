@@ -65,7 +65,7 @@ export const processSteps = [
     step: "01",
     title: "Assessment",
     description:
-      "Evaluate your infrastructure requirements, domain portfolio, and platform needs to define the optimal deployment strategy across the OldWestSolutions ecosystem.",
+      "Evaluate your infrastructure requirements, domain portfolio, and platform needs to define the optimal deployment strategy across the Old West Solutions ecosystem.",
   },
   {
     step: "02",

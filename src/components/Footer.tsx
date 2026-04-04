@@ -12,10 +12,7 @@ export default function Footer() {
             <a href="/" className="inline-flex items-center gap-2.5 mb-4 touch-manipulation rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
               <div className="flex flex-col leading-none text-left">
                 <span className="text-white font-semibold text-[15px] tracking-tight">
-                  OldWestSolutions
-                </span>
-                <span className="text-text-muted text-[10px] tracking-wider uppercase mt-0.5">
-                  Distributed Systems
+                  Old West Solutions
                 </span>
               </div>
             </a>
@@ -84,7 +81,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-14 pt-6 border-t border-white/[0.04] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-text-muted text-xs">
-            &copy; {new Date().getFullYear()} OldWestSolutions. All rights reserved.
+            &copy; {new Date().getFullYear()} Old West Solutions. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
             <a href="#" className="text-text-muted text-xs hover:text-white transition-colors duration-200">

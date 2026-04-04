@@ -25,7 +25,7 @@ export default function Process() {
           </h2>
           <p className="mt-4 px-0 text-base leading-relaxed text-text-muted sm:text-lg">
             A systematic deployment framework for provisioning infrastructure
-            across the OldWestSolutions ecosystem — from initial assessment
+            across the Old West Solutions ecosystem — from initial assessment
             through continuous scaling.
           </p>
         </motion.div>

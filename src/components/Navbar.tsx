@@ -23,11 +23,11 @@ export default function Navbar() {
         <a
           href="/"
           className="flex min-h-[44px] min-w-[44px] shrink-0 touch-manipulation items-center pl-1 -ml-1 justify-self-start"
-          aria-label="OldWestSolutions home"
+          aria-label="Old West Solutions home"
         >
           <div className="flex flex-col leading-none">
             <span className="text-[15px] font-semibold tracking-tight text-white">
-              OldWestSolutions
+              Old West Solutions
             </span>
             <span className="mt-0.5 text-[10px] uppercase tracking-[0.18em] text-text-muted">
               Distributed Systems
