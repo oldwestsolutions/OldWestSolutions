@@ -47,6 +47,27 @@ function BatteryIcon({ className }: { className?: string }) {
   );
 }
 
+function MessagesIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M7.5 18.5 3 21l1.2-4.8A9.2 9.2 0 1 1 7.5 18.5Z"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function MailEnvelopeIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75} aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+    </svg>
+  );
+}
+
 const flagshipBody =
   "OldWest.net is the flagship network we operate for teams who treat the domain as the product — markets, compute, communications, search, and mail on one disciplined surface. Where your policies allow, stablecoin and crypto-native flows plug into the same contracts, telemetry, and controls as conventional settlement, so you are not running parallel stacks every time the financial layer evolves.";
 
@@ -56,7 +77,7 @@ function NetworkPhoneMockup() {
       <div
         className="relative rounded-[1.9rem] border-[5px] border-[#2e2e34] bg-gradient-to-b from-[#232328] via-[#18181c] to-[#121214] p-[5px] shadow-[0_24px_60px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.06)]"
         role="img"
-        aria-label="Smartphone showing network status dashboard"
+        aria-label="Smartphone showing everyday status: cellular, Wi-Fi, battery, screen time, and apps"
       >
         {/* Side buttons (phone hardware) */}
         <div className="pointer-events-none absolute -left-[3px] top-[22%] h-9 w-[3px] rounded-l-sm bg-[#3a3a42]" aria-hidden />
@@ -78,10 +99,10 @@ function NetworkPhoneMockup() {
             </div>
           </div>
 
-          {/* App-style header */}
+          {/* App-style header (Settings-style title) */}
           <div className="border-b border-white/[0.05] px-3 pb-2 pt-0.5">
             <div className="text-center text-[8px] font-semibold uppercase tracking-[0.16em] text-text-muted">
-              Network status
+              Settings
             </div>
           </div>
 
@@ -89,9 +110,9 @@ function NetworkPhoneMockup() {
           <div className="space-y-2 bg-gradient-to-b from-[#151518] to-[#101012] px-2.5 py-2.5">
             <div className="grid grid-cols-3 gap-1.5">
               {[
-                { label: "Domains", value: "142", change: "Active" },
-                { label: "Uptime", value: "99.98%", change: "Last 90 days" },
-                { label: "Avg response", value: "38ms", change: "Global" },
+                { label: "Cellular", value: "5G", change: "On" },
+                { label: "Wi-Fi", value: "Home", change: "Connected" },
+                { label: "Battery", value: "84%", change: "Normal" },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -109,11 +130,10 @@ function NetworkPhoneMockup() {
             <div className="rounded-lg border border-white/[0.05] bg-white/[0.025] p-2">
               <div className="mb-1.5 flex items-center justify-between gap-2">
                 <span className="text-[6.5px] uppercase tracking-wider text-text-muted">
-                  Network throughput (7 days)
+                  Screen Time (7 days)
                 </span>
                 <span className="flex items-center gap-0.5 text-[6.5px] font-medium text-accent/85">
-                  <WifiIcon className="h-2 w-2" />
-                  Fiber
+                  Daily avg
                 </span>
               </div>
               <div className="flex h-10 items-end gap-0.5">
@@ -129,9 +149,9 @@ function NetworkPhoneMockup() {
 
             <div className="overflow-hidden rounded-lg border border-white/[0.05] bg-white/[0.02]">
               {[
-                { name: "DNS resolution", state: "Healthy", Icon: WifiIcon },
-                { name: "Edge network", state: "Active", Icon: CellSignalIcon },
-                { name: "Mail delivery", state: "Delivering", Icon: PhoneIcon },
+                { name: "Messages", state: "2 unread", Icon: MessagesIcon },
+                { name: "Phone", state: "Recents", Icon: PhoneIcon },
+                { name: "Mail", state: "Updated", Icon: MailEnvelopeIcon },
               ].map((row, i) => {
                 const RowIcon = row.Icon;
                 return (
