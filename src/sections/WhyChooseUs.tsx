@@ -68,8 +68,8 @@ function MailEnvelopeIcon({ className }: { className?: string }) {
   );
 }
 
-const flagshipBody =
-  "OldWest.net is our flagship network for teams who treat the domain as the product — markets, compute, communications, search, and mail on one disciplined surface, with shared contracts, telemetry, and controls so finance and infrastructure stay on the same facts.";
+const networkAboutBody =
+  "OldWest.net is the network we operate for teams who treat the domain as the product — markets, compute, communications, search, and mail on one disciplined surface, with shared contracts, telemetry, and controls so finance and infrastructure stay on the same facts.";
 
 function NetworkPhoneMockup() {
   return (
@@ -185,7 +185,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="about"
-      aria-labelledby="network-flagship-heading"
+      aria-labelledby="network-heading"
       className="relative border-t border-white/[0.06] bg-[#111113] pt-14 pb-8 md:pt-20 md:pb-10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -199,10 +199,10 @@ export default function WhyChooseUs() {
           >
             <span className="label-caps text-accent">Network</span>
             <h2
-              id="network-flagship-heading"
+              id="network-heading"
               className="luxury-title mt-3 text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight tracking-[-0.02em]"
             >
-              Our <span className="text-accent">Flagship</span>
+              State of the <span className="text-accent">Art</span>
             </h2>
 
             <motion.div
@@ -224,7 +224,7 @@ export default function WhyChooseUs() {
               custom={0.14}
               className="mt-5 rounded-[1.5rem] border border-white/[0.06] bg-[#17171a] p-6 shadow-card"
             >
-              <p className="text-text-muted text-sm leading-relaxed">{flagshipBody}</p>
+              <p className="text-text-muted text-sm leading-relaxed">{networkAboutBody}</p>
             </motion.div>
 
             <a

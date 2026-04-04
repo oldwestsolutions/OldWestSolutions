@@ -109,7 +109,7 @@ export default function Hero() {
                 Distributed infrastructure
               </span>
               <span className="block text-3xl leading-[1.08] min-[400px]:text-4xl sm:text-5xl sm:leading-[1.06] lg:text-[3.25rem] xl:text-[3.5rem]">
-                <span className="text-white">Big Business</span>
+                <span className="text-white">Enterprise Grade</span>
                 <br className="hidden sm:inline" />
                 <span className="text-white/92">
                   {" "}

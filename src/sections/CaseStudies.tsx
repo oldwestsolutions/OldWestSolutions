@@ -86,15 +86,16 @@ export default function CaseStudies() {
                 </div>
               </div>
 
-              <div className="mt-auto shrink-0 px-7 pb-6 pt-2 flex flex-wrap gap-1.5">
-                {study.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[10px] text-text-muted bg-white/[0.04] border border-white/[0.06] px-2.5 py-1 rounded-md"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="mt-auto shrink-0 border-t border-white/[0.04] px-7 py-4">
+                <a
+                  href="/systems"
+                  className="inline-flex min-h-[40px] w-full items-center justify-center gap-1.5 rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2.5 text-xs font-medium text-text-secondary transition-all duration-200 hover:border-accent/30 hover:text-white sm:w-auto"
+                >
+                  Read More
+                  <svg className="h-3 w-3 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
               </div>
             </motion.div>
           ))}

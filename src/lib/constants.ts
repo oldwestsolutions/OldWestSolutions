@@ -103,7 +103,6 @@ export const caseStudies = [
       "Old West Solutions introduced a shared record book where each entry is time-stamped and chained to the previous one. Partners, finance, and auditors now open the same timeline instead of reconciling attachments side by side.",
     outcome:
       "Early programs report shorter close cycles, fewer arguments over who changed what, and a single story leadership can stand behind when questions come from the outside.",
-    tags: ["Ledger", "Partners", "Audit", "Compliance"],
   },
   {
     title: "Operator retires monolith in favor of focused services",
@@ -114,7 +113,6 @@ export const caseStudies = [
       "Engineers carved the stack into smaller services behind versioned APIs: delivery here, health checks there, telemetry elsewhere. Teams scale and roll back one surface without touching unrelated code paths.",
     outcome:
       "Shipping picked up pace, on-call tickets point to a named service, and traffic spikes for one tenant no longer stall the entire product line.",
-    tags: ["Microservices", "APIs", "Reliability", "Shipping"],
   },
   {
     title: "Governed AI layer keeps answers fast when traffic doubles",
@@ -125,7 +123,6 @@ export const caseStudies = [
       "The team wired training, routing, and live inference to one control plane: budgets and data rules travel with each model, latency and quality metrics stream continuously, and releases use the same promotion gates as the rest of production.",
     outcome:
       "Executives now scan cost, version, and performance in one place, and experiments graduate to full traffic without inventing a second launch playbook.",
-    tags: ["Inference", "Governance", "Production", "Telemetry"],
   },
 ];
 
