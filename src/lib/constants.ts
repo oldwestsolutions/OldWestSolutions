@@ -98,7 +98,7 @@ export const caseStudies = [
     title: "Partners adopt one shared ledger auditors can follow",
     industry: "Trust & records",
     problem:
-      "PLANO — Teams still e-mail competing spreadsheets, so nobody trusts which file is official. Small mistakes show up in partner statements and renewals. Month-end close drags because finance reconciles the same rows twice.",
+      "USA — Teams still e-mail competing spreadsheets, so nobody trusts which file is official. Small mistakes show up in partner statements and renewals. Month-end close drags because finance reconciles the same rows twice.",
     solution:
       "Old West Solutions launched a shared record book where each line is time-stamped and chained to the previous entry. Partners, finance, and auditors open that single timeline instead of reconciling attachments and side files by hand.",
     outcome:
@@ -108,7 +108,7 @@ export const caseStudies = [
     title: "Operator retires monolith in favor of focused services",
     industry: "Platform",
     problem:
-      "PLANO — One large application owned messaging, billing hooks, and status pages on the same release train. A bug in notifications could freeze a pricing fix. Incidents were noisy, and every deploy felt like moving a whole building.",
+      "USA — One large application owned messaging, billing hooks, and status pages on the same release train. A bug in notifications could freeze a pricing fix. Incidents were noisy, and every deploy felt like moving a whole building.",
     solution:
       "Engineers split the stack into focused services behind versioned APIs for delivery, health checks, and telemetry. Teams scale or roll back one surface at a time without opening unrelated routes or shared binaries.",
     outcome:
@@ -118,7 +118,7 @@ export const caseStudies = [
     title: "Governed AI layer keeps answers fast when traffic doubles",
     industry: "AI desk",
     problem:
-      "PLANO — Models lived in notebooks and short GPU contracts with no scorecard everyone trusted. Finance could not tie spend to the answers customers saw live. At peak hours, nobody could swear which build was actually taking requests.",
+      "USA — Models lived in notebooks and short GPU contracts with no scorecard everyone trusted. Finance could not tie spend to the answers customers saw live. At peak hours, nobody could swear which build was actually taking requests.",
     solution:
       "The team wired training, routing, and live inference to one control plane where budgets and data rules travel with each model. Latency and quality metrics stream in real time, and releases clear the same promotion gates as the rest of production.",
     outcome:
