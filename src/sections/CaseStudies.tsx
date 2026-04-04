@@ -88,7 +88,7 @@ export default function CaseStudies() {
 
               <div className="mt-auto shrink-0 border-t border-white/[0.04] px-7 py-4">
                 <a
-                  href="/systems"
+                  href="/news"
                   className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-medium text-accent underline-offset-2 transition-colors hover:text-white hover:underline touch-manipulation"
                 >
                   Read More

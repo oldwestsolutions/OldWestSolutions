@@ -183,9 +183,9 @@ export const footerLinks = [
   {
     title: "Company",
     links: [
-      { label: "About", href: "/about" },
-      { label: "Contact", href: "/contact" },
+      { label: "About Us", href: "/about" },
       { label: "Careers", href: "/careers" },
+      { label: "News", href: "/news" },
     ],
   },
   {

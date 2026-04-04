@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Us",
   description:
     "About Old West Solutions — who we are, what we believe, and how we help businesses build and run the technology behind the domains they operate.",
   alternates: { canonical: "/about" },
