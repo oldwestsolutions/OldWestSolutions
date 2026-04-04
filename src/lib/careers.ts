@@ -128,6 +128,7 @@ export const openRoles: Job[] = [
     location: "Plano, TX",
     type: "Full-time",
     workMode: "Hybrid",
+    postedAt: "2026-03-25",
     summary:
       "Generate qualified conversations for fiber, voice, TV bundles, and managed IT — disciplined outreach with honest positioning.",
     highlights: [

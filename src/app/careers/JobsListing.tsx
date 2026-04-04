@@ -36,9 +36,9 @@ export default function JobsListing({ jobs }: Props) {
   const [sort, setSort] = useState<SortKey>("recent");
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
-  const typeOptions = useMemo(() => [...new Set(jobs.map((j) => j.type))].sort(), [jobs]);
-  const workModeOptions = useMemo(() => [...new Set(jobs.map((j) => j.workMode))].sort(), [jobs]);
-  const locationOptions = useMemo(() => [...new Set(jobs.map((j) => j.location))].sort(), [jobs]);
+  const typeOptions = useMemo(() => Array.from(new Set(jobs.map((j) => j.type))).sort(), [jobs]);
+  const workModeOptions = useMemo(() => Array.from(new Set(jobs.map((j) => j.workMode))).sort(), [jobs]);
+  const locationOptions = useMemo(() => Array.from(new Set(jobs.map((j) => j.location))).sort(), [jobs]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
