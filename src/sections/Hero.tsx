@@ -100,12 +100,20 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0}
-              className="luxury-title luxury-title-center text-balance text-3xl font-extrabold leading-[1.05] tracking-[-0.04em] text-white min-[400px]:text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem]"
+              className="luxury-title luxury-title-center text-balance font-extrabold tracking-[-0.04em] text-white"
             >
-              Control plane for distributed infrastructure
-              <br className="hidden sm:inline" />
-              <span className="text-white/95"> on the </span>
-              <span className="text-accent">domains you operate</span>
+              <span className="mb-3 block text-[10px] font-semibold uppercase tracking-[0.32em] text-text-muted sm:mb-5 sm:text-[11px]">
+                Distributed infrastructure
+              </span>
+              <span className="block text-3xl leading-[1.08] min-[400px]:text-4xl sm:text-5xl sm:leading-[1.06] lg:text-[3.25rem] xl:text-[3.5rem]">
+                <span className="text-white">Control plane</span>
+                <br className="hidden sm:inline" />
+                <span className="text-white/92">
+                  {" "}
+                  for the{" "}
+                  <span className="text-accent">domains you operate</span>
+                </span>
+              </span>
             </motion.h1>
 
             <motion.p
